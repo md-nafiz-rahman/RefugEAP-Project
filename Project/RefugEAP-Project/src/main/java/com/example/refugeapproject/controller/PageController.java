@@ -10,6 +10,6 @@ public class PageController {
     @RequestMapping(value = "/") // Request to HomePage
     public String HomePage() {
         return "homePage";
-    }
+    } // test for commit
 
 }
