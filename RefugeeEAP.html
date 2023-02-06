@@ -46,49 +46,94 @@
     padding-top: 32px;
     padding-bottom: 32px;
 }
-.top{
-    position: fixed;
-    width: 100%;
-}
- .topnav {
-  overflow: hidden;
-  background-color: #29668B;
+/*.top{*/
+/*    position: fixed;*/
+/*    width: 100%;*/
+/*}*/
+/* .topnav {*/
+/*  overflow: hidden;*/
+/*  background-color: #29668B;*/
 
-}
-
-.topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 24px 20px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.topnav a:hover {
-  background-color: #FFFFFF;
-  color: black;
-}
-
-/*.topnav a.active {*/
-/*  background-color: #FFFFFF;*/
-/*  color: white;*/
 /*}*/
 
-.topnav-text{
-    float: right;
-}
+/*.topnav a {*/
+/*  float: left;*/
+/*  color: white;*/
+/*  text-align: center;*/
+/*  padding: 24px 20px;*/
+/*  text-decoration: none;*/
+/*  font-size: 20px;*/
+/*}*/
+
+/*.topnav a:hover {*/
+/*  background-color: #FFFFFF;*/
+/*  color: black;*/
+/*}*/
+
+/*!*.topnav a.active {*!*/
+/*!*  background-color: #FFFFFF;*!*/
+/*!*  color: white;*!*/
+/*!*}*!*/
+
+/*.topnav-text{*/
+/*    float: right;*/
+/*}*/
 .toplogo{
     float: left;
     padding-top: 5px;
     padding-left: 20px;
     padding-bottom: 10px;
 }
-.home{
-    padding:128px 16px;
-    background-image: url();
-    height: auto;
-}
+
+    .header {
+        background-image: url('https://images.unsplash.com/photo-1533709752211-118fcaf03312?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100%;
+        background-size: cover;
+        text-align: center;
+    }
+
+    /* Header Navigation Menu */
+    body {
+        margin: 0;                               /* Header Navigation google font */
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .navigator {
+        background-color: #29668B;         /* Header Navigation Main Button */
+        overflow: hidden;
+    }
+
+
+    .navigator a {
+        float: right;
+        display: block;
+        color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+        text-align: center;
+        padding: 30px 50px;
+        text-decoration: none;
+        font-size: 23px;
+    }
+
+    .logo {
+        float: left;
+        display: block;       /* Header Navigation Settings text color, font size, alignment */
+        padding: 10px 40px;
+        height: 90px;
+    }
+
+    .navigator a:hover {
+        background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+        color: black;
+    }
+
+    .navigator a.mainB {
+        background-color: #f2f2f2;     /* Header Navigation Main Button */
+        color: #29668B;
+        padding: 30px 130px;
+    }
+
 .link1{
     background-color: black;
     color: lightblue;
@@ -169,20 +214,13 @@ footer div:last-child p {
 <body>
 
 <!-- Navbar -->
-<div class="top">
-  <div class="topnav">
-    <div class="topnav-text">
-    <a href="#" class="toplink">Home</a>
-    <a href="#" class="toplink">Blog</a>
-    <a href="#" class="toplink">About us</a>
-    <a href="#" class="toplink">Events</a>
-    <a href="#" class="toplink">Contact us</a>
-    </div>
-    <div class="toplogo">
-        <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" width="250">
-    </div>
-  </div>
-
+<div class="navigator">
+    <a href="#home" class="mainB">Home</a>
+    <a href="#blog">Blog</a>
+    <a href="#aboutUs">About Us</a>
+    <a href="#events">Events</a>
+    <a href="#contacs">Contacts</a>
+    <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
 <!-- Header -->
