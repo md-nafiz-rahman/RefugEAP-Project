@@ -49,6 +49,9 @@
         }
         .toplogo{
             float: left;
+            padding-top: 5px;
+            padding-left: 20px;
+            padding-bottom: 10px;
         }
         .home{
             padding:128px 16px;
@@ -102,24 +105,24 @@
 </head>
 <body>
 
-<!-- Navbar/Header -->
+<!-- Navbar -->
 <div class="top">
     <div class="topnav">
         <div class="topnav-text">
-            <a href="#" class="toplink">Home11</a>
+            <a href="#" class="toplink">Home</a>
             <a href="#" class="toplink">Blog</a>
             <a href="#" class="toplink">About us</a>
             <a href="#" class="toplink">Events</a>
             <a href="#" class="toplink">Contact us</a>
         </div>
         <div class="toplogo">
-            <img src="">
+            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" width="150" height="auto">
         </div>
     </div>
 
 </div>
 
-<!-- Slideshow -->
+<!-- Header -->
 <header class="home">
     <h1>Refugee Eap</h1>
     <p>||Description||</p>
