@@ -5,10 +5,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
 <style>
-body,h1,h2,h3,h4,h5,h6 {
-    font-family: "Lato", sans-serif
-}
+
+    html {
+        min-width: auto;
+    }
+
+
+    body {
+        margin: 0;
+        font-family: 'Oswald', sans-serif;       /* google font */
+        padding: 0;
+    }
+/*body,h1,h2,h3,h4,h5,h6 {*/
+/*    font-family: "Lato", sans-serif*/
+/*}*/
+
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 44px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    h4{
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
 .blog p{
     color: gray;
 }
@@ -23,7 +57,7 @@ body,h1,h2,h3,h4,h5,h6 {
  .topnav {
   overflow: hidden;
   background-color: #29668B;
-  
+
 }
 
 .topnav a {
@@ -57,26 +91,24 @@ body,h1,h2,h3,h4,h5,h6 {
 .home{
     padding:128px 16px;
     background-image: url();
-    height:500px;
+    height: auto;
     border-bottom: 2px solid black;
 }
 .link1{
     background-color: black;
     color: lightblue;
     margin: 0;
-    position: absolute;
-    left:20%;
+    padding: 10px;
 }
 .link2{
     background-color: black;
     color: lightblue;
     margin: 0;
-    position: absolute;
-    right:20%;
+    padding: 10px;
 }
 .split{
     display: grid;
-    height: 750px;
+    height: auto;
 }
 .blog{
     float: left;
@@ -84,7 +116,7 @@ body,h1,h2,h3,h4,h5,h6 {
 }
 .line{
     border-left: 2px solid black;
-    height: 750px;
+    height: 870px;
     position:absolute;
     left: 50%;
 }
@@ -137,6 +169,7 @@ footer div:last-child p {
     text-align: right;
 }
 
+
 </style>
 </head>
 <body>
@@ -166,39 +199,39 @@ footer div:last-child p {
       formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP has been developed to meet this need, providing students with
       an opportunity to continue to develop their academic English skills in a supportive way while they are waiting for more formal opportunities to
       become available.</p>
+
 </header>
 
 <!-- First Grid -->
 <div class="split">
   <div class="second">
     <div class="blog">
-        <h1>Blog</h1>
+        <h2>Blog</h2>
         <div>
-        <h5>Blog title</h5>
+        <h3>Blog title</h3>
         <div class="blogp"><img src="" style="height: 50%; width: 50%; background-color: black;"></div>
         <p>Blog description</p>
         </div>
         <div>
-        <h5>Blog title</h5>
+        <h3>Blog title</h3>
         <div class="blogp"><img src="" style="height: 50%; width: 50%; background-color: black;"></div>
         <p>Blog description</p>
         </div>
         <div>
-        <h5>Blog title</h5>
+        <h3>Blog title</h3>
         <div class="blogp"><img src="" style="height: 50%; width: 50%; background-color: black;"></div>
         <p>Blog description</p>
         </div>
         <div>
-        <h5>Blog title</h5>
+        <h3>Blog title</h3>
         <div class="blogp"><img src="" style="height: 50%; width: 50%; background-color: black;"></div>
         <p>Blog description</p>
         </div>
-        <button class="link1">view more</button>
+        <button class="link1">Visit The Blog</button>
     </div>
-    <div class="line"></div>
-    <div class="Events">
-       <h1>Events </h1>
-       <button class="link2">view more</button>
+    <div class="Upcoming Events">
+       <h2>Events </h2>
+       <button class="link2">View All Events</button>
     </div>
   </div>
 </div>
