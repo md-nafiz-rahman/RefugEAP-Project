@@ -102,11 +102,11 @@
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar/Header -->
 <div class="top">
     <div class="topnav">
         <div class="topnav-text">
-            <a href="#" class="toplink">Home</a>
+            <a href="#" class="toplink">Home11</a>
             <a href="#" class="toplink">Blog</a>
             <a href="#" class="toplink">About us</a>
             <a href="#" class="toplink">Events</a>
@@ -119,7 +119,7 @@
 
 </div>
 
-<!-- Header -->
+<!-- Slideshow -->
 <header class="home">
     <h1>Refugee Eap</h1>
     <p>||Description||</p>
