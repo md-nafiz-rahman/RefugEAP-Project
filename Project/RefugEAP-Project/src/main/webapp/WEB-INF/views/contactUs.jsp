@@ -412,7 +412,7 @@
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
-                <li><a href="ContactUs.jsp">Contact Us</a></li>
+                <a href="ContactUs.html" class="mainB">Contacts</a>
             </ul>
         </nav>
     </div>
