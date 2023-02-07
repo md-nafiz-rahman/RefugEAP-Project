@@ -310,11 +310,11 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="#home" class="mainB">Home</a>
+    <a href="homePage.jsp" class="mainB">Home</a>
     <a href="#blog">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
-    <a href="#contacs">Contacts</a>
+    <a href="contactUs.jsp">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -389,11 +389,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="homePage.jsp">Home</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contactUs.jsp">Contact Us</a></li>
             </ul>
         </nav>
     </div>
