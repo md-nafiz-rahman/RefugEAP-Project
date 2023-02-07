@@ -36,8 +36,10 @@
     }
 
     p {
-        font-size: 20px;
+        font-size: 23px;
     }
+
+
 
 .blog p{
     color: gray;
@@ -46,6 +48,7 @@
     padding-top: 32px;
     padding-bottom: 32px;
 }
+
 /*.top{*/
 /*    position: fixed;*/
 /*    width: 100%;*/
@@ -85,14 +88,30 @@
     padding-bottom: 10px;
 }
 
-    .header {
-        background-image: url('https://images.unsplash.com/photo-1533709752211-118fcaf03312?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100%;
-        background-size: cover;
-        text-align: center;
+    .container {
+        position: relative;
     }
+
+    .background-image {
+        background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        text-align: center;
+        z-index: 1;
+    }
+
+
 
     /* Header Navigation Menu */
     body {
@@ -224,15 +243,22 @@ footer div:last-child p {
 </div>
 
 <!-- Header -->
-<header class="home">
-  <h1>Refugee Eap</h1>
-  <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. It is for students who
-      need to improve their academic English skills to help them access a degree programme at university, but perhaps have not been able to access a
-      formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP has been developed to meet this need, providing students with
-      an opportunity to continue to develop their academic English skills in a supportive way while they are waiting for more formal opportunities to
-      become available.</p>
+
+<header>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="overlay" style="padding-top: 125px">
+                <h1>RefugeeEAP Purpose</h1>
+                <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. It is for students who <br>
+                    need to improve their academic English skills to help them access a degree programme at university, but perhaps have not been able to access a <br>
+                    formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP has been developed to meet this need, providing students with<br>
+                    an opportunity to continue to develop their academic English skills in a supportive way while they are waiting for more formal opportunities to
+                    become available.</p>
+        </div>
+    </div>
 
 </header>
+
 
 <!-- First Grid -->
 <div class="split">
