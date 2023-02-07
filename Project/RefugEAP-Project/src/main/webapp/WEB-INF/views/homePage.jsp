@@ -159,14 +159,13 @@
         /*    margin: 0;*/
         /*    padding: 10px;*/
         /*}*/
-        .link2{
-            background-color: black;
-            color: lightblue;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            padding: 10px;
-        }
+        /*.link2{*/
+        /*    background-color: black;*/
+        /*    color: lightblue;*/
+        /*    position: absolute;*/
+        /*    bottom: 0;*/
+        /*    right: 0;*/
+        /*}*/
         .split{
             display: grid;
             height: auto;
@@ -212,10 +211,39 @@
             text-decoration: none;
         }
 
-        .Events{
+        /*.Events{*/
+        /*    float: right;*/
+        /*    width:50%;*/
+        /*    border: 2px solid black*/
+        /*}*/
+        #calendar {
+            width: 50%;
             float: right;
-            width:50%;
-            border: 2px solid black
+            text-align: center;
+            font-size: 30px;
+            padding: 30px;
+            background-image: url("https://img.freepik.com/free-photo/beautiful-shot-sea-with-mountain-distance-clear-sky_181624-2248.jpg?w=1380&t=st=1675791595~exp=1675792195~hmac=09f14f18d9690e28766cf15d70f85ed094a0291a9b5db5079f8f2077a59903ec");
+            background-size: cover;
+        }
+        #events {
+            width: 45%;
+            float: right;
+            padding: 20px;
+            background-color: aquamarine;
+        }
+        #events li {
+            font-size: 20px;
+            padding: 10px 0;
+        }
+        #event-title {
+            width: 45%;
+            float: right;
+            padding: 20px;
+        }
+        #view-event-btn {
+            position: absolute;
+            top: 1500px;
+            right: 20px;
         }
         /*.blogp{*/
         /*    float: right;*/
@@ -261,6 +289,7 @@
             font-size: 0.8rem;
             text-align: right;
         }
+
         #social-links {
             display: flex;
             align-items: center;
@@ -337,10 +366,19 @@
                 <a class="link" href="#">Read More</a>
             </div>
         </div>
-        <div class="Upcoming Events">
-            <h2>Events </h2>
-            <button class="link2">View All Events</button>
-        </div>
+        <!--    <div class="Upcoming Events">-->
+        <!--       <h2>Events </h2>-->
+        <!--       <button class="link2">View All Events</button>-->
+        <!--    </div>-->
+        <!--      -->
+        <div id="calendar"></div>
+        <h3 id="event-title">Upcoming Events</h3>
+        <ul id="events">
+            <li>Event 1</li>
+            <li>Event 2</li>
+            <li>Event 3</li>
+        </ul>
+        <button id="view-event-btn">View All Events</button>
     </div>
 </div>
 
@@ -375,6 +413,24 @@
         <p>Copyright &copy; 2023 RefugEAP</p>
     </div>
 </footer>
-
+<script>
+    const dateVar = document.getElementById("calendar");
+    const presentDate = new Date();
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+    dateVar.innerHTML = `${months[presentDate.getMonth()]} ${presentDate.getFullYear()}`;
+</script>
 </body>
 </html>
