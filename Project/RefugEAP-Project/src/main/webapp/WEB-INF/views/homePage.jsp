@@ -162,7 +162,9 @@
         .link2{
             background-color: black;
             color: lightblue;
-            margin: 0;
+            position: absolute;
+            bottom: 0;
+            right: 0;
             padding: 10px;
         }
         .split{
