@@ -395,9 +395,9 @@
     </div>
     <div class="contact-info">
         <h2>Contact Information</h2>
-        <p>Phone: 123-456-7890</p>
-        <p>Email: info@refugEAP.com</p>
-        <p>Address: 123 Main St, Mars USA</p>
+        <p>Phone: +44 (0)116 252 2522</p>
+        <p>Email: sanctuary@le.ac.uk</p>
+        <p>Address: The University of Leicester, University Road, Leicester, LE1 7RH, United Kingdom</p>
     </div>
 </div>
 
@@ -432,24 +432,5 @@
         <p>Copyright &copy; 2023 RefugEAP</p>
     </div>
 </footer>
-<script>
-    const dateVar = document.getElementById("calendar");
-    const presentDate = new Date();
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-    dateVar.innerHTML = `${months[presentDate.getMonth()]} ${presentDate.getFullYear()}`;
-</script>
 </body>
 </html>
