@@ -17,6 +17,11 @@ public class PageController {
         return "contactUs";
     }
 
+    @RequestMapping(value = "/adminPortal") // Request to adminPortal page
+    public String AdminPortal() {
+        return "adminPortal";
+    }
+
 
 
 }
