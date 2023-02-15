@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
     <title>Refugee eap</title>
@@ -281,8 +279,6 @@
 
         input[type="text"],
         input[type="email"],
-        input[type="password"],
-        select,
         textarea {
             width: 100%;
             padding: 10px;
@@ -356,92 +352,64 @@
             width: 50px;
         }
 
-        table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 90%;
-        border: 1px solid #ddd;
-        margin-bottom: 25px;
-        }
-
-        th, td {
-        border: 1px solid black;
-        text-align: left;
-        padding: 8px;
-        }
-
-        .center {
-        margin-left: auto;
-        margin-right: auto;
-        }
-
 
     </style>
 </head>
 <body>
 
-        <!-- Navbar -->
-    <div class="navigator">
-        <a href="/">Home</a>
-        <a href="/admin/adminPortal" class="mainB">Users Managment</a>
-        <a href="/logout">Logout</a>
-        <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
+<!-- Navbar -->
+<div class="navigator">
+    <a href="/">Home</a>
+    <a href="#blog">Blog Management</a>
+    <a href="#events">Events Management</a>
+    <a href="/admin/adminPortal">Users Managment</a>
+    <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
+</div>
+
+<!-- Header -->
+
+<header>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="overlay" style="padding-top: 70px">
+            <h1>SECURE AREA</h1>
+        </div>
     </div>
 
+</header>
 
+
+
+<footer>
     <div>
-        <div class="form">
-            <h4>Add New User</h4>
-            <form method="post" action="/admin/user/add">
-                <label for="username">Username:</label> <input type="text" id="username" name="username" required />
-                <label for="password">Password:</label> <input type="password" id="password" name="password" required />
-                <label for="role">Role:</label><select id="role" name="role">
-                    <c:forEach var="role" items="${roles}">
-                        <option>${role.getName()}</option>
-                    </c:forEach>
-                </select>
-                <input type="submit" value="Add New User" title="Add user" />
-            </form>
+        <div>
+            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
         </div>
+        <nav>
+            <ul>
+                <li><a href="homePage.jsp">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Events</a></li>
+                <a href="ContactUs.html" class="mainB">Contacts</a>
+            </ul>
+        </nav>
     </div>
-            <table class="center">
-                <tr><th>Username</th><th>Role</th><th>Status</th><th>DELETE</th></tr>
-                <c:forEach var="user" items="${users}">
-                    <tr><td>${user.getUsername()}</td><td>${user.GetRolesNames()}</td><td>${user.isEnabled()}</td><td><a href = '<c:url value = "/admin/user/del/${user.getId()}"/>'>TEST</a></td></tr>
-                </c:forEach>
-
-            </table>
-
-    <footer>
-        <div>
-            <div>
-                <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="homePage.jsp">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Events</a></li>
-                    <a href="ContactUs.html" class="mainB">Contacts</a>
-                </ul>
-            </nav>
-        </div>
-        <div id="footer-follow">
-            <h3>Follow Us</h3>
-            <p id="social-links">
-                <a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank">
-                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" alt="Facebook logo"></a>
-                <a href="https://twitter.com/EapForSJ" target="_blank">
-                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png" alt="Twitter logo"></a>
-                <a href="https://www.instagram.com/">
-                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png" alt="Instagram logo">
-                </a>
-            </p>
-        </div>
-        <div>
-            <p>Copyright &copy; 2023 RefugEAP</p>
-        </div>
-    </footer>
+    <div id="footer-follow">
+        <h3>Follow Us</h3>
+        <p id="social-links">
+            <a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" alt="Facebook logo"></a>
+            <a href="https://twitter.com/EapForSJ" target="_blank">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png" alt="Twitter logo"></a>
+            <a href="https://www.instagram.com/">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png" alt="Instagram logo">
+            </a>
+        </p>
+    </div>
+    <div>
+        <p>Copyright &copy; 2023 RefugEAP</p>
+    </div>
+</footer>
 </body>
 </html>
