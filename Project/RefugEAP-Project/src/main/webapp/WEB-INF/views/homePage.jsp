@@ -311,7 +311,7 @@
 <!-- Navbar -->
 <div class="navigator">
     <a href="/" class="mainB">Home</a>
-    <a href="#blog">Blog</a>
+    <a href="">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
     <a href="/contactUs">Contacts</a>
@@ -390,7 +390,7 @@
         <nav>
             <ul>
                 <li><a href="homePage.jsp">Home</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="contactUs.jsp">Contact Us</a></li>
