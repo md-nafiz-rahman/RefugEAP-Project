@@ -50,38 +50,6 @@
             padding-bottom: 32px;
         }
 
-        /*.top{*/
-        /*    position: fixed;*/
-        /*    width: 100%;*/
-        /*}*/
-        /* .topnav {*/
-        /*  overflow: hidden;*/
-        /*  background-color: #29668B;*/
-
-        /*}*/
-
-        /*.topnav a {*/
-        /*  float: left;*/
-        /*  color: white;*/
-        /*  text-align: center;*/
-        /*  padding: 24px 20px;*/
-        /*  text-decoration: none;*/
-        /*  font-size: 20px;*/
-        /*}*/
-
-        /*.topnav a:hover {*/
-        /*  background-color: #FFFFFF;*/
-        /*  color: black;*/
-        /*}*/
-
-        /*!*.topnav a.active {*!*/
-        /*!*  background-color: #FFFFFF;*!*/
-        /*!*  color: white;*!*/
-        /*!*}*!*/
-
-        /*.topnav-text{*/
-        /*    float: right;*/
-        /*}*/
         .toplogo{
             float: left;
             padding-top: 5px;
@@ -111,7 +79,6 @@
             text-align: center;
             z-index: 1;
         }
-
 
 
         /* Header Navigation Menu */
@@ -154,52 +121,6 @@
             padding: 30px 130px;
         }
 
-        /*.link1{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    margin: 0;*/
-        /*    padding: 10px;*/
-        /*}*/
-        /*.link2{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    position: absolute;*/
-        /*    bottom: 0;*/
-        /*    right: 0;*/
-        /*}*/
-        .split{
-            display: grid;
-            height: auto;
-        }
-        /*.blog{*/
-        /*    float: left;*/
-        /*    width:50%;*/
-        /*    background-color: lightblue;*/
-        /*    border: 2px solid black;*/
-
-        /*}*/
-
-        .blog {
-            float: left;
-            width: 50%;
-            margin: 0 auto;
-            text-align: center;
-            color: #dddddd;
-            border: 2px solid black;
-            background-color: #29668B;
-        }
-
-        .post {
-            width: 80%;
-            margin: 20px auto;
-            text-align: left;
-            color: black;
-            padding: 20px;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-            background-color: #dddddd;
-        }
-
         h2 {
             margin-top: 0;
         }
@@ -210,66 +131,6 @@
             text-align: right;
             color: blue;
             text-decoration: none;
-        }
-
-        /*.Events{*/
-        /*    float: right;*/
-        /*    width:50%;*/
-        /*    border: 2px solid black*/
-        /*}*/
-        #calendar {
-            width: 50%;
-            float: right;
-            text-align: center;
-            font-size: 30px;
-            padding: 30px;
-            background-image: url("https://img.freepik.com/free-photo/beautiful-shot-sea-with-mountain-distance-clear-sky_181624-2248.jpg?w=1380&t=st=1675791595~exp=1675792195~hmac=09f14f18d9690e28766cf15d70f85ed094a0291a9b5db5079f8f2077a59903ec");
-            background-size: cover;
-        }
-        #events {
-            width: 45%;
-            float: right;
-            padding: 20px;
-            background-color: aquamarine;
-        }
-        #events li {
-            font-size: 20px;
-            padding: 10px 0;
-        }
-        #event-title {
-            width: 45%;
-            float: right;
-            padding: 20px;
-        }
-        #view-event-btn {
-            position: absolute;
-            top: 1500px;
-            right: 20px;
-        }
-        /*.blogp{*/
-        /*    float: right;*/
-        /*    width: 20%;*/
-        /*}*/
-
-        .containerForm {
-            display: flex;
-            height: 700px;
-        }
-
-        .form {
-            width: 66%;
-            margin: 0 auto;
-            padding: 150px ;
-            border: 0px solid gray;
-            /*border-radius: 10px;*/
-        }
-
-        .contact-info {
-            width: 33%;
-            padding: 150px;
-            border: 1px solid gray;
-            /*border-radius: 10px;*/
-            text-align: center;
         }
 
         label {
@@ -299,11 +160,13 @@
             cursor: pointer;
         }
 
+
+
         footer {
-            background-color: #29668B;
-            color: #fff;
-            padding: 2rem;
-        }
+             background-color: #29668B;
+             color: #fff;
+             padding: 2rem;
+         }
 
         footer div:first-child {
             display: flex;
@@ -353,6 +216,88 @@
             width: 50px;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .post-header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .post-footer {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 10px;
+        }
+
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        article {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 50%;
+        }
+
+        article header {
+            margin: 0 0 20px 0;
+        }
+
+        article h2 {
+            margin: 0;
+        }
+
+        article p.meta {
+            margin: 0 0 10px 0;
+            font-style: italic;
+            font-size: 0.8em;
+        }
+
+        article footer {
+            margin: 20px 0 0 0;
+        }
+
+        article p.tags {
+            font-style: italic;
+            font-size: 0.8em;
+        }
+
+        article p.tags a {
+            text-decoration: none;
+            color: #333;
+            border: 1px solid;
+        }
+
+        .containerBlog {
+            display: flex;
+            height: auto;
+        }
+
 
     </style>
 </head>
@@ -380,11 +325,116 @@
 
 </header>
 
-<div class="containerForm">
-    <div class="form">
+<main class="containerBlog">
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+        </footer>
+    </article>
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023 by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+        </footer>
+    </article>
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023 by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+        </footer>
+    </article>
+</main>
 
-    </div>
-</div>
+
+<main class="containerBlog">
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+        </footer>
+    </article>
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023 by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+        </footer>
+    </article>
+
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023 by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a href="#">tag1</a>, <a href="#">tag2</a>, <a href="#">tag3</a></p>
+        </footer>
+    </article>
+</main>
+
 
 <footer>
     <div>
@@ -394,7 +444,7 @@
         <nav>
             <ul>
                 <li><a href="RefugeeEAP.html">Home</a></li>
-                <li><a href="BlogPage.html"></a></li>
+                <li><a href="BlogPage.html">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="ContactUs.html">Contact Us</a></li>
@@ -417,5 +467,4 @@
         <p>Copyright &copy; 2023 RefugEAP</p>
     </div>
 </footer>
-</body>
 </html>
