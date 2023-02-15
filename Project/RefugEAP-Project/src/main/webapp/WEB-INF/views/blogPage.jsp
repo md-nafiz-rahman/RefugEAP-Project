@@ -161,59 +161,67 @@
         }
 
 
-
         footer {
             background-color: #29668B;
             color: #fff;
-            padding: 2rem;
+            padding: 20px 0;
         }
 
-        footer div:first-child {
+        .footer-columns {
+            max-width: 1200px;
+            margin: 0 0 0 250px;
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        footer div:first-child div {
-            display: flex;
-            align-items: center;
+        .footer-columns > div {
+            flex: 1;
+            text-align: left;
         }
 
-        footer div:first-child div img {
-            height: 2rem;
-            margin-right: 1rem;
+        .footer-col-1 img {
+            max-width: 150px;
+            height: auto;
+            margin: 30px 50px;
         }
 
-        footer nav ul {
-            display: flex;
-        }
-
-        footer nav a {
-            color: #fff;
-            margin-right: 1.5rem;
-        }
-
-        footer div:last-child {
-            background-color: #29668B;
-            padding: 1rem;
-        }
-
-        footer div:last-child p {
+        .social-icons {
+            list-style: none;
+            padding: 0;
             margin: 0;
-            font-size: 0.8rem;
-            text-align: right;
         }
 
-        #social-links {
-            display: flex;
-            align-items: center;
+        .social-icons li {
+            display: inline-block;
+            margin: 0 10px;
+            height: 40px;
+            width: 40px;
         }
 
-        #footer-follow a {
-            margin-right: 40px;
+        .social-icons a {
+            color: black;
         }
-        #footer-follow img {
-            height: 50px;
-            width: 50px;
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            display: block;
+            margin-bottom: 10px;
+            margin-right: 50px;
+        }
+
+        .footer-links a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .footer-slogan {
+            font-size: 15px;
+            max-width: 300px;
         }
 
         body {
@@ -305,11 +313,11 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="RefugeeEAP.jsp">Home</a>
-    <a href="BlogPage.jsp" class="mainB">Blog</a>
+    <a href="RefugeeEAP.html">Home</a>
+    <a href="BlogPage.html" class="mainB">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
-    <a href="ContactUs.jsp">Contacts</a>
+    <a href="ContactUs.html">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -437,34 +445,29 @@
 
 
 <footer>
-    <div>
-        <div>
+    <div class="footer-columns">
+        <div class="footer-col-1">
             <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+            <p class="footer-slogan">The RefugEAP Network’s overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="RefugeeEAP.jsp">Home</a></li>
-                <li><a href="BlogPage.jsp">Blog</a></li>
+        <div class="footer-col-2">
+            <p>Follow us on</p>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-col-3">
+            <p>Useful Links</p>
+            <ul class="footer-links">
+                <li><a href="homePage.jsp">Home</a></li>
+                <li><a href="blogPage.jsp">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
-                <li><a href="ContactUs.jsp">Contact Us</a></li>
+                <li><a href="contactUs.jsp">Contact Us</a></li>
             </ul>
-        </nav>
-    </div>
-    <div id="footer-follow">
-        <h3>Follow Us</h3>
-        <p id="social-links">
-            <a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" alt="Facebook logo"></a>
-            <a href="https://twitter.com/EapForSJ" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png" alt="Twitter logo"></a>
-            <a href="https://www.instagram.com/">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png" alt="Instagram logo">
-            </a>
-        </p>
-    </div>
-    <div>
-        <p>Copyright &copy; 2023 RefugEAP</p>
+        </div>
     </div>
 </footer>
 </body>
