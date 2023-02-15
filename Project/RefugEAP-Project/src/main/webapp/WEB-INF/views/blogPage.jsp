@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 
         html {
@@ -95,7 +96,7 @@
         .background-image {
             background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
             background-size: cover;
-            height: 500px;
+            height: 250px;
             width: 100%;
         }
 
@@ -249,6 +250,55 @@
         /*    float: right;*/
         /*    width: 20%;*/
         /*}*/
+
+        .containerForm {
+            display: flex;
+            height: 700px;
+        }
+
+        .form {
+            width: 66%;
+            margin: 0 auto;
+            padding: 150px ;
+            border: 0px solid gray;
+            /*border-radius: 10px;*/
+        }
+
+        .contact-info {
+            width: 33%;
+            padding: 150px;
+            border: 1px solid gray;
+            /*border-radius: 10px;*/
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 18px;
+        }
+
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
         footer {
             background-color: #29668B;
             color: #fff;
@@ -310,11 +360,11 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="/" class="mainB">Home</a>
-    <a href="">Blog</a>
+    <a href="RefugeeEAP.html">Home</a>
+    <a href="BlogPage.html" class="mainB">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
-    <a href="/contactUs">Contacts</a>
+    <a href="ContactUs.html">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -323,62 +373,16 @@
 <header>
     <div class="container">
         <div class="background-image"></div>
-        <div class="overlay" style="padding-top: 125px">
-            <h1>RefugeeEAP Purpose</h1>
-            <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. It is for students who <br>
-                need to improve their academic English skills to help them access a degree programme at university, but perhaps have not been able to access a <br>
-                formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP has been developed to meet this need, providing students with<br>
-                an opportunity to continue to develop their academic English skills in a supportive way while they are waiting for more formal opportunities to
-                become available.</p>
+        <div class="overlay" style="padding-top: 70px">
+            <h1>BLOG</h1>
         </div>
     </div>
 
 </header>
 
+<div class="containerForm">
+    <div class="form">
 
-<!-- First Grid -->
-<div class="split">
-    <div class="second">
-        <div class="blog">
-            <h1>Recent Blog Posts</h1>
-
-            <div class="post">
-                <h2>Blog Post 1</h2>
-                <p>Description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 2</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 3</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 4</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-        </div>
-        <!--    <div class="Upcoming Events">-->
-        <!--       <h2>Events </h2>-->
-        <!--       <button class="link2">View All Events</button>-->
-        <!--    </div>-->
-        <!--      -->
-        <div id="calendar"></div>
-        <h3 id="event-title">Upcoming Events</h3>
-        <ul id="events">
-            <li>Event 1</li>
-            <li>Event 2</li>
-            <li>Event 3</li>
-        </ul>
-        <button id="view-event-btn">View All Events</button>
     </div>
 </div>
 
@@ -389,11 +393,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="homePage.jsp">Home</a></li>
-                <li><a href="">Blog</a></li>
+                <li><a href="RefugeeEAP.html">Home</a></li>
+                <li><a href="BlogPage.html"></a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
-                <li><a href="contactUs.jsp">Contact Us</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
             </ul>
         </nav>
     </div>
@@ -413,24 +417,5 @@
         <p>Copyright &copy; 2023 RefugEAP</p>
     </div>
 </footer>
-<script>
-    const dateVar = document.getElementById("calendar");
-    const presentDate = new Date();
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-    dateVar.innerHTML = `${months[presentDate.getMonth()]} ${presentDate.getFullYear()}`;
-</script>
 </body>
 </html>
