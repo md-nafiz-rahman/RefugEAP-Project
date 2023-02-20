@@ -133,6 +133,25 @@
             text-decoration: none;
         }
 
+        .containerForm {
+            display: flex;
+            height: 800px;
+            border: 1px solid black;
+        }
+
+        .form {
+            width: 66%;
+            margin: 0 auto;
+            padding: 60px ;
+            border: 0px solid gray;
+            /*border-radius: 10px;*/
+        }
+
+        .form h2 {
+            text-align: center;
+        }
+
+
         label {
             display: block;
             margin-bottom: 10px;
@@ -442,6 +461,25 @@
         </footer>
     </article>
 </main>
+
+<div class="containerForm">
+    <div class="form">
+        <h2>Contribute to the BLOG</h2><br>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="title">Title:</label>
+            <input type="text" id="title" title="title" required>
+
+            <label for="message">Description:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
 
 
 <footer>
