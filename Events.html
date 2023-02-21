@@ -348,9 +348,9 @@
 </div>
 <div>
     <body>
-        <input type="button" value="&#10094;" onclick="calendar(-1)";>
+        <input type="button" value="&#10094;" onclick="dateChange(-1)";>
         <h4 id="calendar-title"></h4>
-        <input type="button" value="&#10095;" onclick="calendar(+1)";>
+        <input type="button" value="&#10095;" onclick="dateChange(+1)";>
 
         <table id="calendar-table">
           <tr>
@@ -365,6 +365,15 @@
         </table>
       
         <script>
+            var a=0;
+
+            function dateChange(z) {
+                a=a+z
+                
+                calendar(a)
+                return a = a;
+            }
+
             function calendar(m) { // could possibly pass values here to change the calendar month/date with either a dropdown or arrows
                 
                 // var today = new Date(); //get current date with built in JS function
@@ -411,7 +420,7 @@
                     table.appendChild(row);
                 }
         }
-        calendar(0);
+        dateChange(0);
         </script>
     </body>
 
