@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html>
 <head>
-    <title>Refugee eap</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
-    <style>
-
-        html {
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html {
             min-width: auto;
         }
 
@@ -96,7 +93,7 @@
         .background-image {
             background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
             background-size: cover;
-            height: 500px;
+            height: 250px;
             width: 100%;
         }
 
@@ -251,192 +248,225 @@
         /*    width: 20%;*/
         /*}*/
 
+        .containerForm {
+            display: flex;
+            height: 700px;
+        }
+
+        .form {
+            width: 66%;
+            margin: 0 auto;
+            padding: 150px ;
+            border: 0px solid gray;
+            /*border-radius: 10px;*/
+        }
+
+        .contact-info {
+            width: 33%;
+            padding: 150px;
+            border: 1px solid gray;
+            /*border-radius: 10px;*/
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 18px;
+        }
+
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
         footer {
             background-color: #29668B;
             color: #fff;
-            padding: 20px 0;
+            padding: 2rem;
         }
 
-        .footer-columns {
-            max-width: 1200px;
-            margin: 0 0 0 250px;
+        footer div:first-child {
             display: flex;
-            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
-        .footer-columns > div {
-            flex: 1;
-            text-align: left;
+        footer div:first-child div {
+            display: flex;
+            align-items: center;
         }
 
-        .footer-col-1 img {
-            max-width: 150px;
-            height: auto;
-            margin: 30px 50px;
+        footer div:first-child div img {
+            height: 2rem;
+            margin-right: 1rem;
         }
 
-        .social-icons {
-            list-style: none;
-            padding: 0;
+        footer nav ul {
+            display: flex;
+        }
+
+        footer nav a {
+            color: #fff;
+            margin-right: 1.5rem;
+        }
+
+        footer div:last-child {
+            background-color: #29668B;
+            padding: 1rem;
+        }
+
+        footer div:last-child p {
             margin: 0;
+            font-size: 0.8rem;
+            text-align: right;
         }
 
-        .social-icons li {
-            display: inline-block;
-            margin: 0 10px;
-            height: 40px;
-            width: 40px;
+        #social-links {
+            display: flex;
+            align-items: center;
         }
 
-        .social-icons a {
-            color: black;
+        #footer-follow a {
+            margin-right: 40px;
         }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        #footer-follow img {
+            height: 50px;
+            width: 50px;
         }
+    form {
+        border: 3px solid #f1f1f1;}
 
-        .footer-links li {
-            display: block;
-            margin-bottom: 10px;
-            margin-right: 50px;
-        }
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-        .footer-links a {
-            color: black;
-            text-decoration: none;
-        }
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
 
-        .footer-slogan {
-            font-size: 15px;
-            max-width: 300px;
-        }
+button:hover {
+  opacity: 0.8;
+}
 
-    </style>
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #29668B;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
 </head>
 <body>
-
-<!-- Navbar -->
 <div class="navigator">
-    <a href="RefugeeEAP.html" class="mainB">Home</a>
-    <a href="BlogPage.html">Blog</a>
+    <a href="RefugeeEAP.html">Home</a>
+    <a href="#blog">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
     <a href="ContactUs.html">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
-<!-- Header -->
+<h1>Login</h1>
 
-<header>
-    <div class="container">
-        <div class="background-image"></div>
-        <div class="overlay" style="padding-top: 125px">
-            <h1>RefugeeEAP Purpose</h1>
-            <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. It is for students who <br>
-                need to improve their academic English skills to help them access a degree programme at university, but perhaps have not been able to access a <br>
-                formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP has been developed to meet this need, providing students with<br>
-                an opportunity to continue to develop their academic English skills in a supportive way while they are waiting for more formal opportunities to
-                become available.</p>
-        </div>
-    </div>
+<form action="/login" method="post">
+   
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
 
-</header>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+        
+    <button type="submit" style="background-color: #29668B;">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
 
-
-<!-- First Grid -->
-<div class="split">
-    <div class="second">
-        <div class="blog">
-            <h1>Recent Blog Posts</h1>
-
-            <div class="post">
-                <h2>Blog Post 1</h2>
-                <p>Description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 2</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 3</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 4</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-        </div>
-        <!--    <div class="Upcoming Events">-->
-        <!--       <h2>Events </h2>-->
-        <!--       <button class="link2">View All Events</button>-->
-        <!--    </div>-->
-        <!--      -->
-        <div id="calendar"></div>
-        <h3 id="event-title">Upcoming Events</h3>
-        <ul id="events">
-            <li>Event 1</li>
-            <li>Event 2</li>
-            <li>Event 3</li>
-        </ul>
-        <button id="view-event-btn">View All Events</button>
-    </div>
-</div>
-
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
 <footer>
-    <div class="footer-columns">
-        <div class="footer-col-1">
+    <div>
+        <div>
             <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network’s overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
-        <div class="footer-col-2">
-            <p>Follow us on</p>
-            <ul class="social-icons">
-                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
-                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-col-3">
-            <p>Useful Links</p>
-            <ul class="footer-links">
+        <nav>
+            <ul>
                 <li><a href="RefugeeEAP.html">Home</a></li>
-                <li><a href="BlogPage.html">Blog</a></li>
+                <li><a href="#">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="ContactUs.html">Contact Us</a></li>
+                <li><a href="#"><i class="fa fa-fw fa-user"></i> Login</a></li>
             </ul>
-        </div>
+        </nav>
+    </div>
+    <div id="footer-follow">
+        <h3>Follow Us</h3>
+        <p id="social-links">
+            <a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" alt="Facebook logo"></a>
+            <a href="https://twitter.com/EapForSJ" target="_blank">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png" alt="Twitter logo"></a>
+            <a href="https://www.instagram.com/">
+                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png" alt="Instagram logo">
+            </a>
+        </p>
+    </div>
+    <div>
+        <p>Copyright &copy; 2023 RefugEAP</p>
     </div>
 </footer>
 
-<script>
-    const dateVar = document.getElementById("calendar");
-    const presentDate = new Date();
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-    dateVar.innerHTML = `${months[presentDate.getMonth()]} ${presentDate.getFullYear()}`;
-</script>
 </body>
 </html>
+

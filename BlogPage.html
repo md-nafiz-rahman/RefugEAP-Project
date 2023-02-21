@@ -50,38 +50,6 @@
             padding-bottom: 32px;
         }
 
-        /*.top{*/
-        /*    position: fixed;*/
-        /*    width: 100%;*/
-        /*}*/
-        /* .topnav {*/
-        /*  overflow: hidden;*/
-        /*  background-color: #29668B;*/
-
-        /*}*/
-
-        /*.topnav a {*/
-        /*  float: left;*/
-        /*  color: white;*/
-        /*  text-align: center;*/
-        /*  padding: 24px 20px;*/
-        /*  text-decoration: none;*/
-        /*  font-size: 20px;*/
-        /*}*/
-
-        /*.topnav a:hover {*/
-        /*  background-color: #FFFFFF;*/
-        /*  color: black;*/
-        /*}*/
-
-        /*!*.topnav a.active {*!*/
-        /*!*  background-color: #FFFFFF;*!*/
-        /*!*  color: white;*!*/
-        /*!*}*!*/
-
-        /*.topnav-text{*/
-        /*    float: right;*/
-        /*}*/
         .toplogo{
             float: left;
             padding-top: 5px;
@@ -111,7 +79,6 @@
             text-align: center;
             z-index: 1;
         }
-
 
 
         /* Header Navigation Menu */
@@ -154,52 +121,6 @@
             padding: 30px 130px;
         }
 
-        /*.link1{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    margin: 0;*/
-        /*    padding: 10px;*/
-        /*}*/
-        /*.link2{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    position: absolute;*/
-        /*    bottom: 0;*/
-        /*    right: 0;*/
-        /*}*/
-        .split{
-            display: grid;
-            height: auto;
-        }
-        /*.blog{*/
-        /*    float: left;*/
-        /*    width:50%;*/
-        /*    background-color: lightblue;*/
-        /*    border: 2px solid black;*/
-
-        /*}*/
-
-        .blog {
-            float: left;
-            width: 50%;
-            margin: 0 auto;
-            text-align: center;
-            color: #dddddd;
-            border: 2px solid black;
-            background-color: #29668B;
-        }
-
-        .post {
-            width: 80%;
-            margin: 20px auto;
-            text-align: left;
-            color: black;
-            padding: 20px;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-            background-color: #dddddd;
-        }
-
         h2 {
             margin-top: 0;
         }
@@ -212,65 +133,24 @@
             text-decoration: none;
         }
 
-        /*.Events{*/
-        /*    float: right;*/
-        /*    width:50%;*/
-        /*    border: 2px solid black*/
-        /*}*/
-        #calendar {
-            width: 50%;
-            float: right;
-            text-align: center;
-            font-size: 30px;
-            padding: 30px;
-            background-image: url("https://img.freepik.com/free-photo/beautiful-shot-sea-with-mountain-distance-clear-sky_181624-2248.jpg?w=1380&t=st=1675791595~exp=1675792195~hmac=09f14f18d9690e28766cf15d70f85ed094a0291a9b5db5079f8f2077a59903ec");
-            background-size: cover;
-        }
-        #events {
-            width: 45%;
-            float: right;
-            padding: 20px;
-            background-color: aquamarine;
-        }
-        #events li {
-            font-size: 20px;
-            padding: 10px 0;
-        }
-        #event-title {
-            width: 45%;
-            float: right;
-            padding: 20px;
-        }
-        #view-event-btn {
-            position: absolute;
-            top: 1500px;
-            right: 20px;
-        }
-        /*.blogp{*/
-        /*    float: right;*/
-        /*    width: 20%;*/
-        /*}*/
-
         .containerForm {
             display: flex;
-            height: 700px;
+            height: 800px;
+            border: 1px solid black;
         }
 
         .form {
             width: 66%;
             margin: 0 auto;
-            padding: 150px ;
+            padding: 60px ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
         }
 
-        .contact-info {
-            width: 33%;
-            padding: 150px;
-            border: 1px solid gray;
-            /*border-radius: 10px;*/
+        .form h2 {
             text-align: center;
         }
+
 
         label {
             display: block;
@@ -299,58 +179,150 @@
             cursor: pointer;
         }
 
+
         footer {
             background-color: #29668B;
             color: #fff;
-            padding: 2rem;
+            padding: 20px 0;
         }
 
-        footer div:first-child {
+        .footer-columns {
+            max-width: 1200px;
+            margin: 0 0 0 250px;
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        footer div:first-child div {
-            display: flex;
-            align-items: center;
+        .footer-columns > div {
+            flex: 1;
+            text-align: left;
         }
 
-        footer div:first-child div img {
-            height: 2rem;
-            margin-right: 1rem;
+        .footer-col-1 img {
+            max-width: 150px;
+            height: auto;
+            margin: 30px 50px;
         }
 
-        footer nav ul {
-            display: flex;
-        }
-
-        footer nav a {
-            color: #fff;
-            margin-right: 1.5rem;
-        }
-
-        footer div:last-child {
-            background-color: #29668B;
-            padding: 1rem;
-        }
-
-        footer div:last-child p {
+        .social-icons {
+            list-style: none;
+            padding: 0;
             margin: 0;
-            font-size: 0.8rem;
-            text-align: right;
         }
 
-        #social-links {
+        .social-icons li {
+            display: inline-block;
+            margin: 0 10px;
+            height: 40px;
+            width: 40px;
+        }
+
+        .social-icons a {
+            color: black;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            display: block;
+            margin-bottom: 10px;
+            margin-right: 50px;
+        }
+
+        .footer-links a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .footer-slogan {
+            font-size: 15px;
+            max-width: 300px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .post-header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .post-footer {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 10px;
+        }
+
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        article {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 50%;
+        }
+
+        article header {
+            margin: 0 0 20px 0;
+        }
+
+        article h2 {
+            margin: 0;
+        }
+
+        article p.meta {
+            margin: 0 0 10px 0;
+            font-style: italic;
+            font-size: 0.8em;
+        }
+
+        article footer {
+            margin: 20px 0 0 0;
+        }
+
+        article p.tags {
+            font-style: italic;
+            font-size: 0.8em;
+        }
+
+        article p.tags a {
+            text-decoration: none;
+            color: #333;
+            border: 1px solid;
+        }
+
+        .containerBlog {
             display: flex;
-            align-items: center;
-        }
-
-        #footer-follow a {
-            margin-right: 40px;
-        }
-        #footer-follow img {
-            height: 50px;
-            width: 50px;
+            height: auto;
         }
 
 
@@ -380,41 +352,160 @@
 
 </header>
 
+<main class="containerBlog">
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
+        </footer>
+    </article>
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
+        </footer>
+    </article>
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
+        </footer>
+    </article>
+</main>
+
+
+<main class="containerBlog">
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
+        </footer>
+    </article>
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
+        </footer>
+    </article>
+
+    <article>
+        <header class="post-header">
+            <h2>My Blog Post Title</h2>
+            <p class="meta">Posted on January 1, 2023, by John Doe</p>
+        </header>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
+            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
+            <h3>Subheading</h3>
+            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
+            <h3>Another Subheading</h3>
+            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
+        </section>
+        <footer class="post-footer">
+            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
+        </footer>
+    </article>
+</main>
+
 <div class="containerForm">
     <div class="form">
+        <h2>Contribute to the BLOG</h2><br>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="title">Title:</label>
+            <input type="text" id="title" title="title" required>
 
+            <label for="message">Description:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </div>
 
+
 <footer>
-    <div>
-        <div>
+    <div class="footer-columns">
+        <div class="footer-col-1">
             <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+            <p class="footer-slogan">The RefugEAP Network’s overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
-        <nav>
-            <ul>
+        <div class="footer-col-2">
+            <p>Follow us on</p>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-col-3">
+            <p>Useful Links</p>
+            <ul class="footer-links">
                 <li><a href="RefugeeEAP.html">Home</a></li>
-                <li><a href="BlogPage.html"></a></li>
+                <li><a href="BlogPage.html">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="ContactUs.html">Contact Us</a></li>
             </ul>
-        </nav>
-    </div>
-    <div id="footer-follow">
-        <h3>Follow Us</h3>
-        <p id="social-links">
-            <a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" alt="Facebook logo"></a>
-            <a href="https://twitter.com/EapForSJ" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png" alt="Twitter logo"></a>
-            <a href="https://www.instagram.com/">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png" alt="Instagram logo">
-            </a>
-        </p>
-    </div>
-    <div>
-        <p>Copyright &copy; 2023 RefugEAP</p>
+        </div>
     </div>
 </footer>
 </body>
