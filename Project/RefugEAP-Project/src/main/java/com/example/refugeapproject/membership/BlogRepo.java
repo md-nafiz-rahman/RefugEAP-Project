@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 public interface BlogRepo extends CrudRepository<Blog,Integer> {
 
     @Query("SELECT b FROM Blog b WHERE b.blog_id = :blog_id")
-    public Blog getBlogByBlog_id(@Param("blog_id") String blog_id);
+    public Blog getBlogByBlog_id(@Param("blog_id") int blog_id);
 
 }
