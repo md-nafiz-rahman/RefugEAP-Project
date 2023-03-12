@@ -1,3 +1,4 @@
+
 /*
  Navicat Premium Data Transfer
 
@@ -22,9 +23,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+                          `id` int NOT NULL AUTO_INCREMENT,
+                          `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                          PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -38,12 +39,12 @@ INSERT INTO `roles` VALUES (2, 'ROLE_EDITOR');
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `enabled` bit(1) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`, `username`) USING BTREE,
-  UNIQUE INDEX `IDX_UNQ_NAME`(`username`) USING BTREE
+                          `id` int NOT NULL AUTO_INCREMENT,
+                          `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                          `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                          `enabled` bit(1) NULL DEFAULT NULL,
+                          PRIMARY KEY (`id`, `username`) USING BTREE,
+                          UNIQUE INDEX `IDX_UNQ_NAME`(`username`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -57,13 +58,24 @@ INSERT INTO `users` VALUES (2, 'editor1', '$2a$10$07hYXEtxes7P3HapjKsL9eSdN7xIRD
 -- ----------------------------
 DROP TABLE IF EXISTS `users_roles`;
 CREATE TABLE `users_roles`  (
-  `user_id` int NOT NULL,
-  `role_id` int NOT NULL,
-  PRIMARY KEY (`user_id`, `role_id`) USING BTREE,
-  INDEX `FK_Roles`(`role_id`) USING BTREE,
-  CONSTRAINT `FK_Roles` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_Users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                                `user_id` int NOT NULL,
+                                `role_id` int NOT NULL,
+                                PRIMARY KEY (`user_id`, `role_id`) USING BTREE,
+                                INDEX `FK_Roles`(`role_id`) USING BTREE,
+                                CONSTRAINT `FK_Roles` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+                                CONSTRAINT `FK_Users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+
+-- ----------------------------
+-- Table structure for blogs
+-- ----------------------------
+DROP TABLE IF EXISTS `blogs`;
+CREATE TABLE `blogs`  (
+                          `blog_id` int NOT NULL,
+                          `title` varchar(50) NOT NULL,
+                          `content` TEXT(10000) NOT NULL,
+                          PRIMARY KEY (`blog_id`) USING BTREE);
 
 -- ----------------------------
 -- Records of users_roles
@@ -72,3 +84,8 @@ INSERT INTO `users_roles` VALUES (1, 1);
 INSERT INTO `users_roles` VALUES (2, 2);
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+SELECT * FROM users;
+
+
+SELECT * FROM blogs;
