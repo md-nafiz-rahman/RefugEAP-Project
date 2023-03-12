@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -442,6 +443,26 @@
         </footer>
     </article>
 </main>
+
+<div class="containerForm">
+    <div class="form">
+        <h2>Contribute to the BLOG</h2><br>
+
+<%--  Form to take in a blog  --%>
+        <%--@elvariable id="blog" type="blog"--%>
+        <form:form action="/addBlog" modelAttribute="blog">
+
+            <form:label path="title">Title: </form:label><form:input path="title"/>
+
+            <form:label path="content">Content: </form:label><form:input path="content"/>
+
+
+
+            <input type="submit"/>
+
+        </form:form>
+    </div>
+</div>
 
 
 <footer>

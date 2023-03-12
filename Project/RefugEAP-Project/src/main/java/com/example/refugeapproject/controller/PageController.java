@@ -94,5 +94,23 @@ public class PageController {
     }
 
 
+    // Currently not working
+    //Mapping to take blog form input and add it to the blog database
+    @RequestMapping("/blogPage")
+    public String newBlog(Model model) {
+        model.addAttribute("blog", new Blog());
+        return "blogPage";
+    }
+
+    @PostMapping("/addBlog")
+    public String addBlog(@ModelAttribute Blog blog,Model model) {
+
+
+        model.addAttribute("id", blog);
+
+        return "blogPage";
+    }
+
+
 
 }
