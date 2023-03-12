@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Blog {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "blog_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long blog_id;
 
