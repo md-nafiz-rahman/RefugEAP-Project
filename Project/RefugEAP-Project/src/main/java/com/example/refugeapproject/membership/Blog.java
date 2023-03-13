@@ -13,6 +13,24 @@ public class Blog {
 
     private String title;
     private String content;
+    private String email;
+    private String name;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Integer getBlog_id() {
         return blog_id;

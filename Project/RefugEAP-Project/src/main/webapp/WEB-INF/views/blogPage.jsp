@@ -306,7 +306,40 @@
             display: flex;
             height: auto;
         }
+        #content {
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 150px;
+        }
 
+        #blog {
+            padding-bottom: 10px;
+        }
+
+        #title {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        label {
+            margin-left: 10px;
+        }
+
+        input[type="text"] {
+            width: 98%;
+        }
+
+        textarea {
+            width: 98%;
+        }
+
+        #email, #name {
+            margin-left: 10px;
+        }
+
+        #blogHeader {
+            margin-left: 10px;
+        }
 
     </style>
 </head>
@@ -446,7 +479,7 @@
 
 <div class="containerForm">
     <div class="form">
-        <h2>Contribute to the BLOG</h2><br>
+        <h2>Contribute to the Blog</h2><br>
 
 <%--  Form to take in a blog  --%>
         <%--@elvariable id="blog" type="blog"--%>
@@ -454,11 +487,13 @@
 
             <form:label path="title">Title: </form:label><form:input path="title"/>
 
+            <form:label path="name">Name:*</form:label><form:input path="name"/>
+
             <form:label path="content">Content: </form:label><form:input path="content"/>
 
+            <form:label path="email">Email:* </form:label><form:input path="email"/>
 
-
-            <input type="submit"/>
+            <input type="submit" value="Submit Blog" style="margin-left: 10px"/>
 
         </form:form>
     </div>
