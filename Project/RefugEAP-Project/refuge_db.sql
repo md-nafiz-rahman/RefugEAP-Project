@@ -74,7 +74,9 @@ DROP TABLE IF EXISTS `blogs`;
 CREATE TABLE `blogs`  (
                           `blog_id` int NOT NULL,
                           `title` varchar(50) NOT NULL,
+                          `name` varchar(100) NOT NULL,
                           `content` TEXT(10000) NOT NULL,
+                          `email` varchar(100) NOT NULL,
                           PRIMARY KEY (`blog_id`) USING BTREE);
 
 -- ----------------------------
