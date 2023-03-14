@@ -2,6 +2,7 @@ package com.example.refugeapproject;
 
 import com.example.refugeapproject.membership.Blog;
 import com.example.refugeapproject.membership.BlogRepo;
+import com.example.refugeapproject.membership.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +19,10 @@ public class RefugEapProjectApplication implements CommandLineRunner {
 	public static List<Blog> blogs = new ArrayList<>();
 
 	@Autowired
-	private BlogRepo Brepo;
+	private UserRepo repo;
+
+	@Autowired
+	private BlogRepo blogRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RefugEapProjectApplication.class, args);
@@ -31,23 +35,14 @@ public class RefugEapProjectApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//System.out.println(Brepo.getBlogByBlog_id(1).getTitle());
-
-		//System.out.println(Brepo.total_rows_in_blog());
-
-
-		//Gets all blogs from the blog database and stores them in the "blogs" list
-		for( int i = 1; i <= Brepo.total_rows_in_blog(); i++) {
-			blogs.add(Brepo.getBlogByBlog_id(i));
+		// Get a blog by id and print its title
+		int blogId = 1;
+		Blog blog = blogRepo.findById(blogId);
+		if (blog != null) {
+			System.out.println("Blog title: " + blog.getTitle());
+		} else {
+			System.out.println("Blog with id " + blogId + " not found");
 		}
-
-		for( int i = 0; i < blogs.size(); i++) {
-			System.out.println(blogs.get(i).getBlog_id());
-		}
-
 	}
-	}
-}
-
 
 }
