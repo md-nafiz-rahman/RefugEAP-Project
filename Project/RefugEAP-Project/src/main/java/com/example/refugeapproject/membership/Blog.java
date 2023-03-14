@@ -1,6 +1,7 @@
 package com.example.refugeapproject.membership;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "blogs")
@@ -13,24 +14,13 @@ public class Blog {
 
     private String title;
     private String content;
+    private String status = "pending";
+
     private String email;
     private String name;
 
-    public String getEmail() {
-        return email;
-    }
+    private Date date;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Integer getBlog_id() {
         return blog_id;
@@ -54,5 +44,29 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setEmail(String email) { this.email = email;}
+
+    public String getEmail() { return email; }
+
+    public void setName(String name) { this.name = name;}
+
+    public String getName() { return name; }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
