@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -363,6 +362,7 @@
     <a href="/contactUs">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
+
 <!-- Header -->
 
 <header>
@@ -375,6 +375,7 @@
 
 </header>
 
+
 <div class="blog-container">
     <c:forEach var="blog" items="${approvedBlogs}">
         <div class="blog-post">
@@ -385,7 +386,6 @@
         </div>
     </c:forEach>
 </div>
-
 
 <div class="containerForm">
     <div class="form">
@@ -411,6 +411,7 @@
         </form:form>
     </div>
 </div>
+
 
 <footer>
     <div class="footer-columns">

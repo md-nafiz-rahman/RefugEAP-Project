@@ -40,53 +40,12 @@
             font-size: 23px;
         }
 
-
-
         .blog p{
             color: gray;
         }
         .blog  h5{
             padding-top: 32px;
             padding-bottom: 32px;
-        }
-
-        /*.top{*/
-        /*    position: fixed;*/
-        /*    width: 100%;*/
-        /*}*/
-        /* .topnav {*/
-        /*  overflow: hidden;*/
-        /*  background-color: #29668B;*/
-
-        /*}*/
-
-        /*.topnav a {*/
-        /*  float: left;*/
-        /*  color: white;*/
-        /*  text-align: center;*/
-        /*  padding: 24px 20px;*/
-        /*  text-decoration: none;*/
-        /*  font-size: 20px;*/
-        /*}*/
-
-        /*.topnav a:hover {*/
-        /*  background-color: #FFFFFF;*/
-        /*  color: black;*/
-        /*}*/
-
-        /*!*.topnav a.active {*!*/
-        /*!*  background-color: #FFFFFF;*!*/
-        /*!*  color: white;*!*/
-        /*!*}*!*/
-
-        /*.topnav-text{*/
-        /*    float: right;*/
-        /*}*/
-        .toplogo{
-            float: left;
-            padding-top: 5px;
-            padding-left: 20px;
-            padding-bottom: 10px;
         }
 
         .container {
@@ -154,102 +113,14 @@
             padding: 30px 130px;
         }
 
-        /*.link1{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    margin: 0;*/
-        /*    padding: 10px;*/
-        /*}*/
-        /*.link2{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    position: absolute;*/
-        /*    bottom: 0;*/
-        /*    right: 0;*/
-        /*}*/
-        .split{
-            display: grid;
-            height: auto;
-        }
-        /*.blog{*/
-        /*    float: left;*/
-        /*    width:50%;*/
-        /*    background-color: lightblue;*/
-        /*    border: 2px solid black;*/
-
-        /*}*/
-
-        .blog {
-            float: left;
-            width: 50%;
-            margin: 0 auto;
-            text-align: center;
-            color: #dddddd;
-            border: 2px solid black;
-            background-color: #29668B;
-        }
-
-        .post {
-            width: 80%;
-            margin: 20px auto;
-            text-align: left;
-            color: black;
-            padding: 20px;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-            background-color: #dddddd;
-        }
-
         h2 {
             margin-top: 0;
         }
 
-        a.link {
-            display: block;
-            margin-top: 20px;
-            text-align: right;
-            color: blue;
-            text-decoration: none;
-        }
-
-        /*.Events{*/
-        /*    float: right;*/
-        /*    width:50%;*/
-        /*    border: 2px solid black*/
-        /*}*/
-        #calendar {
-            width: 50%;
-            float: right;
-            text-align: center;
-            font-size: 30px;
-            padding: 30px;
-            background-image: url("https://img.freepik.com/free-photo/beautiful-shot-sea-with-mountain-distance-clear-sky_181624-2248.jpg?w=1380&t=st=1675791595~exp=1675792195~hmac=09f14f18d9690e28766cf15d70f85ed094a0291a9b5db5079f8f2077a59903ec");
-            background-size: cover;
-        }
-        #events {
-            width: 45%;
-            float: right;
-            padding: 20px;
-            background-color: aquamarine;
-        }
         #events li {
             font-size: 20px;
             padding: 10px 0;
         }
-        #event-title {
-            width: 45%;
-            float: right;
-            padding: 20px;
-        }
-        #view-event-btn {
-            position: absolute;
-            top: 1500px;
-            right: 20px;
-        }
-        /*.blogp{*/
-        /*    float: right;*/
-        /*    width: 20%;*/
-        /*}*/
 
         .containerForm {
             display: flex;
@@ -369,11 +240,11 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="RefugeeEAP.html">Home</a>
-    <a href="BlogPage.html">Blog</a>
+    <a href="/">Home</a>
+    <a href="/blogPage">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
-    <a href="ContactUs.html" class="mainB">Contacts</a>
+    <a href="/contactUs" class="mainB">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 

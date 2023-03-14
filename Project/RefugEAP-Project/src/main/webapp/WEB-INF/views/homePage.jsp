@@ -50,45 +50,6 @@
             padding-bottom: 32px;
         }
 
-        /*.top{*/
-        /*    position: fixed;*/
-        /*    width: 100%;*/
-        /*}*/
-        /* .topnav {*/
-        /*  overflow: hidden;*/
-        /*  background-color: #29668B;*/
-
-        /*}*/
-
-        /*.topnav a {*/
-        /*  float: left;*/
-        /*  color: white;*/
-        /*  text-align: center;*/
-        /*  padding: 24px 20px;*/
-        /*  text-decoration: none;*/
-        /*  font-size: 20px;*/
-        /*}*/
-
-        /*.topnav a:hover {*/
-        /*  background-color: #FFFFFF;*/
-        /*  color: black;*/
-        /*}*/
-
-        /*!*.topnav a.active {*!*/
-        /*!*  background-color: #FFFFFF;*!*/
-        /*!*  color: white;*!*/
-        /*!*}*!*/
-
-        /*.topnav-text{*/
-        /*    float: right;*/
-        /*}*/
-        .toplogo{
-            float: left;
-            padding-top: 5px;
-            padding-left: 20px;
-            padding-bottom: 10px;
-        }
-
         .container {
             position: relative;
         }
@@ -154,30 +115,10 @@
             padding: 30px 130px;
         }
 
-        /*.link1{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    margin: 0;*/
-        /*    padding: 10px;*/
-        /*}*/
-        /*.link2{*/
-        /*    background-color: black;*/
-        /*    color: lightblue;*/
-        /*    position: absolute;*/
-        /*    bottom: 0;*/
-        /*    right: 0;*/
-        /*}*/
         .split{
             display: grid;
             height: auto;
         }
-        /*.blog{*/
-        /*    float: left;*/
-        /*    width:50%;*/
-        /*    background-color: lightblue;*/
-        /*    border: 2px solid black;*/
-
-        /*}*/
 
         .blog {
             float: left;
@@ -212,11 +153,6 @@
             text-decoration: none;
         }
 
-        /*.Events{*/
-        /*    float: right;*/
-        /*    width:50%;*/
-        /*    border: 2px solid black*/
-        /*}*/
         #calendar {
             width: 50%;
             float: right;
@@ -246,10 +182,6 @@
             top: 1500px;
             right: 20px;
         }
-        /*.blogp{*/
-        /*    float: right;*/
-        /*    width: 20%;*/
-        /*}*/
 
         footer {
             background-color: #29668B;
@@ -320,11 +252,11 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="RefugeeEAP.html" class="mainB">Home</a>
-    <a href="BlogPage.html">Blog</a>
+    <a href="/" class="mainB">Home</a>
+    <a href="/blogPage">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
-    <a href="ContactUs.html">Contacts</a>
+    <a href="/contactUs">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -376,11 +308,7 @@
                 <a class="link" href="#">Read More</a>
             </div>
         </div>
-        <!--    <div class="Upcoming Events">-->
-        <!--       <h2>Events </h2>-->
-        <!--       <button class="link2">View All Events</button>-->
-        <!--    </div>-->
-        <!--      -->
+
         <div id="calendar"></div>
         <h3 id="event-title">Upcoming Events</h3>
         <ul id="events">

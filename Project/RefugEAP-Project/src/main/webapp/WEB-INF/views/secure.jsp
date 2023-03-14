@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
     <title>Refugee eap</title>
@@ -6,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 
         html {
@@ -48,29 +50,6 @@
             padding-bottom: 32px;
         }
 
-        .container {
-            position: relative;
-        }
-
-        .background-image {
-            background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
-            background-size: cover;
-            height: 700px;
-            width: 100%;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-            text-align: center;
-            z-index: 1;
-        }
-
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
@@ -105,13 +84,22 @@
             color: black;
         }
 
+        .navigator a.mainB {
+            background-color: #f2f2f2;     /* Header Navigation Main Button */
+            color: #29668B;
+            padding: 30px 130px;
+        }
+
         h2 {
             margin-top: 0;
         }
 
-        #events li {
-            font-size: 20px;
-            padding: 10px 0;
+        .form {
+            width: 66%;
+            margin: 0 auto;
+            padding: 150px ;
+            border: 0px solid gray;
+            /*border-radius: 10px;*/
         }
 
         label {
@@ -122,6 +110,8 @@
 
         input[type="text"],
         input[type="email"],
+        input[type="password"],
+        select,
         textarea {
             width: 100%;
             padding: 10px;
@@ -192,6 +182,29 @@
             max-width: 300px;
         }
 
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 90%;
+            border: 1px solid #ddd;
+            margin-bottom: 25px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        caption {
+            font-size: 2em;
+            font-weight: bold;
+            padding-bottom: 15px;
+        }
 
     </style>
 </head>
@@ -200,23 +213,140 @@
 <!-- Navbar -->
 <div class="navigator">
     <a href="/">Home</a>
-    <a href="/admin/blogManagement">Blog Management</a>
-    <a href="#events">Events Management</a>
     <a href="/admin/adminPortal">Users Managment</a>
+    <a href="/admin/blogManagement"  class="mainB">Blog Management</a>
+    <a href="#events">Events Management</a>
+    <a href="/logout">Logout</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
-<!-- Header -->
-
-<header>
-    <div class="container">
-        <div class="background-image"></div>
-        <div class="overlay" style="padding-top: 100px">
-            <h1>SECURE AREA</h1>
-        </div>
+<div>
+    <div class="form">
+        <h4>Add New Blog Post</h4>
+        <form method="post" action="${pageContext.request.contextPath}/admin/blog/add">
+            <label for="name">Name:</label> <input type="text" id="name" name="name" required />
+            <label for="email">Email:</label> <input type="email" id="email" name="email" required />
+            <label for="title">Title:</label> <input type="text" id="title" name="title" required />
+            <label for="content">Content:</label> <input type="text" id="content" name="content" required />
+            <input type="submit" value="Add New Post" title="Add Post" />
+        </form>
     </div>
+</div>
 
-</header>
+<table class="center">
+    <caption>Pending Blog Posts</caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Email</th>
+        <th>Date Posted</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${blogs}" var="blog">
+        <tr>
+            <td>${blog.blog_id}</td>
+            <td>${blog.name}</td>
+            <td>${blog.email}</td>
+            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+            <td>${blog.title}</td>
+            <td>${blog.content}</td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/acceptBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Accept">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Discard">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<br>
+
+<table class="center">
+    <caption>Current Blog Posts</caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Email</th>
+        <th>Date Posted</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${acceptedBlogs}" var="blog">
+        <tr>
+            <td>${blog.blog_id}</td>
+            <td>${blog.name}</td>
+            <td>${blog.email}</td>
+            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+            <td>${blog.title}</td>
+            <td>${blog.content}</td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Discard">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<br>
+
+<table class="center">
+    <caption>Discarded Blog Posts</caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Email</th>
+        <th>Date Posted</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${discardedBlogs}" var="blog">
+        <tr>
+            <td>${blog.blog_id}</td>
+            <td>${blog.name}</td>
+            <td>${blog.email}</td>
+            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+            <td>${blog.title}</td>
+            <td>${blog.content}</td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/deleteBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/recoverBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Recover">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 
 <footer>
     <div class="footer-columns">

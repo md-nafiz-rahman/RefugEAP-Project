@@ -155,12 +155,6 @@
             margin: 30px 50px;
         }
 
-        .social-icons {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
         .social-icons li {
             display: inline-block;
             margin: 0 10px;
@@ -170,12 +164,6 @@
 
         .social-icons a {
             color: black;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
         }
 
         .footer-links li {
