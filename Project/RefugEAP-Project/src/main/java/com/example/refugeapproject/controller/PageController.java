@@ -167,6 +167,55 @@ public class PageController {
 
         return "redirect:/admin/blogManagement";}
 
+    @PostMapping(value = "/admin/acceptBlog")
+    public String acceptBlog(@RequestParam("blog_id") int blogId) {
+        // Get the blog by ID
+        Blog blog = blogRepo.findById(blogId);
+        if (blog != null) {
+            // Set the status of the blog to "approved"
+            blog.setStatus("approved");
+            blogRepo.save(blog);
+        }
+        return "redirect:/admin/blogManagement";
+    }
+
+    @PostMapping(value = "/admin/discardBlog")
+    public String discardBlog(@RequestParam("blog_id") int blogId) {
+        // Get the blog by ID
+        Blog blog = blogRepo.findById(blogId);
+        if (blog != null) {
+            // Set the status of the blog to "approved"
+            blog.setStatus("deleted");
+            blogRepo.save(blog);
+        }
+        return "redirect:/admin/blogManagement";
+    }
+
+    @PostMapping(value = "/admin/deleteBlog")
+    public String deleteBlog(@RequestParam("blog_id") int blogId) {
+        // Get the blog by ID
+        Blog blog = blogRepo.findById(blogId);
+        if (blog != null) {
+            // Delete the blog from the database
+            blogRepo.delete(blog);
+        }
+        return "redirect:/admin/blogManagement";
+    }
+
+    @PostMapping(value = "/admin/recoverBlog")
+    public String recoverBlog(@RequestParam("blog_id") int blogId) {
+        // Get the blog by ID
+        Blog blog = blogRepo.findById(blogId);
+        if (blog != null) {
+            // Set the status of the blog to "approved"
+            blog.setStatus("pending");
+            blogRepo.save(blog);
+        }
+        return "redirect:/admin/blogManagement";
+    }
+}
+
+
 
 
 
