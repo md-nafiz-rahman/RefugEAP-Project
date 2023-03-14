@@ -69,8 +69,8 @@ public class PageController {
         String encrypPassword= new BCryptPasswordEncoder().encode(pwd);
         user.setPassword(encrypPassword);
         user.setEnabled(true);
-        
-        Set<Role> role= new HashSet<>();      
+
+        Set<Role> role= new HashSet<>();
         Role role_= roleRepo.getRoleByName(roleName);
         role.add(role_);
         user.setRoles(role);
@@ -78,7 +78,7 @@ public class PageController {
         userRepo.save(user);
 
         return "redirect:/admin/adminPortal";
-        
+
     }
 
     @RequestMapping(value = "/login") // Request login page
@@ -114,14 +114,40 @@ public class PageController {
         return "blogPage";
     }
 
-    @PostMapping("/addBlog")
-    public String addBlog(@ModelAttribute Blog blog,Model model) {
+    @RequestMapping(value = "/addBlog", method = RequestMethod.POST) // Request to adminPortal page
+    public String addBlog(@RequestParam("name") String name,
+                          @RequestParam("email") String email,
+                          @RequestParam("title") String title,
+                          @RequestParam("content") String content) {
 
+        Blog blog = new Blog();
+        java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
+        blog.setName(name);
+        blog.setEmail(email);
+        blog.setTitle(title);
+        blog.setContent(content);
+        blog.setDate(currentDate);
 
-        model.addAttribute("id", blog);
+        blogRepo.save(blog);
 
-        return "blogPage";
-    }
+        return "redirect:/blogPage";}
+
+    @RequestMapping(value = "/admin/blog/add", method = RequestMethod.POST) // Request to adminPortal page
+    public String BlogAdd(@RequestParam("name") String name,
+                          @RequestParam("email") String email,
+                          @RequestParam("title") String title,
+                          @RequestParam("content") String content) {
+
+        Blog blog = new Blog();
+        java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
+        blog.setName(name);
+        blog.setEmail(email);
+        blog.setTitle(title);
+        blog.setContent(content);
+        blog.setDate(currentDate);
+        blogRepo.save(blog);
+
+        return "redirect:/admin/blogManagement";}
 
 
 
