@@ -375,115 +375,17 @@
 
 </header>
 
-<main class="containerBlog">
-    <article>
-        <header class="post-header">
-            <h2>My Blog Post Title</h2>
-            <p class="meta">Posted on January 1, 2023, by John Doe</p>
-        </header>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
-            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
-            <h3>Subheading</h3>
-            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
-            <h3>Another Subheading</h3>
-            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
-        </section>
-        <footer class="post-footer">
-            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
-        </footer>
-    </article>
-    <article>
-        <header class="post-header">
-            <h2>My Blog Post Title</h2>
-            <p class="meta">Posted on January 1, 2023, by John Doe</p>
-        </header>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
-            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
-            <h3>Subheading</h3>
-            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
-            <h3>Another Subheading</h3>
-            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
-        </section>
-        <footer class="post-footer">
-            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
-        </footer>
-    </article>
-    <article>
-        <header class="post-header">
-            <h2>My Blog Post Title</h2>
-            <p class="meta">Posted on January 1, 2023, by John Doe</p>
-        </header>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
-            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
-            <h3>Subheading</h3>
-            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
-            <h3>Another Subheading</h3>
-            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
-        </section>
-        <footer class="post-footer">
-            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
-        </footer>
-    </article>
-</main>
+<div class="blog-container">
+    <c:forEach var="blog" items="${approvedBlogs}">
+        <div class="blog-post">
+            <h2>${blog.title}</h2>
+            <h3>${blog.name}</h3>
+            <h3>Posted on <fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></h3>
+            <p>${blog.content}</p>
+        </div>
+    </c:forEach>
+</div>
 
-
-<main class="containerBlog">
-    <article>
-        <header class="post-header">
-            <h2>My Blog Post Title</h2>
-            <p class="meta">Posted on January 1, 2023, by John Doe</p>
-        </header>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
-            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
-            <h3>Subheading</h3>
-            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
-            <h3>Another Subheading</h3>
-            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
-        </section>
-        <footer class="post-footer">
-            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
-        </footer>
-    </article>
-    <article>
-        <header class="post-header">
-            <h2>My Blog Post Title</h2>
-            <p class="meta">Posted on January 1, 2023, by John Doe</p>
-        </header>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
-            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
-            <h3>Subheading</h3>
-            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
-            <h3>Another Subheading</h3>
-            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
-        </section>
-        <footer class="post-footer">
-            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
-        </footer>
-    </article>
-
-    <article>
-        <header class="post-header">
-            <h2>My Blog Post Title</h2>
-            <p class="meta">Posted on January 1, 2023, by John Doe</p>
-        </header>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie, orci ac consectetur bibendum, nisl sapien porta mauris, at tristique felis velit ut nibh. Sed eget ex nec nisl suscipit dictum.</p>
-            <p>Nullam ut elit vel nisl tincidunt hendrerit. Ut viverra massa ac lectus molestie interdum. Curabitur vel est vitae orci semper bibendum. In eget tincidunt orci, sit amet lacinia ex. Morbi ornare nisl ac arcu aliquet, et gravida risus tincidunt.</p>
-            <h3>Subheading</h3>
-            <p>Aliquam varius turpis justo, id volutpat orci vestibulum non. Fusce non felis nulla. Sed mattis elementum nunc a aliquam. Fusce ut velit velit. Sed vel sapien neque. Suspendisse in ex ut dolor malesuada luctus. </p>
-            <h3>Another Subheading</h3>
-            <p>Pellentesque accumsan vestibulum tortor, eget auctor ex tincidunt vel. Nunc nec rhoncus magna, at pharetra sapien. Etiam ut mauris et tortor imperdiet posuere a ac nibh. Curabitur ac varius dolor, eget blandit mauris. </p>
-        </section>
-        <footer class="post-footer">
-            <p class="tags">Tags: <a>tag1</a>, <a>tag2</a>, <a>tag3</a></p>
-        </footer>
-    </article>
-</main>
 
 <div class="containerForm">
     <div class="form">
