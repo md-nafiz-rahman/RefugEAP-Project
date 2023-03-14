@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
     <title>Refugee eap</title>
@@ -242,8 +245,120 @@
     </div>
 </div>
 
+<table class="center">
+    <caption>Pending Blog Posts</caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Email</th>
+        <th>Date Posted</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${blogs}" var="blog">
+        <tr>
+            <td>${blog.blog_id}</td>
+            <td>${blog.name}</td>
+            <td>${blog.email}</td>
+            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+            <td>${blog.title}</td>
+            <td>${blog.content}</td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/acceptBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Accept">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Discard">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<br>
 
+<table class="center">
+    <caption>Current Blog Posts</caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Email</th>
+        <th>Date Posted</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${acceptedBlogs}" var="blog">
+        <tr>
+            <td>${blog.blog_id}</td>
+            <td>${blog.name}</td>
+            <td>${blog.email}</td>
+            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+            <td>${blog.title}</td>
+            <td>${blog.content}</td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Discard">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<br>
 
+<table class="center">
+    <caption>Discarded Blog Posts</caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Email</th>
+        <th>Date Posted</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${discardedBlogs}" var="blog">
+        <tr>
+            <td>${blog.blog_id}</td>
+            <td>${blog.name}</td>
+            <td>${blog.email}</td>
+            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+            <td>${blog.title}</td>
+            <td>${blog.content}</td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/deleteBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/recoverBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Recover">
+                </form>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 
 <footer>
     <div class="footer-columns">
