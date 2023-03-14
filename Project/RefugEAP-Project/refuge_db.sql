@@ -71,14 +71,16 @@ CREATE TABLE `users_roles`  (
 -- Table structure for blogs
 -- ----------------------------
 DROP TABLE IF EXISTS `blogs`;
-CREATE TABLE `blogs`  (
-                          `blog_id` int NOT NULL,
-                          `title` varchar(50) NOT NULL,
-                          `name` varchar(100) NOT NULL,
-                          `content` TEXT(10000) NOT NULL,
-                          `email` varchar(100) NOT NULL,
-                          PRIMARY KEY (`blog_id`) USING BTREE);
-
+CREATE TABLE `blogs` (
+                         `blog_id` int NOT NULL AUTO_INCREMENT,
+                         `title` varchar(100) NOT NULL,
+                         `name` varchar(100) NOT NULL,
+                         `content` TEXT(10000) NOT NULL,
+                         `status` VARCHAR(10) NOT NULL DEFAULT 'pending',
+                         `email` varchar(100) NOT NULL,
+                         `date` Date NOT NULL,
+                         PRIMARY KEY (`blog_id`) USING BTREE
+);
 -- ----------------------------
 -- Records of users_roles
 -- ----------------------------
