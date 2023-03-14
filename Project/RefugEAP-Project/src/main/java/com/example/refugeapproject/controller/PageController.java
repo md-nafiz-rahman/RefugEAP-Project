@@ -1,22 +1,22 @@
 package com.example.refugeapproject.controller;
 
+import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import com.example.refugeapproject.membership.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.example.refugeapproject.membership.Role;
-import com.example.refugeapproject.membership.RoleRepo;
-import com.example.refugeapproject.membership.User;
-import com.example.refugeapproject.membership.UserRepo;
 
 
 @Controller
@@ -220,4 +220,4 @@ public class PageController {
 
 
 
-}
+
