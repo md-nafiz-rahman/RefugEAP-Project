@@ -96,6 +96,24 @@ public class PageController {
         return "secure";
     }
 
+    @RequestMapping(value = "/admin/blogManagement")
+    public ModelAndView blogManagement() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        // Fetch all the blogs from the database using the findAll() method
+        List<Blog> blogs = (List<Blog>) blogRepo.findByStatus("pending");
+        List<Blog> acceptedBlogs = (List<Blog>) blogRepo.findByStatus("approved");
+        List<Blog> discardedBlogs = (List<Blog>) blogRepo.findByStatus("deleted");
+
+        // Pass the list of blogs to the JSP view
+        modelAndView.addObject("blogs", blogs);
+        modelAndView.addObject("acceptedBlogs", acceptedBlogs);
+        modelAndView.addObject("discardedBlogs", discardedBlogs);
+
+        modelAndView.setViewName("blogManagement");
+
+        return modelAndView;
+    }
 
 
     //Mapping to take blog form input and add it to the blog database
