@@ -28,6 +28,9 @@ public class PageController {
     @Autowired
     RoleRepo roleRepo;
 
+    @Autowired
+    BlogRepo blogRepo;
+
     @RequestMapping(value = "/") // Request to HomePage
     public String HomePage() {
         return "homePage";
@@ -94,11 +97,20 @@ public class PageController {
     }
 
 
-    // Currently not working
+
     //Mapping to take blog form input and add it to the blog database
     @RequestMapping("/blogPage")
     public String newBlog(Model model) {
         model.addAttribute("blog", new Blog());
+        List<Blog> approvedBlogs = blogRepo.findByStatus("approved");
+
+        // Pass the list of approved blog posts to the blogPage.jsp view
+        model.addAttribute("approvedBlogs", approvedBlogs);
+
+        List<Blog> discardedBlogs = blogRepo.findByStatus("deleted");
+
+        // Pass the list of discarded blog posts to the blogPage.jsp view
+        model.addAttribute("discardedBlogs", discardedBlogs);
         return "blogPage";
     }
 
@@ -110,6 +122,8 @@ public class PageController {
 
         return "blogPage";
     }
+
+
 
 
 
