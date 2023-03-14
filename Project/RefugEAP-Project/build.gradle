@@ -21,8 +21,8 @@ dependencies {
 	// testImplementation 'org.springframework.security:spring-security-test'
 
 	// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
-    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.32'
-	
+	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.32'
+
 
 	runtimeOnly 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.41'
 	runtimeOnly 'javax.servlet:jstl:1.2'
