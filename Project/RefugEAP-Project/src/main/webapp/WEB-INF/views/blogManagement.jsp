@@ -229,6 +229,20 @@
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
+<div>
+    <div class="form">
+        <h4>Add New Blog Post</h4>
+        <form method="post" action="${pageContext.request.contextPath}/admin/blog/add">
+            <label for="name">Name:</label> <input type="text" id="name" name="name" required />
+            <label for="email">Email:</label> <input type="email" id="email" name="email" required />
+            <label for="title">Title:</label> <input type="text" id="title" name="title" required />
+            <label for="content">Content:</label> <input type="text" id="content" name="content" required />
+            <input type="submit" value="Add New Post" title="Add Post" />
+        </form>
+    </div>
+</div>
+
+
 
 
 <footer>
