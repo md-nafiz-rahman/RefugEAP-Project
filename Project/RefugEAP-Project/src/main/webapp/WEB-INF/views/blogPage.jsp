@@ -1,5 +1,8 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
     <title>Refugee eap</title>
@@ -306,40 +309,46 @@
             display: flex;
             height: auto;
         }
-        #content {
-            margin-left: 10px;
-            margin-right: 10px;
-            height: 150px;
+
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .blog-post {
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: calc(33.33% - 10px);
+        }
+        .blog-post h2 {
+            font-size: 26px;
+            margin-top: 0;
         }
 
-        #blog {
-            padding-bottom: 10px;
+        .blog-post h3 {
+            font-size: 12px;
+            margin-top: 0;
+        }
+        .blog-post p {
+            font-size: 16px;
         }
 
-        #title {
-            margin-left: 10px;
-            margin-right: 10px;
+        .containerForm {
+            display: flex;
+            height: 800px;
         }
 
-        label {
-            margin-left: 10px;
+        .form {
+            width: 100%;
+            margin: 0 auto;
+            padding: 150px ;
+            border: 0px solid gray;
+            /*border-radius: 10px;*/
         }
 
-        input[type="text"] {
-            width: 98%;
-        }
-
-        textarea {
-            width: 98%;
-        }
-
-        #email, #name {
-            margin-left: 10px;
-        }
-
-        #blogHeader {
-            margin-left: 10px;
-        }
 
     </style>
 </head>
@@ -347,14 +356,13 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="RefugeeEAP.html">Home</a>
-    <a href="BlogPage.html" class="mainB">Blog</a>
+    <a href="/">Home</a>
+    <a href="/blogPage" class="mainB">Blog</a>
     <a href="#aboutUs">About Us</a>
     <a href="#events">Events</a>
-    <a href="ContactUs.html">Contacts</a>
+    <a href="/contactUs">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
-
 <!-- Header -->
 
 <header>
@@ -479,26 +487,28 @@
 
 <div class="containerForm">
     <div class="form">
-        <h2>Contribute to the Blog</h2><br>
+        <h2>Contribute to the BLOG</h2><br>
 
-<%--  Form to take in a blog  --%>
+        <%--  Form to take in a blog  --%>
         <%--@elvariable id="blog" type="blog"--%>
         <form:form action="/addBlog" modelAttribute="blog">
 
-            <form:label path="title">Title: </form:label><form:input path="title"/>
+            <form:label path="name">Name: </form:label><form:input path="name" required="required"/>
 
-            <form:label path="name">Name:*</form:label><form:input path="name"/>
+            <form:label path="email">Email: </form:label><form:input type="email" path="email" required="required"/>
 
-            <form:label path="content">Content: </form:label><form:input path="content"/>
 
-            <form:label path="email">Email:* </form:label><form:input path="email"/>
+            <form:label path="title">Title: </form:label><form:input path="title" required="required"/>
 
-            <input type="submit" value="Submit Blog" style="margin-left: 10px"/>
+            <form:label path="content">Content: </form:label><form:input path="content" required="required"/>
+
+            <form:hidden path="status" value="pending"/>
+
+            <input type="submit"/>
 
         </form:form>
     </div>
 </div>
-
 
 <footer>
     <div class="footer-columns">
