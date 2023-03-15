@@ -66,16 +66,11 @@ public class PageController {
         modelAndView.addObject("acceptedBlogs", acceptedBlogs);
         modelAndView.addObject("discardedBlogs", discardedBlogs);
 
-
-
         ViewCount views = viewRepo.findById(1);
-
 
         views.setViews(views.getViews()+1);
 
-
         modelAndView.addObject("total_views", views.getViews());
-
 
         viewRepo.save(views);
 
