@@ -272,7 +272,8 @@
         article {
             border: 1px solid #ccc;
             padding: 20px;
-            width: 50%;
+            flex: 0 0 calc(33.33% - 20px);
+            box-sizing: border-box;
         }
 
         article header {
@@ -306,7 +307,9 @@
 
         .containerBlog {
             display: flex;
-            height: auto;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
         }
 
         .blog-container {
@@ -358,7 +361,7 @@
     <a href="/">Home</a>
     <a href="/blogPage" class="mainB">Blog</a>
     <a href="#aboutUs">About Us</a>
-    <a href="#events">Events</a>
+    <a href="/eventPage">Events</a>
     <a href="/contactUs">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
@@ -375,17 +378,22 @@
 
 </header>
 
-
-<div class="blog-container">
+<main class="containerBlog">
     <c:forEach var="blog" items="${approvedBlogs}">
-        <div class="blog-post">
-            <h2>${blog.title}</h2>
-            <h3>${blog.name}</h3>
-            <h3>Posted on <fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></h3>
-            <p>${blog.content}</p>
-        </div>
+        <article>
+            <header class="post-header">
+                <h3>${blog.title}</h3>
+                <p class="meta">Posted on <fmt:formatDate value="${blog.date}" pattern="dd MMMM, yyyy" />, by ${blog.name}</p>
+            </header>
+            <section>
+                <p>${blog.content}</p>
+            </section>
+            <footer class="post-footer">
+                <!-- Add any additional footer content here -->
+            </footer>
+        </article>
     </c:forEach>
-</div>
+</main>
 
 <div class="containerForm">
     <div class="form">
