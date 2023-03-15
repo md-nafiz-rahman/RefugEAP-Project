@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
     <title>Refugee eap</title>
@@ -218,6 +219,33 @@
     <a href="/admin/eventManagement" class="mainB">Events Management</a>
     <a href="/logout">Logout</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
+</div>
+
+<div>
+    <div class="containerForm">
+        <div class="form">
+            <h2>Contribute to the EVENT</h2><br>
+            <form method="post" action="${pageContext.request.contextPath}/admin/event/add">    <input type="hidden" name="event_id" />
+
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="event_title">Event Title: </label>
+                <input type="text" id="event_title" name="event_title" required />
+
+                <label for="event_datetime">Event Date and Time (dd-MM-yyyy HH:mm): </label>
+                <input type="datetime-local" id="event_datetime" name="event_datetime" required />
+
+                <label for="event_more_info">Event More Info: </label>
+                <textarea id="event_more_info" name="event_more_info" rows="5" required></textarea>
+
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+    </div>
 </div>
 
 <table class="center">
