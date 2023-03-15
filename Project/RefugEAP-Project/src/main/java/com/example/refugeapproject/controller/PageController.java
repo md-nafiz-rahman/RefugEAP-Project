@@ -1,11 +1,13 @@
 package com.example.refugeapproject.controller;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.example.refugeapproject.membership.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -195,14 +194,14 @@ public class PageController {
         return "blogPage";
     }
 
-    @RequestMapping(value = "/eventPage") // Request to eventPage page
-    public String EventPage(Model model)
-    {
+    @RequestMapping(value = "/eventPage")
+    public String EventPage(Model model) {
         model.addAttribute("event", new Event());
         List<Event> allEvents = (List<Event>) eventRepo.findAll();
 
         return "eventPage";
     }
+
 
     @RequestMapping(value = "/addBlog", method = RequestMethod.POST)
     public String addBlog(@RequestParam("name") String name,
@@ -368,6 +367,15 @@ public class PageController {
             blogRepo.save(blog);
         }
         return "redirect:/admin/blogManagement";
+    }
+
+
+    @GetMapping("/api/events")
+    @ResponseBody
+    public List<Event> getEventsByDate(@RequestParam("date") String date) {
+        LocalDate localDate = LocalDate.parse(date);
+        List<Event> events = eventRepo.findByEventDatetimeBetween(localDate.atStartOfDay(), localDate.plusDays(1).atStartOfDay());
+        return events;
     }
 
 }
