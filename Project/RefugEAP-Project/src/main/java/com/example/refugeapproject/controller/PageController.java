@@ -35,6 +35,9 @@ public class PageController {
     @Autowired
     EventRepo eventRepo;
 
+    @Autowired
+    ViewCountRepo viewRepo;
+
 
     private void formatEventDateTime(List<Event> events, DateTimeFormatter dateFormatter, DateTimeFormatter timeFormatter) {
         for (Event event : events) {
