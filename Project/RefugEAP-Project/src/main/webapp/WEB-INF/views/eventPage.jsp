@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html lang="en" >
+<html lang="en">
 <head>
     <title>Refugee eap</title>
     <meta charset="UTF-8">
@@ -26,10 +26,27 @@
                 defaultDate: new Date(),
                 editable: false,
                 eventLimit: true,
-                events: [],
+                events: function(start, end, timezone, callback) {
+                    $.ajax({
+                        url: '/api/events',
+                        dataType: 'json',
+                        data: {
+                            start: start.unix(),
+                            end: end.unix()
+                        },
+                        success: function(data) {
+                            callback(data);
+                            applyEventStyles(data);
+                        }
+                    });
+                },
                 dayClick: function(date, jsEvent, view) {
+                    // Remove the existing 'selected-date' class
+                    $('td.fc-day').removeClass('selected-date');
+                    // Add the 'selected-date' class to the clicked date
+                    $(jsEvent.target).closest('td.fc-day').addClass('selected-date');
                     fetchEvents(date.format());
-                }
+                },
             });
         });
 
@@ -43,22 +60,30 @@
             });
         }
 
+        function applyEventStyles(events) {
+            events.forEach(function(event) {
+                $('td[data-date="' + event.start.slice(0, 10) + '"]').addClass('has-event');
+            });
+        }
+
         function displayEvents(events) {
             var eventList = $('#event-list');
             eventList.empty();
 
             if (events.length > 0) {
                 events.forEach(function(event) {
-                    eventList.append('<div><strong>' + event.event_title + '</strong><br/>' +
+                    eventList.append('<div class="event-item"><strong>' + event.event_title + '</strong><br/>' +
                         event.event_more_info + '<br/>' +
                         'Date: ' + event.formattedDate + '<br/>' +
                         'Time: ' + event.formattedTime + '</div><hr/>');
                 });
             } else {
-                eventList.append('<div>No events found on this date.</div>');
+                eventList.append('<div class="event-item"><strong>No events found on this date.</strong></div><hr/>');
             }
         }
     </script>
+
+
     <style>
 
         html {
@@ -419,6 +444,66 @@
             font-size: 14px;
         }
 
+        .selected-date {
+            background-color: #3399ff;
+            color: white;
+        }
+
+        .event-item {
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Add this line to center the text */
+        }
+
+        .event-item strong {
+            font-size: 26px;
+        }
+
+        .event-item p {
+            font-size: 16px;
+            margin-top: 0;
+
+        }
+
+        .fc-daygrid-day.active {
+            background-color: #f0ad4e;
+            color: #ffffff;
+        }
+
+        .has-event {
+            background-color: rgba(255, 0, 0, 0.8); /* Change the background color */
+            position: relative;
+        }
+
+        .has-event::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: black; /* Change the dot color */
+            border-radius: 50%;
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+        }
+
+        .event-bg {
+            background-color: #f0f0f0;
+        }
+
+        .event-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #007bff;
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
     </style>
 </head>
@@ -450,6 +535,8 @@
     <div id="calendar"></div>
 </div>
 <div id="event-list"></div>
+
+
 
 <div>
     <div class="containerForm">
@@ -504,11 +591,11 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/blogPage">Blog</a></li>
+                <li><a href="homePage.jsp">Home</a></li>
+                <li><a href="blogPage.jsp">Blog</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="/eventPage" class="mainB">Events</a></li>
-                <li><a href="/contactUs">Contact Us</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="contactUs.jsp">Contact Us</a></li>
             </ul>
         </div>
     </div>
