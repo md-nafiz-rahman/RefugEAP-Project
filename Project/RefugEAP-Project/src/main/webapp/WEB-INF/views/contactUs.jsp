@@ -59,7 +59,7 @@
             width: 100%;
         }
 
-        .overlay {
+        .overlays {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -70,7 +70,6 @@
             text-align: center;
             z-index: 1;
         }
-
 
 
         /* Header Navigation Menu */
@@ -233,8 +232,49 @@
             max-width: 300px;
         }
 
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
 
     </style>
+    <script>
+        function showConfirmation(event) {
+            event.preventDefault(); // Prevent form submission
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+            popup.style.display = "block";
+            overlay.style.display = "block";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+            popup.style.display = "none";
+            overlay.style.display = "none";
+            location.reload(); // Reload the page to clear form data
+        }
+    </script>
 </head>
 <body>
 
@@ -243,7 +283,7 @@
     <a href="/">Home</a>
     <a href="/blogPage">Blog</a>
     <a href="#aboutUs">About Us</a>
-    <a href="#events">Events</a>
+    <a href="/eventPage">Events</a>
     <a href="/contactUs" class="mainB">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
@@ -253,7 +293,7 @@
 <header>
     <div class="container">
         <div class="background-image"></div>
-        <div class="overlay" style="padding-top: 70px">
+        <div class="overlays" style="padding-top: 70px">
             <h1>CONTACT US</h1>
         </div>
     </div>
@@ -262,15 +302,15 @@
 
 <div class="containerForm">
     <div class="form">
-        <form>
+        <h2>Contact Us</h2><br>
+
+        <form onsubmit="showConfirmation(event)">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
-
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -280,6 +320,13 @@
         <p>Email: sanctuary@le.ac.uk</p>
         <p>Address: The University of Leicester, University Road, Leicester, LE1 7RH, United Kingdom</p>
     </div>
+</div>
+
+<!-- Popup and overlay -->
+<div id="overlay" class="overlay" onclick="closePopup()"></div>
+<div id="popup" class="popup">
+    <p>Your message has been received!</p>
+    <button onclick="closePopup()">OK</button>
 </div>
 
 <footer>
