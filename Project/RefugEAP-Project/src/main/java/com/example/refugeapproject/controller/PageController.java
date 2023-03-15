@@ -1,9 +1,7 @@
 package com.example.refugeapproject.controller;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.time.LocalDateTime;
+import java.util.*;
 
 import com.example.refugeapproject.membership.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,20 +29,25 @@ public class PageController {
     @Autowired
     BlogRepo blogRepo;
 
-    @RequestMapping(value = "/") // Request to HomePage
-    public String HomePage() {
-        return "homePage";
-    }
+    @RequestMapping(value = "/")
+    public ModelAndView homePage() {
+        ModelAndView modelAndView = new ModelAndView();
 
-    @RequestMapping(value = "/contactUs") // Request to contactUs page
-    public String ContactUs() {
-        return "contactUs";
-    }
+        // Fetch all the blogs from the database using the findAll() method
+        List<Blog> blogs = (List<Blog>) blogRepo.findByStatus("pending");
+        List<Blog> acceptedBlogs = (List<Blog>) blogRepo.findByStatus("approved");
+        List<Blog> discardedBlogs = (List<Blog>) blogRepo.findByStatus("deleted");
 
-    // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
-    // public String AdminPortal() {
-    //     return "adminPortal";
-    // }
+
+        // Pass the list of blogs to the JSP view
+        modelAndView.addObject("blogs", blogs);
+        modelAndView.addObject("acceptedBlogs", acceptedBlogs);
+        modelAndView.addObject("discardedBlogs", discardedBlogs);
+
+        modelAndView.setViewName("homePage");
+
+        return modelAndView;
+    }
 
 
     @RequestMapping(value = "/admin/adminPortal") // Request to adminPortal page
