@@ -94,6 +94,17 @@ CREATE TABLE events (
 );
 
 select * from `events`;
+
+-- ----------------------------
+-- Table  for view counter
+-- ----------------------------
+DROP TABLE IF EXISTS `view_count`;
+CREATE TABLE `view_count` (
+                              `view_id` int NOT NULL AUTO_INCREMENT,
+                              `views` int NOT NULL,
+                              PRIMARY KEY (`view_id`) USING BTREE
+);
+
 -- ----------------------------
 -- Records of users_roles
 -- ----------------------------
