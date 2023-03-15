@@ -437,6 +437,10 @@
 </header>
 
 
+<center>
+    <h2> This page has been viewed: ${total_views} times</h2>
+</center>
+
 <!-- First Grid -->
 <div class="split">
     <div class="second">
