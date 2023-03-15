@@ -81,6 +81,19 @@ CREATE TABLE `blogs` (
                          `date` Date NOT NULL,
                          PRIMARY KEY (`blog_id`) USING BTREE
 );
+
+DROP TABLE IF EXISTS `events`;
+CREATE TABLE events (
+                        event_id INT PRIMARY KEY AUTO_INCREMENT,
+                        name VARCHAR(255),
+                        email VARCHAR(255),
+                        event_title VARCHAR(255),
+                        event_more_info TEXT,
+                        event_datetime DATETIME,
+                        status VARCHAR(20) DEFAULT 'Pending'
+);
+
+select * from `events`;
 -- ----------------------------
 -- Records of users_roles
 -- ----------------------------
