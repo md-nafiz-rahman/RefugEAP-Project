@@ -214,7 +214,7 @@
 <!-- Navbar -->
 <div class="navigator">
     <a href="/">Home</a>
-    <a href="/admin/adminPortal">Users Managment</a>
+    <a href="/admin/adminPortal">Users Management</a>
     <a href="/admin/blogManagement" >Blog Management</a>
     <a href="/admin/eventManagement" class="mainB">Events Management</a>
     <a href="/logout">Logout</a>

@@ -201,8 +201,8 @@
 <div class="navigator">
     <a href="/">Home</a>
     <a href="/admin/blogManagement">Blog Management</a>
-    <a href="#events">Events Management</a>
-    <a href="/admin/adminPortal">Users Managment</a>
+    <a href="/admin/eventManagement">Events Management</a>
+    <a href="/admin/adminPortal">Users Management</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
