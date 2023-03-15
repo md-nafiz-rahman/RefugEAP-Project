@@ -71,7 +71,7 @@
             width: 100%;
         }
 
-        .overlay {
+        .overlays {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -351,8 +351,49 @@
             /*border-radius: 10px;*/
         }
 
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
 
     </style>
+    <script>
+        function showConfirmation(event) {
+            event.preventDefault(); // Prevent form submission
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+            popup.style.display = "block";
+            overlay.style.display = "block";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+            popup.style.display = "none";
+            overlay.style.display = "none";
+            location.reload(); // Reload the page to clear form data
+        }
+    </script>
 </head>
 <body>
 
@@ -371,7 +412,7 @@
 <header>
     <div class="container">
         <div class="background-image"></div>
-        <div class="overlay" style="padding-top: 70px">
+        <div class="overlays" style="padding-top: 70px">
             <h1>BLOG</h1>
         </div>
     </div>
@@ -401,12 +442,11 @@
 
         <%--  Form to take in a blog  --%>
         <%--@elvariable id="blog" type="blog"--%>
-        <form:form action="/addBlog" modelAttribute="blog">
+        <form:form action="/addBlog" modelAttribute="blog" onsubmit="showConfirmation(event)">
 
             <form:label path="name">Name: </form:label><form:input path="name" required="required"/>
 
             <form:label path="email">Email: </form:label><form:input type="email" path="email" required="required"/>
-
 
             <form:label path="title">Title: </form:label><form:input path="title" required="required"/>
 
@@ -415,9 +455,15 @@
             <form:hidden path="status" value="pending"/>
 
             <input type="submit"/>
-
         </form:form>
     </div>
+</div>
+
+<!-- Popup and overlay -->
+<div id="overlay" class="overlay" onclick="closePopup()"></div>
+<div id="popup" class="popup">
+    <p>Your blog submission has been received!</p>
+    <button onclick="closePopup()">OK</button>
 </div>
 
 
