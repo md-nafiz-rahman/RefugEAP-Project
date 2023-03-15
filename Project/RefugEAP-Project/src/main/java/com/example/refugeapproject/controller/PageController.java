@@ -1,7 +1,11 @@
 package com.example.refugeapproject.controller;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import com.example.refugeapproject.membership.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +33,22 @@ public class PageController {
     @Autowired
     BlogRepo blogRepo;
 
+    @Autowired
+    EventRepo eventRepo;
+
+
+    private void formatEventDateTime(List<Event> events, DateTimeFormatter dateFormatter, DateTimeFormatter timeFormatter) {
+        for (Event event : events) {
+            String formattedDate = event.getEvent_datetime().format(dateFormatter);
+            String formattedTime = event.getEvent_datetime().format(timeFormatter);
+
+            event.setFormattedDate(formattedDate);
+            event.setFormattedTime(formattedTime);
+        }
+    }
+
+
+
     @RequestMapping(value = "/")
     public ModelAndView homePage() {
         ModelAndView modelAndView = new ModelAndView();
@@ -48,6 +68,18 @@ public class PageController {
 
         return modelAndView;
     }
+
+    @RequestMapping(value = "/contactUs") // Request to contactUs page
+    public String ContactUs() {
+        return "contactUs";
+    }
+
+
+
+    // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
+    // public String AdminPortal() {
+    //     return "adminPortal";
+    // }
 
 
     @RequestMapping(value = "/admin/adminPortal") // Request to adminPortal page
@@ -118,6 +150,34 @@ public class PageController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/admin/eventManagement")
+    public ModelAndView eventManagement() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        // Fetch all the events from the database using the findAll() method
+        List<Event> events = (List<Event>) eventRepo.findByStatus("pending");
+        List<Event> acceptedEvents = (List<Event>) eventRepo.findByStatus("approved");
+        List<Event> discardedEvents = (List<Event>) eventRepo.findByStatus("deleted");
+
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH-mm");
+
+        // Helper method to format date and time for each event list
+        formatEventDateTime(events, dateFormatter, timeFormatter);
+        formatEventDateTime(acceptedEvents, dateFormatter, timeFormatter);
+        formatEventDateTime(discardedEvents, dateFormatter, timeFormatter);
+
+        // Pass the lists of events to the JSP view
+        modelAndView.addObject("events", events);
+        modelAndView.addObject("acceptedEvents", acceptedEvents);
+        modelAndView.addObject("discardedEvents", discardedEvents);
+
+        modelAndView.setViewName("eventManagement");
+
+        return modelAndView;
+    }
+
+
 
     //Mapping to take blog form input and add it to the blog database
     @RequestMapping("/blogPage")
@@ -135,7 +195,16 @@ public class PageController {
         return "blogPage";
     }
 
-    @RequestMapping(value = "/addBlog", method = RequestMethod.POST) // Request to adminPortal page
+    @RequestMapping(value = "/eventPage") // Request to eventPage page
+    public String EventPage(Model model)
+    {
+        model.addAttribute("event", new Event());
+        List<Event> allEvents = (List<Event>) eventRepo.findAll();
+
+        return "eventPage";
+    }
+
+    @RequestMapping(value = "/addBlog", method = RequestMethod.POST)
     public String addBlog(@RequestParam("name") String name,
                           @RequestParam("email") String email,
                           @RequestParam("title") String title,
@@ -152,6 +221,71 @@ public class PageController {
         blogRepo.save(blog);
 
         return "redirect:/blogPage";}
+
+    @RequestMapping(value = "/addEvent", method = RequestMethod.POST)
+    public String addEvent(@RequestParam("name") String name,
+                           @RequestParam("email") String email,
+                           @RequestParam("event_title") String event_title,
+                           @RequestParam("event_datetime") String event_datetime,
+                           @RequestParam("event_more_info") String event_more_info ){
+
+        Event event = new Event();
+        java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
+        event.setName(name);
+        event.setEmail(email);
+        event.setEvent_title(event_title);
+        event.setEvent_datetime(LocalDateTime.parse(event_datetime));
+        event.setEvent_more_info(event_more_info);
+
+        eventRepo.save(event);
+
+        return "redirect:/eventPage";}
+
+    @PostMapping(value = "/admin/acceptEvent")
+    public String acceptEvent(@RequestParam("event_id") int eventId) {
+        // Get the event by ID
+        Event event = eventRepo.findById(eventId);
+        if (event != null) {
+            // Set the status of the event to "approved"
+            event.setStatus("approved");
+            eventRepo.save(event);
+        }
+        return "redirect:/admin/eventManagement";
+    }
+
+    @PostMapping(value = "/admin/discardEvent")
+    public String discardEvent(@RequestParam("event_id") int eventId) {
+        // Get the event by ID
+        Event event = eventRepo.findById(eventId);
+        if (event != null) {
+            // Set the status of the event to "deleted"
+            event.setStatus("deleted");
+            eventRepo.save(event);
+        }
+        return "redirect:/admin/eventManagement";
+    }
+    @PostMapping(value = "/admin/deleteEvent")
+    public String deleteEvent(@RequestParam("event_id") int eventId) {
+        // Get the event by ID
+        Event event = eventRepo.findById(eventId);
+        if (event != null) {
+            // Delete the event from the database
+            eventRepo.delete(event);
+        }
+        return "redirect:/admin/eventManagement";
+    }
+
+    @PostMapping(value = "/admin/recoverEvent")
+    public String recoverEvent(@RequestParam("event_id") int eventId) {
+        // Get the event by ID
+        Event event = eventRepo.findById(eventId);
+        if (event != null) {
+            // Set the status of the event to "pending"
+            event.setStatus("pending");
+            eventRepo.save(event);
+        }
+        return "redirect:/admin/eventManagement";
+    }
 
     @RequestMapping(value = "/admin/blog/add", method = RequestMethod.POST) // Request to adminPortal page
     public String BlogAdd(@RequestParam("name") String name,
@@ -187,7 +321,7 @@ public class PageController {
         // Get the blog by ID
         Blog blog = blogRepo.findById(blogId);
         if (blog != null) {
-            // Set the status of the blog to "approved"
+            // Set the status of the blog to "deleted"
             blog.setStatus("deleted");
             blogRepo.save(blog);
         }
@@ -210,12 +344,13 @@ public class PageController {
         // Get the blog by ID
         Blog blog = blogRepo.findById(blogId);
         if (blog != null) {
-            // Set the status of the blog to "approved"
+            // Set the status of the blog to "pending"
             blog.setStatus("pending");
             blogRepo.save(blog);
         }
         return "redirect:/admin/blogManagement";
     }
+
 }
 
 
