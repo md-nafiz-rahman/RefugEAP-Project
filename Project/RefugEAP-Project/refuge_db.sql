@@ -111,6 +111,8 @@ CREATE TABLE `view_count` (
 INSERT INTO `users_roles` VALUES (1, 1);
 INSERT INTO `users_roles` VALUES (2, 2);
 
+INSERT INTO `view_count` VALUES (1, 1);
+
 SET FOREIGN_KEY_CHECKS = 1;
 
 SELECT * FROM users;
