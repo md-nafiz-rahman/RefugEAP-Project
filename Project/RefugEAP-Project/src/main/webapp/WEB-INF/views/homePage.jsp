@@ -10,6 +10,90 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultDate: new Date(),
+                editable: false,
+                eventLimit: true,
+                events: function(start, end, timezone, callback) {
+                    $.ajax({
+                        url: '/api/events',
+                        dataType: 'json',
+                        data: {
+                            start: start.unix(),
+                            end: end.unix()
+                        },
+                        success: function(data) {
+                            callback(data);
+                            applyEventStyles(data);
+                        }
+                    });
+                },
+                dayClick: function(date, jsEvent, view) {
+                    // Remove the existing 'selected-date' class
+                    $('td.fc-day').removeClass('selected-date');
+                    // Add the 'selected-date' class to the clicked date
+                    $(jsEvent.target).closest('td.fc-day').addClass('selected-date');
+                    fetchEvents(date.format());
+                },
+            });
+
+            // Handle View All Events button click
+            $('#view-event-btn').click(function() {
+                $.ajax({
+                    url: '/api/events',
+                    dataType: 'json',
+                    success: function(data) {
+                        displayEvents(data);
+                    }
+                });
+            });
+        });
+
+        function fetchEvents(date) {
+            $.ajax({
+                url: '/api/events?date=' + date,
+                dataType: 'json',
+                success: function(data) {
+                    displayEvents(data);
+                }
+            });
+        }
+
+        function applyEventStyles(events) {
+            events.forEach(function(event) {
+                $('td[data-date="' + event.start.slice(0, 10) + '"]').addClass('has-event');
+            });
+        }
+
+        function displayEvents(events) {
+            var eventList = $('#event-list');
+            eventList.empty();
+
+            if (events.length > 0) {
+                events.forEach(function(event) {
+                    eventList.append('<li class="event-item"><strong>' + event.event_title + '</strong><br/>' +
+                        event.event_more_info + '<br/>' +
+                        'Date: ' + event.formattedDate + '<br/>' +
+                        'Time: ' + event.formattedTime + '</li>');
+                });
+            } else {
+                eventList.append('<li class="event-item"><strong>No events found on this date.</strong></li>');
+            }
+        }
+    </script>
     <style>
 
         html {
@@ -158,12 +242,13 @@
 
         #calendar {
             width: 50%;
-            float: right;
             text-align: center;
-            font-size: 30px;
-            padding: 30px;
-            background-image: url("https://img.freepik.com/free-photo/beautiful-shot-sea-with-mountain-distance-clear-sky_181624-2248.jpg?w=1380&t=st=1675791595~exp=1675792195~hmac=09f14f18d9690e28766cf15d70f85ed094a0291a9b5db5079f8f2077a59903ec");
+            float: left;
+            font-size: 20px;
+            padding-left: 200px;
+            padding-right: 200px;
             background-size: cover;
+
         }
         #events {
             width: 45%;
@@ -172,6 +257,7 @@
             background-color: aquamarine;
         }
         #events li {
+            width: 50%;
             font-size: 20px;
             padding: 10px 0;
         }
@@ -272,6 +358,53 @@
             background-color: #45a049;
         }
 
+        #calendar {
+            margin-bottom: 20px;
+        }
+
+        #event-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #event-list {
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .event-item {
+            margin-bottom: 10px;
+            margin-left: 1000px;
+            margin-right: 100px;
+        }
+
+        .has-event {
+            background-color: #f1f1f1;
+        }
+
+        .selected-date {
+            background-color: #f9d8c7;
+        }
+
+        .fc-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 6px 12px;
+            font-size: 8px;
+            line-height: 1.5;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .fc-button:hover {
+            background-color: #0069d9;
+        }
+
     </style>
 </head>
 <body>
@@ -328,12 +461,7 @@
         </div>
 
         <div id="calendar"></div>
-        <h3 id="event-title">Upcoming Events</h3>
-        <ul id="events">
-            <li>Event 1</li>
-            <li>Event 2</li>
-            <li>Event 3</li>
-        </ul>
+        <ul id="event-list"></ul>
         <button id="view-event-btn">View All Events</button>
     </div>
 </div>
@@ -355,7 +483,7 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="/" class="mainB">Home</a></li>
+                <li><a href="/homePage">Home</a></li>
                 <li><a href="/blogPage">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="/eventPage">Events</a></li>
