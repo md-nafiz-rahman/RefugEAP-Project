@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
     <title>Refugee eap</title>
@@ -246,6 +249,29 @@
             max-width: 300px;
         }
 
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #FFFFFF;
+            color: black;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            border: 1px solid black;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
     </style>
 </head>
 <body>
@@ -255,7 +281,7 @@
     <a href="/" class="mainB">Home</a>
     <a href="/blogPage">Blog</a>
     <a href="#aboutUs">About Us</a>
-    <a href="#events">Events</a>
+    <a href="/eventPage">Events</a>
     <a href="/contactUs">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
@@ -284,28 +310,20 @@
         <div class="blog">
             <h1>Recent Blog Posts</h1>
 
-            <div class="post">
-                <h2>Blog Post 1</h2>
-                <p>Description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 2</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 3</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
-            </div>
-
-            <div class="post">
-                <h2>Blog Post 4</h2>
-                <p>description</p>
-                <a class="link" href="#">Read More</a>
+            <c:forEach begin="0" end="1" step="1" varStatus="loop">
+                <c:set var="reversedIndex" value="${acceptedBlogs.size() - 1 - loop.index}" />
+                <c:set var="blog" value="${acceptedBlogs[reversedIndex]}" />
+                <div class="post">
+                    <h2>${blog.title}</h2>
+                    <p>${blog.content}</p>
+                    <div class="author">
+                        <p>Author: ${blog.name}</p>
+                        <p>Date Posted: <fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></p>
+                    </div>
+                </div>
+            </c:forEach>
+            <div class="button-container">
+                <a href="/blogPage" class="button">View More</a>
             </div>
         </div>
 
