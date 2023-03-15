@@ -241,6 +241,25 @@ public class PageController {
 
         return "redirect:/eventPage";}
 
+    @RequestMapping(value = "/admin/event/add", method = RequestMethod.POST) // Request to adminPortal page
+    public String EventAdd(@RequestParam("name") String name,
+                           @RequestParam("email") String email,
+                           @RequestParam("event_title") String event_title,
+                           @RequestParam("event_datetime") String event_datetime,
+                           @RequestParam("event_more_info") String event_more_info ) {
+
+        Event event = new Event();
+        java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
+        event.setName(name);
+        event.setEmail(email);
+        event.setEvent_title(event_title);
+        event.setEvent_datetime(LocalDateTime.parse(event_datetime));
+        event.setEvent_more_info(event_more_info);
+
+        eventRepo.save(event);
+
+        return "redirect:/admin/eventManagement";}
+
     @PostMapping(value = "/admin/acceptEvent")
     public String acceptEvent(@RequestParam("event_id") int eventId) {
         // Get the event by ID
@@ -352,10 +371,3 @@ public class PageController {
     }
 
 }
-
-
-
-
-
-
-
