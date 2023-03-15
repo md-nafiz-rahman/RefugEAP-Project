@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html lang="en">
+<html lang="en" >
 <head>
     <title>Refugee eap</title>
     <meta charset="UTF-8">
@@ -10,6 +10,55 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultDate: new Date(),
+                editable: false,
+                eventLimit: true,
+                events: [],
+                dayClick: function(date, jsEvent, view) {
+                    fetchEvents(date.format());
+                }
+            });
+        });
+
+        function fetchEvents(date) {
+            $.ajax({
+                url: '/api/events?date=' + date,
+                dataType: 'json',
+                success: function(data) {
+                    displayEvents(data);
+                }
+            });
+        }
+
+        function displayEvents(events) {
+            var eventList = $('#event-list');
+            eventList.empty();
+
+            if (events.length > 0) {
+                events.forEach(function(event) {
+                    eventList.append('<div><strong>' + event.event_title + '</strong><br/>' +
+                        event.event_more_info + '<br/>' +
+                        'Date: ' + event.formattedDate + '<br/>' +
+                        'Time: ' + event.formattedTime + '</div><hr/>');
+                });
+            } else {
+                eventList.append('<div>No events found on this date.</div>');
+            }
+        }
+    </script>
     <style>
 
         html {
@@ -349,6 +398,28 @@
         }
 
 
+        #calendar-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Adjust the font size of the calendar */
+        .fc {
+            font-size: 14px;
+        }
+
+        /* Adjust the size of the calendar's title */
+        .fc-header-title h2 {
+            font-size: 24px;
+        }
+
+        /* Adjust the size of the calendar's buttons */
+        .fc-header-right .fc-button {
+            font-size: 14px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -374,6 +445,12 @@
     </div>
 
 </header>
+
+<div id="calendar-container">
+    <div id="calendar"></div>
+</div>
+<div id="event-list"></div>
+
 <div>
     <div class="containerForm">
         <div class="form">
