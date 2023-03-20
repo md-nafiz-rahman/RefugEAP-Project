@@ -416,7 +416,7 @@
 <div class="navigator">
     <a href="/">Home</a>
     <a href="/blogPage" class="mainB">Blog</a>
-    <a href="#aboutUs">About Us</a>
+    <a href="/aboutUs">About Us</a>
     <a href="/eventPage">Events</a>
     <a href="/contactUs">Contacts</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
@@ -501,11 +501,11 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="homePage.jsp">Home</a></li>
-                <li><a href="blogPage.jsp">Blog</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="contactUs.jsp">Contact Us</a></li>
+                <li><a href="/homePage">Home</a></li>
+                <li><a href="/blogPage">Blog</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
+                <li><a href="/eventPage">Events</a></li>
+                <li><a href="/contactUs">Contact Us</a></li>
             </ul>
         </div>
     </div>
