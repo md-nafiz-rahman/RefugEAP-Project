@@ -2,6 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html lang="en">
 <head>
     <title>Refugee eap</title>
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
 
         html {
@@ -382,9 +384,22 @@
             event.preventDefault(); // Prevent form submission
             var popup = document.getElementById("popup");
             var overlay = document.getElementById("overlay");
-            popup.style.display = "block";
-            overlay.style.display = "block";
+
+            $.ajax({
+                type: 'POST',
+                url: '/addBlog',
+                data: $('form').serialize(),
+                success: function(response) {
+                    // Show the popup message after the AJAX request is complete
+                    popup.style.display = "block";
+                    overlay.style.display = "block";
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+                }
+            });
         }
+
 
         function closePopup() {
             var popup = document.getElementById("popup");
@@ -453,6 +468,8 @@
             <form:label path="content">Content: </form:label><form:input path="content" required="required"/>
 
             <form:hidden path="status" value="pending"/>
+
+
 
             <input type="submit"/>
         </form:form>
