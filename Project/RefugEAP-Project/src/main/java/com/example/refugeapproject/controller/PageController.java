@@ -90,20 +90,20 @@ public class PageController {
         return "aboutUs";
     }
 
-    @RequestMapping(value = "/homePage") // Request to homePage page
-    public String AboutUs() {
+/*    @RequestMapping(value = "/homePage") // Request to homePage page
+    public String homePageFooter() {
         return "homePage";
     }
 
     @RequestMapping(value = "/") // Request to homePage page
-    public String AboutUs() {
+    public String defaultPage() {
         return "homePage";
     }
 
     @RequestMapping(value = "/eventPage") // Request to eventPage page
-    public String AboutUs() {
+    public String eventPage() {
         return "eventPage";
-    }
+    }*/
 
 
 
