@@ -90,6 +90,21 @@ public class PageController {
         return "aboutUs";
     }
 
+    @RequestMapping(value = "/homePage") // Request to homePage page
+    public String AboutUs() {
+        return "homePage";
+    }
+
+    @RequestMapping(value = "/") // Request to homePage page
+    public String AboutUs() {
+        return "homePage";
+    }
+
+    @RequestMapping(value = "/eventPage") // Request to eventPage page
+    public String AboutUs() {
+        return "eventPage";
+    }
+
 
 
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
