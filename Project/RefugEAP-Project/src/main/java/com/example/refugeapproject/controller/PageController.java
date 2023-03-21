@@ -95,6 +95,11 @@ public class PageController {
         return "resourcePage";
     }
 
+    @RequestMapping(value = "/developingProvisionPage") // Request to developing provision page
+    public String DevelopingProvisionPage() {
+        return "developingProvisionPage";
+    }
+
 
 /*    @RequestMapping(value = "/homePage") // Request to homePage page
     public String homePageFooter() {
