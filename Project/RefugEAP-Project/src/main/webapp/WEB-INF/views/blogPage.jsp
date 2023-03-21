@@ -453,7 +453,7 @@
 
 <div class="containerForm">
     <div class="form">
-        <h2>Contribute to the BLOG</h2><br>
+        <h2>Contribute to the Blog</h2><br>
 
         <%--  Form to take in a blog  --%>
         <%--@elvariable id="blog" type="blog"--%>
