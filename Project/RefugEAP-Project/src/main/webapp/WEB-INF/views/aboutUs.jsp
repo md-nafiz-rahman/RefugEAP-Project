@@ -397,7 +397,7 @@
                 <li><a href="/blogPage">Blog</a></li>
                 <li><a href="/aboutUs">About Us</a></li>
                 <li><a href="/eventPage">Events</a></li>
-                <li><a href="contactUs.jsp">Contact Us</a></li>
+                <li><a href="/contactUs">Contact Us</a></li>
             </ul>
         </div>
     </div>
