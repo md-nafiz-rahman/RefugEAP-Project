@@ -90,6 +90,12 @@ public class PageController {
         return "aboutUs";
     }
 
+    @RequestMapping(value = "/resourcePage") // Request to resource page
+    public String ResourcePage() {
+        return "resourcePage";
+    }
+
+
 /*    @RequestMapping(value = "/homePage") // Request to homePage page
     public String homePageFooter() {
         return "homePage";
