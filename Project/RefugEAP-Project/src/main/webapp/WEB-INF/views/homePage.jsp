@@ -213,7 +213,6 @@
             margin: 0 auto;
             text-align: center;
             color: #dddddd;
-            border: 2px solid black;
             background-color: #29668B;
         }
 
@@ -360,6 +359,7 @@
 
         #calendar {
             margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         #event-title {
@@ -411,8 +411,6 @@
             align-items: center;
             background-color: #29668B;
             padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
         }
 
         .view-counter h2 {
