@@ -100,24 +100,6 @@ public class PageController {
         return "developingProvisionPage";
     }
 
-
-/*    @RequestMapping(value = "/homePage") // Request to homePage page
-    public String homePageFooter() {
-        return "homePage";
-    }
-
-    @RequestMapping(value = "/") // Request to homePage page
-    public String defaultPage() {
-        return "homePage";
-    }
-
-    @RequestMapping(value = "/eventPage") // Request to eventPage page
-    public String eventPage() {
-        return "eventPage";
-    }*/
-
-
-
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
     // public String AdminPortal() {
     //     return "adminPortal";
