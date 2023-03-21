@@ -405,6 +405,23 @@
             background-color: #0069d9;
         }
 
+        .view-counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #29668B;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .view-counter h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -436,10 +453,9 @@
 
 </header>
 
-
-<center>
-    <h2> This page has been viewed: ${total_views} times</h2>
-</center>
+<div class="view-counter">
+    <h2>This page has been viewed: ${total_views} times</h2>
+</div>
 
 <!-- First Grid -->
 <div class="split">
