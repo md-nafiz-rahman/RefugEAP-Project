@@ -284,7 +284,7 @@
     <a href="/blogPage">Blog</a>
     <a href="/aboutUs" >About Us</a>
     <a href="/eventPage">Events</a>
-    <a href="/contactUs">Contacts</a>
+    <a href="/contactUs">Contact Us</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 

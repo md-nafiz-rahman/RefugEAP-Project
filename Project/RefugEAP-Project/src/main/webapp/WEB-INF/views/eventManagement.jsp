@@ -224,7 +224,7 @@
 <div>
     <div class="containerForm">
         <div class="form">
-            <h2>Contribute to the EVENT</h2><br>
+            <h2>Submit Your Event Here</h2><br>
             <form method="post" action="${pageContext.request.contextPath}/admin/event/add">    <input type="hidden" name="event_id" />
 
                 <label for="name">Name: </label>
