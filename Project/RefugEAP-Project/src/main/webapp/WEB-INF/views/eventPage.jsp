@@ -434,6 +434,13 @@
             font-size: 14px;
         }
 
+        .fc-today-button,
+        .fc-month-button,
+        .fc-agendaWeek-button,
+        .fc-agendaDay-button {
+            text-transform: capitalize;
+        }
+
         /* Adjust the size of the calendar's title */
         .fc-header-title h2 {
             font-size: 24px;
