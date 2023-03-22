@@ -291,8 +291,8 @@
         }
 
         .footer-links a {
-            color: black;
-            text-decoration: none;
+            text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
@@ -600,7 +600,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/blogPage">Blog</a></li>
                 <li><a href="/aboutUs">About Us</a></li>
-                <li><a href="/eventPage">Events</a></li>
+                <li><a href="/eventPage" style="text-decoration: underline">Events</a></li>
                 <li><a href="/contactUs">Contact Us</a></li>
             </ul>
         </div>

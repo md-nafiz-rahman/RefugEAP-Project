@@ -325,8 +325,8 @@
         }
 
         .footer-links a {
-            color: black;
             text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
@@ -508,7 +508,7 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="/">Home</a></li>
+                <li><a href="/" style="text-decoration: underline">Home</a></li>
                 <li><a href="/blogPage">Blog</a></li>
                 <li><a href="/aboutUs">About Us</a></li>
                 <li><a href="/eventPage">Events</a></li>

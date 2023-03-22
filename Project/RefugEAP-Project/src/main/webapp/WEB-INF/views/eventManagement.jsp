@@ -173,8 +173,8 @@
         }
 
         .footer-links a {
-            color: black;
             text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
