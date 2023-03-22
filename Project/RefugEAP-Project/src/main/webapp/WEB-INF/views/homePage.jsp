@@ -213,6 +213,7 @@
             margin: 0 auto;
             text-align: center;
             color: #dddddd;
+            border: 2px solid black;
             background-color: #29668B;
         }
 
@@ -384,6 +385,13 @@
 
         .selected-date {
             background-color: #f9d8c7;
+        }
+
+        .fc-today-button,
+        .fc-month-button,
+        .fc-agendaWeek-button,
+        .fc-agendaDay-button {
+            text-transform: capitalize;
         }
 
         .fc-button {
