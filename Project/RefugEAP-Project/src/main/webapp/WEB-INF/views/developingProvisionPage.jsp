@@ -219,7 +219,7 @@
             margin: 0 auto; /* center the section horizontally within its parent container */
             color: black; /* set the text color to white */
             line-height: 2.0; /* add some spacing between lines */
-            font-family: "Times New Roman";
+            font-family: "Calibri";
         }
 
         .sec2 {
@@ -258,6 +258,7 @@
 
         li {
             font-size: 20px; /* set the font size to 20 pixels */
+            font-family: Calibri, sans-serif;
         }
 
         figure {
@@ -306,6 +307,36 @@
         Below, we have compiled a number of tips and considerations for anyone thinking of setting up sanctuary provision, starting with a list of general tips, and moving on to more EAP-specific considerations. If you would like to suggest any additional tips to add to these lists, please let us know via our <a href="/contactUs" target=”_blank” >Contact Us</a> form .
     </p>
 </section>
+
+<section class="sec1">
+    <h3>General tips for developing successful sanctuary provision</h3>
+    <p><ul>
+    <li><strong>Connect with others who have developed similar provision</strong> - this is a very useful starting point, can provide useful models to base your own provision on and can help you avoid certain pitfalls along the way. Various ways in which you can do this are listed on our <a href="/joinUs" target=”_blank” >Join Us</a> page. </li>
+
+    <li><strong>Tap into an inspiring vision</strong> - developing and sharing a clear vision of where you want your institution to be with regard to its sanctuary work will help to get people excited about it and more likely to support it. One place to start might be the vision of your university as a University of Sanctuary, embodying and promoting a culture of inclusivity and welcome. Committing to work towards a recognition scheme such as the <a href="https://universities.cityofsanctuary.org/" target=”_blank” >University of Sanctuary</a> Award Scheme can be a very powerful way to gain buy in from across the institution, and can also provide a useful framework through which to structure this work. It also offers three key principles to base provision around - Learn, Embed, Share. </li>
+
+    <li><strong>Start small and demonstrate the impact that can be made before scaling up</strong> - one reason for this is that it gives you a chance to iron out any issues on a small scale (this is far more difficult to do once an initiative has been rolled out on a large scale). Another reason for this is that it can be helpful to demonstrate to managers what is possible on a small scale before they are willing to invest more resources in an initiative. </li>
+
+    <li><strong>Find useful organisations to partner with</strong> - by their very nature, sanctuary initiatives benefit from partnership working. Students with refugee backgrounds often have multiple complex needs (e.g. immigration issues, mental health needs, housing issues) that it may not be possible for an educational institution to address alone. Various organisations exist which institutions can partner with to fill these gaps. Examples include:  <a href="https://refuaid.org/" target=”_blank” >RefuAid</a> (which can provide wrap around support and pay students' language exam fees); <a href="https://www.englishlanguagetesting.co.uk/" target=”_blank” >Password English Language Testing</a> (which can provide free high-quality entry tests for pre-sessionals and degree programmes); local <a href="https://cityofsanctuary.org/" target=”_blank” >City of Sanctuary</a> groups (which institutions can partner with to run ESOL provision). Further information about potential partner organisations can be found in the 'Useful (partner) organisations and movements (education specific)' column in the <a href="https://padlet.com/alekspalanac/refugeap-network-resource-bank-94dn9e90rewkm1p3" target=”_blank” >RefugEAP Network Resources Bank Padlet</a>. </li>
+
+    <li><strong>Link to key university strategies/systems</strong> - you are more likely to achieve buy-in from university management if you are able to demonstrate how your proposed initiative links to a key university strategy. These strategies might include: vision, mission and values of the university; strategic objectives; Widening Participation initiatives; Corporate Social Responsibility policies; decolonisation initiatives; relevant steering/working groups/support teams, etc. </li>
+
+    <li><strong>Show how your proposed initiative can feed in to reporting to national and international rankings and recognition</strong> - the Universities of Sanctuary award scheme; THE Impact Rankings; the TEF; the REF; the KEF; the UN's SDG Accord; and the UN Global Compact.</li>
+
+    <li><strong>Mitigate concerns about loss of revenue</strong> - University management may raise this concern, assuming that offering a sanctuary student on a pre-sessional fee waiver may be taking the place of a fee-paying student, thereby resulting in loss of revenue. One argument to put forward is to argue that refugee-background students will not be taking the place of fee-paying students, but instead can be regarded as filling empty seats when classes are running at less than full capacity. Seen this way, there is no actual loss of revenue, although it is important to note that some extra staff time and training might need to be factored in to supporting RBS with their additional needs.</li>
+
+    <li><strong>Base proposals on evidence wherever</strong> - there is a small but growing body of evidence regarding what initiatives / strategies have been tried and tested at different universities / EAP centres. When it comes to proposing new initiatives in this area, it can be very helpful to draw upon these.  The RefugEAP Network website aims to compile as much of this evidence as possible onto its <a href="/evidenceBase" target=”_blank” >Evidence Base</a> and <a href="/blogPage" target=”_blank” >Blog</a> page to make it easier for people to find it.</li>
+
+    <li><strong>Gain the backing of one or more people who are able to advocate at a higher level within the institution</strong> - this is one key way in which you'll be likely to put sanctuary on the radar of the university administration, and to get new initiatives/policies approved.</li>
+
+
+
+
+
+</ul>
+    </p>
+</section>
+
 
 
 
