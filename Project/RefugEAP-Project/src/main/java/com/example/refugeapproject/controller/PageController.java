@@ -100,6 +100,11 @@ public class PageController {
         return "developingProvisionPage";
     }
 
+    @RequestMapping(value = "/evidenceBasePage") // Request to evidence base page
+    public String EvidenceBasePage() {
+        return "evidenceBasePage";
+    }
+
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
     // public String AdminPortal() {
     //     return "adminPortal";
