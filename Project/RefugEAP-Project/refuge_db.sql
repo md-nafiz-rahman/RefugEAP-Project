@@ -104,7 +104,6 @@ CREATE TABLE `view_count` (
                               `views` int NOT NULL,
                               PRIMARY KEY (`view_id`) USING BTREE
 );
-
 -- ----------------------------
 -- Table structure for contacts
 -- ----------------------------
@@ -116,6 +115,7 @@ CREATE TABLE `contacts` (
                             `email` varchar(100) NOT NULL,
                             PRIMARY KEY (`contact_id`) USING BTREE
 );
+
 
 
 -- ----------------------------
