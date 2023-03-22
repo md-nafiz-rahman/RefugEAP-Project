@@ -106,6 +106,19 @@ CREATE TABLE `view_count` (
 );
 
 -- ----------------------------
+-- Table structure for contacts
+-- ----------------------------
+DROP TABLE IF EXISTS `contacts`;
+CREATE TABLE `contacts` (
+                            `contact_id` int NOT NULL AUTO_INCREMENT,
+                            `name` varchar(100) NOT NULL,
+                            `status` VARCHAR(10) NOT NULL DEFAULT 'pending',
+                            `email` varchar(100) NOT NULL,
+                            PRIMARY KEY (`contact_id`) USING BTREE
+);
+
+
+-- ----------------------------
 -- Records of users_roles
 -- ----------------------------
 INSERT INTO `users_roles` VALUES (1, 1);
