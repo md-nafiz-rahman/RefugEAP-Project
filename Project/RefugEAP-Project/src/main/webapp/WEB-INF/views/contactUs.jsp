@@ -128,7 +128,7 @@
         .form {
             width: 66%;
             margin: 0 auto;
-            padding: 150px ;
+            padding: 130px ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
         }
