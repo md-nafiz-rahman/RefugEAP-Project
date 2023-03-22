@@ -85,7 +85,20 @@ public class PageController {
         return "contactUs";
     }
 
+    @RequestMapping(value = "/aboutUs") // Request to aboutUs page
+    public String AboutUs() {
+        return "aboutUs";
+    }
 
+    @RequestMapping(value = "/resourcePage") // Request to resource page
+    public String ResourcePage() {
+        return "resourcePage";
+    }
+
+    @RequestMapping(value = "/developingProvisionPage") // Request to developing provision page
+    public String DevelopingProvisionPage() {
+        return "developingProvisionPage";
+    }
 
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
     // public String AdminPortal() {

@@ -1,3 +1,5 @@
+package com.example.refugeapproject.membership;
+
 import javax.persistence.*;
 
 @Entity

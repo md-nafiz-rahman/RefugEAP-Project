@@ -4,11 +4,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
-    <title>Refugee eap</title>
+    <title>RefugEAP - Events</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -93,7 +92,7 @@
 
         body {
             margin: 0;
-            font-family: 'Oswald', sans-serif;       /* google font */
+            font-family: 'Calibri', sans-serif;       /* google font */
             padding: 0;
         }
 
@@ -161,7 +160,7 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Calibri', sans-serif;
         }
 
         .navigator {
@@ -292,8 +291,8 @@
         }
 
         .footer-links a {
-            color: black;
-            text-decoration: none;
+            text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
@@ -434,6 +433,13 @@
             font-size: 14px;
         }
 
+        .fc-today-button,
+        .fc-month-button,
+        .fc-agendaWeek-button,
+        .fc-agendaDay-button {
+            text-transform: capitalize;
+        }
+
         /* Adjust the size of the calendar's title */
         .fc-header-title h2 {
             font-size: 24px;
@@ -513,9 +519,9 @@
 <div class="navigator">
     <a href="/">Home</a>
     <a href="/blogPage" >Blog</a>
-    <a href="#aboutUs">About Us</a>
+    <a href="/aboutUs">About Us</a>
     <a href="/eventPage"class="mainB">Events</a>
-    <a href="/contactUs">Contacts</a>
+    <a href="/contactUs">Contact Us</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -541,7 +547,7 @@
 <div>
     <div class="containerForm">
         <div class="form">
-            <h2>Contribute to the EVENT</h2><br>
+            <h2>Submit Your Event Here</h2><br>
 
             <%-- Form to take in an event --%>
             <%--@elvariable id="event" type="event"--%>
@@ -578,7 +584,7 @@
     <div class="footer-columns">
         <div class="footer-col-1">
             <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network’s overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
+            <p class="footer-slogan">The RefugEAP Network's overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
         <div class="footer-col-2">
             <p>Follow us on</p>
@@ -591,11 +597,11 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="homePage.jsp">Home</a></li>
-                <li><a href="blogPage.jsp">Blog</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="contactUs.jsp">Contact Us</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blogPage">Blog</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
+                <li><a href="/eventPage" style="text-decoration: underline">Events</a></li>
+                <li><a href="/contactUs">Contact Us</a></li>
             </ul>
         </div>
     </div>

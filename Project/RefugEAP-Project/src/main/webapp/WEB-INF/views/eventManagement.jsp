@@ -5,11 +5,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
-    <title>Refugee eap</title>
+    <title>RefugEAP - Event Management</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
     <style>
 
         html {
@@ -19,7 +18,7 @@
 
         body {
             margin: 0;
-            font-family: 'Oswald', sans-serif;       /* google font */
+            font-family: 'Calibri', sans-serif;       /* google font */
             padding: 0;
         }
 
@@ -54,7 +53,7 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Calibri', sans-serif;
         }
 
         .navigator {
@@ -174,8 +173,8 @@
         }
 
         .footer-links a {
-            color: black;
             text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
@@ -224,7 +223,7 @@
 <div>
     <div class="containerForm">
         <div class="form">
-            <h2>Contribute to the EVENT</h2><br>
+            <h2>Submit Your Event Here</h2><br>
             <form method="post" action="${pageContext.request.contextPath}/admin/event/add">    <input type="hidden" name="event_id" />
 
                 <label for="name">Name: </label>

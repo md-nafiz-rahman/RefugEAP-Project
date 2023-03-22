@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
-    <title>RefugEAP - Login</title>
+    <title>RefugEAP</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,6 +12,7 @@
             min-width: auto;
         }
 
+
         body {
             margin: 0;
             font-family: 'Calibri', sans-serif;       /* google font */
@@ -22,6 +21,7 @@
 
         h1 {
             font-size: 48px;
+            text-align: center;
         }
 
         h2 {
@@ -52,12 +52,31 @@
             position: relative;
         }
 
+        .background-image {
+            background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+            background-size: cover;
+            height: 250px;
+            width: 100%;
+        }
+
+        .overlays {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+
+
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
             font-family: 'Calibri', sans-serif;
         }
-
 
         .navigator {
             background-color: #29668B;         /* Header Navigation Main Button */
@@ -102,18 +121,6 @@
             padding: 10px 0;
         }
 
-        .containerForm {
-            display: flex;
-            height: 700px;
-        }
-
-        .form {
-            width: 100%;
-            margin: 0 auto;
-            padding: 150px ;
-            border: 0px solid gray;
-            /*border-radius: 10px;*/
-        }
 
         label {
             display: block;
@@ -205,92 +212,103 @@
             max-width: 300px;
         }
 
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+        .sec1 {
+            background-color: white; /* add a blue background color to the team section */
+            padding: 10px;
+            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
+            margin: 0 auto; /* center the section horizontally within its parent container */
+            color: black; /* set the text color to white */
+            line-height: 2.0; /* add some spacing between lines */
+            font-family: "Times New Roman";
         }
 
-        button {
-            background-color: #04AA6D;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+        .sec2 {
+            background-color: white; /* add a blue background color to the team section */
+            padding: 10px;
+            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
+            margin: 0 auto; /* center the section horizontally within its parent container */
+            color: black; /* set the text color to white */
+            line-height: 2.0; /* add some spacing between lines */
+            font-family: "Times New Roman";
+        }
+        .sec3 {
+            background-color: white; /* add a blue background color to the team section */
+            padding: 10px;
+            max-width: 1600px; /* limit the maximum width of the section to 800 pixels */
+            max-height: 1000px;
+            margin: 0 auto; /* center the section horizontally within its parent container */
+            margin-bottom: 60px;
+            color: black; /* set the text color to white */
+            line-height: 2.0; /* add some spacing between lines */
         }
 
-        button:hover {
-            opacity: 0.8;
+        #evidence_base_title {
+            background-color: white; /* add a blue background color to the team section */
+            padding: 10px;
+            max-width: 1600px; /* limit the maximum width of the section to 800 pixels */
+            max-height: 1000px;
+            margin: 0 auto; /* center the section horizontally within its parent container */
+            margin-bottom: 20px;
+            color: black; /* set the text color to white */
+            line-height: 2.0; /* add some spacing between lines */
+
         }
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #29668B;
+
+
+        li {
+            font-size: 20px; /* set the font size to 20 pixels */
         }
 
-        .container {
-            padding: 16px;
+        figure {
+            display: flex; /* display the image and caption as a flex container */
+            flex-direction: column; /* stack the image on top of the caption */
+            align-items: center; /* center the contents horizontally */
+            text-align: center; /* center the caption text */
         }
 
-        span.psw {
-            float: right;
-            padding-top: 16px;
+        figcaption {
+            margin-top: 10px; /* add some space between the image and caption */
+            font-weight: bold; /* make the caption text bold */
         }
 
-        /* Change styles for span and cancel button on extra small screens */
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-            .cancelbtn {
-                width: 100%;
-            }
-        }
 
     </style>
 </head>
 <body>
 
-
 <!-- Navbar -->
 <div class="navigator">
     <a href="/">Home</a>
     <a href="/blogPage">Blog</a>
-    <a href="/aboutUs">About Us</a>
+    <a href="/aboutUs" >About Us</a>
     <a href="/eventPage">Events</a>
     <a href="/contactUs">Contact Us</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
-<div class="containerForm">
-    <div class="form">
-        <h1>Login</h1>
-        <form action="/login" method="post">
-            <div>
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
+<!-- Header -->
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-                <button type="submit" style="background-color: #29668B;">Login</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-            </div>
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-        </form>
+<header>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="overlays" style="padding-top: 70px">
+            <h1>Developing Provision</h1>
+        </div>
     </div>
-</div>
+
+</header>
+
+
+<section class="sec1">
+
+    <p>Developing and offering sanctuary provision isn't something to rush into. While it would be very helpful if more EAP provision were to be made available to refugee-background students across the UK, it is important to give careful consideration to what this means in practice, and whether your organisation can dedicate the time and resources to this before taking the plunge. It is useful to frame this not only in terms of whether you are able to make provision accessible to students, but also whether you are able to offer appropriate support whilst they are with you (and it is often the latter that can be overlooked).
+        Below, we have compiled a number of tips and considerations for anyone thinking of setting up sanctuary provision, starting with a list of general tips, and moving on to more EAP-specific considerations. If you would like to suggest any additional tips to add to these lists, please let us know via our <a href="/contactUs" target=”_blank” >Contact Us</a> form .
+    </p>
+</section>
+
+
+
 
 <footer>
     <div class="footer-columns">
@@ -318,6 +336,5 @@
         </div>
     </div>
 </footer>
-
 </body>
 </html>

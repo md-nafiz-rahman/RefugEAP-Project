@@ -4,12 +4,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
-    <title>Refugee eap</title>
+    <title>RefugEAP - Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -103,7 +102,7 @@
 
         body {
             margin: 0;
-            font-family: 'Oswald', sans-serif;       /* google font */
+            font-family: 'Calibri', sans-serif;       /* google font */
             padding: 0;
         }
 
@@ -165,7 +164,7 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Calibri', sans-serif;
         }
 
         .navigator {
@@ -326,8 +325,8 @@
         }
 
         .footer-links a {
-            color: black;
             text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
@@ -360,6 +359,7 @@
 
         #calendar {
             margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         #event-title {
@@ -386,6 +386,13 @@
             background-color: #f9d8c7;
         }
 
+        .fc-today-button,
+        .fc-month-button,
+        .fc-agendaWeek-button,
+        .fc-agendaDay-button {
+            text-transform: capitalize;
+        }
+
         .fc-button {
             background-color: white;
             color: black;
@@ -405,6 +412,21 @@
             background-color: #0069d9;
         }
 
+        .view-counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #29668B;
+            padding: 10px;
+        }
+
+        .view-counter h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -413,9 +435,9 @@
 <div class="navigator">
     <a href="/" class="mainB">Home</a>
     <a href="/blogPage">Blog</a>
-    <a href="#aboutUs">About Us</a>
+    <a href="/aboutUs">About Us</a>
     <a href="/eventPage">Events</a>
-    <a href="/contactUs">Contacts</a>
+    <a href="/contactUs">Contact Us</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -425,21 +447,20 @@
     <div class="container">
         <div class="background-image"></div>
         <div class="overlay" style="padding-top: 125px">
-            <h1>RefugeeEAP Purpose</h1>
-            <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. It is for students who <br>
-                need to improve their academic English skills to help them access a degree programme at university, but perhaps have not been able to access a <br>
-                formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP has been developed to meet this need, providing students with<br>
-                an opportunity to continue to develop their academic English skills in a supportive way while they are waiting for more formal opportunities to
-                become available.</p>
+            <h1>RefugEAP Purpose</h1>
+            <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. <br>
+                It is for students who need to improve their academic English skills to help them access a degree programme at university,<br>
+                but perhaps have not been able to access a formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP <br>
+                has been developed to meet this need, providing students with an opportunity to continue to develop their academic English skills <br>
+                in a supportive way while they are waiting for more formal opportunities to become available.</p>
         </div>
     </div>
 
 </header>
 
-
-<center>
-    <h2> This page has been viewed: ${total_views} times</h2>
-</center>
+<div class="view-counter">
+    <h2>This page has been viewed: ${total_views} times</h2>
+</div>
 
 <!-- First Grid -->
 <div class="split">
@@ -474,7 +495,7 @@
     <div class="footer-columns">
         <div class="footer-col-1">
             <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network’s overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
+            <p class="footer-slogan">The RefugEAP Network's overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
         <div class="footer-col-2">
             <p>Follow us on</p>
@@ -487,9 +508,9 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="/homePage">Home</a></li>
+                <li><a href="/" style="text-decoration: underline">Home</a></li>
                 <li><a href="/blogPage">Blog</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
                 <li><a href="/eventPage">Events</a></li>
                 <li><a href="/contactUs">Contact Us</a></li>
             </ul>

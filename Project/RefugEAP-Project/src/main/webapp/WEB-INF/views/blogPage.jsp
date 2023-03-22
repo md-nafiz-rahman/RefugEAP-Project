@@ -2,14 +2,15 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html lang="en">
 <head>
-    <title>Refugee eap</title>
+    <title>RefugEAP - Blogs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
 
         html {
@@ -19,7 +20,7 @@
 
         body {
             margin: 0;
-            font-family: 'Oswald', sans-serif;       /* google font */
+            font-family: 'Calibri', sans-serif;       /* google font */
             padding: 0;
         }
 
@@ -87,7 +88,7 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Calibri', sans-serif;
         }
 
         .navigator {
@@ -218,8 +219,8 @@
         }
 
         .footer-links a {
-            color: black;
-            text-decoration: none;
+            text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
@@ -382,9 +383,22 @@
             event.preventDefault(); // Prevent form submission
             var popup = document.getElementById("popup");
             var overlay = document.getElementById("overlay");
-            popup.style.display = "block";
-            overlay.style.display = "block";
+
+            $.ajax({
+                type: 'POST',
+                url: '/addBlog',
+                data: $('form').serialize(),
+                success: function(response) {
+                    // Show the popup message after the AJAX request is complete
+                    popup.style.display = "block";
+                    overlay.style.display = "block";
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+                }
+            });
         }
+
 
         function closePopup() {
             var popup = document.getElementById("popup");
@@ -401,9 +415,9 @@
 <div class="navigator">
     <a href="/">Home</a>
     <a href="/blogPage" class="mainB">Blog</a>
-    <a href="#aboutUs">About Us</a>
+    <a href="/aboutUs">About Us</a>
     <a href="/eventPage">Events</a>
-    <a href="/contactUs">Contacts</a>
+    <a href="/contactUs">Contact Us</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -438,7 +452,7 @@
 
 <div class="containerForm">
     <div class="form">
-        <h2>Contribute to the BLOG</h2><br>
+        <h2>Contribute to the Blog</h2><br>
 
         <%--  Form to take in a blog  --%>
         <%--@elvariable id="blog" type="blog"--%>
@@ -453,6 +467,8 @@
             <form:label path="content">Content: </form:label><form:input path="content" required="required"/>
 
             <form:hidden path="status" value="pending"/>
+
+
 
             <input type="submit"/>
         </form:form>
@@ -471,7 +487,7 @@
     <div class="footer-columns">
         <div class="footer-col-1">
             <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network’s overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
+            <p class="footer-slogan">The RefugEAP Network's overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
         <div class="footer-col-2">
             <p>Follow us on</p>
@@ -484,11 +500,11 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="homePage.jsp">Home</a></li>
-                <li><a href="blogPage.jsp">Blog</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="contactUs.jsp">Contact Us</a></li>
+                <li><a href="/homePage">Home</a></li>
+                <li><a href="/blogPage" style="text-decoration: underline">Blog</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
+                <li><a href="/eventPage">Events</a></li>
+                <li><a href="/contactUs">Contact Us</a></li>
             </ul>
         </div>
     </div>

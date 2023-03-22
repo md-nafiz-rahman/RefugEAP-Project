@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Refugee eap</title>
+    <title>RefugEAP - Contact Us</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 
@@ -16,7 +15,7 @@
 
         body {
             margin: 0;
-            font-family: 'Oswald', sans-serif;       /* google font */
+            font-family: 'Calibri', sans-serif;       /* google font */
             padding: 0;
         }
 
@@ -75,7 +74,7 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Calibri', sans-serif;
         }
 
         .navigator {
@@ -129,14 +128,14 @@
         .form {
             width: 66%;
             margin: 0 auto;
-            padding: 150px ;
+            padding: 130px ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
         }
 
         .contact-info {
             width: 33%;
-            padding: 150px;
+            padding: 100px;
             border: 1px solid gray;
             /*border-radius: 10px;*/
             text-align: center;
@@ -223,8 +222,8 @@
         }
 
         .footer-links a {
-            color: black;
             text-decoration:none;
+            font-size:18px;
         }
 
         .footer-slogan {
@@ -282,9 +281,9 @@
 <div class="navigator">
     <a href="/">Home</a>
     <a href="/blogPage">Blog</a>
-    <a href="#aboutUs">About Us</a>
+    <a href="/aboutUs">About Us</a>
     <a href="/eventPage">Events</a>
-    <a href="/contactUs" class="mainB">Contacts</a>
+    <a href="/contactUs" class="mainB">Contact Us</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -333,7 +332,7 @@
     <div class="footer-columns">
         <div class="footer-col-1">
             <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network’s overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
+            <p class="footer-slogan">The RefugEAP Network's overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
         <div class="footer-col-2">
             <p>Follow us on</p>
@@ -346,11 +345,11 @@
         <div class="footer-col-3">
             <p>Useful Links</p>
             <ul class="footer-links">
-                <li><a href="homePage.jsp">Home</a></li>
-                <li><a href="blogPage.jsp">Blog</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="contactUs.jsp">Contact Us</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blogPage">Blog</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
+                <li><a href="/eventPage">Events</a></li>
+                <li><a href="/contactUs" style="text-decoration: underline">Contact Us</a></li>
             </ul>
         </div>
     </div>
