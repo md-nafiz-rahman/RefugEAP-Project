@@ -129,14 +129,14 @@
         .form {
             width: 66%;
             margin: 0 auto;
-            padding: 150px ;
+            padding: 130px ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
         }
 
         .contact-info {
             width: 33%;
-            padding: 150px;
+            padding: 120px;
             border: 1px solid gray;
             /*border-radius: 10px;*/
             text-align: center;
