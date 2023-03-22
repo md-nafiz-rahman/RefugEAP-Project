@@ -113,10 +113,9 @@ CREATE TABLE `contacts` (
                             `name` varchar(100) NOT NULL,
                             `status` VARCHAR(10) NOT NULL DEFAULT 'pending',
                             `email` varchar(100) NOT NULL,
+                            `message` varchar(100) NOT NULL,
                             PRIMARY KEY (`contact_id`) USING BTREE
 );
-
-
 
 -- ----------------------------
 -- Records of users_roles
