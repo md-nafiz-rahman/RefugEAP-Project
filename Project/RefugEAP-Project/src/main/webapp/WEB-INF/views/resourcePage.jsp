@@ -219,7 +219,7 @@
             margin: 0 auto; /* center the section horizontally within its parent container */
             color: black; /* set the text color to white */
             line-height: 2.0; /* add some spacing between lines */
-            font-family: "Times New Roman";
+            font-family: "Calibri", sans-serif;
         }
 
         .sec2 {
@@ -229,7 +229,7 @@
             margin: 0 auto; /* center the section horizontally within its parent container */
             color: black; /* set the text color to white */
             line-height: 2.0; /* add some spacing between lines */
-            font-family: "Times New Roman";
+            font-family: "Calibri", sans-serif;
         }
         .sec3 {
             background-color: white; /* add a blue background color to the team section */
@@ -240,18 +240,6 @@
             margin-bottom: 60px;
             color: black; /* set the text color to white */
             line-height: 2.0; /* add some spacing between lines */
-        }
-
-        #evidence_base_title {
-            background-color: white; /* add a blue background color to the team section */
-            padding: 10px;
-            max-width: 1600px; /* limit the maximum width of the section to 800 pixels */
-            max-height: 1000px;
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            margin-bottom: 20px;
-            color: black; /* set the text color to white */
-            line-height: 2.0; /* add some spacing between lines */
-
         }
 
 
@@ -272,12 +260,6 @@
             font-weight: bold; /* make the caption text bold */
         }
 
-        .staffImg {
-            max-width: 20%;
-            max-height: 20%;
-        }
-
-
     </style>
 </head>
 <body>
@@ -286,7 +268,7 @@
 <div class="navigator">
     <a href="/">Home</a>
     <a href="/blogPage">Blog</a>
-    <a href="/aboutUs"  class="mainB">About Us</a>
+    <a href="/aboutUs">About Us</a>
     <a href="/eventPage">Events</a>
     <a href="/contactUs">Contact Us</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
@@ -321,45 +303,6 @@
 <section class="sec3">
     <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/94dn9e90rewkm1p3" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Made with Padlet"></div></a></div></div>
 </section>
-
-<h1 id="evidence_base_title">Evidence Base</h1>
-
-<section class="sec1">
-    <p>We are keen to build a strong collection of case studies, research studies, testimonials and other forms of evidence that practitioners / organisations can use when developing (or advocating for the development of) robust 'pathway to Higher Education' English language provision for refugee-background students (RBS), with a particular focus on English for Academic Purposes (EAP).</p>
-</section>
-
-<section class="sec2">
-    <h2>RefugEAP Network's collated evidence</h2>
-    <h3>Case studies</h3>
-    <p>Case studies compiled via this RefugEAP Network website can be accessed here . We invite practitioners / organisations to contribute a case study outlining one of their own initiatives. These can be submitted via our <a href="/blogPage" target=”_blank” >blog page</a> (via the contributions form) .
-    </p>
-</section>
-
-<section class="sec1">
-    <h3>Testimonials</h3>
-    <p>We are also collecting testimonials, which can be accessed here . These can be submitted by anyone involved in these sorts of initiatives, including practitioners, researchers or students. You can contribute your own testimonial via our <a href="/blogPage" target=”_blank” >blog page</a> (via the contributions form) .
-    </p>
-</section>
-
-<section class="sec2">
-    <h3>Other forms of evidence</h3>
-    <p>We are also inviting practitioners, researchers and students to contribute other relevant content to our blog page (to add to the evidence base), accessible here . This might be in the form of a written blog post, an audio or video file, or perhaps a combination of media. This category is deliberately broad, and might focus on a range of relevant topics. You can contribute via our <a href="/blogPage" target=”_blank” >blog page</a> (via the contributions form) .
-    </p>
-</section>
-
-<section class="sec1">
-    <h3>Repository of studies on HE access for forced migrants (compiled by Eva Hanna)</h3>
-    <p>One of our RefugEAP Network working group members, Eva Hanna, has been curating a very useful repository of studies focusing on HE access for forced migrants, plus language-focused Widening Participation studies. It is accessible in this editable <a href="https://docs.google.com/document/d/1NjAE1-rZ_Rs_i4CpdvQsT7fFbbFSPx1MrFa1fBgV5h4/edit" target=”_blank” >Google Doc</a>, and you are invited to add to this document any relevant resources that you would like to share.
-    </p>
-</section>
-
-<section class="sec2">
-    <h3>Hub for European Refugees (HERE) database)</h3>
-    <p>The <a href="https://hubhere.org/#database" target=”_blank” >HERE Database</a> is an extremely useful searchable database of studies / resources related to refugee education in Europe. It is not specifically focused on HE (it focuses on all levels of education) or language education (it focuses on all types of provision), but you can use the search filters to locate HE language provision (e.g. for 'education type' you can select 'language education', and for 'education level' you can select 'tertiary education'). There is also a facility on the HERE website to suggest studies / resources to be included in their database.
-    </p>
-</section>
-
-
 
 
 <footer>
