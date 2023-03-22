@@ -447,12 +447,12 @@
     <div class="container">
         <div class="background-image"></div>
         <div class="overlay" style="padding-top: 125px">
-            <h1>RefugeeEAP Purpose</h1>
-            <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. It is for students who <br>
-                need to improve their academic English skills to help them access a degree programme at university, but perhaps have not been able to access a <br>
-                formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP has been developed to meet this need, providing students with<br>
-                an opportunity to continue to develop their academic English skills in a supportive way while they are waiting for more formal opportunities to
-                become available.</p>
+            <h1>RefugEAP Purpose</h1>
+            <p>RefugEAP is a free online pre-university academic English skills programme for refugee-background students across the UK. <br>
+                It is for students who need to improve their academic English skills to help them access a degree programme at university,<br>
+                but perhaps have not been able to access a formal pre-sessional English for Academic Purposes (EAP) programme yet. RefugEAP <br>
+                has been developed to meet this need, providing students with an opportunity to continue to develop their academic English skills <br>
+                in a supportive way while they are waiting for more formal opportunities to become available.</p>
         </div>
     </div>
 

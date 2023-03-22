@@ -135,7 +135,7 @@
 
         .contact-info {
             width: 33%;
-            padding: 150px;
+            padding: 100px;
             border: 1px solid gray;
             /*border-radius: 10px;*/
             text-align: center;
