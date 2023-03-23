@@ -72,12 +72,6 @@
         }
 
 
-        /* Header Navigation Menu */
-        body {
-            margin: 0;                               /* Header Navigation google font */
-            font-family: 'Calibri', sans-serif;
-        }
-
         .navigator {
             background-color: #29668B;         /* Header Navigation Main Button */
             overflow: hidden;
@@ -214,12 +208,15 @@
 
         .sec1 {
             background-color: white; /* add a blue background color to the team section */
-            padding: 40px 40px 10px;
+            padding: 20px 20px 5px;
             max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
             margin: 0 auto; /* center the section horizontally within its parent container */
             color: black; /* set the text color to white */
             line-height: 2.0; /* add some spacing between lines */
             font-family: 'Calibri', sans-serif; /* set the font to Calibri */
+            display: flex; /* make the section a flex container */
+            flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
+            justify-content: center; /* center the items horizontally */
         }
 
         .sec2 {
@@ -238,19 +235,38 @@
 
         figure {
             display: flex; /* display the image and caption as a flex container */
-            flex-direction: column; /* stack the image on top of the caption */
+            flex-direction: row; /* stack the image and caption side by side */
             align-items: center; /* center the contents horizontally */
             text-align: center; /* center the caption text */
+            margin: auto; /* add some margin around each figure */
+            padding-bottom: 40px;
+        }
+
+        figure:nth-child(even) {
+            flex-direction: row-reverse; /* alternate the direction of the flex container between rows */
         }
 
         figcaption {
+            text-align: left;
             margin-top: 10px; /* add some space between the image and caption */
             font-weight: bold; /* make the caption text bold */
+            text-align: left; /* align the caption text to the left */
+
         }
 
         .staffImg {
             max-width: 20%;
             max-height: 20%;
+            margin: 0 20px 0 20px;
+            border: 2px solid #29668B;
+        }
+
+        .staffText {
+            text-align: left !important;
+            font-size: 18px;
+            font-family: Calibri, sans-serif;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
 
@@ -280,7 +296,7 @@
 
 </header>
 
-<section class="sec1">
+<section class="sec2">
     <h2>Purpose</h2>
     <p>The RefugEAP Network's overarching objective is to facilitate the development and implementation of 'pathway to Higher Education' English language provision for refugee-background students (RBS), with a particular focus on English for Academic Purposes (EAP).</p>
 </section>
@@ -295,7 +311,7 @@
     </p>
 </section>
 
-<section class="sec1">
+<section class="sec2">
     <h2>RefugEAP Network Working Group</h2>
     <p>The RefugEAP Network Working Group is working to redress this situation. It consists of a small group of EAP practitioners, researchers and managers from across the UK HE sector working together to develop and run the RefugEAP Network. This working group, which is a branch of the BALEAP EAP for Social Justice Special Interest Group, was established in April 2022.</p>
 </section>
@@ -326,28 +342,31 @@
 
     <p>The RefugEAP Network Working Group consists of a small group of EAP practitioners, researchers and managers from across the UK HE sector working together to develop and run the RefugEAP Network. Meet the members below:</p>
 
+    <br>
+    <br>
+
     <figure>
         <img class="staffImg" src="${pageContext.request.contextPath}/images/Aleks_Palanac.jpg" alt="Aleks Palanac">
         <figcaption>Aleks Palanac</figcaption>
-        <p>Aleks Palanac is Convenor of the RefugEAP Network and Head of Sanctuary at the University of Leicester. She has been heavily involved in developing its University of Sanctuary initiatives, particularly by widening participation to HE for asylum seekers and refugees through trauma-informed English language provision (ESOL and EAP). More information about her sanctuary and social justice work in EAP and ESOL is available <a href="https://www.researchgate.net/profile/Aleks-Palanac" target=”_blank” >here</a>. Contact: <a href="mailto:ap417@le.ac.uk">ap417@le.ac.uk</a> Twitter: <a href="https://twitter.com/AleksPalanac">@AleksPalanac</a></p>
+        <p class="staffText">Aleks Palanac is Convenor of the RefugEAP Network and Head of Sanctuary at the University of Leicester. She has been heavily involved in developing its University of Sanctuary initiatives, particularly by widening participation to HE for asylum seekers and refugees through trauma-informed English language provision (ESOL and EAP). More information about her sanctuary and social justice work in EAP and ESOL is available <a href="https://www.researchgate.net/profile/Aleks-Palanac" target=”_blank” >here</a>. Contact: <a href="mailto:ap417@le.ac.uk">ap417@le.ac.uk</a> Twitter: <a href="https://twitter.com/AleksPalanac">@AleksPalanac</a></p>
     </figure>
 
     <figure>
         <img class="staffImg" src="${pageContext.request.contextPath}/images/Tomasz.jpg" alt="Dr Tomasz John">
         <figcaption>Dr Tomasz John</figcaption>
-        <p>Dr Tomasz John (he/him) is a Teaching Fellow in TESOL and Intercultural Communication at University of Strathclyde (Glasgow). Tomasz worked as an EAP practitioner and Head of EAP for over 10 years. He's a Co-convener and Comms Officer of the BALEAP EAP4SJ SIG. Tomasz is passionate about ethical and comprehensive internationalisation of HE, decolonisation of curriculum and representation in ELT . Find out more about his work <a href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpureportal.strath.ac.uk%2Fen%2Fpersons%2Ftomasz-john&data=05%7C01%7Cap417%40leicester.ac.uk%7C25ec2e7d32dd43ba440f08db1e32f801%7Caebecd6a31d44b0195ce8274afe853d9%7C0%7C0%7C638136976503013971%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=ShW0do9OL7YjOYfWr4wq6ATMwmK76JB6DGtYFPzcOus%3D&reserved=0" target=”_blank” >here</a>. Contact: <a href="mailto:tomasz.john@strath.ac.uk">tomasz.john@strath.ac.uk</a> Twitter: <a href="https://twitter.com/tomaszjohn84">@tomaszjohn84</a></p>
+        <p class="staffText">Dr Tomasz John (he/him) is a Teaching Fellow in TESOL and Intercultural Communication at University of Strathclyde (Glasgow). Tomasz worked as an EAP practitioner and Head of EAP for over 10 years. He's a Co-convener and Comms Officer of the BALEAP EAP4SJ SIG. Tomasz is passionate about ethical and comprehensive internationalisation of HE, decolonisation of curriculum and representation in ELT . Find out more about his work <a href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpureportal.strath.ac.uk%2Fen%2Fpersons%2Ftomasz-john&data=05%7C01%7Cap417%40leicester.ac.uk%7C25ec2e7d32dd43ba440f08db1e32f801%7Caebecd6a31d44b0195ce8274afe853d9%7C0%7C0%7C638136976503013971%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=ShW0do9OL7YjOYfWr4wq6ATMwmK76JB6DGtYFPzcOus%3D&reserved=0" target=”_blank” >here</a>. Contact: <a href="mailto:tomasz.john@strath.ac.uk">tomasz.john@strath.ac.uk</a> Twitter: <a href="https://twitter.com/tomaszjohn84">@tomaszjohn84</a></p>
     </figure>
 
     <figure>
         <img class="staffImg" src="${pageContext.request.contextPath}/images/Iwona.jpg" alt="Iwona Winiarska-Pringle">
         <figcaption>Iwona Winiarska-Pringle</figcaption>
-        <p>Iwona Winiarska-Pringle is an English for Academic Purposes Lecturer at the University of Glasgow with an additional role of overseeing refugee-background students support provision within English for Academic Study. Iwona volunteers with RefugEAP and BALEAP EAP for Social Justice SIG. Her professional interests are educational dialogue, ethical internationalisation, teacher development and relational pedagogies. Contact: <a href="mailto:iwona.winiarska-pringle@glasgow.ac.uk">iwona.winiarska-pringle@glasgow.ac.uk</a>  Twitter: <a href="https://twitter.com/IwonaPringle">@IwonaPringle</a></p>
+        <p class="staffText">Iwona Winiarska-Pringle is an English for Academic Purposes Lecturer at the University of Glasgow with an additional role of overseeing refugee-background students support provision within English for Academic Study. Iwona volunteers with RefugEAP and BALEAP EAP for Social Justice SIG. Her professional interests are educational dialogue, ethical internationalisation, teacher development and relational pedagogies. Contact: <a href="mailto:iwona.winiarska-pringle@glasgow.ac.uk">iwona.winiarska-pringle@glasgow.ac.uk</a>  Twitter: <a href="https://twitter.com/IwonaPringle">@IwonaPringle</a></p>
     </figure>
 
     <figure>
         <img class="staffImg" src="${pageContext.request.contextPath}/images/Paul_Breen.png" alt="Paul Breen">
         <figcaption>Paul Breen</figcaption>
-        <p>Paul Breen is a Senior Digital Learning Developer and Senior Lecturer in EAP with UCL's Academic Communication Centre. He gained his Masters and PhD qualifications at The University of Manchester in the field of Education, with a particular focus on English Language Teaching, English for Academic Purposes and Educational Technology. He has worked in academic and media contexts in Britain, Ireland and overseas. His publications include both academic and non-academic output, ranging from textbooks to the 2018 book version of his PhD, entitled Developing Educators for the Digital Age.
+        <p class="staffText">Paul Breen is a Senior Digital Learning Developer and Senior Lecturer in EAP with UCL's Academic Communication Centre. He gained his Masters and PhD qualifications at The University of Manchester in the field of Education, with a particular focus on English Language Teaching, English for Academic Purposes and Educational Technology. He has worked in academic and media contexts in Britain, Ireland and overseas. His publications include both academic and non-academic output, ranging from textbooks to the 2018 book version of his PhD, entitled Developing Educators for the Digital Age.
             Contact <a href="mailto:paul.breen@ucl.ac.uk">paul.breen@ucl.ac.uk</a> Twitter: <a href="https://twitter.com/charltonmen">@charltonmen</a>
         </p>
     </figure>
@@ -355,21 +374,21 @@
     <figure>
         <img class="staffImg" src="${pageContext.request.contextPath}/images/Sadie-Jade.jpg" alt="Sadie-Jade Fouracre-Reynolds">
         <figcaption>Sadie-Jade Fouracre-Reynolds</figcaption>
-        <p>Sadie-Jade Fouracre-Reynolds is a language teacher of two decades with a background in science. She has worked in a wide range of contexts including EAP, ESOL, EAL and CLIL. A combination of teaching experience, course development, material creation and outreach project management has fed into her work with vulnerable communities and development of teacher support and mentoring programmes. Contact: <a href="mailto:s.fouracre-reynolds@swansea.ac.uk">s.fouracre-reynolds@swansea.ac.uk</a>
+        <p class="staffText">Sadie-Jade Fouracre-Reynolds is a language teacher of two decades with a background in science. She has worked in a wide range of contexts including EAP, ESOL, EAL and CLIL. A combination of teaching experience, course development, material creation and outreach project management has fed into her work with vulnerable communities and development of teacher support and mentoring programmes. Contact: <a href="mailto:s.fouracre-reynolds@swansea.ac.uk">s.fouracre-reynolds@swansea.ac.uk</a>
         </p>
     </figure>
 
     <figure>
         <img class="staffImg" src="${pageContext.request.contextPath}/images/Amelia_Harker.png" alt="Amelia Harker">
         <figcaption>Amelia Harker</figcaption>
-        <p>Amelia Harker is the English Language for Widening Participation Coordinator at the University of Edinburgh and an English Language Education Teaching Fellow. She has taught English for Academic Purposes for 15 years but still identifies as a Sociologist whose research interests include: Widening Participation, Internationalisation, Student Voice, Criticality in Higher Education, Critical Pedagogy, and EAP for Social Justice. Her emerging expertise is in Refugee and Asylum Seeker support and Trauma Informed Practice.  Contact: <a href="mailto:Amelia.Harker@ed.ac.uk">Amelia.Harker@ed.ac.uk</a>
+        <p class="staffText">Amelia Harker is the English Language for Widening Participation Coordinator at the University of Edinburgh and an English Language Education Teaching Fellow. She has taught English for Academic Purposes for 15 years but still identifies as a Sociologist whose research interests include: Widening Participation, Internationalisation, Student Voice, Criticality in Higher Education, Critical Pedagogy, and EAP for Social Justice. Her emerging expertise is in Refugee and Asylum Seeker support and Trauma Informed Practice.  Contact: <a href="mailto:Amelia.Harker@ed.ac.uk">Amelia.Harker@ed.ac.uk</a>
         </p>
     </figure>
 
     <figure>
         <img class="staffImg" src="${pageContext.request.contextPath}/images/Jennifer.png" alt="Jennifer Cowell">
         <figcaption>Jennifer Cowell</figcaption>
-        <p>Jennifer Cowell works at the University of Stirling and leads on a variety of university-wide in-sessional provisions, including the new Academic and Business English ESAPs in the Business School. She is also: a member of the QAA advisory group for the updated Linguistics benchmark statement (2022); practitioner advisor for TESOLgraphics; an executive committee member of SATEFL; and a tutor at the Stirling School of English. Jen is passionate about: designing accessible and inclusive learning materials which motivate students' learning; promoting decolonisation of the curriculum; and widening participation. Contact: <a href="mailto:jennifer.cowell@stir.ac.uk">jennifer.cowell@stir.ac.uk</a> Twitter: <a href="https://twitter.com/JenMCowell">@JenMCowell</a>
+        <p class="staffText">Jennifer Cowell works at the University of Stirling and leads on a variety of university-wide in-sessional provisions, including the new Academic and Business English ESAPs in the Business School. She is also: a member of the QAA advisory group for the updated Linguistics benchmark statement (2022); practitioner advisor for TESOLgraphics; an executive committee member of SATEFL; and a tutor at the Stirling School of English. Jen is passionate about: designing accessible and inclusive learning materials which motivate students' learning; promoting decolonisation of the curriculum; and widening participation. Contact: <a href="mailto:jennifer.cowell@stir.ac.uk">jennifer.cowell@stir.ac.uk</a> Twitter: <a href="https://twitter.com/JenMCowell">@JenMCowell</a>
         </p>
     </figure>
 
