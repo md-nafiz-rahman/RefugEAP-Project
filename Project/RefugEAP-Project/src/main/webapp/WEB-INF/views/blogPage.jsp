@@ -341,8 +341,12 @@
 
         .containerForm {
             display: flex;
-            height: 800px;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 50px; /* add margin bottom */
         }
+
 
         .form {
             width: 100%;
@@ -454,24 +458,42 @@
     <div class="form">
         <h2>Contribute to the Blog</h2><br>
 
-        <%--  Form to take in a blog  --%>
-        <%--@elvariable id="blog" type="blog"--%>
+        <%--@elvariable id="blog" type=""--%>
         <form:form action="/addBlog" modelAttribute="blog" onsubmit="showConfirmation(event)">
+            <form:label path="name">Name:</form:label>
+            <form:input path="name" required="required"/>
 
-            <form:label path="name">Name: </form:label><form:input path="name" required="required"/>
+            <form:label path="email">Email:</form:label>
+            <form:input type="email" path="email" required="required"/>
 
-            <form:label path="email">Email: </form:label><form:input type="email" path="email" required="required"/>
+            <form:label path="affiliation">Affiliation (if any):</form:label>
+            <form:input path="affiliation"/>
 
-            <form:label path="title">Title: </form:label><form:input path="title" required="required"/>
+            <form:label path="role">Role:</form:label>
+            <form:input path="role"/>
 
-            <form:label path="content">Content: </form:label><form:input path="content" required="required"/>
+            <form:label path="typeOfContribution">Type of Contribution:</form:label>
+            <form:select path="typeOfContribution">
+                <form:option value="case study">Case Study</form:option>
+                <form:option value="testimonial">Testimonial</form:option>
+                <form:option value="other">Other</form:option>
+            </form:select>
+
+            <form:label path="title">Title:</form:label>
+            <form:input path="title" required="required"/>
+
+            <form:label path="content">Content:</form:label>
+            <form:input path="content" required="required"/>
+
+
+            <br>
+            <br>
 
             <form:hidden path="status" value="pending"/>
 
-
-
             <input type="submit"/>
         </form:form>
+
     </div>
 </div>
 
