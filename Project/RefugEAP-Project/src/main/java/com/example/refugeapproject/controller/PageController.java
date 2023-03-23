@@ -237,7 +237,10 @@ public class PageController {
     public String addBlog(@RequestParam("name") String name,
                           @RequestParam("email") String email,
                           @RequestParam("title") String title,
-                          @RequestParam("content") String content) {
+                          @RequestParam("content") String content,
+                          @RequestParam("affiliation") String affiliation,
+                          @RequestParam("role") String role,
+                          @RequestParam("typeOfContribution") String typeOfContribution){
 
         Blog blog = new Blog();
         java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
@@ -245,6 +248,9 @@ public class PageController {
         blog.setEmail(email);
         blog.setTitle(title);
         blog.setContent(content);
+        blog.setAffiliation(affiliation);
+        blog.setRole(role);
+        blog.setTypeOfContribution(typeOfContribution);
         blog.setDate(currentDate);
 
         blogRepo.save(blog);
@@ -339,7 +345,10 @@ public class PageController {
     public String BlogAdd(@RequestParam("name") String name,
                           @RequestParam("email") String email,
                           @RequestParam("title") String title,
-                          @RequestParam("content") String content) {
+                          @RequestParam("content") String content,
+                          @RequestParam("affiliation") String affiliation,
+                          @RequestParam("role") String role,
+                          @RequestParam("typeOfContribution") String typeOfContribution){
 
         Blog blog = new Blog();
         java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
@@ -347,6 +356,9 @@ public class PageController {
         blog.setEmail(email);
         blog.setTitle(title);
         blog.setContent(content);
+        blog.setAffiliation(affiliation);
+        blog.setRole(role);
+        blog.setTypeOfContribution(typeOfContribution);
         blog.setDate(currentDate);
         blogRepo.save(blog);
 

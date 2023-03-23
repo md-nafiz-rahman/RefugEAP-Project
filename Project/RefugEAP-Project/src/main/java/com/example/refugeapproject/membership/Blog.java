@@ -19,6 +19,10 @@ public class Blog {
     private String email;
     private String name;
 
+    private String affiliation; // added affiliation field
+    private String role; // added role field
+    private String typeOfContribution; // added type of contribution field
+
     private Date date;
 
 
@@ -68,5 +72,30 @@ public class Blog {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    // added getters and setters for affiliation, role, and type of contribution fields
+    public String getAffiliation() {
+        return affiliation;
+    }
+
+    public void setAffiliation(String affiliation) {
+        this.affiliation = affiliation;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getTypeOfContribution() {
+        return typeOfContribution;
+    }
+
+    public void setTypeOfContribution(String typeOfContribution) {
+        this.typeOfContribution = typeOfContribution;
     }
 }
