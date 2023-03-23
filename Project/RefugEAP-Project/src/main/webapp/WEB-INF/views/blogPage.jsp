@@ -41,7 +41,7 @@
         }
 
         p {
-            font-size: 23px;
+            font-size: 18px;
         }
 
 
@@ -381,12 +381,84 @@
             z-index: 99;
         }
 
+        .sec1 {
+            background-color: white; /* add a blue background color to the team section */
+            padding: 10px;
+            font-size:16px;
+            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
+            margin: 0 auto; /* center the section horizontally within its parent container */
+            color: black; /* set the text color to white */
+            line-height: 2.0; /* add some spacing between lines */
+            font-family: "Calibri", sans-serif;
+        }
+
+        .contribution-popup {
+            display: none;
+            position: fixed;
+            font-size: 12px;
+            font-family: Calibri, sans-serif;
+            text-align: left;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .contribution-popup li {
+            text-align: left;
+            font-family: Calibri, sans-serif;
+        }
+
+        .contribution-popup h2 {
+            text-align: left;
+            font-family: Calibri, sans-serif;
+            font-size: 24px;
+        }
+
+        .contribution-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+
+
+        .popup-text {
+            font-size: 12px;
+            font-family: Calibri, sans-serif;
+            text-align: left;
+        }
+
+        .contribution-popup button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+
+
     </style>
     <script>
         function showConfirmation(event) {
             event.preventDefault(); // Prevent form submission
             var popup = document.getElementById("popup");
             var overlay = document.getElementById("overlay");
+            var guidelinesCheckbox = document.getElementById("readGuidelines");
+
+            // Check if the guidelines checkbox is checked
+            if (!guidelinesCheckbox.checked) {
+                alert("Please read and agree to the contribution guidelines before submitting the form.");
+                return;
+            }
 
             $.ajax({
                 type: 'POST',
@@ -411,6 +483,30 @@
             overlay.style.display = "none";
             location.reload(); // Reload the page to clear form data
         }
+
+        function viewGuideline() {
+            var overlay = document.querySelector('.contribution-overlay');
+            var popup = document.querySelector('.contribution-popup');
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        }
+
+        function closeGuideline() {
+            var overlay = document.querySelector('.contribution-overlay');
+            var popup = document.querySelector('.contribution-popup');
+            overlay.style.display = "none";
+            popup.style.display = "none";
+        }
+
+        var closeButtons = document.querySelectorAll(".contribution-popup button");
+        for (var i = 0; i < closeButtons.length; i++) {
+            closeButtons[i].addEventListener("click", function() {
+                var overlay = document.querySelector(".contribution-overlay");
+                overlay.style.display = "none";
+            });
+        }
+
+
     </script>
 </head>
 <body>
@@ -454,9 +550,16 @@
     </c:forEach>
 </main>
 
+
 <div class="containerForm">
     <div class="form">
         <h2>Contribute to the Blog</h2><br>
+
+        <label>
+            <input type="checkbox" id="readGuidelines" name="readGuidelines" required="required" />
+            I have read and agree to the contribution guidelines
+        </label>
+        <button type="button" onclick="viewGuideline()">View Guidelines</button>
 
         <%--@elvariable id="blog" type=""--%>
         <form:form action="/addBlog" modelAttribute="blog" onsubmit="showConfirmation(event)">
@@ -467,13 +570,13 @@
             <form:input type="email" path="email" required="required"/>
 
             <form:label path="affiliation">Affiliation (if any):</form:label>
-            <form:input path="affiliation"/>
+            <form:input path="affiliation" required="required"/>
 
             <form:label path="role">Role:</form:label>
-            <form:input path="role"/>
+            <form:input path="role" required="required"/>
 
             <form:label path="typeOfContribution">Type of Contribution:</form:label>
-            <form:select path="typeOfContribution">
+            <form:select path="typeOfContribution" required="required">
                 <form:option value="case study">Case Study</form:option>
                 <form:option value="testimonial">Testimonial</form:option>
                 <form:option value="other">Other</form:option>
@@ -496,6 +599,59 @@
 
     </div>
 </div>
+
+
+<div class="contribution-overlay">
+    <div class="contribution-popup">
+        <h2>Contribution Guidelines</h2>
+        <p class="popup-text">We encourage contributions to our RefugEAP Network Blog in accordance with the submission guidelines below:</p>
+        <ol>
+            <li>
+                <p class="popup-text">Ensure that your submission is relevant to the RefugEAP Network's main objective of facilitating the development and implementation of 'pathway to Higher Education' English language provision for refugee-background students (RBS), with a particular focus on English for Academic Purposes (EAP).</p>
+            </li>
+            <li>
+                <p class="popup-text">Indicate which of the following categories your submission falls under:</p>
+                <ul>
+                    <li>
+                        <strong>Case study</strong> - this can focus on one of more types of 'pathway to HE' English language provision, and should outline what the provision is, how it was set up, what challenges were faced along the way, how these were tackled, what the impact of the initiative was, etc.
+                    </li>
+                    <li>
+                        <strong>Testimonial</strong> - these can be submitted by practitioners, researchers or students involved in this provision:
+                        <ol>
+                            <li>For practitioner/researcher testimonials, these should include name (if happy to share), role, institution, initiative involved with, reasons for getting involved, impact on themselves and on the students. </li>
+                            <li>For student testimonials, these should include name (if happy to share), country of origin, future goal, what they need to study at university to reach this goal, what challenges they have faced along the way, what EAP provision they have accessed to help them reach this goal, what impact it has had on them, what advice they would give to future students</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Other</strong> - this category is deliberately broad, and might cover submissions such as those which focus on one aspect relating to developing or running this type of 'pathway to HE' English language provision - perhaps related to developing suitable materials, how to build in progression opportunities, how to ensure provision is trauma-informed, how to work successfully with partner organisations, or how you might advocate for increased opportunities for RBS within your institution.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="popup-text">We accept posts from a range of perspectives - practitioner, student, research, policy or personal. Submissions might also span two or more perspectives, perhaps by being written in collaboration with others (e.g. student-practitioner)</p>
+            </li>
+            <li>
+                <p class="popup-text">In order for your post to contribute to the RefugEAP Network evidence base, please ensure it is measured in its approach and supported with evidence. Depending on the perspective you are writing from, this evidence might be from academic sources, blog posts, reports, websites and other grey literature. If you are writing from a personal perspective, please include some biographical and situational context.</p>
+            </li>
+            <li>
+                <p class="popup-text">In terms of language, please ensure that:</p>
+                <ul>
+                    <li>Any terminology used is accessible to non-specialists by using clear language and explaining any acronyms or technical terms used</li>
+                    <li>No offensive or discriminatory language is used</li>
+                </ul>
+            </li>
+            <li>
+                <p class="popup-text">In terms of submission format:</p>
+                <ul>
+                    <li>This might take the form of a written blog post, a vlog, an interview, or something else - we are open to suggestions!</li>
+                    <li>If your submission contains text, you can paste it directly into the form below.</li>
+                </ul>
+            </li>
+        </ol>
+        <button type="button" onclick="closeGuideline()">Close Guidelines</button>
+    </div>
+</div>
+
 
 <!-- Popup and overlay -->
 <div id="overlay" class="overlay" onclick="closePopup()"></div>
