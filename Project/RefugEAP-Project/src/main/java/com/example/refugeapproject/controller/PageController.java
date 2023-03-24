@@ -444,4 +444,23 @@ public class PageController {
 
         return "redirect:/contactUs";}
 
+    @RequestMapping(value = "/admin/contactManagement")
+    public ModelAndView contactManagement() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        // Fetch all the contacts from the database using the findAll() method
+        List<Contact> contacts = (List<Contact>) contactRepo.findByStatus("pending");
+        List<Contact> acceptedContacts = (List<Contact>) contactRepo.findByStatus("approved");
+        List<Contact> discardedContacts = (List<Contact>) contactRepo.findByStatus("deleted");
+
+        // Pass the list of contacts to the JSP view
+        modelAndView.addObject("contacts", contacts);
+        modelAndView.addObject("acceptedContacts", acceptedContacts);
+        modelAndView.addObject("discardedContacts", discardedContacts);
+
+        modelAndView.setViewName("contactManagement");
+
+        return modelAndView;
+    }
+
 }
