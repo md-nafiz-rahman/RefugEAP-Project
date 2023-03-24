@@ -462,5 +462,52 @@ public class PageController {
 
         return modelAndView;
     }
+    @PostMapping(value = "/admin/acceptContact")
+    public String acceptContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Set the status of the contact to "approved"
+            contact.setStatus("approved");
+            contactRepo.save(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
+
+    @PostMapping(value = "/admin/discardContact")
+    public String discardContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Set the status of the contact to "deleted"
+            contact.setStatus("deleted");
+            contactRepo.save(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
+
+    @PostMapping(value = "/admin/deleteContact")
+    public String deleteContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Delete the contact from the database
+            contactRepo.delete(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
+
+    @PostMapping(value = "/admin/recoverContact")
+    public String recoverContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Set the status of the contact to "pending"
+            contact.setStatus("pending");
+            contactRepo.save(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
+
 
 }
