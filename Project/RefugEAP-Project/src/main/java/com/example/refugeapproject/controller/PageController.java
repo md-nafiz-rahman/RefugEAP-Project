@@ -38,6 +38,10 @@ public class PageController {
     @Autowired
     ViewCountRepo viewRepo;
 
+    @Autowired
+    ContactRepo contactRepo;
+
+
 
     private void formatEventDateTime(List<Event> events, DateTimeFormatter dateFormatter, DateTimeFormatter timeFormatter) {
         for (Event event : events) {
@@ -419,5 +423,25 @@ public class PageController {
         List<Event> events = eventRepo.findByEventDatetimeBetween(localDate.atStartOfDay(), localDate.plusDays(1).atStartOfDay());
         return events;
     }
+
+    @RequestMapping("/contactUs")
+    public String newContact(Model model) {
+        model.addAttribute("contact", new Contact());
+
+        return "contactUs";
+    }
+
+    @RequestMapping(value = "/addContact", method = RequestMethod.POST)
+    public String addContact(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("message") String message){
+
+        System.out.println("test");
+        Contact contact = new Contact();
+        contact.setName(name);
+        contact.setEmail(email);
+        contact.setMessage(message);
+
+        contactRepo.save(contact);
+
+        return "redirect:/contactUs";}
 
 }
