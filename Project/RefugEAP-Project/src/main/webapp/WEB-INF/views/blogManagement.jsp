@@ -215,6 +215,7 @@
     <a href="/admin/adminPortal">Users Management</a>
     <a href="/admin/blogManagement"  class="mainB">Blog Management</a>
     <a href="/admin/eventManagement">Events Management</a>
+    <a href="/admin/contactManagement">Contact Management</a>
     <a href="/logout">Logout</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
