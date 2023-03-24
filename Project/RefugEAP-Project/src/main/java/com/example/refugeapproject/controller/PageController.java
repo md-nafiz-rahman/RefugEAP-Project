@@ -84,10 +84,10 @@ public class PageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/contactUs") // Request to contactUs page
+    /*@RequestMapping(value = "/contactUs") // Request to contactUs page
     public String ContactUs() {
         return "contactUs";
-    }
+    }*/
 
     @RequestMapping(value = "/aboutUs") // Request to aboutUs page
     public String AboutUs() {
