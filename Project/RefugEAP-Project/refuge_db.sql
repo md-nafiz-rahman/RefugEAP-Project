@@ -74,11 +74,14 @@ DROP TABLE IF EXISTS `blogs`;
 CREATE TABLE `blogs` (
                          `blog_id` int NOT NULL AUTO_INCREMENT,
                          `title` varchar(100) NOT NULL,
-                         `name` varchar(100) NOT NULL,
                          `content` TEXT(10000) NOT NULL,
                          `status` VARCHAR(10) NOT NULL DEFAULT 'pending',
                          `email` varchar(100) NOT NULL,
+                         `name` varchar(100) NOT NULL,
                          `date` Date NOT NULL,
+                         `affiliation` varchar(100) NOT NULL,
+                         `role` varchar(50) NOT NULL,
+                         `type_of_contribution` varchar(50) NOT NULL,
                          PRIMARY KEY (`blog_id`) USING BTREE
 );
 

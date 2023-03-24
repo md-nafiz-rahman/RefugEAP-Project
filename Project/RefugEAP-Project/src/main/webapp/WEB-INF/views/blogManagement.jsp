@@ -225,6 +225,14 @@
         <form method="post" action="${pageContext.request.contextPath}/admin/blog/add">
             <label for="name">Name:</label> <input type="text" id="name" name="name" required />
             <label for="email">Email:</label> <input type="email" id="email" name="email" required />
+            <label for="affiliation">Affiliation:</label> <input type="text" id="affiliation" name="affiliation" required />
+            <label for="role">Role:</label> <input type="text" id="role" name="role" required />
+            <label for="typeOfContribution">Type of Contribution:</label>
+            <select id="typeOfContribution" name="typeOfContribution">
+                <option value="case study">Case Study</option>
+                <option value="testimonial">Testimonial</option>
+                <option value="other">Other</option>
+            </select>
             <label for="title">Title:</label> <input type="text" id="title" name="title" required />
             <label for="content">Content:</label> <input type="text" id="content" name="content" required />
             <input type="submit" value="Add New Post" title="Add Post" />
@@ -239,6 +247,9 @@
         <th>ID</th>
         <th>Author</th>
         <th>Email</th>
+        <th>Affiliation</th>
+        <th>Role</th>
+        <th>Type Of Contribution</th>
         <th>Date Posted</th>
         <th>Title</th>
         <th>Content</th>
@@ -252,6 +263,9 @@
             <td>${blog.blog_id}</td>
             <td>${blog.name}</td>
             <td>${blog.email}</td>
+            <td>${blog.affiliation}</td>
+            <td>${blog.role}</td>
+            <td>${blog.typeOfContribution}</td>
             <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
             <td>${blog.title}</td>
             <td>${blog.content}</td>
@@ -280,6 +294,9 @@
         <th>ID</th>
         <th>Author</th>
         <th>Email</th>
+        <th>Affiliation</th>
+        <th>Role</th>
+        <th>Type Of Contribution</th>
         <th>Date Posted</th>
         <th>Title</th>
         <th>Content</th>
@@ -292,6 +309,9 @@
             <td>${blog.blog_id}</td>
             <td>${blog.name}</td>
             <td>${blog.email}</td>
+            <td>${blog.affiliation}</td>
+            <td>${blog.role}</td>
+            <td>${blog.typeOfContribution}</td>
             <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
             <td>${blog.title}</td>
             <td>${blog.content}</td>
@@ -314,6 +334,9 @@
         <th>ID</th>
         <th>Author</th>
         <th>Email</th>
+        <th>Affiliation</th>
+        <th>Role</th>
+        <th>Type Of Contribution</th>
         <th>Date Posted</th>
         <th>Title</th>
         <th>Content</th>
@@ -327,19 +350,22 @@
             <td>${blog.blog_id}</td>
             <td>${blog.name}</td>
             <td>${blog.email}</td>
+            <td>${blog.affiliation}</td>
+            <td>${blog.role}</td>
+            <td>${blog.typeOfContribution}</td>
             <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
             <td>${blog.title}</td>
             <td>${blog.content}</td>
             <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/deleteBlog">
-                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
-                    <input type="submit" value="Delete">
-                </form>
-            </td>
-            <td>
                 <form method="post" action="${pageContext.request.contextPath}/admin/recoverBlog">
                     <input type="hidden" name="blog_id" value="${blog.blog_id}">
                     <input type="submit" value="Recover">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/deleteBlog">
+                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                    <input type="submit" value="Delete">
                 </form>
             </td>
         </tr>

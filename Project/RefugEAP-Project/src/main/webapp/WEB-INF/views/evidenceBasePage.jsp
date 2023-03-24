@@ -231,16 +231,7 @@
             line-height: 2.0; /* add some spacing between lines */
             font-family: "Calibri", sans-serif;
         }
-        .sec3 {
-            background-color: white; /* add a blue background color to the team section */
-            padding: 10px;
-            max-width: 1600px; /* limit the maximum width of the section to 800 pixels */
-            max-height: 1000px;
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            margin-bottom: 60px;
-            color: black; /* set the text color to white */
-            line-height: 2.0; /* add some spacing between lines */
-        }
+
 
 
 
@@ -259,6 +250,9 @@
             margin-top: 10px; /* add some space between the image and caption */
             font-weight: bold; /* make the caption text bold */
         }
+
+
+
 
     </style>
 </head>
@@ -280,29 +274,49 @@
     <div class="container">
         <div class="background-image"></div>
         <div class="overlays" style="padding-top: 70px">
-            <h1>Resources</h1>
+            <h1>Evidence Base</h1>
         </div>
     </div>
 
 </header>
 
 
-<section class="sec2">
+<section class="sec1">
+    <p>We are keen to build a strong collection of case studies, research studies, testimonials and other forms of evidence that practitioners / organisations can use when developing (or advocating for the development of) robust 'pathway to Higher Education' English language provision for refugee-background students (RBS), with a particular focus on English for Academic Purposes (EAP).</p>
+</section>
 
-    <p>We have compiled a collection of practical resources to support any practitioners / organisations looking to develop 'pathway to Higher Education' English language provision for refugee-background students (RBS), with a particular focus on English for Academic Purposes (EAP). We have done this in the form of a Refugee Network Resource Bank Padlet, as we would like to encourage practitioners from around the sector to contribute links / resources to this on an ongoing basis. </p>
+<section class="sec2">
+    <h2>RefugEAP Network's collated evidence</h2>
+    <h3>Case studies</h3>
+    <p>Case studies compiled via this RefugEAP Network website can be accessed here . We invite practitioners / organisations to contribute a case study outlining one of their own initiatives. These can be submitted via our <a href="/blogPage" target=”_blank” >blog page</a> (via the contributions form) .
+    </p>
 </section>
 
 <section class="sec1">
-    <p>Please feel free to add to this Padlet if you have resources / links on this topic which might help others who are working in this area. Contributions are set to 'anonymous', but you are free to add your name to any posts/comments if you wish to. </p>
+    <h3>Testimonials</h3>
+    <p>We are also collecting testimonials, which can be accessed here . These can be submitted by anyone involved in these sorts of initiatives, including practitioners, researchers or students. You can contribute your own testimonial via our <a href="/blogPage" target=”_blank” >blog page</a> (via the contributions form) .
+    </p>
 </section>
 
 <section class="sec2">
-    <p>The categories included in this Padlet include (among others): examples of relevant initiatives; resources related to trauma-informed practice; training resources for those working with refugee background students; useful partner organisations which can support your initiatives; job / role descriptions for practitioners across the sector focusing on supporting RBS. </p>
+    <h3>Other forms of evidence</h3>
+    <p>We are also inviting practitioners, researchers and students to contribute other relevant content to our blog page (to add to the evidence base), accessible here . This might be in the form of a written blog post, an audio or video file, or perhaps a combination of media. This category is deliberately broad, and might focus on a range of relevant topics. You can contribute via our <a href="/blogPage" target=”_blank” >blog page</a> (via the contributions form) .
+    </p>
 </section>
 
-<section class="sec3">
-    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/94dn9e90rewkm1p3" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Made with Padlet"></div></a></div></div>
+<section class="sec1">
+    <h3>Repository of studies on HE access for forced migrants (compiled by Eva Hanna)</h3>
+    <p>One of our RefugEAP Network working group members, Eva Hanna, has been curating a very useful repository of studies focusing on HE access for forced migrants, plus language-focused Widening Participation studies. It is accessible in this editable <a href="https://docs.google.com/document/d/1NjAE1-rZ_Rs_i4CpdvQsT7fFbbFSPx1MrFa1fBgV5h4/edit" target=”_blank” >Google Doc</a>, and you are invited to add to this document any relevant resources that you would like to share.
+    </p>
 </section>
+
+<section class="sec2">
+    <h3>Hub for European Refugees (HERE) database)</h3>
+    <p>The <a href="https://hubhere.org/#database" target=”_blank” >HERE Database</a> is an extremely useful searchable database of studies / resources related to refugee education in Europe. It is not specifically focused on HE (it focuses on all levels of education) or language education (it focuses on all types of provision), but you can use the search filters to locate HE language provision (e.g. for 'education type' you can select 'language education', and for 'education level' you can select 'tertiary education'). There is also a facility on the HERE website to suggest studies / resources to be included in their database.
+    </p>
+</section>
+
+
 
 
 <footer>
