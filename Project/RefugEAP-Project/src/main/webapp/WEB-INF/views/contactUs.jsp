@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html lang="en">
 <head>
     <title>RefugEAP - Contact Us</title>
@@ -262,9 +267,22 @@
             event.preventDefault(); // Prevent form submission
             var popup = document.getElementById("popup");
             var overlay = document.getElementById("overlay");
-            popup.style.display = "block";
-            overlay.style.display = "block";
+
+            $.ajax({
+                type: 'POST',
+                url: '/addContact',
+                data: $('form').serialize(),
+                success: function(response) {
+                    // Show the popup message after the AJAX request is complete
+                    popup.style.display = "block";
+                    overlay.style.display = "block";
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+                }
+            });
         }
+
 
         function closePopup() {
             var popup = document.getElementById("popup");
@@ -274,6 +292,7 @@
             location.reload(); // Reload the page to clear form data
         }
     </script>
+
 </head>
 <body>
 
@@ -301,17 +320,24 @@
 
 <div class="containerForm">
     <div class="form">
-        <h2>Contact Us</h2><br>
+        <h2>Contact us</h2><br>
 
-        <form onsubmit="showConfirmation(event)">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <input type="submit" value="Submit">
-        </form>
+        <%--  Form to take in a contact  --%>
+        <%--@elvariable id="contact" type="contact"--%>
+        <form:form action="/addContact" modelAttribute="contact" >    <%-- onsubmit="showConfirmation(event)"  --%>
+
+            <form:label path="name">Name: </form:label><form:input path="name" required="required"/>
+
+            <form:label path="email">Email: </form:label><form:input type="email" path="email" required="required"/>
+
+            <form:label path="message">Message: </form:label><form:input path="message" required="required"/>
+
+            <form:hidden path="status" value="pending"/>
+
+
+
+            <input type="submit"/>
+        </form:form>
     </div>
     <div class="contact-info">
         <h2>Contact Information</h2>
