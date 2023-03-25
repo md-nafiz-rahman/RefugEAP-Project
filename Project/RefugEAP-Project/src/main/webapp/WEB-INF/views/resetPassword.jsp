@@ -391,26 +391,17 @@
 
     <div>
         <div class="form">
-            <h4>Add New User</h4>
-            <form method="post" action="/admin/user/add">
-                <label for="username">Username:</label> <input type="text" id="username" name="username" required />
-                <label for="password">Password:</label> <input type="password" id="password" name="password" required />
-                <label for="role">Role:</label><select id="role" name="role">
-                    <c:forEach var="role" items="${roles}">
-                        <option>${role.getName()}</option>
-                    </c:forEach>
-                </select>
-                <input type="submit" value="Add New User" title="Add user" />
+            <h4>Reset Password</h4>
+            <p>Change the password of the user account: ${username}</p>
+            <form method="post" action="/admin/user/resetPassword">
+                <input type="hidden" id="username" name="username" value="${username}" />
+                <label for="password">New Password:</label> <input type="password" id="password" name="password" required />
+                <input type="submit" value="Reset" title="Reset password" />
+                <p><a href = '<c:url value = "/admin/adminPortal"/>'>NO, don't reset</a></p>
             </form>
         </div>
     </div>
-            <table class="center">
-                <tr><th>Username</th><th>Role</th><th>Status</th><th>DELETE</th><th>PASSWORD</th></tr>
-                <c:forEach var="user" items="${users}">
-                    <tr><td>${user.getUsername()}</td><td>${user.GetRolesNames()}</td><td>${user.isEnabled()}</td><td><a href = '<c:url value = "/admin/user/deleteUser/${user.getId()}"/>'>DEL</a></td><td><a href = '<c:url value = "/admin/user/resetPassword/${user.getId()}"/>'>Reset</a></td></tr>
-                </c:forEach>
-
-            </table>
+            
 
     <footer>
         <div>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RefugEAP - Secure</title>
+    <title>Refugee eap</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> <!--Google font link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 
@@ -15,7 +16,7 @@
 
         body {
             margin: 0;
-            font-family: 'Calibri', sans-serif;       /* google font */
+            font-family: 'Oswald', sans-serif;       /* google font */
             padding: 0;
         }
 
@@ -73,7 +74,7 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Calibri', sans-serif;
+            font-family: 'Oswald', sans-serif;
         }
 
         .navigator {
@@ -182,8 +183,8 @@
         }
 
         .footer-links a {
+            color: black;
             text-decoration:none;
-            font-size:18px;
         }
 
         .footer-slogan {
@@ -202,7 +203,7 @@
     <a href="/admin/blogManagement">Blog Management</a>
     <a href="/admin/eventManagement">Events Management</a>
     <a href="/admin/adminPortal">Users Management</a>
-    <a href="/admin/contactManagement">Contact Management</a>
+    <a href="/admin/changePassword">Change Password</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -212,7 +213,7 @@
     <div class="container">
         <div class="background-image"></div>
         <div class="overlay" style="padding-top: 100px">
-            <h1>SECURE AREA</h1>
+            <h1>Admin & Editors Area</h1>
         </div>
     </div>
 

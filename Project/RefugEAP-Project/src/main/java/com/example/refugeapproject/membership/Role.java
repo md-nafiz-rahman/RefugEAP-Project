@@ -1,5 +1,7 @@
 package com.example.refugeapproject.membership;
 
+import java.util.Set;
+
 import javax.persistence.*;
  
 @Entity
@@ -12,6 +14,10 @@ public class Role {
     
     private String name;
 
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
+
+    
     public Integer getId() {
         return id;
     }
@@ -29,4 +35,5 @@ public class Role {
     {
         this.name=name;
     }
+
 }
