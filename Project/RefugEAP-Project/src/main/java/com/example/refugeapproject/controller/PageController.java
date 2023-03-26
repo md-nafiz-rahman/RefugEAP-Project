@@ -19,12 +19,6 @@ import org.springframework.web.bind.annotation.*;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-
-
-
-
 
 @Controller
 public class PageController {
@@ -44,7 +38,8 @@ public class PageController {
     @Autowired
     ViewCountRepo viewRepo;
 
-
+    @Autowired
+    ContactRepo contactRepo;
 
 
 
@@ -89,12 +84,30 @@ public class PageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/contactUs") // Request to contactUs page
+    /*@RequestMapping(value = "/contactUs") // Request to contactUs page
     public String ContactUs() {
         return "contactUs";
+    }*/
+
+    @RequestMapping(value = "/aboutUs") // Request to aboutUs page
+    public String AboutUs() {
+        return "aboutUs";
     }
 
+    @RequestMapping(value = "/resourcePage") // Request to resource page
+    public String ResourcePage() {
+        return "resourcePage";
+    }
 
+    @RequestMapping(value = "/developingProvisionPage") // Request to developing provision page
+    public String DevelopingProvisionPage() {
+        return "developingProvisionPage";
+    }
+
+    @RequestMapping(value = "/evidenceBasePage") // Request to evidence base page
+    public String EvidenceBasePage() {
+        return "evidenceBasePage";
+    }
 
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
     // public String AdminPortal() {
@@ -124,8 +137,8 @@ public class PageController {
         String encrypPassword= new BCryptPasswordEncoder().encode(pwd);
         user.setPassword(encrypPassword);
         user.setEnabled(true);
-        
-        Set<Role> role= new HashSet<>();      
+
+        Set<Role> role= new HashSet<>();
         Role role_= roleRepo.getRoleByName(roleName);
         role.add(role_);
         user.setRoles(role);
@@ -133,105 +146,8 @@ public class PageController {
         userRepo.save(user);
 
         return "redirect:/admin/adminPortal";
-        
-    }
-
-    @RequestMapping(value = "/admin/user/deleteUser/{id}") // Start page of the members only section
-    public ModelAndView DeleteUser(@PathVariable("id") int id) {
-        ModelAndView mv= new ModelAndView();
-        Long userID= Long.valueOf(id);
-        User user = userRepo.findById(userID).orElse(null);
-        if(user==null)
-        {
-            mv.addObject("username", "Not found");
-            mv.addObject("id", "0");
-        }
-        else
-        {
-            mv.addObject("username", user.getUsername());
-            mv.addObject("id", user.getId());
-        }
-        mv.setViewName("deleteUser");
-        return mv;
-    }
-
-    @RequestMapping(value = "/admin/user/doDeleteUser/{id}") // Start page of the members only section
-    public String DoDeleteUser(@PathVariable("id") int id) {
-        ModelAndView mv= new ModelAndView();
-        Long userID= Long.valueOf(id);
-        User user = userRepo.findById(userID).orElse(null);
-        if(user!=null)
-        {
-            userRepo.delete(user);
-        }
-        return "redirect:/admin/adminPortal";
 
     }
-
-    @RequestMapping(value = "/admin/user/resetPassword/{id}") // Start page of the members only section
-    public ModelAndView ResetPassword(@PathVariable("id") int id) {
-        ModelAndView mv= new ModelAndView();
-        Long userID= Long.valueOf(id);
-        User user = userRepo.findById(userID).orElse(null);
-        if(user==null)
-        {
-            mv.addObject("username", "Not found");
-        }
-        else
-        {
-            mv.addObject("username", user.getUsername());
-        }
-        mv.setViewName("resetPassword");
-        return mv;
-    }
-
-    @RequestMapping(value = "/admin/user/resetPassword", method = RequestMethod.POST) // Request to adminPortal page
-    public String DoResetPassword(@RequestParam("username") String username,@RequestParam("password") String password) {
-
-        User user=userRepo.getUserByUsername(username);
-        String encrypPassword= new BCryptPasswordEncoder().encode(password);
-        user.setPassword(encrypPassword);
-        userRepo.save(user);
-
-        return "redirect:/admin/adminPortal";
-        
-    }
-
-    @RequestMapping(value = "/admin/changePassword") // Start page of the members only section
-    public ModelAndView ChangePassword(@RequestParam(required = false) String error) {
-        ModelAndView mv= new ModelAndView();
-        if(error!=null)
-        {
-            mv.addObject("message",true);
-            mv.addObject("error", "The submitted password does not match the user's password!");
-        }
-        mv.setViewName("changePassword");
-        return mv;
-    }
-
-    @RequestMapping(value = "/admin/changePassword", method = RequestMethod.POST) // Request to adminPortal page
-    public String DoChangePassword(@RequestParam("newPassword") String newPassword,@RequestParam("password") String password) {
-        
-        // Get the login username and the userDetails object.
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        User user=userRepo.getUserByUsername(username);
-
-        // Check if the submitted current password is same user's password.
-        boolean matched = new BCryptPasswordEncoder().matches(password, user.getPassword());
-        if(!matched)
-        {
-            return "redirect:/admin/changePassword?error=Incorrect";
-        }
-
-        String encrypPassword= new BCryptPasswordEncoder().encode(newPassword);
-        user.setPassword(encrypPassword);
-        userRepo.save(user);
-
-        return "redirect:/admin/secure";
-        
-    }
-
 
     @RequestMapping(value = "/login") // Request login page
     public ModelAndView Login() {
@@ -247,7 +163,6 @@ public class PageController {
     public String Secure() {
         return "secure";
     }
-
 
     @RequestMapping(value = "/admin/blogManagement")
     public ModelAndView blogManagement() {
@@ -326,7 +241,10 @@ public class PageController {
     public String addBlog(@RequestParam("name") String name,
                           @RequestParam("email") String email,
                           @RequestParam("title") String title,
-                          @RequestParam("content") String content) {
+                          @RequestParam("content") String content,
+                          @RequestParam("affiliation") String affiliation,
+                          @RequestParam("role") String role,
+                          @RequestParam("typeOfContribution") String typeOfContribution){
 
         Blog blog = new Blog();
         java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
@@ -334,6 +252,9 @@ public class PageController {
         blog.setEmail(email);
         blog.setTitle(title);
         blog.setContent(content);
+        blog.setAffiliation(affiliation);
+        blog.setRole(role);
+        blog.setTypeOfContribution(typeOfContribution);
         blog.setDate(currentDate);
 
         blogRepo.save(blog);
@@ -428,7 +349,10 @@ public class PageController {
     public String BlogAdd(@RequestParam("name") String name,
                           @RequestParam("email") String email,
                           @RequestParam("title") String title,
-                          @RequestParam("content") String content) {
+                          @RequestParam("content") String content,
+                          @RequestParam("affiliation") String affiliation,
+                          @RequestParam("role") String role,
+                          @RequestParam("typeOfContribution") String typeOfContribution){
 
         Blog blog = new Blog();
         java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
@@ -436,6 +360,9 @@ public class PageController {
         blog.setEmail(email);
         blog.setTitle(title);
         blog.setContent(content);
+        blog.setAffiliation(affiliation);
+        blog.setRole(role);
+        blog.setTypeOfContribution(typeOfContribution);
         blog.setDate(currentDate);
         blogRepo.save(blog);
 
@@ -497,7 +424,90 @@ public class PageController {
         return events;
     }
 
+    @RequestMapping("/contactUs")
+    public String newContact(Model model) {
+        model.addAttribute("contact", new Contact());
 
+        return "contactUs";
+    }
+
+    @RequestMapping(value = "/addContact", method = RequestMethod.POST)
+    public String addContact(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("message") String message){
+
+        System.out.println("test");
+        Contact contact = new Contact();
+        contact.setName(name);
+        contact.setEmail(email);
+        contact.setMessage(message);
+
+        contactRepo.save(contact);
+
+        return "redirect:/contactUs";}
+
+    @RequestMapping(value = "/admin/contactManagement")
+    public ModelAndView contactManagement() {
+        ModelAndView modelAndView = new ModelAndView();
+
+        // Fetch all the contacts from the database using the findAll() method
+        List<Contact> contacts = (List<Contact>) contactRepo.findByStatus("pending");
+        List<Contact> acceptedContacts = (List<Contact>) contactRepo.findByStatus("approved");
+        List<Contact> discardedContacts = (List<Contact>) contactRepo.findByStatus("deleted");
+
+        // Pass the list of contacts to the JSP view
+        modelAndView.addObject("contacts", contacts);
+        modelAndView.addObject("acceptedContacts", acceptedContacts);
+        modelAndView.addObject("discardedContacts", discardedContacts);
+
+        modelAndView.setViewName("contactManagement");
+
+        return modelAndView;
+    }
+    @PostMapping(value = "/admin/acceptContact")
+    public String acceptContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Set the status of the contact to "approved"
+            contact.setStatus("approved");
+            contactRepo.save(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
+
+    @PostMapping(value = "/admin/discardContact")
+    public String discardContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Set the status of the contact to "deleted"
+            contact.setStatus("deleted");
+            contactRepo.save(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
+
+    @PostMapping(value = "/admin/deleteContact")
+    public String deleteContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Delete the contact from the database
+            contactRepo.delete(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
+
+    @PostMapping(value = "/admin/recoverContact")
+    public String recoverContact(@RequestParam("contact_id") int contactId) {
+        // Get the contact by ID
+        Contact contact = contactRepo.findById(contactId);
+        if (contact != null) {
+            // Set the status of the contact to "pending"
+            contact.setStatus("pending");
+            contactRepo.save(contact);
+        }
+        return "redirect:/admin/contactManagement";
+    }
 
 
 }
