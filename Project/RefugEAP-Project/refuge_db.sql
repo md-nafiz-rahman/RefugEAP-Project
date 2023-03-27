@@ -116,7 +116,7 @@ CREATE TABLE `contacts` (
                             `name` varchar(100) NOT NULL,
                             `status` VARCHAR(10) NOT NULL DEFAULT 'pending',
                             `email` varchar(100) NOT NULL,
-                            `message` varchar(100) NOT NULL,
+                            `message` TEXT(10000) NOT NULL,
                             PRIMARY KEY (`contact_id`) USING BTREE
 );
 
