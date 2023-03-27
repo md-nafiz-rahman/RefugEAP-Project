@@ -263,6 +263,8 @@ public class PageController {
         blog.setDate(currentDate);
 
         blogRepo.save(blog);
+        emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your blog and will check your request withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
+        emailService.sendMessage("Hazzaemailservice@gmail.com","Blog request",name +" at "+ email + " Has asked to put up a blog this can be accepted/denied on the admin page");
 
         return "redirect:/blogPage";}
 
@@ -282,6 +284,9 @@ public class PageController {
         event.setEvent_more_info(event_more_info);
 
         eventRepo.save(event);
+        emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your event and will check your request withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
+
+        emailService.sendMessage("Hazzaemailservice@gmail.com","Event request",name +" at "+ email + " Has asked to put up an event this can be accepted/denied on the admin page");
 
         return "redirect:/eventPage";}
 
@@ -446,6 +451,8 @@ public class PageController {
         contact.setMessage(message);
 
         contactRepo.save(contact);
+        emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your message and will reply withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
+        emailService.sendMessage("Hazzaemailservice@gmail.com","Contact request",name + " wants to get in contact, here is their email if you wish to reply "+ email +"\n\n Here is their message\n\n"+ message);
 
         return "redirect:/contactUs";}
 
