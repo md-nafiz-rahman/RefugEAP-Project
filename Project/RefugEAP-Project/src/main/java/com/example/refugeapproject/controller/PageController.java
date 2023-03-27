@@ -420,7 +420,7 @@ public class PageController {
             blog.setStatus("deleted");
             blogRepo.save(blog);
         }
-        emailService.sendMessage(event.getEmail(), "RefugEAP","Hi "+ event.getName() + ",\n\nWe have declined your blog feel free to email for further inquiries into why we have done this.\n\nYours Sincerely, \nThe RefugEAP team");
+        emailService.sendMessage(blog.getEmail(), "RefugEAP","Hi "+ blog.getName() + ",\n\nWe have declined your blog feel free to email for further inquiries into why we have done this.\n\nYours Sincerely, \nThe RefugEAP team");
         return "redirect:/admin/blogManagement";
     }
 
