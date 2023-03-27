@@ -109,6 +109,11 @@ public class PageController {
         return "evidenceBasePage";
     }
 
+    @RequestMapping(value = "/joinUs") // Request to evidence base page
+    public String JoinUsPage() {
+        return "joinUs";
+    }
+
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
     // public String AdminPortal() {
     //     return "adminPortal";
