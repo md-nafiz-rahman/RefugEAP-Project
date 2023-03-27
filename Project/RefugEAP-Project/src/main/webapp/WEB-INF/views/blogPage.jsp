@@ -444,10 +444,60 @@
             right: 20px;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .button-container button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #f2f2f2;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button-container button.active {
+            background-color: #e6e6e6;
+        }
+
+        .containerBlog {
+            display: none;
+        }
+
+        .containerBlog.show {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
 
 
     </style>
     <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.containerBlog');
+            sections.forEach(section => {
+                section.classList.remove('show');
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('show');
+
+            // Set active button
+            const buttons = document.querySelectorAll('.button-container button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+                if (button.getAttribute('onclick').includes(sectionId)) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
         function showConfirmation(event) {
             event.preventDefault(); // Prevent form submission
             var popup = document.getElementById("popup");
@@ -532,6 +582,12 @@
     </div>
 
 </header>
+
+<div class="button-container">
+    <button class="active" onclick="showSection('blog')">Blog</button>
+    <button onclick="showSection('testimonials')">Testimonials</button>
+    <button onclick="showSection('case-studies')">Case Studies</button>
+</div>
 
 <main id="blog" class="containerBlog show">
     <c:forEach var="blog" items="${approvedOther}">
