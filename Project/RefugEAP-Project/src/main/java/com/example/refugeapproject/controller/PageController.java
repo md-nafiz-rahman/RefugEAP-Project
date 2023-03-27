@@ -225,15 +225,29 @@ public class PageController {
     @RequestMapping("/blogPage")
     public String newBlog(Model model) {
         model.addAttribute("blog", new Blog());
-        List<Blog> approvedBlogs = blogRepo.findByStatus("approved");
+
+        List<Blog> approvedBlogs = blogRepo.findByStatusAndTypeOfContribution("approved", "blog");
+        List<Blog> approvedOther = blogRepo.findByStatusAndTypeOfContribution("approved", "other");
+        List<Blog> approvedTestimonials = blogRepo.findByStatusAndTypeOfContribution("approved", "testimonial");
+        List<Blog> approvedCaseStudies = blogRepo.findByStatusAndTypeOfContribution("approved", "case study");
 
         // Pass the list of approved blog posts to the blogPage.jsp view
         model.addAttribute("approvedBlogs", approvedBlogs);
+
+        // Pass the list of approved other posts to the blogPage.jsp view
+        model.addAttribute("approvedOther", approvedOther);
+
+        // Pass the list of approved testimonials to the blogPage.jsp view
+        model.addAttribute("approvedTestimonials", approvedTestimonials);
+
+        // Pass the list of approved case studies to the blogPage.jsp view
+        model.addAttribute("approvedCaseStudies", approvedCaseStudies);
 
         List<Blog> discardedBlogs = blogRepo.findByStatus("deleted");
 
         // Pass the list of discarded blog posts to the blogPage.jsp view
         model.addAttribute("discardedBlogs", discardedBlogs);
+
         return "blogPage";
     }
 
