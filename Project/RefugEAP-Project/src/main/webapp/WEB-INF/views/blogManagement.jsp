@@ -205,6 +205,31 @@
             padding-bottom: 15px;
         }
 
+
+        th{
+            background-color: #9a9ba6;
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+
+        .tScroll{
+            overflow-x:scroll;
+            height:30%;
+            width:90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .textheader{
+            text-align: center;
+            font-size: 1.75em;
+            font-weight: bold;
+            padding-bottom: 5px;
+
+        }
+
+
     </style>
 </head>
 <body>
@@ -241,9 +266,10 @@
     </div>
 </div>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Pending Blog Posts</caption>
+<h3 class="textheader">Pending Blog Posts</h3>
+<div class="tScroll">
+<table>
+
     <thead>
     <tr>
         <th>ID</th>
@@ -291,9 +317,10 @@
 
 <br>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Current Blog Posts</caption>
+<h3 class="textheader">Current Blog Posts</h3>
+<div class="tScroll">
+    <table>
+
     <thead>
     <tr>
         <th>ID</th>
@@ -334,9 +361,10 @@
 
 <br>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Discarded Blog Posts</caption>
+<h3 class="textheader">Discarded Blog Posts</h3>
+<div class="tScroll">
+    <table>
+
     <thead>
     <tr>
         <th>ID</th>

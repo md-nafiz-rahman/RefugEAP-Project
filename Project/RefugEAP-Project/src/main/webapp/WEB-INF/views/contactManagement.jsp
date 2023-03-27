@@ -206,6 +206,29 @@
             padding-bottom: 15px;
         }
 
+        th{
+            background-color: #9a9ba6;
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+
+        .tScroll{
+            overflow-x:scroll;
+            height:30%;
+            width:90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .textheader{
+            text-align: center;
+            font-size: 1.75em;
+            font-weight: bold;
+            padding-bottom: 5px;
+
+        }
+
     </style>
 </head>
 <body>
@@ -222,9 +245,11 @@
 </div>
 
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Pending Contacts</caption>
+<h3 class="textheader">Pending Contacts</h3>
+<div class="tScroll">
+    <table>
+
+
     <thead>
     <tr>
         <th>ID</th>
@@ -263,9 +288,10 @@
 
 <br>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Current Contacts</caption>
+<h3 class="textheader">Current Contacts</h3>
+<div class="tScroll">
+    <table>
+
     <thead>
     <tr>
         <th>ID</th>
@@ -297,9 +323,11 @@
 
 <br>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Discarded Contacts</caption>
+<h3 class="textheader">Discarded Contacts</h3>
+<div class="tScroll">
+    <table>
+
+
     <thead>
     <tr>
         <th>ID</th>

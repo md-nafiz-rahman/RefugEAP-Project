@@ -206,6 +206,29 @@
             padding-bottom: 15px;
         }
 
+        th{
+            background-color: #9a9ba6;
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+
+        .tScroll{
+            overflow-x:scroll;
+            height:30%;
+            width:90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .textheader{
+            text-align: center;
+            font-size: 1.75em;
+            font-weight: bold;
+            padding-bottom: 5px;
+
+        }
+
     </style>
 </head>
 <body>
@@ -248,9 +271,10 @@
     </div>
 </div>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Requests to add events</caption>
+<h3 class="textheader">Requests to add events</h3>
+<div class="tScroll">
+    <table>
+
     <thead>
     <tr>
         <th>ID</th>
@@ -291,9 +315,10 @@
 </table>
 </div>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Accepted Events</caption>
+<h3 class="textheader">Accepted Events</h3>
+<div class="tScroll">
+    <table>
+
     <thead>
     <tr>
         <th>ID</th>
@@ -327,9 +352,10 @@
 </table>
 </div>
 
-<div style="overflow-x:auto;">
-<table class="center">
-    <caption>Discarded Events</caption>
+<h3 class="textheader">Discarded Events</h3>
+<div class="tScroll">
+    <table>
+
     <thead>
     <tr>
         <th>ID</th>
