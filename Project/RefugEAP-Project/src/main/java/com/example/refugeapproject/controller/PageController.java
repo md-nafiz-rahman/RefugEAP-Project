@@ -41,6 +41,10 @@ public class PageController {
     @Autowired
     ContactRepo contactRepo;
 
+    @Autowired
+    private EmailService emailService;
+
+
 
 
     private void formatEventDateTime(List<Event> events, DateTimeFormatter dateFormatter, DateTimeFormatter timeFormatter) {
