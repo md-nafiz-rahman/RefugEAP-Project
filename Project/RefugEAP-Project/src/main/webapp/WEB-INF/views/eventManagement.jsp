@@ -248,6 +248,7 @@
     </div>
 </div>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Requests to add events</caption>
     <thead>
@@ -288,7 +289,9 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Accepted Events</caption>
     <thead>
@@ -322,7 +325,9 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Discarded Events</caption>
     <thead>
@@ -363,6 +368,7 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 
 <footer>
     <div class="footer-columns">

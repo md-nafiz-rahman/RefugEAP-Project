@@ -241,6 +241,7 @@
     </div>
 </div>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Pending Blog Posts</caption>
     <thead>
@@ -286,8 +287,11 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
+
 <br>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Current Blog Posts</caption>
     <thead>
@@ -326,8 +330,11 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
+
 <br>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Discarded Blog Posts</caption>
     <thead>
@@ -373,6 +380,7 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 
 <footer>
     <div class="footer-columns">

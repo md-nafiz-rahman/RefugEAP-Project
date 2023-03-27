@@ -222,7 +222,7 @@
 </div>
 
 
-
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Pending Contacts</caption>
     <thead>
@@ -259,8 +259,11 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
+
 <br>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Current Contacts</caption>
     <thead>
@@ -290,8 +293,11 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
+
 <br>
 
+<div style="overflow-x:auto;">
 <table class="center">
     <caption>Discarded Contacts</caption>
     <thead>
@@ -327,6 +333,7 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 
 <footer>
     <div class="footer-columns">
