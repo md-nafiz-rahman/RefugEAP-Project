@@ -322,6 +322,7 @@ public class PageController {
             event.setStatus("approved");
             eventRepo.save(event);
         }
+        emailService.sendMessage(event.getEmail(), "RefugEAP","Hi "+ event.getName() + ",\n\nWe have approved your event and it has now been posted.\n\nYours Sincerely, \nThe RefugEAP team");
         return "redirect:/admin/eventManagement";
     }
 
@@ -334,6 +335,7 @@ public class PageController {
             event.setStatus("deleted");
             eventRepo.save(event);
         }
+        emailService.sendMessage(event.getEmail(), "RefugEAP","Hi "+ event.getName() + ",\n\nWe have declined your event feel free to email for further inquiries into why we have done this.\n\nYours Sincerely, \nThe RefugEAP team");
         return "redirect:/admin/eventManagement";
     }
     @PostMapping(value = "/admin/deleteEvent")
@@ -391,6 +393,7 @@ public class PageController {
             blog.setStatus("approved");
             blogRepo.save(blog);
         }
+        emailService.sendMessage(blog.getEmail(), "RefugEAP","Hi "+ blog.getName() + ",\n\nWe have approved your blog and it has now been posted.\n\nYours Sincerely, \nThe RefugEAP team");
         return "redirect:/admin/blogManagement";
     }
 
@@ -403,6 +406,7 @@ public class PageController {
             blog.setStatus("deleted");
             blogRepo.save(blog);
         }
+        emailService.sendMessage(event.getEmail(), "RefugEAP","Hi "+ event.getName() + ",\n\nWe have declined your blog feel free to email for further inquiries into why we have done this.\n\nYours Sincerely, \nThe RefugEAP team");
         return "redirect:/admin/blogManagement";
     }
 
