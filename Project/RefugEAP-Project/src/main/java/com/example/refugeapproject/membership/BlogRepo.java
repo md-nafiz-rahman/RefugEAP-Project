@@ -7,5 +7,6 @@ import java.util.List;
 public interface BlogRepo extends CrudRepository<Blog, Integer> {
     public Blog findById(int id);
     public List<Blog> findByStatus(String status);
-}
+    public List<Blog> findByStatusAndTypeOfContribution(String status, String typeOfContribution);
 
+}
