@@ -533,8 +533,42 @@
 
 </header>
 
-<main class="containerBlog">
-    <c:forEach var="blog" items="${approvedBlogs}">
+<main id="blog" class="containerBlog show">
+    <c:forEach var="blog" items="${approvedOther}">
+        <article>
+            <header class="post-header">
+                <h3>${blog.title}</h3>
+                <p class="meta">Posted on <fmt:formatDate value="${blog.date}" pattern="dd MMMM, yyyy" />, by ${blog.name}</p>
+            </header>
+            <section>
+                <p>${blog.content}</p>
+            </section>
+            <footer class="post-footer">
+                <!-- Add any additional footer content here -->
+            </footer>
+        </article>
+    </c:forEach>
+</main>
+
+<main id="testimonials" class="containerBlog">
+    <c:forEach var="blog" items="${approvedTestimonials}">
+        <article>
+            <header class="post-header">
+                <h3>${blog.title}</h3>
+                <p class="meta">Posted on <fmt:formatDate value="${blog.date}" pattern="dd MMMM, yyyy" />, by ${blog.name}</p>
+            </header>
+            <section>
+                <p>${blog.content}</p>
+            </section>
+            <footer class="post-footer">
+                <!-- Add any additional footer content here -->
+            </footer>
+        </article>
+    </c:forEach>
+</main>
+
+<main id="case-studies" class="containerBlog">
+    <c:forEach var="blog" items="${approvedCaseStudies}">
         <article>
             <header class="post-header">
                 <h3>${blog.title}</h3>
