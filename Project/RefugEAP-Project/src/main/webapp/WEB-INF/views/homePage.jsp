@@ -276,7 +276,6 @@
 
         .cal {
             height: 700px;
-            float: left;
             width: 50%;
             margin: 0 auto;
             text-align: center;
@@ -306,7 +305,6 @@
         }
 
         #calendar {
-            float: top;
             size: 10px;
             padding-left: 20%;
             padding-right: 20%;
