@@ -591,7 +591,7 @@
             .background-image {
                 background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
                 background-size: cover;
-                height: 160px;
+                height: 200px;
                 width: 100%;
             }
 
@@ -862,7 +862,7 @@
         <div class="dropdown-content">
             <a href="/developingProvisionPage">Developing provision</a>
             <a href="/evidenceBasePage">Evidence Base</a>
-            <a href="/resourcesPage">Practical Resources</a>
+            <a href="/resourcePage">Practical Resources</a>
         </div>
     </div>
 
