@@ -81,7 +81,7 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Calibri', sans-serif;
         }
 
         .navigator {
@@ -271,7 +271,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Calibri, sans-serif;
             margin: 0;
         }
 
