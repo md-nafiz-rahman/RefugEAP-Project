@@ -184,7 +184,7 @@
         table {
             border-collapse: collapse;
             border-spacing: 0;
-            width: 90%;
+            width: 100%;
             border: 1px solid #ddd;
             margin-bottom: 25px;
         }
