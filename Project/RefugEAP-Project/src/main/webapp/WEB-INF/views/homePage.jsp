@@ -483,30 +483,54 @@
 <!-- Navbar -->
 <div class="navigator">
     <a href="/" class="mainB">Home</a>
-    <a href="/blogPage">Blog</a>
-    <a href="/eventPage">Events</a>
+    <a href="/aboutUs">About</a>
 
-    <!-- About Us dropdown menu -->
+    <!-- Existing provision dropdown menu -->
     <div class="dropdown">
-        <button class="dropbtn">About Us
+        <button class="dropbtn">Existing Provision
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="/">Our Mission</a>
-            <a href="#">Our Team</a>
-            <a href="#">Our History</a>
+            <a href="/englishLP">English Language Provision</a>
+            <a href="/refugEAP">RefugEAP Programme</a>
         </div>
     </div>
 
-    <!-- Contact Us dropdown menu -->
+    <!-- Practitioner resources dropdown menu -->
     <div class="dropdown">
-        <button class="dropbtn">Contact Us
+        <button class="dropbtn">Practitioner Resources
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="#">Email</a>
-            <a href="#">Phone</a>
-            <a href="#">Address</a>
+            <a href="/developingProvisionPage">Developing provision</a>
+            <a href="/evidenceBasePage">Evidence Base</a>
+            <a href="/resourcesPage">Practical Resources</a>
+        </div>
+    </div>
+
+    <!-- Blog dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn" href="/blogPage">Blog
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/blogPage">Case Studies</a>
+            <a href="/blogPage">Testimonials</a>
+            <a href="/blogPage">Other Blog Contributions</a>
+        </div>
+    </div>
+
+    <a href="/eventPage">Events</a>
+
+    <!-- Contact Us dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Connect
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/contactUs">Contact Us</a>
+            <a href="/joinUs">Join Us</a>
+            <a href="#">Directory</a>
         </div>
     </div>
 
