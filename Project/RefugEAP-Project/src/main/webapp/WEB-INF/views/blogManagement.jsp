@@ -207,7 +207,7 @@
 
 
         th{
-            background-color: #9a9ba6;
+            background-color: #023047;
             color: white;
             font-size: 1.25em;
             font-weight: bold;
@@ -229,6 +229,7 @@
 
         }
 
+        tr:nth-child(even) {background-color: #f2f2f2;}
 
     </style>
 </head>
