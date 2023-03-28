@@ -118,6 +118,11 @@ public class PageController {
         return "joinUs";
     }
 
+    @RequestMapping(value = "/directoryPage") // Request to directory page
+    public String DirectoryPage() {
+        return "directoryPage";
+    }
+
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
     // public String AdminPortal() {
     //     return "adminPortal";
