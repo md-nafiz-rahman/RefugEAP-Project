@@ -239,6 +239,192 @@
             font-weight: bold; /* make the caption text bold */
         }
 
+        /* CSS style for tablet device responsiveness */
+        @media screen and (max-width: 1200px) {
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            li {
+                font-size: 12px; /* set the font size to 20 pixels */
+            }
+
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+            }
+
+
+            .navigator a {
+                float: right;
+                display: block;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 5px 10px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+            .logo {
+                float: left;
+                display: block;       /* Header Navigation Settings text color, font size, alignment */
+                padding: 5px 10px;
+                height: 30px;
+            }
+
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 30px;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+            .sec1 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 10px;
+                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
+                margin: 0 auto; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+                font-family: "Calibri", sans-serif;
+            }
+
+            .sec2 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 10px 10px 2px;
+                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
+                margin: 0 auto; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+                font-family: "Calibri", sans-serif;
+                display: flex; /* make the section a flex container */
+                flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
+
+            }
+
+            .sec3 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 5px;
+                max-width: 90%; /* limit the maximum width of the section to 800 pixels */
+                max-height: 600px;
+                margin: 0 auto 700px; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+            }
+
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 10px 0;
+            }
+
+            .footer-columns {
+                max-width: 600px;
+                margin: 0 0 0 250px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-columns > div {
+                flex: 1;
+                text-align: left;
+            }
+
+            .footer-col-1 img {
+                max-width: 75px;
+                height: auto;
+                margin: 7px 12px;
+            }
+
+            .social-icons {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .social-icons li {
+                display: inline-block;
+                margin: 0 5px;
+                height: 20px;
+                width: 20px;
+            }
+
+            .social-icons a {
+                color: black;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                display: block;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+
+            .footer-links a {
+                text-decoration:none;
+                font-size:10px;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+            }
+
+        }
+
 
         /* CSS style for mobile device responsiveness */
         @media screen and (max-width: 600px) {
