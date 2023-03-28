@@ -692,7 +692,7 @@
                 </div>
             </c:forEach>
             <div class="view-more-btn-container">
-                <a href="/blogPage" class="view-more-btn">View More</a>
+                <a href="/eventPage" class="view-more-btn">View More</a>
             </div>
         </div>
 
