@@ -648,7 +648,7 @@
         <div class="dropdown-content">
             <a href="/contactUs">Contact Us</a>
             <a href="/joinUs">Join Us</a>
-            <a href="#">Directory</a>
+            <a href="/directoryPage">Directory</a>
         </div>
     </div>
 
