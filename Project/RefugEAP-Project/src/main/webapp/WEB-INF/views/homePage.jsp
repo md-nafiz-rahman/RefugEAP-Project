@@ -252,7 +252,7 @@
 
         .split{
             display: grid;
-            height: 1000px;
+            height: 900px;
         }
 
         .splitcal{
@@ -264,7 +264,7 @@
 
 
         .blog {
-            height: 1000px;
+            height: 900px;
             float: left;
             width: 50%;
             margin: 0 auto;
