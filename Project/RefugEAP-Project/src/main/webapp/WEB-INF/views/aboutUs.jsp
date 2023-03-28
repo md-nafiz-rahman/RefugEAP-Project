@@ -346,39 +346,120 @@
             li {
                 font-size: 12px; /* set the font size to 20 pixels */
             }
+            .container {
+                position: relative;
+            }
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlays {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+            }
+
 
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: right;
+                padding: 10px 0 10px 0;
+                flex-direction: row-reverse;
+
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 12px;
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 10px;
+                height: 50px;
+                margin: 0;
             }
 
             .navigator a:hover {
                 background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
                 color: black;
+
             }
 
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
+            }
+
+            .dropdown {
+                float: right;
+                overflow: hidden;
+
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 12px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 7px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #FFFFFF;
+                color: #29668B;
             }
 
             h2 {
@@ -530,24 +611,32 @@
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 9px;
+                /*position: relative;*/
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 20px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
             }
 
             .navigator a:hover {
@@ -558,7 +647,39 @@
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 9px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 5px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+                z-index: 2;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+                z-index: 2;
             }
 
             h2 {
@@ -577,26 +698,6 @@
                 font-size: 10px;
             }
 
-            input[type="text"],
-            input[type="email"],
-            textarea {
-                width: 100%;
-                padding: 5px;
-                margin-bottom: 10px;
-                border-radius: 2px;
-                border: 1px solid gray;
-                font-size: 10px;
-            }
-
-            input[type="submit"] {
-                background-color: black;
-                color: white;
-                padding: 5px 10px;
-                border-radius: 2px;
-                border: none;
-                font-size: 10px;
-                cursor: pointer;
-            }
 
             footer {
                 background-color: #29668B;
@@ -736,6 +837,9 @@
 
 <!-- Navbar -->
 <div class="navigator">
+
+    <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
+
     <a href="/" class="mainB">Home</a>
     <a href="/aboutUs">About</a>
 
@@ -788,7 +892,6 @@
         </div>
     </div>
 
-    <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
 <!-- Header -->
