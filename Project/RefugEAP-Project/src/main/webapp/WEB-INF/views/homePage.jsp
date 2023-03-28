@@ -178,9 +178,9 @@
             /*display: block;*/
             color: #FFFFFF;
             text-align: center;
-            padding: 30px 50px;
+            padding: 30px 30px;
             text-decoration: none;
-            font-size: 23px;
+            font-size: 19px;
         }
 
         .logo {
@@ -198,7 +198,7 @@
         .navigator a.mainB {
             background-color: #f2f2f2;
             color: #29668B;
-            padding: 30px 130px;
+            padding: 30px 60px;
         }
 
         /* Dropdown menu styles */
@@ -209,11 +209,11 @@
 
         .dropdown .dropbtn {
             cursor: pointer;
-            font-size: 23px;
+            font-size: 19px;
             border: none;
             outline: none;
             color: #FFFFFF;
-            padding: 30px 50px;
+            padding: 30px 30px;
             background-color: inherit;
             font-family: inherit;
             margin: 0;
