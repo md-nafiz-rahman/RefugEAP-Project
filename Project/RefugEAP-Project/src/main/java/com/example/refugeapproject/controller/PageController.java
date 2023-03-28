@@ -131,6 +131,12 @@ public class PageController {
         return "directoryPage";
     }
 
+    @RequestMapping(value = "/englishLP") // Request to EnglishLP page
+    public String EnglishLP() {return "englishLP";}
+
+    @RequestMapping(value = "/refugEAP") // Request to EnglishLP page
+    public String RefugEAP() {return "refugEAP";}
+
     // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
     // public String AdminPortal() {
     //     return "adminPortal";
