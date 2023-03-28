@@ -178,16 +178,16 @@
             /*display: block;*/
             color: #FFFFFF;
             text-align: center;
-            padding: 30px 30px;
+            padding: 20px 20px;
             text-decoration: none;
-            font-size: 19px;
+            font-size: 18px;
         }
 
         .logo {
             float: left;
             display: block;
             padding: 10px 40px;
-            height: 90px;
+            height: 80px;
         }
 
         .navigator a:hover {
@@ -198,7 +198,7 @@
         .navigator a.mainB {
             background-color: #f2f2f2;
             color: #29668B;
-            padding: 30px 60px;
+            padding: 20px 30px;
         }
 
         /* Dropdown menu styles */
@@ -213,7 +213,7 @@
             border: none;
             outline: none;
             color: #FFFFFF;
-            padding: 30px 30px;
+            padding: 20px 30px;
             background-color: inherit;
             font-family: inherit;
             margin: 0;
@@ -255,6 +255,14 @@
             height: 1000px;
         }
 
+        .splitcal{
+            display: grid;
+            height: 700px;
+            border: 1px solid black;
+            padding-top: 20px;
+        }
+
+
         .blog {
             height: 1000px;
             float: left;
@@ -264,6 +272,14 @@
             color: #dddddd;
             border: 2px solid black;
             background-color: #29668B;
+        }
+
+        .cal {
+            height: 700px;
+            float: left;
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .post {
@@ -290,19 +306,16 @@
         }
 
         #calendar {
-            text-align: center;
-            float: left;
-            font-size: 20px;
-            padding-left: 200px;
-            padding-right: 200px;
+            float: top;
+            size: 10px;
+            padding-left: 20%;
+            padding-right: 20%;
             background-size: cover;
-
         }
         .events {
-            height: 1000px;
+            height: 700px;
             float: right;
             width: 50%;
-            border: 2px solid black;
         }
 
         #events li {
@@ -429,7 +442,7 @@
         }
 
         .event-item strong {
-            font-size: 26px;
+            font-size: 20px;
         }
 
         .event-item p {
