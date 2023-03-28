@@ -435,20 +435,22 @@
         }
 
         .contribution-popup {
-            display: none;
+            display: block;
             position: fixed;
-            font-size: 12px;
-            font-family: Calibri, sans-serif;
-            text-align: left;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%,-50%);
+            width: 50%;
+            max-height: 90vh;
+            font-size: 12px;
+            font-family: Calibri, sans-serif;
             background: #fff;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             text-align: center;
             z-index: 100;
+            overflow: auto;
         }
 
         .contribution-popup li {
