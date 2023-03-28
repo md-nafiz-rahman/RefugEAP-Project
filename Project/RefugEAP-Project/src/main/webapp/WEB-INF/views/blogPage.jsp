@@ -483,9 +483,10 @@
         }
 
         .contribution-popup button {
-            position: absolute;
+            position: relative;
             bottom: 20px;
             right: 20px;
+            top : -5px;
         }
 
         .button-container {
