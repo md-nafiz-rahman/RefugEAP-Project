@@ -435,9 +435,32 @@
 <div class="navigator">
     <a href="/" class="mainB">Home</a>
     <a href="/blogPage">Blog</a>
-    <a href="/aboutUs">About Us</a>
     <a href="/eventPage">Events</a>
-    <a href="/contactUs">Contact Us</a>
+
+    <!-- About Us dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">About Us
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/">Our Mission</a>
+            <a href="#">Our Team</a>
+            <a href="#">Our History</a>
+        </div>
+    </div>
+
+    <!-- Contact Us dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Contact Us
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#">Email</a>
+            <a href="#">Phone</a>
+            <a href="#">Address</a>
+        </div>
+    </div>
+
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
