@@ -239,12 +239,35 @@ public class PageController {
         // Pass the list of approved blog posts to the blogPage.jsp view
         model.addAttribute("approvedBlogs", approvedBlogs);
 
+
+        // Shorten content so that it can all fit on the blog page
+        for (int i = 0; i < approvedOther.size(); i++) {
+            String shortStr = approvedOther.get(i).getContent().replaceAll("(.{50})", "$1\n");
+            approvedOther.get(i).setContent(shortStr);
+
+        }
         // Pass the list of approved other posts to the blogPage.jsp view
         model.addAttribute("approvedOther", approvedOther);
 
+
+
+        // Shorten content so that it can all fit on the blog page
+        for (int i = 0; i < approvedTestimonials.size(); i++) {
+            String shortStr = approvedTestimonials.get(i).getContent().replaceAll("(.{50})", "$1\n");
+            approvedTestimonials.get(i).setContent(shortStr);
+
+        }
         // Pass the list of approved testimonials to the blogPage.jsp view
         model.addAttribute("approvedTestimonials", approvedTestimonials);
 
+
+
+        // Shorten content so that it can all fit on the blog page
+        for (int i = 0; i < approvedCaseStudies.size(); i++) {
+            String shortStr = approvedCaseStudies.get(i).getContent().replaceAll("(.{50})", "$1\n");
+            approvedCaseStudies.get(i).setContent(shortStr);
+
+        }
         // Pass the list of approved case studies to the blogPage.jsp view
         model.addAttribute("approvedCaseStudies", approvedCaseStudies);
 
