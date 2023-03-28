@@ -615,12 +615,15 @@
         }
 
         table, th, td { /*Style for directory table */
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             border-collapse: collapse;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
         }
 
         th{ /*Style for directory table header */
-            background-color: #9a9ba6;
+            background-color: #023047;
             color: white;
             font-size: 1.25em;
             font-weight: bold;
@@ -633,6 +636,7 @@
             margin-right: auto;
         }
 
+        tr:nth-child(even) {background-color: #f2f2f2;}
 
     </style>
 </head>
