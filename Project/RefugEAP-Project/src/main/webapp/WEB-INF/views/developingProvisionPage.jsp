@@ -37,6 +37,7 @@
         }
 
         p {
+            font-family: 'Calibri', sans-serif;
             font-size: 23px;
         }
 
@@ -187,7 +188,7 @@
         }
 
         .social-icons a {
-            color: black;
+            color: white;
         }
 
         .footer-links {
