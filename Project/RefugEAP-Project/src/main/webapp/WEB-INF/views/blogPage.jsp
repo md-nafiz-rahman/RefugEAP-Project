@@ -395,7 +395,7 @@
             margin: 0 auto;
             border: 0px solid gray;
             /*border-radius: 10px;*/
-            padding: 25px 150px 150px;
+            padding: 25px 150px;
         }
 
         .popup {
@@ -518,6 +518,9 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: space-between;
+        }
+        .contributionDropdown {
+            margin-bottom: 10px;
         }
 
 
@@ -742,7 +745,7 @@
             <input type="checkbox" id="readGuidelines" name="readGuidelines" required="required" />
             I have read and agree to the contribution guidelines
         </label>
-        <button type="button" onclick="viewGuideline()">View Guidelines</button>
+        <button type="button" onclick="viewGuideline()" style="margin-bottom: 10px;">View Guidelines</button>
 
         <%--@elvariable id="blog" type=""--%>
         <form:form action="/addBlog" modelAttribute="blog" onsubmit="showConfirmation(event)">
@@ -758,8 +761,8 @@
             <form:label path="role">Role:</form:label>
             <form:input path="role" required="required"/>
 
-            <form:label path="typeOfContribution">Type of Contribution:</form:label>
-            <form:select path="typeOfContribution" required="required">
+            <form:label path="typeOfContribution" class="contributionDropdown">Type of Contribution:</form:label>
+            <form:select path="typeOfContribution" required="required" class="contributionDropdown">
                 <form:option value="case study">Case Study</form:option>
                 <form:option value="testimonial">Testimonial</form:option>
                 <form:option value="other">Other</form:option>
