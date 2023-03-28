@@ -72,37 +72,86 @@
         }
 
         .navigator {
-            background-color: #29668B;         /* Header Navigation Main Button */
+            background-color: #29668B;
+            /*position: relative;*/
             overflow: hidden;
         }
 
-
         .navigator a {
             float: right;
-            display: block;
-            color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+            /*display: block;*/
+            color: #FFFFFF;
             text-align: center;
-            padding: 30px 50px;
+            padding: 30px 20px;
             text-decoration: none;
-            font-size: 23px;
+            font-size: 18px;
         }
 
         .logo {
             float: left;
-            display: block;       /* Header Navigation Settings text color, font size, alignment */
+            display: block;
             padding: 10px 40px;
-            height: 90px;
+            height: 80px;
         }
 
         .navigator a:hover {
-            background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+            background-color: #FFFFFF;
             color: black;
         }
 
         .navigator a.mainB {
-            background-color: #f2f2f2;     /* Header Navigation Main Button */
+            background-color: #f2f2f2;
             color: #29668B;
-            padding: 30px 130px;
+            padding: 30px 30px;
+        }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 19px;
+            border: none;
+            outline: none;
+            color: #FFFFFF;
+            padding: 30px 30px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #FFFFFF;
+            color: black;
         }
 
         h2 {
@@ -160,7 +209,7 @@
         }
 
         .social-icons a {
-            color: white;
+            color: black;
         }
 
         .footer-links {
@@ -645,11 +694,58 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="/">Home</a>
-    <a href="/blogPage">Blog</a>
-    <a href="/aboutUs">About Us</a>
+    <a href="/" class="mainB">Home</a>
+    <a href="/aboutUs">About</a>
+
+    <!-- Existing provision dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Existing Provision
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/englishLP">English Language Provision</a>
+            <a href="/refugEAP">RefugEAP Programme</a>
+        </div>
+    </div>
+
+    <!-- Practitioner resources dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Practitioner Resources
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/developingProvisionPage">Developing provision</a>
+            <a href="/evidenceBasePage">Evidence Base</a>
+            <a href="/resourcePage">Practical Resources</a>
+        </div>
+    </div>
+
+    <!-- Blog dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn" href="/blogPage">Blog
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/blogPage">Case Studies</a>
+            <a href="/blogPage">Testimonials</a>
+            <a href="/blogPage">Other Blog Contributions</a>
+        </div>
+    </div>
+
     <a href="/eventPage">Events</a>
-    <a href="/contactUs">Contact Us</a>
+
+    <!-- Contact Us dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Connect
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/contactUs">Contact Us</a>
+            <a href="/joinUs">Join Us</a>
+            <a href="/directoryPage">Directory</a>
+        </div>
+    </div>
+
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
@@ -669,87 +765,87 @@
 
 <div class="fixtable">
 
-<table>
+    <table>
 
-    <tr>
-        <th>Full Name</th>
-        <th>Email Address</th>
-        <th>Institution</th>
-        <th>Role within institution</th>
-        <th>Other relevant affiliations </th>
-        <th>Areas of interest/expertise and/or types of provision/initiatives you are involved with</th>
-    </tr>
+        <tr>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Institution</th>
+            <th>Role within institution</th>
+            <th>Other relevant affiliations </th>
+            <th>Areas of interest/expertise and/or types of provision/initiatives you are involved with</th>
+        </tr>
 
-    <tr>
-        <td>Aleks Palanac</td>
-        <td>ap417@le.ac.uk</td>
-        <td>University of Leicester</td>
-        <td>Head of Sanctuary</td>
-        <td>RefugEAP Network Convenor EAP4SJ SIG (BALEAP) Committee Member</td>
-        <td>
-            <ul>
-            <li>Pre-sessional programme fee waivers + support</li>
-            <li>Trauma-informed ELT/EAP</li>
-            <li>Degree-level sanctuary scholarships</li>
-            <li>Working with partner organisations (e.g. RefuAid, Password English Language Testing, Leicester City of Sanctuary, Screen Share, After 18)</li>
-            </ul>
-        </td>
-    </tr>
+        <tr>
+            <td>Aleks Palanac</td>
+            <td>ap417@le.ac.uk</td>
+            <td>University of Leicester</td>
+            <td>Head of Sanctuary</td>
+            <td>RefugEAP Network Convenor EAP4SJ SIG (BALEAP) Committee Member</td>
+            <td>
+                <ul>
+                    <li>Pre-sessional programme fee waivers + support</li>
+                    <li>Trauma-informed ELT/EAP</li>
+                    <li>Degree-level sanctuary scholarships</li>
+                    <li>Working with partner organisations (e.g. RefuAid, Password English Language Testing, Leicester City of Sanctuary, Screen Share, After 18)</li>
+                </ul>
+            </td>
+        </tr>
 
-    <tr>
-        <td>Tomasz John</td>
-        <td>tomasz.john@strath.ac.uk</td>
-        <td>University of Strathclyde (Glasgow)</td>
-        <td>University of Strathclyde (Glasgow)</td>
-        <td>Member of the RefugEAP Network</td>
-        <td>
-            <ul>
-            <li>  Strathclyde scholarships for students from disadvantaged background</li>
-            </ul>
-        </td>
-    </tr>
+        <tr>
+            <td>Tomasz John</td>
+            <td>tomasz.john@strath.ac.uk</td>
+            <td>University of Strathclyde (Glasgow)</td>
+            <td>University of Strathclyde (Glasgow)</td>
+            <td>Member of the RefugEAP Network</td>
+            <td>
+                <ul>
+                    <li>  Strathclyde scholarships for students from disadvantaged background</li>
+                </ul>
+            </td>
+        </tr>
 
-    <tr>
-        <td>Iwona Winiarska-Pringle</td>
-        <td>Iwona.winiarska-pringle@glasgow.ac.uk</td>
-        <td>University of Glasgow</td>
-        <td>English for Academic Purposes Lecturer</td>
-        <td>Member of RefugEAP Network
+        <tr>
+            <td>Iwona Winiarska-Pringle</td>
+            <td>Iwona.winiarska-pringle@glasgow.ac.uk</td>
+            <td>University of Glasgow</td>
+            <td>English for Academic Purposes Lecturer</td>
+            <td>Member of RefugEAP Network
 
-            EAP4SJ SIG (BALEAP)
-            Events Officer
-        </td>
-        <td>
-            <ul>
-            <li>Overseeing sanctuary student support provision in English for Academic Study at the University of Glasgow</li>
-            <li>Collaborating with Widening Participation team at UoG in offering access to pre-sessional course for WP Access students</li>
-            <li>Mentoring visiting CARA Fellows</li>
-            </ul>
-        </td>
-    </tr>
+                EAP4SJ SIG (BALEAP)
+                Events Officer
+            </td>
+            <td>
+                <ul>
+                    <li>Overseeing sanctuary student support provision in English for Academic Study at the University of Glasgow</li>
+                    <li>Collaborating with Widening Participation team at UoG in offering access to pre-sessional course for WP Access students</li>
+                    <li>Mentoring visiting CARA Fellows</li>
+                </ul>
+            </td>
+        </tr>
 
-    <tr>
-        <td>Paul Breen </td>
-        <td>Paul.breen@ucl.ac.uk</td>
-        <td>UCL</td>
-        <td>Senior Digital Learning Developer </td>
-        <td>Member of RefugEAP Network</td>
-        <td>
-            <ul>
-            <li>       In previous role was involved in setting up a programme for Young Adult Migrants to study at The University of Westminster in a pre-university/access course but now in UCL have a different focus though keen on creating pathways for refugee students onto our Pre Sessional courses</li>
-            </ul>
-        </td>
-    </tr>
+        <tr>
+            <td>Paul Breen </td>
+            <td>Paul.breen@ucl.ac.uk</td>
+            <td>UCL</td>
+            <td>Senior Digital Learning Developer </td>
+            <td>Member of RefugEAP Network</td>
+            <td>
+                <ul>
+                    <li>       In previous role was involved in setting up a programme for Young Adult Migrants to study at The University of Westminster in a pre-university/access course but now in UCL have a different focus though keen on creating pathways for refugee students onto our Pre Sessional courses</li>
+                </ul>
+            </td>
+        </tr>
 
-    <tr>
-        <td>Jennifer Cowell</td>
-        <td>Jennifer.cowell@stir.ac.uk</td>
-        <td>University of Stirling</td>
-        <td>Faculty Academic Skills Advisor (Business School & EAP)</td>
-        <td>Member of RefugEAP Network</td>
-        <td></td>
-    </tr>
-</table>
+        <tr>
+            <td>Jennifer Cowell</td>
+            <td>Jennifer.cowell@stir.ac.uk</td>
+            <td>University of Stirling</td>
+            <td>Faculty Academic Skills Advisor (Business School & EAP)</td>
+            <td>Member of RefugEAP Network</td>
+            <td></td>
+        </tr>
+    </table>
 
 </div>
 
