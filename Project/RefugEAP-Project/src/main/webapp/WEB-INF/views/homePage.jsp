@@ -83,13 +83,13 @@
 
             if (events.length > 0) {
                 events.forEach(function(event) {
-                    eventList.append('<li class="event-item"><strong>' + event.event_title + '</strong><br/>' +
+                    eventList.append('<div class="event-item"><strong>' + event.event_title + '</strong><br/>' +
                         event.event_more_info + '<br/>' +
                         'Date: ' + event.formattedDate + '<br/>' +
-                        'Time: ' + event.formattedTime + '</li>');
+                        'Time: ' + event.formattedTime + '</div><hr/>');
                 });
             } else {
-                eventList.append('<li class="event-item"><strong>No events found on this date.</strong></li>');
+                eventList.append('<div class="event-item"><strong>No events found on this date.</strong></div><hr/>');
             }
         }
     </script>
@@ -252,10 +252,11 @@
 
         .split{
             display: grid;
-            height: auto;
+            height: 1000px;
         }
 
         .blog {
+            height: 1000px;
             float: left;
             width: 50%;
             margin: 0 auto;
@@ -289,7 +290,6 @@
         }
 
         #calendar {
-            width: 50%;
             text-align: center;
             float: left;
             font-size: 20px;
@@ -298,22 +298,18 @@
             background-size: cover;
 
         }
-        #events {
-            width: 45%;
+        .events {
+            height: 1000px;
             float: right;
-            padding: 20px;
-            background-color: aquamarine;
-        }
-        #events li {
             width: 50%;
+            border: 2px solid black;
+        }
+
+        #events li {
             font-size: 20px;
             padding: 10px 0;
         }
-        #event-title {
-            width: 45%;
-            float: right;
-            padding: 20px;
-        }
+
         #view-event-btn {
             position: absolute;
             top: 1500px;
@@ -422,17 +418,45 @@
         }
 
         .event-item {
-            margin-bottom: 10px;
-            margin-left: 1000px;
-            margin-right: 100px;
+            background-color: #f8f8f8;
+            /*max-width: 50%;*/
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Add this line to center the text */
+        }
+
+        .event-item strong {
+            font-size: 26px;
+        }
+
+        .event-item p {
+            font-size: 16px;
+            margin-top: 0;
+
         }
 
         .has-event {
-            background-color: #f1f1f1;
+            background-color: rgba(255, 0, 0, 0.8); /* Change the background color */
+            position: relative;
+        }
+
+        .has-event::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: black; /* Change the dot color */
+            border-radius: 50%;
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
         }
 
         .selected-date {
-            background-color: #f9d8c7;
+            background-color: #3399ff;
+            color: white;
         }
 
         .fc-today-button,
@@ -580,10 +604,13 @@
                 <a href="/blogPage" class="button">View More</a>
             </div>
         </div>
-
-        <div id="calendar"></div>
-        <ul id="event-list"></ul>
-        <button id="view-event-btn">View All Events</button>
+        <div class="events">
+            <div id="calendar"></div>
+            <div id="event-list"></div>
+            <div class="button-container">
+                <a href="/eventPage" class="button">View More</a>
+            </div>
+        </div>
     </div>
 </div>
 
