@@ -136,7 +136,7 @@
 
         .dropdown-content a {
             float: none;
-            color: black;
+            color: #29668B;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -153,7 +153,7 @@
 
         .dropdown:hover .dropbtn {
             background-color: #FFFFFF;
-            color: black;
+            color: #29668B;
         }
 
         h2 {
