@@ -128,26 +128,6 @@
             font-size: 20px;
         }
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid gray;
-            font-size: 18px;
-        }
-
-        input[type="submit"] {
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-        }
 
         footer {
             background-color: #29668B;
@@ -236,8 +216,7 @@
             padding: 10px;
             max-width: 1600px; /* limit the maximum width of the section to 800 pixels */
             max-height: 1000px;
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            margin-bottom: 60px;
+            margin: 0 auto 400px; /* center the section horizontally within its parent container */
             color: black; /* set the text color to white */
             line-height: 2.0; /* add some spacing between lines */
         }
@@ -258,6 +237,232 @@
         figcaption {
             margin-top: 10px; /* add some space between the image and caption */
             font-weight: bold; /* make the caption text bold */
+        }
+
+
+        /* CSS style for mobile device responsiveness */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+
+            .container {
+                position: relative;
+            }
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlays {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+            }
+
+
+            .navigator a {
+                float: right;
+                display: block;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 5px 10px;
+                text-decoration: none;
+                font-size: 9px;
+            }
+
+            .logo {
+                float: left;
+                display: block;       /* Header Navigation Settings text color, font size, alignment */
+                padding: 5px 10px;
+                height: 25px;
+            }
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 30px;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 10px 0;
+            }
+
+            .footer-columns {
+                max-width: 600px;
+                margin: 0 0 0 30px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-columns > div {
+                flex: 1;
+                text-align: left;
+            }
+
+            .footer-col-1 img {
+                max-width: 75px;
+                height: auto;
+                margin: 7px 12px;
+            }
+
+            .social-icons {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .social-icons li {
+                display: inline-block;
+                margin: 0 5px;
+                height: 20px;
+                width: 20px;
+            }
+
+            .social-icons a {
+                color: black;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                display: block;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+
+            .footer-links a {
+                text-decoration:none;
+                font-size:10px;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+            }
+
+            .sec1 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 10px 10px 2px;
+                max-width: 85%; /* limit the maximum width of the section to 400 pixels */
+                margin: 0 auto; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+                font-family: 'Calibri', sans-serif; /* set the font to Calibri */
+                display: flex; /* make the section a flex container */
+                flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
+
+            }
+
+            .sec2 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 10px 10px 2px;
+                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
+                margin: 0 auto; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+                font-family: "Calibri", sans-serif;
+                display: flex; /* make the section a flex container */
+                flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
+
+            }
+
+            .sec3 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 5px;
+                max-width: 90%; /* limit the maximum width of the section to 800 pixels */
+                max-height: 600px;
+                margin: 0 auto 700px; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+            }
+
+
+            li {
+                font-size: 10px; /* set the font size to 20 pixels */
+            }
+
+            figure {
+                display: flex; /* display the image and caption as a flex container */
+                flex-direction: row; /* stack the image and caption side by side */
+                align-items: center; /* center the contents horizontally */
+                text-align: center; /* center the caption text */
+                margin: auto; /* add some margin around each figure */
+                padding-bottom: 20px;
+            }
+
+            figure:nth-child(even) {
+                flex-direction: row-reverse; /* alternate the direction of the flex container between rows */
+            }
+
+            figcaption {
+                text-align: left;
+                margin-top: 5px; /* add some space between the image and caption */
+                font-weight: bold; /* make the caption text bold */
+                text-align: left; /* align the caption text to the left */
+
+            }
+
         }
 
     </style>
@@ -301,7 +506,7 @@
 </section>
 
 <section class="sec3">
-    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/94dn9e90rewkm1p3" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Made with Padlet"></div></a></div></div>
+    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/94dn9e90rewkm1p3" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:1200px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Made with Padlet"></div></a></div></div>
 </section>
 
 
