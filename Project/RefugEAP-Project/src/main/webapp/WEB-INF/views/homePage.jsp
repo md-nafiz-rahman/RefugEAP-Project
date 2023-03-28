@@ -686,7 +686,7 @@
                 <c:set var="blog" value="${acceptedBlogs[reversedIndex]}" />
                 <div class="post-wrapper">
                     <h3 class="post-title">${blog.title}</h3>
-                    <p class="post-content">${blog.content}</p>
+                    <p class="post-content"><a href="/blogPage">Read More</a></p>
                     <div class="post-author">
                         <p class="author-name">Author: ${blog.name}</p>
                         <p>Date Posted: <fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></p>
