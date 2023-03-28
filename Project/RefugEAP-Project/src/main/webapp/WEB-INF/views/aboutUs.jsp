@@ -19,7 +19,8 @@
 
         h2 {
             font-family: 'Calibri', sans-serif;
-            font-size: 44px;
+            font-size: 35px;
+            text-align: center;
         }
 
         h3 {
@@ -31,7 +32,7 @@
         }
 
         p {
-            font-size: 23px;
+            font-size: 20px;
         }
 
         .blog p{
@@ -327,7 +328,7 @@
 
             h2 {
                 font-family: 'Calibri', sans-serif;
-                font-size: 20px;
+                font-size: 35px;
             }
 
             h3 {
@@ -808,7 +809,7 @@
 </section>
 
 <section class="sec2">
-    <h2>Why is this work needed?</h2>
+    <h2>Why is this Work Needed?</h2>
     <p>In marked contrast to the ESOL classroom, the EAP classroom has not traditionally been a space which is open and accessible to refugee-background students (RBSs). This is due to the presence of a variety of systemic barriers, reflecting those associated with difficulties that refugees face in accessing HE in general, which includes that of the prohibitive cost of programmes of study. While ESOL provision is widely and freely available for these students, EAP provision is typically not, and the importance of EAP has been outlined by Jacqueline Stevenson and Sally Baker in their book Refugees in Higher Education: Debates, Discourse and Practice as follows:
 
         "What those seeking access to HE need is English for Academic Purposes which enables learners to develop those sorts of English language skills needed for higher level academic and vocational courses"
