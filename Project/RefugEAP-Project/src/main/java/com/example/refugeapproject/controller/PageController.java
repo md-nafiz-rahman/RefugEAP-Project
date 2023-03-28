@@ -71,7 +71,15 @@ public class PageController {
 
         // Pass the list of blogs to the JSP view
         modelAndView.addObject("blogs", blogs);
+
+        // Shorten content so that it can all fit on the blog page
+        for (int i = 0; i < acceptedBlogs.size(); i++) {
+            String shortStr = acceptedBlogs.get(i).getContent().replaceAll("(.{50})", "$1\n");
+            acceptedBlogs.get(i).setContent(shortStr);
+
+        }
         modelAndView.addObject("acceptedBlogs", acceptedBlogs);
+
         modelAndView.addObject("discardedBlogs", discardedBlogs);
 
         ViewCount views = viewRepo.findById(1);
