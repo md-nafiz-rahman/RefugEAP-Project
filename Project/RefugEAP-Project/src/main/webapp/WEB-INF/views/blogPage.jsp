@@ -393,9 +393,9 @@
         .form {
             width: 100%;
             margin: 0 auto;
-            padding: 150px ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
+            padding: 25px 150px 150px;
         }
 
         .popup {
@@ -492,7 +492,8 @@
         .button-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
 
         .button-container button {
