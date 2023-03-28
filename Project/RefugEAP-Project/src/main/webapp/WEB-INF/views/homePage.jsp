@@ -710,7 +710,7 @@
         <div class="cal">
             <div id="calendar"></div>
             <div class="view-more-btn-container">
-                <a href="/blogPage" class="view-more-btn">View All Events</a>
+                <a href="/eventPage" class="view-more-btn">View All Events</a>
             </div>
         </div>
         <div class="events">
