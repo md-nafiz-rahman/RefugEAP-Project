@@ -276,7 +276,7 @@
         }
 
         .post-header {
-            background-color: #333;
+            background-color: #023047; /*#333*/
             color: #fff;
             padding: 20px;
         }
