@@ -567,7 +567,7 @@
         <div class="dropdown-content">
             <a href="/contactUs">Contact Us</a>
             <a href="/joinUs">Join Us</a>
-            <a href="/directoryPage">Directory</a>
+            <a href="#">Directory</a>
         </div>
     </div>
 
@@ -598,25 +598,25 @@
 <!-- First Grid -->
 <div class="split">
     <div class="second">
-        <div class="blog">
-            <h1>Recent Blog Posts</h1>
-
+        <div class="blog-wrapper">
+            <h2 style="font-size: 48px; font-weight: bold; color: #29668b; margin-bottom: 60px;">Recent Blog Posts</h2>
             <c:forEach begin="0" end="1" step="1" varStatus="loop">
                 <c:set var="reversedIndex" value="${acceptedBlogs.size() - 1 - loop.index}" />
                 <c:set var="blog" value="${acceptedBlogs[reversedIndex]}" />
-                <div class="post">
-                    <h2>${blog.title}</h2>
-                    <p>${blog.content}</p>
-                    <div class="author">
-                        <p>Author: ${blog.name}</p>
+                <div class="post-wrapper">
+                    <h3 class="post-title">${blog.title}</h3>
+                    <p class="post-content">${blog.content}</p>
+                    <div class="post-author">
+                        <p class="author-name">Author: ${blog.name}</p>
                         <p>Date Posted: <fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></p>
                     </div>
                 </div>
             </c:forEach>
-            <div class="button-container">
-                <a href="/blogPage" class="button">View More</a>
+            <div class="view-more-btn-container">
+                <a href="/blogPage" class="view-more-btn">View More</a>
             </div>
         </div>
+
         <div class="events">
             <a class="twitter-timeline" data-height="900" href="https://twitter.com/EapForSJ?ref_src=twsrc%5Etfw">Tweets by EapForSJ</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -630,8 +630,8 @@
     <div class="second">
         <div class="cal">
             <div id="calendar"></div>
-            <div class="button-container">
-                <a href="/eventPage" class="button">View All Events</a>
+            <div class="view-more-btn-container">
+                <a href="/blogPage" class="view-more-btn">View All Events</a>
             </div>
         </div>
         <div class="events">
