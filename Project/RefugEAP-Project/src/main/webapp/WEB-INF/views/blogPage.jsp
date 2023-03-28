@@ -17,13 +17,6 @@
             min-width: auto;
         }
 
-
-        body {
-            margin: 0;
-            font-family: 'Calibri', sans-serif;       /* google font */
-            padding: 0;
-        }
-
         h1 {
             font-size: 48px;
         }
@@ -88,41 +81,90 @@
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
-            font-family: 'Calibri', sans-serif;
+            font-family: 'Oswald', sans-serif;
         }
 
         .navigator {
-            background-color: #29668B;         /* Header Navigation Main Button */
+            background-color: #29668B;
+            /*position: relative;*/
             overflow: hidden;
         }
 
-
         .navigator a {
             float: right;
-            display: block;
-            color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+            /*display: block;*/
+            color: #FFFFFF;
             text-align: center;
-            padding: 30px 50px;
+            padding: 30px 20px;
             text-decoration: none;
-            font-size: 23px;
+            font-size: 18px;
         }
 
         .logo {
             float: left;
-            display: block;       /* Header Navigation Settings text color, font size, alignment */
+            display: block;
             padding: 10px 40px;
-            height: 90px;
+            height: 80px;
         }
 
         .navigator a:hover {
-            background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+            background-color: #FFFFFF;
             color: black;
         }
 
         .navigator a.mainB {
-            background-color: #f2f2f2;     /* Header Navigation Main Button */
+            background-color: #f2f2f2;
             color: #29668B;
-            padding: 30px 130px;
+            padding: 30px 30px;
+        }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 19px;
+            border: none;
+            outline: none;
+            color: #FFFFFF;
+            padding: 30px 30px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #FFFFFF;
+            color: black;
         }
 
         h2 {
@@ -563,11 +605,58 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="/">Home</a>
-    <a href="/blogPage" class="mainB">Blog</a>
-    <a href="/aboutUs">About Us</a>
+    <a href="/" class="mainB">Home</a>
+    <a href="/aboutUs">About</a>
+
+    <!-- Existing provision dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Existing Provision
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/englishLP">English Language Provision</a>
+            <a href="/refugEAP">RefugEAP Programme</a>
+        </div>
+    </div>
+
+    <!-- Practitioner resources dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Practitioner Resources
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/developingProvisionPage">Developing provision</a>
+            <a href="/evidenceBasePage">Evidence Base</a>
+            <a href="/resourcesPage">Practical Resources</a>
+        </div>
+    </div>
+
+    <!-- Blog dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn" href="/blogPage">Blog
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/blogPage">Case Studies</a>
+            <a href="/blogPage">Testimonials</a>
+            <a href="/blogPage">Other Blog Contributions</a>
+        </div>
+    </div>
+
     <a href="/eventPage">Events</a>
-    <a href="/contactUs">Contact Us</a>
+
+    <!-- Contact Us dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Connect
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/contactUs">Contact Us</a>
+            <a href="/joinUs">Join Us</a>
+            <a href="/directoryPage">Directory</a>
+        </div>
+    </div>
+
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
