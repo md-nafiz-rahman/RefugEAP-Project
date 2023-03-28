@@ -605,11 +605,23 @@
             </div>
         </div>
         <div class="events">
+
+        </div>
+    </div>
+</div>
+
+
+<!-- First Grid -->
+<div class="splitcal">
+    <div class="second">
+        <div class="cal">
             <div id="calendar"></div>
-            <div id="event-list"></div>
             <div class="button-container">
-                <a href="/eventPage" class="button">View More</a>
+                <a href="/eventPage" class="button">View All Events</a>
             </div>
+        </div>
+        <div class="events">
+            <div id="event-list"></div>
         </div>
     </div>
 </div>
