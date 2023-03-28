@@ -634,6 +634,7 @@
             width:90%;
             margin-left: auto;
             margin-right: auto;
+            font-size: 20px;
         }
 
         tr:nth-child(even) {background-color: #f2f2f2;}
