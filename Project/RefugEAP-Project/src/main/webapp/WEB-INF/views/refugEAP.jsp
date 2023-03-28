@@ -811,6 +811,35 @@
 
 <br>
 
+<section class="sec1">
+    <p>The RefugEAP Programme is a parallel initiative to the RefugEAP Network. Whereas the Network is working to create more lasting opportunities for refugee-background students to access academic English courses across the HE sector through changing systems and processes, the Programme is functioning as a stop-gap which gives students a means to access academic English provision in the meantime.</p>
+    <h2>What is the RefugEAP Programme?</h2>
+    <p>The RefugEAP Programme is a free online pre-university academic English skills course for refugee-background students across the UK. It is for students who need to improve their academic English
+        skills to help them access a degree programme at university, but perhaps have not been able to access a formal pre-sessional English for Academic Purposes (EAP) programme
+        yet. RefugEAP has been developed to meet this need, providing students with an opportunity to continue to develop their academic English skills in a supportive way while
+        they are waiting for more formal opportunities to become available. The RefugEAP Programme has been developed by Deirdre McKenna at the University of Leeds’ Language
+        Centre and Aleks Palanac at the University of Leicester’s Sanctuary Seekers’ Unit. It is being kindly supported by dedicated volunteer tutors and a number of partner
+        organisations, including <a href="https://www.password-english.com/">Password Testing</a> (who are providing initial assessments), <a href="https://www.screen-share.co.uk/">Screen Share</a> (who are providing digital devices for students who need them) <a href="https://www.refuaid.org/">RefuAid</a> (who are providing wrap-around support and referrals) and <a href="https://www.oup.com/">Oxford University Press</a> (who have provided online course books). You can find out more via the <a href="https://le.ac.uk/refugeap">RefugEAP Programme web pages</a>.</p>
+    <h2>How can individuals and organisations support the RefugEAP Programme?</h2>
+    <p>There are various ways in which individuals and organisations can get involved in the RefugEAP Programme, including:</p>
+    <ul>
+        <li>becoming a volunteer tutor on the programme (if you are able to deliver a minimum of 1.5 - 3 hours per week of online classes)</li>
+        <li>becoming an associate member organisation (referring students into the scheme, and considering referrals for eligible RefugEAP students onto your pre-sessional, IELTS or academic programmes)</li>
+        <li>becoming an official partner organisation (contributing time or resources to support the running of the scheme)</li>
+    </ul>
+    <p>If you are potentially keen to support the scheme in one of these ways, please complete an <a href="https://docs.google.com/forms/d/e/1FAIpQLSfy_N8cqvLV2FGPrfWBXR-W64asV0yz4AqdHwDTCiOmH93P7Q/viewform">expression of interest form</a> to indicate the role(s) you’re potentially keen to get involved with.</p>
+    <h2>How can I get in touch or find out more?</h2>
+    <ul>
+        <li>If you have a general enquiry, please email <a href="mailto:refugeap@le.ac.uk">refugeap@le.ac.uk</a></li>
+        <li>Follow us on Twitter at <a href="https://twitter.com/RefugEAP">@RefugEAP</a></li>
+        <li>Follow the RefugEAP Programme project updates on <a href="https://www.researchgate.net/project/RefugEAP-conceptualising-piloting-and-evaluating-an-innovative-EAP-programme-for-refugee-background-students">ResearchGate</a></li>
+    </ul>
+    <p><a href="https://www.teachingenglish.org.uk/professional-development/podcast/teaching-english/british-council-teachingenglish-podcast-what">Listen to a British Council Teaching English podcast featuring the RefugEAP Programme</a><p>
+</section>
+
+</div>
+
+<br>
 
 <footer>
     <div class="footer-columns">
