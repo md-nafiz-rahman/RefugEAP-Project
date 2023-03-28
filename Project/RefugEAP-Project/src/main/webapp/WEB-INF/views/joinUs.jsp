@@ -261,10 +261,57 @@
 <!-- Navbar -->
 <div class="navigator">
     <a href="/">Home</a>
-    <a href="/blogPage">Blog</a>
-    <a href="/aboutUs">About Us</a>
+    <a href="/aboutUs">About</a>
+
+    <!-- Existing provision dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Existing Provision
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/englishLP">English Language Provision</a>
+            <a href="/refugEAP">RefugEAP Programme</a>
+        </div>
+    </div>
+
+    <!-- Practitioner resources dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Practitioner Resources
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/developingProvisionPage">Developing provision</a>
+            <a href="/evidenceBasePage">Evidence Base</a>
+            <a href="/resourcesPage">Practical Resources</a>
+        </div>
+    </div>
+
+    <!-- Blog dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn" href="/blogPage">Blog
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/blogPage">Case Studies</a>
+            <a href="/blogPage">Testimonials</a>
+            <a href="/blogPage">Other Blog Contributions</a>
+        </div>
+    </div>
+
     <a href="/eventPage">Events</a>
-    <a href="/contactUs">Contact Us</a>
+
+    <!-- Contact Us dropdown menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Connect
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/contactUs">Contact Us</a>
+            <a href="/joinUs">Join Us</a>
+            <a href="/directoryPage">Directory</a>
+        </div>
+    </div>
+
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
