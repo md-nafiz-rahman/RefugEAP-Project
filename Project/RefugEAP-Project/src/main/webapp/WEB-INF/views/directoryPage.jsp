@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RefugEAP - Resources</title>
+    <title>RefugEAP - Directory</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -234,28 +234,6 @@
             max-width: 300px;
         }
 
-        .sec1 {
-            background-color: white; /* add a blue background color to the team section */
-            padding: 10px;
-            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            color: black; /* set the text color to white */
-            line-height: 2.0; /* add some spacing between lines */
-            font-family: "Calibri", sans-serif;
-        }
-
-        .sec2 {
-            background-color: white; /* add a blue background color to the team section */
-            padding: 10px;
-            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            color: black; /* set the text color to white */
-            line-height: 2.0; /* add some spacing between lines */
-            font-family: "Calibri", sans-serif;
-        }
-
-
-
 
         li {
             font-size: 20px; /* set the font size to 20 pixels */
@@ -272,6 +250,31 @@
             margin-top: 10px; /* add some space between the image and caption */
             font-weight: bold; /* make the caption text bold */
         }
+
+        table, th, td { /*Style for directory table */
+            /*border: 1px solid black;*/
+            border-collapse: collapse;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th{ /*Style for directory table header */
+            background-color: #023047;
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+
+        .fixtable{ /*Align table in center */
+            height:30%;
+            width:90%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+        }
+
+        tr:nth-child(even) {background-color: #f2f2f2;}
 
         /* CSS style for tablet device responsiveness */
         @media screen and (max-width: 1200px) {
@@ -311,37 +314,95 @@
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: right;
+                padding: 10px 0 10px 0;
+                flex-direction: row-reverse;
+
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 12px;
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 10px;
+                height: 50px;
+                margin: 0;
             }
-
 
             .navigator a:hover {
                 background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
                 color: black;
+
             }
 
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
             }
+
+            .dropdown {
+                float: right;
+                overflow: hidden;
+
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 12px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 7px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: #29668B;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #FFFFFF;
+                color: #29668B;
+            }
+
 
             h2 {
                 margin-top: 0;
@@ -357,29 +418,6 @@
                 display: block;
                 margin-bottom: 5px;
                 font-size: 10px;
-            }
-
-            .sec1 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px;
-                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: "Calibri", sans-serif;
-
-            }
-
-            .sec2 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px 10px 2px;
-                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: "Calibri", sans-serif;
-
-
             }
 
 
@@ -446,6 +484,32 @@
                 max-width: 100px;
             }
 
+            table, th, td { /*Style for directory table */
+                /*border: 1px solid black;*/
+                border-collapse: collapse;
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            th{ /*Style for directory table header */
+                background-color: #023047;
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            .fixtable{ /*Align table in center */
+                height:30%;
+                width:80%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 12px;
+            }
+
+            tr:nth-child(even) {background-color: #f2f2f2;}
+
+
         }
 
         /* CSS style for mobile device responsiveness */
@@ -499,24 +563,32 @@
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 9px;
+                /*position: relative;*/
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 25px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
             }
 
             .navigator a:hover {
@@ -527,7 +599,39 @@
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 9px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 5px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+                z-index: 2;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: #29668B;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+                z-index: 2;
             }
 
             h2 {
@@ -609,33 +713,6 @@
                 max-width: 100px;
             }
 
-            .sec1 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px 10px 2px;
-                max-width: 85%; /* limit the maximum width of the section to 400 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: 'Calibri', sans-serif; /* set the font to Calibri */
-                display: flex; /* make the section a flex container */
-                flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
-
-            }
-
-            .sec2 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px 10px 2px;
-                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: "Calibri", sans-serif;
-                display: flex; /* make the section a flex container */
-                flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
-
-            }
-
-
 
             li {
                 font-size: 10px; /* set the font size to 20 pixels */
@@ -661,32 +738,39 @@
                 text-align: left; /* align the caption text to the left */
 
             }
+
+
+            table, th, td { /*Style for directory table */
+                /*border: 1px solid black;*/
+                border-collapse: collapse;
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+                /*max-width: 90%;*/
+            }
+
+            th{ /*Style for directory table header */
+                background-color: #023047;
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+                max-width: 10px;
+
+            }
+
+            .fixtable{ /*Align table in center */
+                height:50%;
+                width:95%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 10px;
+                overflow-x:auto;
+            }
+
+            tr:nth-child(even) {background-color: #f2f2f2;}
+
         }
 
-        table, th, td { /*Style for directory table */
-            /*border: 1px solid black;*/
-            border-collapse: collapse;
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        th{ /*Style for directory table header */
-            background-color: #023047;
-            color: white;
-            font-size: 1.25em;
-            font-weight: bold;
-        }
-
-        .fixtable{ /*Align table in center */
-            height:30%;
-            width:90%;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 20px;
-        }
-
-        tr:nth-child(even) {background-color: #f2f2f2;}
 
     </style>
 </head>
@@ -778,7 +862,7 @@
 
         <tr>
             <td>Aleks Palanac</td>
-            <td>ap417@le.ac.uk</td>
+            <td><a href="mailto:ap417@le.ac.uk">ap417@le.ac.uk</a></td>
             <td>University of Leicester</td>
             <td>Head of Sanctuary</td>
             <td>RefugEAP Network Convenor EAP4SJ SIG (BALEAP) Committee Member</td>
@@ -794,7 +878,7 @@
 
         <tr>
             <td>Tomasz John</td>
-            <td>tomasz.john@strath.ac.uk</td>
+            <td><a href="mailto:tomasz.john@strath.ac.uk">tomasz.john@strath.ac.uk</a></td>
             <td>University of Strathclyde (Glasgow)</td>
             <td>University of Strathclyde (Glasgow)</td>
             <td>Member of the RefugEAP Network</td>
@@ -807,7 +891,7 @@
 
         <tr>
             <td>Iwona Winiarska-Pringle</td>
-            <td>Iwona.winiarska-pringle@glasgow.ac.uk</td>
+            <td><a href="mailto:Iwona.winiarska-pringle@glasgow.ac.uk">Iwona.winiarska-pringle@glasgow.ac.uk</a></td>
             <td>University of Glasgow</td>
             <td>English for Academic Purposes Lecturer</td>
             <td>Member of RefugEAP Network
@@ -826,8 +910,8 @@
 
         <tr>
             <td>Paul Breen </td>
-            <td>Paul.breen@ucl.ac.uk</td>
-            <td>UCL</td>
+            <td><a href="mailto:Paul.breen@ucl.ac.uk">Paul.breen@ucl.ac.uk</a></td>
+            <td>University College London</td>
             <td>Senior Digital Learning Developer </td>
             <td>Member of RefugEAP Network</td>
             <td>
@@ -839,7 +923,7 @@
 
         <tr>
             <td>Jennifer Cowell</td>
-            <td>Jennifer.cowell@stir.ac.uk</td>
+            <td><a href="mailto:Jennifer.cowell@stir.ac.uk">Jennifer.cowell@stir.ac.uk</a></td>
             <td>University of Stirling</td>
             <td>Faculty Academic Skills Advisor (Business School & EAP)</td>
             <td>Member of RefugEAP Network</td>
