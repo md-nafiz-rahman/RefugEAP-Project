@@ -180,6 +180,18 @@ public class PageController {
 
     }
 
+    // Method to completely remove a user from the database
+    @PostMapping(value = "/admin/deleteUser")
+    public String deleteUser(@RequestParam("user_id") Long id) {
+        // Get the user by ID
+        User user = userRepo.findById(id);
+        if (user != null) {
+            // Delete the user from the database
+            userRepo.delete(user);
+        }
+        return "redirect:/admin/adminPortal";
+    }
+
     @RequestMapping(value = "/login") // Request login page
     public ModelAndView Login() {
 
