@@ -655,6 +655,16 @@
 <div id="event-list"></div>
 
 
+<div class="event-list">
+    <h2>Upcoming Events</h2>
+    <c:forEach var="event" items="${acceptedEvents}">
+        <div class="event">
+            <h3 class="event-title">${event.getEvent_title()}</h3>
+            <p class="event-datetime">${event.getFormattedDate()} at ${event.getFormattedTime()}</p>
+            <p class="event-info">${event.getEvent_more_info()}</p>
+        </div>
+    </c:forEach>
+</div>
 
 <div>
     <div class="containerForm">
@@ -701,9 +711,9 @@
         <div class="footer-col-2">
             <p>Follow us on</p>
             <ul class="social-icons">
-
-                <li class="iconHover"><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-
+                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
             </ul>
         </div>
         <div class="footer-col-3">
