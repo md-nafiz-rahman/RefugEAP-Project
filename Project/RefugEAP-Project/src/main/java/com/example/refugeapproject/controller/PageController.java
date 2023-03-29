@@ -54,7 +54,7 @@ public class PageController {
     // Passes required home page objects
     //  - Blogs to show most recent blogs feature
     //  - A view counter for No of visitors
-    //  @RequestMapping(value = "/")
+    @RequestMapping(value = "/")
     public ModelAndView homePage() {
         ModelAndView modelAndView = new ModelAndView();
 
@@ -73,15 +73,33 @@ public class PageController {
             acceptedBlogs.get(i).setContent(shortStr);
 
         }
+
         modelAndView.addObject("acceptedBlogs", acceptedBlogs);
+
         modelAndView.addObject("discardedBlogs", discardedBlogs);
 
+        // Fetch all the events from the database using the findAll() method
+        List<Event> acceptedEvents = (List<Event>) eventRepo.findByStatus("approved");
+
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH-mm");
+
+        // Helper method to format date and time for each event list
+        formatEventDateTime(acceptedEvents, dateFormatter, timeFormatter);
+
+        // Pass the lists of events to the JSP view
+        modelAndView.addObject("acceptedEvents", acceptedEvents);
+
         ViewCount views = viewRepo.findById(1);
+
         views.setViews(views.getViews()+1);
+
         modelAndView.addObject("total_views", views.getViews());
+
         viewRepo.save(views);
 
         modelAndView.setViewName("homePage");
+
 
         return modelAndView;
     }

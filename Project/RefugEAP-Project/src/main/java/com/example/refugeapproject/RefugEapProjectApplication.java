@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+// Start Application with this file
 @SpringBootApplication
 public class RefugEapProjectApplication implements CommandLineRunner {
 
@@ -33,6 +34,7 @@ public class RefugEapProjectApplication implements CommandLineRunner {
 	}
 
 
+	// Test to see retrieving data working
 	@Override
 	public void run(String... args) throws Exception {
 		// Get a blog by id and print its title
