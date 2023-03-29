@@ -23,6 +23,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 
+
+    // Enter you email to configure sending emails
+    private String yourEmail = "Enter you email here";
     @Autowired
     UserRepo userRepo;
     @Autowired
@@ -351,8 +354,8 @@ public class PageController {
 
         // Send email to user that their blog has been recieved
         emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your blog and will check your request withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
-        // Send email to refugEAP (Change email to RefugEAP
-        emailService.sendMessage("Hazzaemailservice@gmail.com","Blog request",name +" at "+ email + " Has asked to put up a blog this can be accepted/denied on the admin page");
+
+        emailService.sendMessage(yourEmail,"Blog request",name +" at "+ email + " Has asked to put up a blog this can be accepted/denied on the admin page");
 
         return "redirect:/blogPage";}
 
@@ -377,8 +380,8 @@ public class PageController {
 
         // Send email to user that their event has been recieved
         emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your event and will check your request withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
-        // Send email to refugEAP (Change email to RefugEAP email)
-        emailService.sendMessage("Hazzaemailservice@gmail.com","Event request",name +" at "+ email + " Has asked to put up an event this can be accepted/denied on the admin page");
+
+        emailService.sendMessage(yourEmail,"Event request",name +" at "+ email + " Has asked to put up an event this can be accepted/denied on the admin page");
 
         return "redirect:/eventPage";}
 
@@ -569,8 +572,8 @@ public class PageController {
         // Save contact to the database
         contactRepo.save(contact);
         emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your message and will reply withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
-        // Send email to refugEAP (Change email to RefugEAP email)
-        emailService.sendMessage("Hazzaemailservice@gmail.com","Contact request",name + " wants to get in contact, here is their email if you wish to reply "+ email +"\n\n Here is their message\n\n"+ message);
+
+        emailService.sendMessage(yourEmail,"Contact request",name + " wants to get in contact, here is their email if you wish to reply "+ email +"\n\n Here is their message\n\n"+ message);
 
         return "redirect:/contactUs";}
 
