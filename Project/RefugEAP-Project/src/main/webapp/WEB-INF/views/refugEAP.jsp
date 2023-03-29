@@ -294,37 +294,95 @@
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: right;
+                padding: 10px 0 10px 0;
+                flex-direction: row-reverse;
+
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 12px;
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 10px;
+                height: 50px;
+                margin: 0;
             }
-
 
             .navigator a:hover {
                 background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
                 color: black;
+
             }
 
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
             }
+
+            .dropdown {
+                float: right;
+                overflow: hidden;
+
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 12px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 7px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: #29668B;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #FFFFFF;
+                color: #29668B;
+            }
+
 
             h2 {
                 margin-top: 0;
@@ -350,18 +408,6 @@
                 color: black; /* set the text color to white */
                 line-height: 2.0; /* add some spacing between lines */
                 font-family: "Calibri", sans-serif;
-
-            }
-
-            .sec2 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px 10px 2px;
-                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: "Calibri", sans-serif;
-
 
             }
 
@@ -486,55 +532,58 @@
             }
 
             .navigator {
-                background-color: #29668B;
-                /*position: relative;*/
+                background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
             }
+
 
             .navigator a {
                 float: right;
-                /*display: block;*/
-                color: #FFFFFF;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 30px 20px;
+                padding: 7px 10px;
                 text-decoration: none;
-                font-size: 18px;
+                font-size: 9px;
+                /*position: relative;*/
             }
 
             .logo {
-                float: left;
-                display: block;
-                padding: 10px 40px;
-                height: 80px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
             }
 
             .navigator a:hover {
-                background-color: #FFFFFF;
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
                 color: black;
             }
 
             .navigator a.mainB {
-                background-color: #f2f2f2;
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 30px 30px;
-            }
-
-            /* Dropdown menu styles */
-            .dropdown {
-                float: right;
-                overflow: hidden;
+                padding: 7px 20px;
             }
 
             .dropdown .dropbtn {
                 cursor: pointer;
-                font-size: 19px;
+                font-size: 9px;
                 border: none;
                 outline: none;
                 color: #FFFFFF;
-                padding: 30px 30px;
+                padding: 5px 10px;
                 background-color: inherit;
                 font-family: inherit;
                 margin: 0;
+                z-index: 2;
             }
 
             .dropdown-content {
@@ -542,30 +591,18 @@
                 position: absolute;
                 background-color: #f9f9f9;
                 min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                z-index: 9999;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
             }
 
             .dropdown-content a {
                 float: none;
-                color: black;
-                padding: 12px 16px;
+                color: #29668B;
+                padding: 6px 8px;
                 text-decoration: none;
                 display: block;
                 text-align: left;
-            }
-
-            .dropdown-content a:hover {
-                background-color: #ddd;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .dropdown:hover .dropbtn {
-                background-color: #FFFFFF;
-                color: black;
+                z-index: 2;
             }
 
             h2 {
@@ -659,20 +696,6 @@
                 flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
 
             }
-
-            .sec2 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px 10px 2px;
-                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: "Calibri", sans-serif;
-                display: flex; /* make the section a flex container */
-                flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
-
-            }
-
 
 
             li {
