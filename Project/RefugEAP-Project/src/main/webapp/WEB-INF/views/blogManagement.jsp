@@ -49,10 +49,28 @@
             padding-bottom: 32px;
         }
 
-        /* Header Navigation Menu */
-        body {
-            margin: 0;                               /* Header Navigation google font */
-            font-family: 'Calibri', sans-serif;
+        .container {
+            position: relative;
+        }
+
+        .background-image {
+            background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+            background-size: cover;
+            height: 250px;
+            width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            z-index: 1;
+            padding-top: 70px;
         }
 
         .navigator {
@@ -66,9 +84,9 @@
             display: block;
             color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
             text-align: center;
-            padding: 30px 50px;
+            padding: 30px 20px;
             text-decoration: none;
-            font-size: 23px;
+            font-size: 18px;
         }
 
         .logo {
@@ -84,9 +102,9 @@
         }
 
         .navigator a.mainB {
-            background-color: #f2f2f2;     /* Header Navigation Main Button */
+            background-color: #f2f2f2;
             color: #29668B;
-            padding: 30px 130px;
+            padding: 30px 30px;
         }
 
         h2 {
@@ -96,7 +114,7 @@
         .form {
             width: 66%;
             margin: 0 auto;
-            padding: 150px ;
+            padding: 50px 0 20px 0 ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
         }
@@ -134,51 +152,31 @@
             background-color: #29668B;
             color: #fff;
             padding: 20px 0;
-        }
-
-        .footer-columns {
-            max-width: 1200px;
-            margin: 0 0 0 250px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
-        .footer-columns > div {
-            flex: 1;
-            text-align: left;
+        footer img {
+            max-height: 40px;
         }
 
-        .footer-col-1 img {
-            max-width: 150px;
-            height: auto;
-            margin: 30px 50px;
-        }
-
-        .social-icons li {
-            display: inline-block;
+        footer > * {
             margin: 0 10px;
-            height: 40px;
-            width: 40px;
         }
 
-        .social-icons a {
-            color: white;
+        footer > div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
-        .footer-links li {
-            display: block;
-            margin-bottom: 10px;
-            margin-right: 50px;
-        }
-
-        .footer-links a {
-            text-decoration:none;
-            font-size:18px;
-        }
 
         .footer-slogan {
             font-size: 15px;
-            max-width: 300px;
+            max-width: 500px;
+            margin-left: 20px;
         }
 
         table {
@@ -195,10 +193,7 @@
             padding: 8px;
         }
 
-        .center {
-            margin-left: auto;
-            margin-right: auto;
-        }
+
         caption {
             font-size: 2em;
             font-weight: bold;
@@ -211,6 +206,12 @@
             color: white;
             font-size: 1.25em;
             font-weight: bold;
+        }
+
+        .managementTable{
+            padding: 50px 0 100px 0;
+            width: 90%;
+            margin: 0 auto;
         }
 
         .tScroll{
@@ -246,6 +247,19 @@
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
+<!-- Header -->
+
+<header>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="overlay">
+            <h1>Admin Side Blogs Management</h1>
+        </div>
+    </div>
+
+</header>
+
+
 <div>
     <div class="form">
         <h4>Add New Blog Post</h4>
@@ -261,162 +275,162 @@
                 <option value="other">Other</option>
             </select>
             <label for="title">Title:</label> <input type="text" id="title" name="title" required />
-            <label for="content">Content:</label> <input type="text" id="content" name="content" required />
+            <label for="content">Content:</label> <textarea type="text" id="content" name="content" rows="5" required></textarea>
             <input type="submit" value="Add New Post" title="Add Post" />
         </form>
     </div>
 </div>
 
-<h3 class="textheader">Pending Blog Posts</h3>
-<div class="tScroll">
-<table>
+<div class="managementTable">
+    <h3 class="textheader">Pending Blog Posts</h3>
+    <div class="tScroll">
+        <table>
 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Author</th>
-        <th>Email</th>
-        <th>Affiliation</th>
-        <th>Role</th>
-        <th>Type Of Contribution</th>
-        <th>Date Posted</th>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Action</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${blogs}" var="blog">
-        <tr>
-            <td>${blog.blog_id}</td>
-            <td>${blog.name}</td>
-            <td>${blog.email}</td>
-            <td>${blog.affiliation}</td>
-            <td>${blog.role}</td>
-            <td>${blog.typeOfContribution}</td>
-            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
-            <td>${blog.title}</td>
-            <td>${blog.content}</td>
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/acceptBlog">
-                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
-                    <input type="submit" value="Accept">
-                </form>
-            </td>
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
-                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
-                    <input type="submit" value="Discard">
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-</div>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>Affiliation</th>
+                <th>Role</th>
+                <th>Type Of Contribution</th>
+                <th>Date Posted</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${blogs}" var="blog">
+                <tr>
+                    <td>${blog.blog_id}</td>
+                    <td>${blog.name}</td>
+                    <td>${blog.email}</td>
+                    <td>${blog.affiliation}</td>
+                    <td>${blog.role}</td>
+                    <td>${blog.typeOfContribution}</td>
+                    <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+                    <td>${blog.title}</td>
+                    <td>${blog.content}</td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/acceptBlog">
+                            <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                            <input type="submit" value="Accept">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
+                            <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                            <input type="submit" value="Discard">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-<br>
+    <br>
 
-<h3 class="textheader">Current Blog Posts</h3>
-<div class="tScroll">
-    <table>
+    <h3 class="textheader">Current Blog Posts</h3>
+    <div class="tScroll">
+        <table>
 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Author</th>
-        <th>Email</th>
-        <th>Affiliation</th>
-        <th>Role</th>
-        <th>Type Of Contribution</th>
-        <th>Date Posted</th>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${acceptedBlogs}" var="blog">
-        <tr>
-            <td>${blog.blog_id}</td>
-            <td>${blog.name}</td>
-            <td>${blog.email}</td>
-            <td>${blog.affiliation}</td>
-            <td>${blog.role}</td>
-            <td>${blog.typeOfContribution}</td>
-            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
-            <td>${blog.title}</td>
-            <td>${blog.content}</td>
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
-                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
-                    <input type="submit" value="Discard">
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-</div>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>Affiliation</th>
+                <th>Role</th>
+                <th>Type Of Contribution</th>
+                <th>Date Posted</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${acceptedBlogs}" var="blog">
+                <tr>
+                    <td>${blog.blog_id}</td>
+                    <td>${blog.name}</td>
+                    <td>${blog.email}</td>
+                    <td>${blog.affiliation}</td>
+                    <td>${blog.role}</td>
+                    <td>${blog.typeOfContribution}</td>
+                    <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+                    <td>${blog.title}</td>
+                    <td>${blog.content}</td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
+                            <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                            <input type="submit" value="Discard">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-<br>
+    <br>
 
-<h3 class="textheader">Discarded Blog Posts</h3>
-<div class="tScroll">
-    <table>
+    <h3 class="textheader">Discarded Blog Posts</h3>
+    <div class="tScroll">
+        <table>
 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Author</th>
-        <th>Email</th>
-        <th>Affiliation</th>
-        <th>Role</th>
-        <th>Type Of Contribution</th>
-        <th>Date Posted</th>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Action</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${discardedBlogs}" var="blog">
-        <tr>
-            <td>${blog.blog_id}</td>
-            <td>${blog.name}</td>
-            <td>${blog.email}</td>
-            <td>${blog.affiliation}</td>
-            <td>${blog.role}</td>
-            <td>${blog.typeOfContribution}</td>
-            <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
-            <td>${blog.title}</td>
-            <td>${blog.content}</td>
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/recoverBlog">
-                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
-                    <input type="submit" value="Recover">
-                </form>
-            </td>
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/deleteBlog">
-                    <input type="hidden" name="blog_id" value="${blog.blog_id}">
-                    <input type="submit" value="Delete">
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>Affiliation</th>
+                <th>Role</th>
+                <th>Type Of Contribution</th>
+                <th>Date Posted</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${discardedBlogs}" var="blog">
+                <tr>
+                    <td>${blog.blog_id}</td>
+                    <td>${blog.name}</td>
+                    <td>${blog.email}</td>
+                    <td>${blog.affiliation}</td>
+                    <td>${blog.role}</td>
+                    <td>${blog.typeOfContribution}</td>
+                    <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
+                    <td>${blog.title}</td>
+                    <td>${blog.content}</td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/recoverBlog">
+                            <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                            <input type="submit" value="Recover">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/deleteBlog">
+                            <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <footer>
-    <div class="footer-columns">
-        <div class="footer-col-1">
-            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
-        </div>
+    <div>
+        <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+        <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
     </div>
 </footer>
 </body>
