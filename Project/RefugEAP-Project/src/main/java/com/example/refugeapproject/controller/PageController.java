@@ -298,6 +298,17 @@ public class PageController {
         model.addAttribute("event", new Event());
         List<Event> allEvents = (List<Event>) eventRepo.findAll();
 
+        List<Event> acceptedEvents = (List<Event>) eventRepo.findByStatus("approved");
+
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH-mm");
+
+        formatEventDateTime(acceptedEvents, dateFormatter, timeFormatter);
+
+        // Pass the list of approved events to the blogPage.jsp view
+        model.addAttribute("acceptedEvents", acceptedEvents);
+
+
         return "eventPage";
     }
 
