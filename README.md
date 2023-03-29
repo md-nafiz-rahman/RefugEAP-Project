@@ -2,7 +2,7 @@
 
 ### Setting Up SQL Database:
 
- - Before you are able to launch the website you will need to configure a MySQL database to store information, such as information about events and blog pages. To do so first find the reuge_db.sql file in the repository
+ - Before you are able to launch the website you will need to have InteliJ to open the application and configure a MySQL database to store information, such as information about events and blog pages. To do so first find the reuge_db.sql file in the repository
 
  - From here copy this code into a connection in MySQLWorkbench, and at the very top of the file add the following:
 
