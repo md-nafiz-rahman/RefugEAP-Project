@@ -51,10 +51,28 @@
             padding-bottom: 32px;
         }
 
-        /* Header Navigation Menu */
-        body {
-            margin: 0;                               /* Header Navigation google font */
-            font-family: 'Calibri', sans-serif;
+        .container {
+            position: relative;
+        }
+
+        .background-image {
+            background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+            background-size: cover;
+            height: 250px;
+            width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            z-index: 1;
+            padding-top: 70px;
         }
 
         .navigator {
@@ -68,9 +86,9 @@
             display: block;
             color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
             text-align: center;
-            padding: 30px 50px;
+            padding: 30px 20px;
             text-decoration: none;
-            font-size: 23px;
+            font-size: 18px;
         }
 
         .logo {
@@ -86,9 +104,9 @@
         }
 
         .navigator a.mainB {
-            background-color: #f2f2f2;     /* Header Navigation Main Button */
+            background-color: #f2f2f2;
             color: #29668B;
-            padding: 30px 130px;
+            padding: 30px 30px;
         }
 
         h2 {
@@ -98,16 +116,6 @@
         #events li {
             font-size: 20px;
             padding: 10px 0;
-        }
-        #event-title {
-            width: 45%;
-            float: right;
-            padding: 20px;
-        }
-        #view-event-btn {
-            position: absolute;
-            top: 1500px;
-            right: 20px;
         }
 
         .form {
@@ -150,40 +158,31 @@
             background-color: #29668B;
             color: #fff;
             padding: 20px 0;
-        }
-
-        .footer-columns {
-            max-width: 1200px;
-            margin: 0 0 0 250px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
-        .footer-columns > div {
-            flex: 1;
-            text-align: left;
+        footer img {
+            max-height: 40px;
         }
 
-        .footer-col-1 img {
-            max-width: 150px;
-            height: auto;
-            margin: 30px 50px;
+        footer > * {
+            margin: 0 10px;
         }
 
-        .footer-links li {
-            display: block;
-            margin-bottom: 10px;
-            margin-right: 50px;
+        footer > div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
-        .footer-links a {
-            text-decoration:none;
-            font-size:18px;
-        }
 
         .footer-slogan {
             font-size: 15px;
-            max-width: 300px;
+            max-width: 500px;
+            margin-left: 20px;
         }
 
         table {
@@ -198,6 +197,13 @@
             border: 1px solid black;
             text-align: left;
             padding: 8px;
+        }
+
+        th{
+            background-color:  #023047;
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
         }
 
         .center {
@@ -221,6 +227,17 @@
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
 
+<!-- Header -->
+
+<header>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="overlay">
+            <h1>Admin Accounts Management</h1>
+        </div>
+    </div>
+
+</header>
 
 <div>
     <div class="form">
@@ -246,11 +263,9 @@
 </table>
 
 <footer>
-    <div class="footer-columns">
-        <div class="footer-col-1">
-            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
-        </div>
+    <div>
+        <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+        <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
     </div>
 </footer>
 </body>
