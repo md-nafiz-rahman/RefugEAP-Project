@@ -2,10 +2,12 @@ package com.example.refugeapproject.membership;
 
 import javax.persistence.*;
 
+/*  Class for contacts so can create objects to later add and retrieve contacts from the database  */
 @Entity
 @Table(name = "contacts")
 public class Contact {
 
+    // Automatically genertaed id unique for each contact
     @Id
     @Column(name = "contact_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
