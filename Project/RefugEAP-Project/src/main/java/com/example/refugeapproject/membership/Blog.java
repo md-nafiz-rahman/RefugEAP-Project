@@ -3,10 +3,12 @@ package com.example.refugeapproject.membership;
 import javax.persistence.*;
 import java.util.Date;
 
+/*  Class for blogs so can create objects to later add and retrieve blogs from the database  */
 @Entity
 @Table(name = "blogs")
 public class Blog {
 
+    // Automatically genertaed id unique for each blog
     @Id
     @Column(name = "blog_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
