@@ -216,7 +216,7 @@
         }
 
         .social-icons a {
-            color: black;
+            color: white;
         }
 
         .footer-links {
