@@ -237,18 +237,6 @@
             font-family: "Calibri", sans-serif;
         }
 
-        .sec2 {
-            background-color: white; /* add a blue background color to the team section */
-            padding: 10px;
-            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            color: black; /* set the text color to white */
-            line-height: 2.0; /* add some spacing between lines */
-            font-family: "Calibri", sans-serif;
-        }
-
-
-
 
         li {
             font-size: 20px; /* set the font size to 20 pixels */
@@ -265,6 +253,32 @@
             margin-top: 10px; /* add some space between the image and caption */
             font-weight: bold; /* make the caption text bold */
         }
+
+
+        table, th, td { /*Style for directory table */
+            /*border: 1px solid black;*/
+            border-collapse: collapse;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th{ /*Style for directory table header */
+            background-color: #023047;
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+
+        .fixtable{ /*Align table in center */
+            height:30%;
+            width:80%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+        }
+
+        tr:nth-child(even) {background-color: #f2f2f2;}
 
         /* CSS style for tablet device responsiveness */
         @media screen and (max-width: 1200px) {
@@ -304,36 +318,93 @@
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: right;
+                padding: 10px 0 10px 0;
+                flex-direction: row-reverse;
+
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 12px;
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 10px;
+                height: 50px;
+                margin: 0;
             }
-
 
             .navigator a:hover {
                 background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
                 color: black;
+
             }
 
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
+            }
+
+            .dropdown {
+                float: right;
+                overflow: hidden;
+
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 12px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 7px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: #29668B;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #FFFFFF;
+                color: #29668B;
             }
 
             h2 {
@@ -362,19 +433,6 @@
                 font-family: "Calibri", sans-serif;
 
             }
-
-            .sec2 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px 10px 2px;
-                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: "Calibri", sans-serif;
-
-
-            }
-
 
             footer {
                 background-color: #29668B;
@@ -439,6 +497,32 @@
                 max-width: 100px;
             }
 
+            table, th, td { /*Style for directory table */
+                /*border: 1px solid black;*/
+                border-collapse: collapse;
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            th{ /*Style for directory table header */
+                background-color: #023047;
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            .fixtable{ /*Align table in center */
+                height:30%;
+                width:80%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 12px;
+            }
+
+            tr:nth-child(even) {background-color: #f2f2f2;}
+
+
         }
 
         /* CSS style for mobile device responsiveness */
@@ -496,55 +580,58 @@
             }
 
             .navigator {
-                background-color: #29668B;
-                /*position: relative;*/
+                background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
             }
+
 
             .navigator a {
                 float: right;
-                /*display: block;*/
-                color: #FFFFFF;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 30px 20px;
+                padding: 7px 10px;
                 text-decoration: none;
-                font-size: 18px;
+                font-size: 9px;
+                /*position: relative;*/
             }
 
             .logo {
-                float: left;
-                display: block;
-                padding: 10px 40px;
-                height: 80px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
             }
 
             .navigator a:hover {
-                background-color: #FFFFFF;
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
                 color: black;
             }
 
             .navigator a.mainB {
-                background-color: #f2f2f2;
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 30px 30px;
-            }
-
-            /* Dropdown menu styles */
-            .dropdown {
-                float: right;
-                overflow: hidden;
+                padding: 7px 20px;
             }
 
             .dropdown .dropbtn {
                 cursor: pointer;
-                font-size: 19px;
+                font-size: 9px;
                 border: none;
                 outline: none;
                 color: #FFFFFF;
-                padding: 30px 30px;
+                padding: 5px 10px;
                 background-color: inherit;
                 font-family: inherit;
                 margin: 0;
+                z-index: 2;
             }
 
             .dropdown-content {
@@ -552,30 +639,18 @@
                 position: absolute;
                 background-color: #f9f9f9;
                 min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                z-index: 9999;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
             }
 
             .dropdown-content a {
                 float: none;
-                color: black;
-                padding: 12px 16px;
+                color: #29668B;
+                padding: 6px 8px;
                 text-decoration: none;
                 display: block;
                 text-align: left;
-            }
-
-            .dropdown-content a:hover {
-                background-color: #ddd;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .dropdown:hover .dropbtn {
-                background-color: #FFFFFF;
-                color: black;
+                z-index: 2;
             }
 
             h2 {
@@ -670,20 +745,6 @@
 
             }
 
-            .sec2 {
-                background-color: white; /* add a blue background color to the team section */
-                padding: 10px 10px 2px;
-                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
-                margin: 0 auto; /* center the section horizontally within its parent container */
-                color: black; /* set the text color to white */
-                line-height: 2.0; /* add some spacing between lines */
-                font-family: "Calibri", sans-serif;
-                display: flex; /* make the section a flex container */
-                flex-wrap: wrap; /* allow the items to wrap to the next line if needed */
-
-            }
-
-
 
             li {
                 font-size: 10px; /* set the font size to 20 pixels */
@@ -709,32 +770,33 @@
                 text-align: left; /* align the caption text to the left */
 
             }
-        }
 
-        table, th, td { /*Style for directory table */
-            /*border: 1px solid black;*/
-            border-collapse: collapse;
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
+            table, th, td { /*Style for directory table */
+                /*border: 1px solid black;*/
+                border-collapse: collapse;
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
 
-        th{ /*Style for directory table header */
-            background-color: #023047;
-            color: white;
-            font-size: 1.25em;
-            font-weight: bold;
-        }
+            th{ /*Style for directory table header */
+                background-color: #023047;
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+            }
 
-        .fixtable{ /*Align table in center */
-            height:30%;
-            width:90%;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 20px;
-        }
+            .fixtable{ /*Align table in center */
+                height:30%;
+                width:90%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 10px;
+            }
 
-        tr:nth-child(even) {background-color: #f2f2f2;}
+            tr:nth-child(even) {background-color: #f2f2f2;}
+
+        }
 
     </style>
 </head>
@@ -764,7 +826,7 @@
         <div class="dropdown-content">
             <a href="/developingProvisionPage">Developing provision</a>
             <a href="/evidenceBasePage">Evidence Base</a>
-            <a href="/resourcesPage">Practical Resources</a>
+            <a href="/resourcePage">Practical Resources</a>
         </div>
     </div>
 
@@ -827,7 +889,7 @@
         <tr>
             <td>Free places on pre-sessional (pre-university) academic English programmes.
                 These are generally full-time, formal programmes with in-house assessments at the end</td>
-            <td><a href="https://www.displacedstudent.org.uk/opportunities/sanctuary-fee-waiver-for-pre-sessional-english-programme/">University of Leicester's pre-sessional fee waivers for RBS</a></td>
+            <td><a href="https://www.displacedstudent.org.uk/opportunities/sanctuary-fee-waiver-for-pre-sessional-english-programme/" target="_blank">University of Leicester's pre-sessional fee waivers for RBS</a></td>
         </tr>
 
         <tr>
@@ -840,26 +902,26 @@
             </td>
             <td>Free informal English classes (usually general English) based on a variety of possible models, including:
                 <ul>
-                    <li><a href="https://www.swansea.ac.uk/english-language-training-services/community-classes/">Community Classes - Swansea University</a></li>
-                    <li><a href="https://leicester.cityofsanctuary.org/lcos-uol">University of Leicester + Leicester City of Sanctuary ESOL classes</a></li>
+                    <li><a href="https://www.swansea.ac.uk/english-language-training-services/community-classes/" target="_blank">Community Classes - Swansea University</a></li>
+                    <li><a href="https://leicester.cityofsanctuary.org/lcos-uol" target="_blank">University of Leicester + Leicester City of Sanctuary ESOL classes</a></li>
                 </ul>
             </td>
         </tr>
 
         <tr>
             <td>Free places on formal exam preparation courses such as IELTS, Cambridge ESOL, Occupational English Test (for requalifying
-                medics) - with external exams potentially funded by <a href="https://refuaid.org/">RefuAid.</a></td>
+                medics) - with external exams potentially funded by <a href="https://refuaid.org/" target="_blank">RefuAid.</a></td>
             <td>
                 <ul>
-                    <li><a href="https://le.ac.uk/cite/eltu/exam-preparation-courses/oet">University of Leicester’s OET online intensive</a></li>
-                    <li><a href="https://www.sheffield.ac.uk/eltc/part-time/sanctuary-scholarships">University of Sheffield’s IELTS classes</a></li>
+                    <li><a href="https://le.ac.uk/cite/eltu/exam-preparation-courses/oet" target="_blank">University of Leicester's OET online intensive</a></li>
+                    <li><a href="https://www.sheffield.ac.uk/eltc/part-time/sanctuary-scholarships" target="_blank">University of Sheffield's IELTS classes</a></li>
                 </ul>
             </td>
         </tr>
 
         <tr>
             <td>RefugEAP Programme of free online EAP classes for refugee background students in the UK. This is a part-time, formal
-                programme with a mixture of in-house assessments and the option of taking an IELTS exam at the end (funded by <a href="https://refuaid.org/">RefuAid.</a></td>
+                programme with a mixture of in-house assessments and the option of taking an IELTS exam at the end (funded by <a href="https://refuaid.org/" target="_blank">RefuAid.</a></td>
             <td>
                 <ul>
                     <li><a href="https://le.ac.uk/cite/sanctuary-seekers-unit/initiatives/refugeap">https://le.ac.uk/cite/sanctuary-seekers-unit/initiatives/refugeap</a></li>
@@ -870,7 +932,7 @@
 
     <section class="sec1">
         <h3>Current opportunities in the UK HE context</h3>
-        <p>A great resource to explore what opportunities are currently being offered in the UK context is the <a href="https://www.displacedstudent.org.uk/">Displaced Students Opportunities UK website</a>,
+        <p>A great resource to explore what opportunities are currently being offered in the UK context is the <a href="https://www.displacedstudent.org.uk/" target="_blank">Displaced Students Opportunities UK website</a>,
             which is a portal for sharing and searching for study opportunities to support people with backgrounds of forced displacement in the UK to access HE.<br>
             The most effective way to search for 'pathway to Higher Education' English language provision on this portal is, in the search filters, for 'level of
             study' select 'pre-university', and for 'type of opportunity' select 'English language course' and 'preparation for university'. This should bring up
@@ -880,7 +942,7 @@
             via this portal. Equally, if your organisation has not yet developed any opportunities of this sort for refugee-background students, the portal provides a
             useful insight into what other providers are doing in this respect (very useful for providing evidence to managers when advocating for provision to be developed).<br>
             As the Displaced Students Opportunities UK website is still in its infancy, it does not have the full range of opportunities uploaded to it yet, so
-            another useful website to refer to in the meantime is its predecessor, the <a href="https://star-network.org.uk/access-to-university/courses/">Student Action for Refugees</a> scholarships list (click on the English Language Programmes tab).</p>
+            another useful website to refer to in the meantime is its predecessor, the <a href="https://star-network.org.uk/access-to-university/courses/" target="_blank">Student Action for Refugees</a> scholarships list (click on the English Language Programmes tab).</p>
     </section>
 
 </div>
