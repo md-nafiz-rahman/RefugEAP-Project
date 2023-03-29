@@ -201,6 +201,25 @@
         }
         tr:nth-child(even) {background-color: #f2f2f2;}
 
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #092747;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>

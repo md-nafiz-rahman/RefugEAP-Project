@@ -285,6 +285,16 @@
             cursor: pointer;
         }
 
+        input[type="submit"]:hover {
+            background-color: #092747;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 0;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
 
         footer {
             background-color: #29668B;

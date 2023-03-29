@@ -148,6 +148,15 @@
             cursor: pointer;
         }
 
+        input[type="submit"]:hover {
+            background-color: #092747;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
         footer {
             background-color: #29668B;
             color: #fff;
