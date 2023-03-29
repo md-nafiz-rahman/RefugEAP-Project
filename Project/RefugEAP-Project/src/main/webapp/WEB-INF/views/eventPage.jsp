@@ -654,12 +654,14 @@
     </div>
 
 </header>
-
+<!-- Calendar Grid -->
 <div id="calendar-container">
     <div id="calendar"></div>
 </div>
+<!-- Selected events -->
 <div id="event-list"></div>
 
+<!--Upcoming events List -->
 
 <div class="event-list">
     <h2>Upcoming Events</h2>
