@@ -509,14 +509,16 @@
         .button-container button {
             margin: 0 10px;
             padding: 10px 20px;
-            background-color: #f2f2f2;
+            background-color: #e6e6e6;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            /*#f2f2f2*/
         }
 
         .button-container button.active {
-            background-color: #e6e6e6;
+            background-color: #b3b6ba;
+            /*#e6e6e6*/
         }
 
         .containerBlog {
