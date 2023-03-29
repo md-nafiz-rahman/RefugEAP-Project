@@ -21,6 +21,7 @@
 
  - You will then be able to run the project and can access the website at [http://localhost:8080/](http://localhost:8080/)
 
+
 ### Configuring Email Plugin:
 
  1. To configure the email plugin to automatically send email notifications to practitioners when a new blog is waiting to be approved you need to configure the email plugin found in src --> resources --> application.properties.
@@ -34,4 +35,7 @@
 		host defined by your own web email service
 		
 	b. You can then enter your email address and password in the same way as you would have done before
+
+ 4. The current login for the admin portal is as followed Username: Admin1, Password: 123456  .The link for the admin portal is http://localhost:8080/login
+
 
