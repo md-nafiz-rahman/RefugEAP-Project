@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RefugEAP - Resources</title>
+    <title>RefugEAP Programme</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -228,16 +228,6 @@
         }
 
         .sec1 {
-            background-color: white; /* add a blue background color to the team section */
-            padding: 10px;
-            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            color: black; /* set the text color to white */
-            line-height: 2.0; /* add some spacing between lines */
-            font-family: "Calibri", sans-serif;
-        }
-
-        .sec2 {
             background-color: white; /* add a blue background color to the team section */
             padding: 10px;
             max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
@@ -764,7 +754,7 @@
         <div class="dropdown-content">
             <a href="/developingProvisionPage">Developing provision</a>
             <a href="/evidenceBasePage">Evidence Base</a>
-            <a href="/resourcesPage">Practical Resources</a>
+            <a href="/resourcePage">Practical Resources</a>
         </div>
     </div>
 
@@ -817,9 +807,11 @@
     <p>The RefugEAP Programme is a free online pre-university academic English skills course for refugee-background students across the UK. It is for students who need to improve their academic English
         skills to help them access a degree programme at university, but perhaps have not been able to access a formal pre-sessional English for Academic Purposes (EAP) programme
         yet. RefugEAP has been developed to meet this need, providing students with an opportunity to continue to develop their academic English skills in a supportive way while
-        they are waiting for more formal opportunities to become available. The RefugEAP Programme has been developed by Deirdre McKenna at the University of Leeds’ Language
-        Centre and Aleks Palanac at the University of Leicester’s Sanctuary Seekers’ Unit. It is being kindly supported by dedicated volunteer tutors and a number of partner
-        organisations, including <a href="https://www.password-english.com/">Password Testing</a> (who are providing initial assessments), <a href="https://www.screen-share.co.uk/">Screen Share</a> (who are providing digital devices for students who need them) <a href="https://www.refuaid.org/">RefuAid</a> (who are providing wrap-around support and referrals) and <a href="https://www.oup.com/">Oxford University Press</a> (who have provided online course books). You can find out more via the <a href="https://le.ac.uk/refugeap">RefugEAP Programme web pages</a>.</p>
+        they are waiting for more formal opportunities to become available.
+        <br>
+        <br>
+        The RefugEAP Programme has been developed by Deirdre McKenna at the University of Leeds' <a href="https://www.leeds.ac.uk/language-centre">Language Centre</a> and Aleks Palanac at the University of Leicester's <a href="https://le.ac.uk/cite/sanctuary-seekers-unit">Sanctuary Seekers' Unit</a>. It is being kindly supported by dedicated volunteer tutors and a number of partner
+        organisations, including Password Testing (who are providing initial assessments), Screen Share (who are providing digital devices for students who need them) <a href="https://www.refuaid.org/">RefuAid</a> (who are providing wrap-around support and referrals) and <a href="https://www.oup.com/">Oxford University Press</a> (who have provided online course books). You can find out more via the <a href="https://le.ac.uk/cite/sanctuary-seekers-unit/initiatives/refugeap">RefugEAP Programme web pages</a>.</p>
     <h2>How can individuals and organisations support the RefugEAP Programme?</h2>
     <p>There are various ways in which individuals and organisations can get involved in the RefugEAP Programme, including:</p>
     <ul>
@@ -827,7 +819,7 @@
         <li>becoming an associate member organisation (referring students into the scheme, and considering referrals for eligible RefugEAP students onto your pre-sessional, IELTS or academic programmes)</li>
         <li>becoming an official partner organisation (contributing time or resources to support the running of the scheme)</li>
     </ul>
-    <p>If you are potentially keen to support the scheme in one of these ways, please complete an <a href="https://docs.google.com/forms/d/e/1FAIpQLSfy_N8cqvLV2FGPrfWBXR-W64asV0yz4AqdHwDTCiOmH93P7Q/viewform">expression of interest form</a> to indicate the role(s) you’re potentially keen to get involved with.</p>
+    <p>If you are potentially keen to support the scheme in one of these ways, please complete an <a href="https://docs.google.com/forms/d/e/1FAIpQLSfy_N8cqvLV2FGPrfWBXR-W64asV0yz4AqdHwDTCiOmH93P7Q/viewform">expression of interest form</a> to indicate the role(s) you're potentially keen to get involved with.</p>
     <h2>How can I get in touch or find out more?</h2>
     <ul>
         <li>If you have a general enquiry, please email <a href="mailto:refugeap@le.ac.uk">refugeap@le.ac.uk</a></li>
