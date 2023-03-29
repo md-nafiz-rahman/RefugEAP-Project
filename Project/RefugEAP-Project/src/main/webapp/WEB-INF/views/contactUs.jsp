@@ -839,6 +839,15 @@
                 background-color: rgba(0, 0, 0, 0.5);
                 z-index: 99;
             }
+            .iconHover:hover {
+                background-color: #12b7e0;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                text-align: center;
+                vertical-align: middle;
+                transform: translate(0,-5px);
+            }
         }
 
 
@@ -992,7 +1001,7 @@
         <div class="footer-col-2">
             <p>Follow us on</p>
             <ul class="social-icons">
-                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li class="iconHover"><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
             </ul>
         </div>
         <div class="footer-col-3">

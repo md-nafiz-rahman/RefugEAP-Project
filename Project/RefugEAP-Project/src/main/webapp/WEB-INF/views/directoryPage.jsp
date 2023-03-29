@@ -769,6 +769,16 @@
 
             tr:nth-child(even) {background-color: #f2f2f2;}
 
+            .iconHover:hover {
+                background-color: #12b7e0;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                text-align: center;
+                vertical-align: middle;
+                transform: translate(0,-5px);
+            }
+
         }
 
 
@@ -945,7 +955,7 @@
             <p>Follow us on</p>
             <ul class="social-icons">
 
-                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li class="iconHover"><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
 
             </ul>
         </div>
