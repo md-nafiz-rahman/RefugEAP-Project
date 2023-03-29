@@ -5,10 +5,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
+/*  Class for events so can create objects to later add and retrieve events from the database  */
 @Entity
 @Table(name = "events")
 public class Event {
 
+    // Automatically genertaed id unique for each event
     @Id
     @Column(name = "event_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
