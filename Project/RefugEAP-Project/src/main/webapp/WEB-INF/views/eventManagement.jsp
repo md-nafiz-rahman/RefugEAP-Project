@@ -50,6 +50,30 @@
             padding-bottom: 32px;
         }
 
+        .container {
+            position: relative;
+        }
+
+        .background-image {
+            background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+            background-size: cover;
+            height: 250px;
+            width: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            z-index: 1;
+            padding-top: 70px;
+        }
+
         /* Header Navigation Menu */
         body {
             margin: 0;                               /* Header Navigation google font */
@@ -67,9 +91,9 @@
             display: block;
             color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
             text-align: center;
-            padding: 30px 50px;
+            padding: 30px 20px;
             text-decoration: none;
-            font-size: 23px;
+            font-size: 18px;
         }
 
         .logo {
@@ -85,9 +109,9 @@
         }
 
         .navigator a.mainB {
-            background-color: #f2f2f2;     /* Header Navigation Main Button */
+            background-color: #f2f2f2;
             color: #29668B;
-            padding: 30px 130px;
+            padding: 30px 30px;
         }
 
         h2 {
@@ -135,51 +159,43 @@
             background-color: #29668B;
             color: #fff;
             padding: 20px 0;
-        }
-
-        .footer-columns {
-            max-width: 1200px;
-            margin: 0 0 0 250px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
-        .footer-columns > div {
-            flex: 1;
-            text-align: left;
+        footer img {
+            max-height: 40px;
         }
 
-        .footer-col-1 img {
-            max-width: 150px;
-            height: auto;
-            margin: 30px 50px;
-        }
-
-        .social-icons li {
-            display: inline-block;
+        footer > * {
             margin: 0 10px;
-            height: 40px;
-            width: 40px;
         }
 
-        .social-icons a {
-            color: white;
+        footer > div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
 
-        .footer-links li {
-            display: block;
-            margin-bottom: 10px;
-            margin-right: 50px;
-        }
-
-        .footer-links a {
-            text-decoration:none;
-            font-size:18px;
-        }
 
         .footer-slogan {
             font-size: 15px;
-            max-width: 300px;
+            max-width: 500px;
+            margin-left: 20px;
+        }
+
+        .form {
+            width: 80%;
+            margin: 0 auto;
+            padding: 60px 0 100px ;
+            border: 0px solid gray;
+        }
+
+        .containerForm {
+            display: flex;
+            height: 500px;
         }
 
         table {
@@ -196,10 +212,7 @@
             padding: 8px;
         }
 
-        .center {
-            margin-left: auto;
-            margin-right: auto;
-        }
+
         caption {
             font-size: 2em;
             font-weight: bold;
@@ -211,6 +224,12 @@
             color: white;
             font-size: 1.25em;
             font-weight: bold;
+        }
+
+        .managementTable{
+            padding: 350px 0 100px 0;
+            width: 90%;
+            margin: 0 auto;
         }
 
         .tScroll{
@@ -226,7 +245,6 @@
             font-size: 1.75em;
             font-weight: bold;
             padding-bottom: 5px;
-
         }
 
         tr:nth-child(even) {background-color: #f2f2f2;}
@@ -237,14 +255,27 @@
 
 <!-- Navbar -->
 <div class="navigator">
-    <a href="/">Home</a>
+    <a href="/" class="mainB">Home</a>
     <a href="/admin/adminPortal">Users Management</a>
     <a href="/admin/blogManagement" >Blog Management</a>
-    <a href="/admin/eventManagement" class="mainB">Events Management</a>
+    <a href="/admin/eventManagement">Events Management</a>
     <a href="/admin/contactManagement">Contact Management</a>
     <a href="/logout">Logout</a>
     <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
 </div>
+
+<!-- Header -->
+
+<header>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="overlay">
+            <h1>Admin Side Events Management</h1>
+        </div>
+    </div>
+
+</header>
+
 
 <div>
     <div class="containerForm">
@@ -273,137 +304,137 @@
     </div>
 </div>
 
-<h3 class="textheader">Requests to add events</h3>
-<div class="tScroll">
-    <table>
+<div class="managementTable">
+    <h3 class="textheader">Requests to add events</h3>
+    <div class="tScroll">
+        <table>
 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Author</th>
-        <th>Email</th>
-        <th>Event Title</th>
-        <th>Event Date & Time</th>
-        <th>Event Info</th>
-        <th>Action</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${events}" var="event">
-        <tr>
-            <td>${event.event_id}</td>
-            <td>${event.name}</td>
-            <td>${event.email}</td>
-            <td>${event.event_title}</td>
-            <td>${event.formattedDate}, ${event.formattedTime}</td>
-            <td>${event.event_more_info}</td>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>Event Title</th>
+                <th>Event Date & Time</th>
+                <th>Event Info</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${events}" var="event">
+                <tr>
+                    <td>${event.event_id}</td>
+                    <td>${event.name}</td>
+                    <td>${event.email}</td>
+                    <td>${event.event_title}</td>
+                    <td>${event.formattedDate}, ${event.formattedTime}</td>
+                    <td>${event.event_more_info}</td>
 
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/acceptEvent">
-                    <input type="hidden" name="event_id" value="${event.event_id}">
-                    <input type="submit" value="Accept">
-                </form>
-            </td>
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/discardEvent">
-                    <input type="hidden" name="event_id" value="${event.event_id}">
-                    <input type="submit" value="Discard">
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-</div>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/acceptEvent">
+                            <input type="hidden" name="event_id" value="${event.event_id}">
+                            <input type="submit" value="Accept">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/discardEvent">
+                            <input type="hidden" name="event_id" value="${event.event_id}">
+                            <input type="submit" value="Discard">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-<h3 class="textheader">Accepted Events</h3>
-<div class="tScroll">
-    <table>
+    <h3 class="textheader">Accepted Events</h3>
+    <div class="tScroll">
+        <table>
 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Author</th>
-        <th>Email</th>
-        <th>Event Title</th>
-        <th>Event Date & Time</th>
-        <th>Event Info</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${acceptedEvents}" var="event">
-        <tr>
-            <td>${event.event_id}</td>
-            <td>${event.name}</td>
-            <td>${event.email}</td>
-            <td>${event.event_title}</td>
-            <td>${event.formattedDate}, ${event.formattedTime}</td>
-            <td>${event.event_more_info}</td>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>Event Title</th>
+                <th>Event Date & Time</th>
+                <th>Event Info</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${acceptedEvents}" var="event">
+                <tr>
+                    <td>${event.event_id}</td>
+                    <td>${event.name}</td>
+                    <td>${event.email}</td>
+                    <td>${event.event_title}</td>
+                    <td>${event.formattedDate}, ${event.formattedTime}</td>
+                    <td>${event.event_more_info}</td>
 
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/discardEvent">
-                    <input type="hidden" name="event_id" value="${event.event_id}">
-                    <input type="submit" value="Discard">
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-</div>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/discardEvent">
+                            <input type="hidden" name="event_id" value="${event.event_id}">
+                            <input type="submit" value="Discard">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-<h3 class="textheader">Discarded Events</h3>
-<div class="tScroll">
-    <table>
+    <h3 class="textheader">Discarded Events</h3>
+    <div class="tScroll">
+        <table>
 
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Author</th>
-        <th>Email</th>
-        <th>Event Title</th>
-        <th>Event Date & Time</th>
-        <th>Event Info</th>
-        <th>Action</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${discardedEvents}" var="event">
-        <tr>
-            <td>${event.event_id}</td>
-            <td>${event.name}</td>
-            <td>${event.email}</td>
-            <td>${event.event_title}</td>
-            <td>${event.formattedDate}, ${event.formattedTime}</td>
-            <td>${event.event_more_info}</td>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>Event Title</th>
+                <th>Event Date & Time</th>
+                <th>Event Info</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${discardedEvents}" var="event">
+                <tr>
+                    <td>${event.event_id}</td>
+                    <td>${event.name}</td>
+                    <td>${event.email}</td>
+                    <td>${event.event_title}</td>
+                    <td>${event.formattedDate}, ${event.formattedTime}</td>
+                    <td>${event.event_more_info}</td>
 
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/recoverEvent">
-                    <input type="hidden" name="event_id" value="${event.event_id}">
-                    <input type="submit" value="Recover">
-                </form>
-            </td>
-            <td>
-                <form method="post" action="${pageContext.request.contextPath}/admin/deleteEvent">
-                    <input type="hidden" name="event_id" value="${event.event_id}">
-                    <input type="submit" value="Delete">
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/recoverEvent">
+                            <input type="hidden" name="event_id" value="${event.event_id}">
+                            <input type="submit" value="Recover">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/deleteEvent">
+                            <input type="hidden" name="event_id" value="${event.event_id}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <footer>
-    <div class="footer-columns">
-        <div class="footer-col-1">
-            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
-            <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
-        </div>
+    <div>
+        <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+        <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
     </div>
 </footer>
 </body>
