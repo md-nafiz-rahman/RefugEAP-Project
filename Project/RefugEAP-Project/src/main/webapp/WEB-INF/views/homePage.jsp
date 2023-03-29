@@ -252,7 +252,7 @@
 
         .split{
             display: grid;
-            height: 900px;
+            height: auto;
         }
 
         .splitcal{
@@ -276,6 +276,7 @@
 
         .cal {
             height: 700px;
+            float: left;
             width: 50%;
             margin: 0 auto;
             text-align: center;
@@ -305,13 +306,14 @@
         }
 
         #calendar {
+            float: top;
             size: 10px;
             padding-left: 20%;
             padding-right: 20%;
             background-size: cover;
         }
         .events {
-            height: 700px;
+            height: 800px;
             float: right;
             width: 50%;
         }
@@ -519,7 +521,7 @@
             float: left;
             align-items: center;
             justify-content: center;
-            height: 900px;
+            height: 1000px;
             background-color: #f6f6f6;
             padding: 30px;
         }
@@ -531,7 +533,8 @@
             justify-content: center;
             width: 100%;
             max-width: 800px;
-            margin: 30px 0;
+            /*margin-right: 5%;*/
+            /*margin-left: 5%;*/
             padding: 30px;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -590,18 +593,61 @@
             background-color: #1d4e6e;
         }
 
-        .iconHover:hover {
-            background-color: #12b7e0;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            text-align: center;
-            vertical-align: middle;
-            transform: translate(0,-5px);
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-
-
+        /* Layout */
+        .event-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section-title {
+            margin-bottom: 40px;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-body {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card-text {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #666;
+        }
 
 
 
