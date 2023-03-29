@@ -255,44 +255,6 @@
             height: auto;
         }
 
-        .splitcal{
-            display: grid;
-            height: 700px;
-            border: 1px solid black;
-            padding-top: 20px;
-        }
-
-
-        .blog {
-            height: 900px;
-            float: left;
-            width: 50%;
-            margin: 0 auto;
-            text-align: center;
-            color: #ffffff;
-            border: 2px solid black;
-            background-color: #29668B;
-        }
-
-        .cal {
-            height: 700px;
-            float: left;
-            width: 50%;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .post {
-            width: 90%;
-            margin: 20px auto;
-            text-align: left;
-            color: black;
-            padding: 10px;
-            border: 1px solid lightgray;
-            border-radius: 10px;
-            background-color: #dddddd;
-        }
-
         h2 {
             margin-top: 0;
         }
@@ -323,11 +285,6 @@
             padding: 10px 0;
         }
 
-        #view-event-btn {
-            position: absolute;
-            top: 1500px;
-            right: 20px;
-        }
 
         footer {
             background-color: #29668B;
@@ -420,16 +377,6 @@
             margin-top: 20px;
         }
 
-        #event-title {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        #event-list {
-            list-style-type: none;
-            margin: 0;
-        }
-
         .event-item {
             background-color: #f8f8f8;
             /*max-width: 50%;*/
@@ -470,32 +417,6 @@
         .selected-date {
             background-color: #3399ff;
             color: white;
-        }
-
-        .fc-today-button,
-        .fc-month-button,
-        .fc-agendaWeek-button,
-        .fc-agendaDay-button {
-            text-transform: capitalize;
-        }
-
-        .fc-button {
-            background-color: white;
-            color: black;
-            border: none;
-            padding: 6px 12px;
-            font-size: 8px;
-            line-height: 1.5;
-            border-radius: 4px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .fc-button:hover {
-            background-color: #0069d9;
         }
 
         .view-counter {
@@ -660,9 +581,6 @@
             transform: translate(0,-5px);
         }
 
-
-
-
     </style>
 </head>
 <body>
@@ -741,13 +659,17 @@
 
 </header>
 
+
+<!-- ViewCounter -->
+
 <div class="view-counter">
     <h2>This page has been viewed: ${total_views} times</h2>
 </div>
 
-<!-- First Grid -->
+<!-- Split Grid -->
 <div class="split">
     <div class="second">
+        <!-- Blog Post -->
         <div class="blog-wrapper">
             <h2 style="font-size: 48px; font-weight: bold; color: #29668b; margin-bottom: 60px;">Recent Blog Posts</h2>
             <c:forEach begin="0" end="1" step="1" varStatus="loop">
@@ -766,7 +688,7 @@
                 <a href="/blogPage" class="view-more-btn">View More</a>
             </div>
         </div>
-
+        <!-- Twitter feed -->
         <div class="events">
             <a class="twitter-timeline" data-height="1000" href="https://twitter.com/EapForSJ?ref_src=twsrc%5Etfw">Tweets by EapForSJ</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -774,6 +696,7 @@
     </div>
 </div>
 
+<!-- Events list Upcoming -->
 <div class="event-list">
     <h2 class="section-title">Upcoming Events</h2>
     <div class="card-grid">
@@ -794,7 +717,7 @@
     </div>
 </div>
 
-
+<!-- Footer -->
 <footer>
     <div class="footer-columns">
         <div class="footer-col-1">
