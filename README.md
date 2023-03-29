@@ -39,3 +39,7 @@
  4. The current login for the admin portal is as followed Username: Admin1, Password: 123456  .The link for the admin portal is http://localhost:8080/login
 
 
+### Software List:
+
+1. IntelliJ (https://www.jetbrains.com/idea/)
+2. MySQL Workbench (https://www.mysql.com/products/workbench/)
