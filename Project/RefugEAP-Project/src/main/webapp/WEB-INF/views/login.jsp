@@ -899,14 +899,17 @@
 
 </header>
 
+<!-- Login form -->
 <div class="containerForm">
     <div class="form">
         <h1>Login</h1>
         <form action="/login" method="post">
             <div>
+                <!--Username Input -->
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="username" required>
 
+                <!--Password Input -->
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="password" required>
                 <button type="submit" style="background-color: #29668B;">Login</button>
@@ -922,6 +925,7 @@
     </div>
 </div>
 
+<!-- Footer -->
 <footer>
     <div class="footer-columns">
         <div class="footer-col-1">
