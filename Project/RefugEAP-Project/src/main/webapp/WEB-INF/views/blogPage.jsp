@@ -569,6 +569,7 @@
             });
         }
 
+        <%-- Shows confirmation of submission --%>
         function showConfirmation(event) {
             event.preventDefault(); // Prevent form submission
             var popup = document.getElementById("popup");
@@ -707,6 +708,7 @@
     <button onclick="showSection('case-studies')">Case Studies</button>
 </div>
 
+<%-- Display approvedOther blogs --%>
 <main id="blog" class="containerBlog show">
     <c:forEach var="blog" items="${approvedOther}">
         <article>
@@ -724,6 +726,7 @@
     </c:forEach>
 </main>
 
+<%-- Display approvedTestimonial blogs --%>
 <main id="testimonials" class="containerBlog">
     <c:forEach var="blog" items="${approvedTestimonials}">
         <article>
@@ -741,6 +744,7 @@
     </c:forEach>
 </main>
 
+<%-- Display approvedCaseStudy blogs --%>
 <main id="case-studies" class="containerBlog">
     <c:forEach var="blog" items="${approvedCaseStudies}">
         <article>
@@ -759,6 +763,7 @@
 </main>
 
 
+<%-- Form for user to submit a blog --%>
 <div class="containerForm">
     <div class="form">
         <h2>Contribute to the Blog</h2><br>

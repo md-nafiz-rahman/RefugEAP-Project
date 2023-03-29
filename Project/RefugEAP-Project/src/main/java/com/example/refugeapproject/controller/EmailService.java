@@ -13,7 +13,7 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    // This method creates a template email to quickly send
+    // This method creates a template email to quickly send emails
     public void sendMessage(
             String to, String subject, String text) {
 
