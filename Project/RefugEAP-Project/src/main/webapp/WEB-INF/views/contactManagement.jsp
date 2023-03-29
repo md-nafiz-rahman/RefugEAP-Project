@@ -220,6 +220,362 @@
             cursor: pointer;
         }
 
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #092747;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .fixtable {
+            height:30%;
+            width:90%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            padding: 50px 0 50px 0;
+        }
+
+        @media screen and (max-width: 1200px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            li {
+                font-size: 12px; /* set the font size to 20 pixels */
+            }
+
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+                padding-top: 70px;
+            }
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+            }
+
+
+            .navigator a {
+                float: right;
+                display: block;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 5px 10px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+            .logo {
+                float: left;
+                display: block;       /* Header Navigation Settings text color, font size, alignment */
+                padding: 5px 10px;
+                height: 30px;
+            }
+
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 30px;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            footer img {
+                max-height: 40px;
+            }
+
+            footer > * {
+                margin: 0 10px;
+            }
+
+            footer > div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+                margin-left: 20px;
+            }
+
+            .fixtable{ /*Align table in center */
+                height:30%;
+                width:95%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 12px;
+                padding: 35px 0 35px 0;
+            }
+
+        }
+
+        /* CSS style for mobile device responsiveness */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+
+            .container {
+                position: relative;
+            }
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+                padding-top: 70px;
+            }
+
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
+            }
+
+
+            .navigator a {
+                float: right;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 7px 10px;
+                text-decoration: none;
+                font-size: 9px;
+                /*position: relative;*/
+            }
+
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
+            }
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 20px;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            footer img {
+                max-height: 40px;
+            }
+
+            footer > * {
+                margin: 0 10px;
+            }
+
+            footer > div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+                margin-left: 20px;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 95%;
+                border: 1px solid #ddd;
+                margin-bottom: 25px;
+            }
+
+            th, td {
+                border: 1px solid black;
+                text-align: left;
+                padding: 8px;
+            }
+
+
+            th{
+                background-color: #023047;
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+            }
+
+            .tScroll{
+                overflow-x:scroll;
+                height:30%;
+                width:90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .textheader{
+                text-align: center;
+                font-size: 14px;
+                font-weight: bold;
+                padding-bottom: 5px;
+
+            }
+
+            .fixtable{ /*Align table in center */
+                height:50%;
+                width:100%;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 10px;
+                padding: 25px 0 25px 0;
+                overflow-x:auto;
+            }
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -247,126 +603,125 @@
 
 </header>
 
+<div class="fixtable">
+    <h3 class="textheader">Pending Contacts</h3>
+    <div class="tScroll">
+        <table>
 
 
-<h3 class="textheader">Pending Contacts</h3>
-<div class="tScroll">
-    <table>
-
-
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Author</th>
-            <th>Email</th>
-            <th>message</th>
-            <th>Action</th>
-            <th>Action</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${contacts}" var="contact">
+            <thead>
             <tr>
-                <td>${contact.contact_id}</td>
-                <td>${contact.name}</td>
-                <td>${contact.email}</td>
-                <td>${contact.message}</td>
-                <td>
-                    <form method="post" action="${pageContext.request.contextPath}/admin/acceptContact">
-                        <input type="hidden" name="contact_id" value="${contact.contact_id}">
-                        <input type="submit" value="Accept">
-                    </form>
-                </td>
-                <td>
-                    <form method="post" action="${pageContext.request.contextPath}/admin/discardContact">
-                        <input type="hidden" name="contact_id" value="${contact.contact_id}">
-                        <input type="submit" value="Discard">
-                    </form>
-                </td>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>message</th>
+                <th>Action</th>
+                <th>Action</th>
+
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+            <c:forEach items="${contacts}" var="contact">
+                <tr>
+                    <td>${contact.contact_id}</td>
+                    <td>${contact.name}</td>
+                    <td>${contact.email}</td>
+                    <td>${contact.message}</td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/acceptContact">
+                            <input type="hidden" name="contact_id" value="${contact.contact_id}">
+                            <input type="submit" value="Accept">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/discardContact">
+                            <input type="hidden" name="contact_id" value="${contact.contact_id}">
+                            <input type="submit" value="Discard">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-<br>
+    <br>
 
-<h3 class="textheader">Current Contacts</h3>
-<div class="tScroll">
-    <table>
+    <h3 class="textheader">Current Contacts</h3>
+    <div class="tScroll">
+        <table>
 
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Author</th>
-            <th>Email</th>
-            <th>message</th>
-            <th>Action</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${acceptedContacts}" var="contact">
+            <thead>
             <tr>
-                <td>${contact.contact_id}</td>
-                <td>${contact.name}</td>
-                <td>${contact.email}</td>
-                <td>${contact.message}</td>
-                <td>
-                    <form method="post" action="${pageContext.request.contextPath}/admin/discardContact">
-                        <input type="hidden" name="contact_id" value="${contact.contact_id}">
-                        <input type="submit" value="Discard">
-                    </form>
-                </td>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>message</th>
+                <th>Action</th>
+
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+            <c:forEach items="${acceptedContacts}" var="contact">
+                <tr>
+                    <td>${contact.contact_id}</td>
+                    <td>${contact.name}</td>
+                    <td>${contact.email}</td>
+                    <td>${contact.message}</td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/discardContact">
+                            <input type="hidden" name="contact_id" value="${contact.contact_id}">
+                            <input type="submit" value="Discard">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-<br>
+    <br>
 
-<h3 class="textheader">Discarded Contacts</h3>
-<div class="tScroll">
-    <table>
+    <h3 class="textheader">Discarded Contacts</h3>
+    <div class="tScroll">
+        <table>
 
 
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Author</th>
-            <th>Email</th>
-            <th>message</th>
-            <th>Action</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${discardedContacts}" var="contact">
+            <thead>
             <tr>
-                <td>${contact.contact_id}</td>
-                <td>${contact.name}</td>
-                <td>${contact.email}</td>
-                <td>${contact.message}</td>
-                <td>
-                    <form method="post" action="${pageContext.request.contextPath}/admin/deleteContact">
-                        <input type="hidden" name="contact_id" value="${contact.contact_id}">
-                        <input type="submit" value="Delete">
-                    </form>
-                </td>
-                <td>
-                    <form method="post" action="${pageContext.request.contextPath}/admin/recoverContact">
-                        <input type="hidden" name="contact_id" value="${contact.contact_id}">
-                        <input type="submit" value="Recover">
-                    </form>
-                </td>
+                <th>ID</th>
+                <th>Author</th>
+                <th>Email</th>
+                <th>message</th>
+                <th>Action</th>
+                <th>Action</th>
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <c:forEach items="${discardedContacts}" var="contact">
+                <tr>
+                    <td>${contact.contact_id}</td>
+                    <td>${contact.name}</td>
+                    <td>${contact.email}</td>
+                    <td>${contact.message}</td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/deleteContact">
+                            <input type="hidden" name="contact_id" value="${contact.contact_id}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="${pageContext.request.contextPath}/admin/recoverContact">
+                            <input type="hidden" name="contact_id" value="${contact.contact_id}">
+                            <input type="submit" value="Recover">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 <footer>
     <div>
         <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
