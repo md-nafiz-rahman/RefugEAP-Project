@@ -241,6 +241,328 @@
 
         tr:nth-child(even) {background-color: #f2f2f2;}
 
+        @media screen and (max-width: 1200px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            li {
+                font-size: 12px; /* set the font size to 20 pixels */
+            }
+
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+                padding-top: 70px;
+            }
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+            }
+
+
+            .navigator a {
+                float: right;
+                display: block;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 5px 10px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+            .logo {
+                float: left;
+                display: block;       /* Header Navigation Settings text color, font size, alignment */
+                padding: 5px 10px;
+                height: 30px;
+            }
+
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 30px;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            footer img {
+                max-height: 40px;
+            }
+
+            footer > * {
+                margin: 0 10px;
+            }
+
+            footer > div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+                margin-left: 20px;
+            }
+
+
+
+            .managementTable{
+                padding: 90px 0 50px 0;
+                width: 95%;
+                margin: 0 auto;
+            }
+
+        }
+
+        /* CSS style for mobile device responsiveness */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+
+            .container {
+                position: relative;
+            }
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+                padding-top: 70px;
+            }
+
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
+            }
+
+
+            .navigator a {
+                float: right;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 7px 10px;
+                text-decoration: none;
+                font-size: 9px;
+                /*position: relative;*/
+            }
+
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
+            }
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 20px;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            footer img {
+                max-height: 40px;
+            }
+
+            footer > * {
+                margin: 0 10px;
+            }
+
+            footer > div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+                margin-left: 20px;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+                margin-bottom: 25px;
+            }
+
+            th, td {
+                border: 1px solid black;
+                text-align: left;
+                padding: 8px;
+            }
+
+
+            th{
+                background-color: #023047;
+                color: white;
+                font-size: 10px;
+                font-weight: bold;
+            }
+
+            .tScroll{
+                overflow-x:scroll;
+                height:30%;
+                width:90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .textheader{
+                text-align: center;
+                font-size: 14px;
+                font-weight: bold;
+                padding-bottom: 5px;
+
+            }
+
+            .managementTable{
+                padding: 90px 0 50px 0;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+        }
+
     </style>
 </head>
 <body>
