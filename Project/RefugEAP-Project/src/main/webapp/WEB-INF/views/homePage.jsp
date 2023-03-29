@@ -710,27 +710,32 @@
         </div>
 
         <div class="events">
-            <a class="twitter-timeline" data-height="900" href="https://twitter.com/EapForSJ?ref_src=twsrc%5Etfw">Tweets by EapForSJ</a>
+            <a class="twitter-timeline" data-height="1000" href="https://twitter.com/EapForSJ?ref_src=twsrc%5Etfw">Tweets by EapForSJ</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
 </div>
 
-
-<!-- First Grid -->
-<div class="splitcal">
-    <div class="second">
-        <div class="cal">
-            <div id="calendar"></div>
-            <div class="view-more-btn-container">
-                <a href="/eventPage" class="view-more-btn">View All Events</a>
-            </div>
-        </div>
-        <div class="events">
-            <div id="event-list"></div>
-        </div>
+<div class="event-list">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div class="card-grid">
+        <c:forEach var="event" items="${acceptedEvents}" varStatus="loop">
+            <c:if test="${loop.count <= 3}">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">${event.getEvent_title()}</h3>
+                        <p class="card-text">${event.getFormattedDate()} at ${event.getFormattedTime()}</p>
+                        <p class="card-text">${event.getEvent_more_info()}</p>
+                    </div>
+                </div>
+            </c:if>
+        </c:forEach>
+    </div>
+    <div class="view-more-btn-container">
+        <a href="/eventPage" class="view-more-btn">View All Events</a>
     </div>
 </div>
+
 
 <footer>
     <div class="footer-columns">
@@ -741,9 +746,9 @@
         <div class="footer-col-2">
             <p>Follow us on</p>
             <ul class="social-icons">
-
-                <li class="iconHover"><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-
+                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
             </ul>
         </div>
         <div class="footer-col-3">
