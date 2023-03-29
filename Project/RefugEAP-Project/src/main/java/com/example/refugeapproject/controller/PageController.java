@@ -19,34 +19,27 @@ import org.springframework.web.bind.annotation.*;
 //import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.ModelAndView;
 
-
+/*  Class to handle all requests through out the webpage  */
 @Controller
 public class PageController {
 
     @Autowired
     UserRepo userRepo;
-
     @Autowired
     RoleRepo roleRepo;
-
     @Autowired
     BlogRepo blogRepo;
-
     @Autowired
     EventRepo eventRepo;
-
     @Autowired
     ViewCountRepo viewRepo;
-
     @Autowired
     ContactRepo contactRepo;
-
     @Autowired
     private EmailService emailService;
 
 
-
-
+    // Formatter to display date and times for the event calendar
     private void formatEventDateTime(List<Event> events, DateTimeFormatter dateFormatter, DateTimeFormatter timeFormatter) {
         for (Event event : events) {
             String formattedDate = event.getEvent_datetime().format(dateFormatter);
@@ -58,8 +51,10 @@ public class PageController {
     }
 
 
-
-    @RequestMapping(value = "/")
+    // Passes required home page objects
+    //  - Blogs to show most recent blogs feature
+    //  - A view counter for No of visitors
+    //  @RequestMapping(value = "/")
     public ModelAndView homePage() {
         ModelAndView modelAndView = new ModelAndView();
 
@@ -79,27 +74,17 @@ public class PageController {
 
         }
         modelAndView.addObject("acceptedBlogs", acceptedBlogs);
-
         modelAndView.addObject("discardedBlogs", discardedBlogs);
 
         ViewCount views = viewRepo.findById(1);
-
         views.setViews(views.getViews()+1);
-
         modelAndView.addObject("total_views", views.getViews());
-
         viewRepo.save(views);
 
         modelAndView.setViewName("homePage");
 
-
         return modelAndView;
     }
-
-    /*@RequestMapping(value = "/contactUs") // Request to contactUs page
-    public String ContactUs() {
-        return "contactUs";
-    }*/
 
     @RequestMapping(value = "/aboutUs") // Request to aboutUs page
     public String AboutUs() {
@@ -137,11 +122,6 @@ public class PageController {
     @RequestMapping(value = "/refugEAP") // Request to EnglishLP page
     public String RefugEAP() {return "refugEAP";}
 
-    // @RequestMapping(value = "/adminPortal") // Request to adminPortal page
-    // public String AdminPortal() {
-    //     return "adminPortal";
-    // }
-
 
     @RequestMapping(value = "/admin/adminPortal") // Request to adminPortal page
     public ModelAndView AdminPortal() {
@@ -157,7 +137,9 @@ public class PageController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/admin/user/add", method = RequestMethod.POST) // Request to adminPortal page
+    // Request to adminPortal page to add new admin
+    // Adds a new admin to database and encrypts their password
+    @RequestMapping(value = "/admin/user/add", method = RequestMethod.POST)
     public String UserAdd(@RequestParam("username") String usr,@RequestParam("password") String pwd,@RequestParam("role") String roleName) {
 
         User user=new User();
@@ -292,6 +274,7 @@ public class PageController {
         return "blogPage";
     }
 
+    // Mapping to events page passes all events into jsp to be displayed
     @RequestMapping(value = "/eventPage")
     public String EventPage(Model model) {
         model.addAttribute("event", new Event());
@@ -301,6 +284,7 @@ public class PageController {
     }
 
 
+    // Add a blog to the database
     @RequestMapping(value = "/addBlog", method = RequestMethod.POST)
     public String addBlog(@RequestParam("name") String name,
                           @RequestParam("email") String email,
@@ -321,12 +305,17 @@ public class PageController {
         blog.setTypeOfContribution(typeOfContribution);
         blog.setDate(currentDate);
 
+        // Save blog to database
         blogRepo.save(blog);
+
+        // Send email to user that their blog has been recieved
         emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your blog and will check your request withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
+        // Send email to refugEAP (Change email to RefugEAP
         emailService.sendMessage("Hazzaemailservice@gmail.com","Blog request",name +" at "+ email + " Has asked to put up a blog this can be accepted/denied on the admin page");
 
         return "redirect:/blogPage";}
 
+    // Add a event to the database
     @RequestMapping(value = "/addEvent", method = RequestMethod.POST)
     public String addEvent(@RequestParam("name") String name,
                            @RequestParam("email") String email,
@@ -342,14 +331,18 @@ public class PageController {
         event.setEvent_datetime(LocalDateTime.parse(event_datetime));
         event.setEvent_more_info(event_more_info);
 
+        // Save event to database
         eventRepo.save(event);
-        emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your event and will check your request withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
 
+        // Send email to user that their event has been recieved
+        emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your event and will check your request withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
+        // Send email to refugEAP (Change email to RefugEAP email)
         emailService.sendMessage("Hazzaemailservice@gmail.com","Event request",name +" at "+ email + " Has asked to put up an event this can be accepted/denied on the admin page");
 
         return "redirect:/eventPage";}
 
-    @RequestMapping(value = "/admin/event/add", method = RequestMethod.POST) // Request to adminPortal page
+    // Add an event as an admin via the admin portal side
+    @RequestMapping(value = "/admin/event/add", method = RequestMethod.POST)
     public String EventAdd(@RequestParam("name") String name,
                            @RequestParam("email") String email,
                            @RequestParam("event_title") String event_title,
@@ -364,10 +357,12 @@ public class PageController {
         event.setEvent_datetime(LocalDateTime.parse(event_datetime));
         event.setEvent_more_info(event_more_info);
 
+        // Save the event to database
         eventRepo.save(event);
 
         return "redirect:/admin/eventManagement";}
 
+    // Method to allow admins to accept event after they have checked it
     @PostMapping(value = "/admin/acceptEvent")
     public String acceptEvent(@RequestParam("event_id") int eventId) {
         // Get the event by ID
@@ -377,10 +372,13 @@ public class PageController {
             event.setStatus("approved");
             eventRepo.save(event);
         }
+        // Send email to user saying their event has been approved
         emailService.sendMessage(event.getEmail(), "RefugEAP","Hi "+ event.getName() + ",\n\nWe have approved your event and it has now been posted.\n\nYours Sincerely, \nThe RefugEAP team");
         return "redirect:/admin/eventManagement";
     }
 
+    // Method to allow admins to discard event if it's inappropriate
+    // Goes to a discard section so isn't gone from the database
     @PostMapping(value = "/admin/discardEvent")
     public String discardEvent(@RequestParam("event_id") int eventId) {
         // Get the event by ID
@@ -390,9 +388,12 @@ public class PageController {
             event.setStatus("deleted");
             eventRepo.save(event);
         }
+        // Send email to user saying their event has been discared
         emailService.sendMessage(event.getEmail(), "RefugEAP","Hi "+ event.getName() + ",\n\nWe have declined your event feel free to email for further inquiries into why we have done this.\n\nYours Sincerely, \nThe RefugEAP team");
         return "redirect:/admin/eventManagement";
     }
+
+    // Method to completely remove an event from the database
     @PostMapping(value = "/admin/deleteEvent")
     public String deleteEvent(@RequestParam("event_id") int eventId) {
         // Get the event by ID
@@ -404,6 +405,7 @@ public class PageController {
         return "redirect:/admin/eventManagement";
     }
 
+    // Recovers discarded events NOT deleted ones
     @PostMapping(value = "/admin/recoverEvent")
     public String recoverEvent(@RequestParam("event_id") int eventId) {
         // Get the event by ID
@@ -416,7 +418,8 @@ public class PageController {
         return "redirect:/admin/eventManagement";
     }
 
-    @RequestMapping(value = "/admin/blog/add", method = RequestMethod.POST) // Request to adminPortal page
+    // Allows admins to add a blog on the admin side
+    @RequestMapping(value = "/admin/blog/add", method = RequestMethod.POST)
     public String BlogAdd(@RequestParam("name") String name,
                           @RequestParam("email") String email,
                           @RequestParam("title") String title,
@@ -435,10 +438,14 @@ public class PageController {
         blog.setRole(role);
         blog.setTypeOfContribution(typeOfContribution);
         blog.setDate(currentDate);
+
+        // Save blog to database
         blogRepo.save(blog);
 
         return "redirect:/admin/blogManagement";}
 
+
+    // Method to allow admins to accept blog after they have checked it
     @PostMapping(value = "/admin/acceptBlog")
     public String acceptBlog(@RequestParam("blog_id") int blogId) {
         // Get the blog by ID
@@ -452,6 +459,8 @@ public class PageController {
         return "redirect:/admin/blogManagement";
     }
 
+    // Method to allow admins to discard blog if it's inappropriate
+    // Goes to a discard section so isn't gone from the database
     @PostMapping(value = "/admin/discardBlog")
     public String discardBlog(@RequestParam("blog_id") int blogId) {
         // Get the blog by ID
@@ -465,6 +474,7 @@ public class PageController {
         return "redirect:/admin/blogManagement";
     }
 
+    // Method to completely remove a blog from the database
     @PostMapping(value = "/admin/deleteBlog")
     public String deleteBlog(@RequestParam("blog_id") int blogId) {
         // Get the blog by ID
@@ -476,6 +486,7 @@ public class PageController {
         return "redirect:/admin/blogManagement";
     }
 
+    // Recovers discarded blogs NOT deleted ones
     @PostMapping(value = "/admin/recoverBlog")
     public String recoverBlog(@RequestParam("blog_id") int blogId) {
         // Get the blog by ID
@@ -504,6 +515,7 @@ public class PageController {
         return "contactUs";
     }
 
+    // Add a contact to the database
     @RequestMapping(value = "/addContact", method = RequestMethod.POST)
     public String addContact(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("message") String message){
 
@@ -513,8 +525,10 @@ public class PageController {
         contact.setEmail(email);
         contact.setMessage(message);
 
+        // Save contact to the database
         contactRepo.save(contact);
         emailService.sendMessage(email, "RefugEAP","Hi "+ name + ",\n\nWe have received your message and will reply withing 7 working days.\n\nYours Sincerely, \nThe RefugEAP team");
+        // Send email to refugEAP (Change email to RefugEAP email)
         emailService.sendMessage("Hazzaemailservice@gmail.com","Contact request",name + " wants to get in contact, here is their email if you wish to reply "+ email +"\n\n Here is their message\n\n"+ message);
 
         return "redirect:/contactUs";}
