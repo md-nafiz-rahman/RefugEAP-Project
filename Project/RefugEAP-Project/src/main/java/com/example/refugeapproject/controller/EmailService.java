@@ -18,7 +18,7 @@ public class EmailService {
             String to, String subject, String text) {
 
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("Your email to send from"); // Use the email you want to send emails from (to the client)
+        message.setFrom("Your email to send from"); // Use the email you want to send emails from (to the client), change to RefugEAP email
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
