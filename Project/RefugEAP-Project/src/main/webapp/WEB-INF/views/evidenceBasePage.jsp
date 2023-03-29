@@ -884,9 +884,9 @@
         <div class="footer-col-2">
             <p>Follow us on</p>
             <ul class="social-icons">
-                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+
                 <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+
             </ul>
         </div>
         <div class="footer-col-3">
