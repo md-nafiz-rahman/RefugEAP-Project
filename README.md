@@ -23,9 +23,10 @@
 
 ### Configuring Email Plugin:
 
- 1. To configure the email plugin to automatically send email notifications to practitioners when a new blog is waiting to be approved you need to configure the email plugin found in src --> resources --> application.properties
+ 1. To configure the email plugin to automatically send email notifications to practitioners when a new blog is waiting to be approved you need to configure the email plugin found in src --> resources --> application.properties.
 
- 2. In this file scroll down and you will see spring.mail configuration options, if you decide to use a Gmail account to do this you can leave the host the same and only have to enter your Gmail address and a Gmail App Password
+ 2. In this file scroll down and you will see spring.mail configuration options, if you decide to use a Gmail account to do this you can leave the host the same and only have to enter your Gmail address and a Gmail App Password, then go to com/example/refugeapproject/controller/EmailService.java and change the email in their to your gmail. Finally, go to Project/RefugEAP-Project/src/main/java/com/example/refugeapproject/controller/PageController.java and notice the first variable called yourEmail. Enter your gmail here to configure the rest of this process.
+ 
 
  3. You can also configure your own mail plugin for example if you have a specific email service provided by your webhost:
  
