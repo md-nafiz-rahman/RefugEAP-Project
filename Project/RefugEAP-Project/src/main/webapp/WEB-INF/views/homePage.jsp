@@ -252,7 +252,7 @@
 
         .split{
             display: grid;
-            height: 900px;
+            height: auto;
         }
 
         .splitcal{
@@ -276,6 +276,7 @@
 
         .cal {
             height: 700px;
+            float: left;
             width: 50%;
             margin: 0 auto;
             text-align: center;
@@ -305,13 +306,14 @@
         }
 
         #calendar {
+            float: top;
             size: 10px;
             padding-left: 20%;
             padding-right: 20%;
             background-size: cover;
         }
         .events {
-            height: 700px;
+            height: 800px;
             float: right;
             width: 50%;
         }
@@ -519,7 +521,7 @@
             float: left;
             align-items: center;
             justify-content: center;
-            height: 900px;
+            height: 1000px;
             background-color: #f6f6f6;
             padding: 30px;
         }
@@ -531,7 +533,8 @@
             justify-content: center;
             width: 100%;
             max-width: 800px;
-            margin: 30px 0;
+            /*margin-right: 5%;*/
+            /*margin-left: 5%;*/
             padding: 30px;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -590,18 +593,61 @@
             background-color: #1d4e6e;
         }
 
-        .iconHover:hover {
-            background-color: #12b7e0;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            text-align: center;
-            vertical-align: middle;
-            transform: translate(0,-5px);
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-
-
+        /* Layout */
+        .event-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section-title {
+            margin-bottom: 40px;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-body {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card-text {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #666;
+        }
 
 
 
@@ -710,27 +756,32 @@
         </div>
 
         <div class="events">
-            <a class="twitter-timeline" data-height="900" href="https://twitter.com/EapForSJ?ref_src=twsrc%5Etfw">Tweets by EapForSJ</a>
+            <a class="twitter-timeline" data-height="1000" href="https://twitter.com/EapForSJ?ref_src=twsrc%5Etfw">Tweets by EapForSJ</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
 </div>
 
-
-<!-- First Grid -->
-<div class="splitcal">
-    <div class="second">
-        <div class="cal">
-            <div id="calendar"></div>
-            <div class="view-more-btn-container">
-                <a href="/eventPage" class="view-more-btn">View All Events</a>
-            </div>
-        </div>
-        <div class="events">
-            <div id="event-list"></div>
-        </div>
+<div class="event-list">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div class="card-grid">
+        <c:forEach var="event" items="${acceptedEvents}" varStatus="loop">
+            <c:if test="${loop.count <= 3}">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">${event.getEvent_title()}</h3>
+                        <p class="card-text">${event.getFormattedDate()} at ${event.getFormattedTime()}</p>
+                        <p class="card-text">${event.getEvent_more_info()}</p>
+                    </div>
+                </div>
+            </c:if>
+        </c:forEach>
+    </div>
+    <div class="view-more-btn-container">
+        <a href="/eventPage" class="view-more-btn">View All Events</a>
     </div>
 </div>
+
 
 <footer>
     <div class="footer-columns">
@@ -741,9 +792,9 @@
         <div class="footer-col-2">
             <p>Follow us on</p>
             <ul class="social-icons">
-
-                <li class="iconHover"><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-
+                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
             </ul>
         </div>
         <div class="footer-col-3">
