@@ -457,7 +457,7 @@
             }
 
             .social-icons a {
-                color: black;
+                color: white;
             }
 
             .footer-links {
@@ -660,7 +660,7 @@
             }
 
             .social-icons a {
-                color: black;
+                color: white;
             }
 
             .footer-links {
@@ -703,16 +703,17 @@
                 font-size: 10px; /* set the font size to 20 pixels */
             }
 
-            .iconHover:hover {
-                background-color: #12b7e0;
-                width: 35px;
-                height: 35px;
-                border-radius: 50%;
-                text-align: center;
-                vertical-align: middle;
-                transform: translate(0,-5px);
-            }
+        }
 
+
+        .iconHover:hover {
+            background-color: #12b7e0;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            transform: translate(0,-5px);
         }
 
 

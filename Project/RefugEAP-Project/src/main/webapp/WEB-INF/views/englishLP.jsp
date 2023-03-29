@@ -472,7 +472,7 @@
             }
 
             .social-icons a {
-                color: black;
+                color: white;
             }
 
             .footer-links {
@@ -796,17 +796,20 @@
 
             tr:nth-child(even) {background-color: #f2f2f2;}
 
-            .iconHover:hover {
-                background-color: #12b7e0;
-                width: 35px;
-                height: 35px;
-                border-radius: 50%;
-                text-align: center;
-                vertical-align: middle;
-                transform: translate(0,-5px);
-            }
+
 
         }
+
+        .iconHover:hover {
+            background-color: #12b7e0;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            transform: translate(0,-5px);
+        }
+
 
     </style>
 </head>
