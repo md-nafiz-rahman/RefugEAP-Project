@@ -650,6 +650,18 @@
         }
 
 
+        .iconHover:hover {
+            background-color: #12b7e0;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            transform: translate(0,-5px);
+        }
+
+
+
 
     </style>
 </head>
@@ -751,7 +763,7 @@
                 </div>
             </c:forEach>
             <div class="view-more-btn-container">
-                <a href="/eventPage" class="view-more-btn">View More</a>
+                <a href="/blogPage" class="view-more-btn">View More</a>
             </div>
         </div>
 
@@ -792,9 +804,7 @@
         <div class="footer-col-2">
             <p>Follow us on</p>
             <ul class="social-icons">
-                <li><a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
-                <li><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+                <li class="iconHover"><a href="https://twitter.com/EapForSJ" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
             </ul>
         </div>
         <div class="footer-col-3">
