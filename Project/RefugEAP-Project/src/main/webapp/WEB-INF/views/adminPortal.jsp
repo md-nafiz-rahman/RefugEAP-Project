@@ -582,12 +582,22 @@
         </form>
     </div>
 </div>
+
 <table class="center">
     <tr><th>Username</th><th>Role</th><th>Status</th><th>DELETE</th></tr>
-    <c:forEach var="user" items="${users}">
-        <tr><td>${user.getUsername()}</td><td>${user.GetRolesNames()}</td><td>${user.isEnabled()}</td><td><a href = '<c:url value = "/admin/user/del/${user.getId()}"/>'>TEST</a></td></tr>
+    <c:forEach items="${users}" var="user">
+        <tr>
+            <td>${user.getUsername()}</td>
+            <td>${user.GetRolesNames()}</td>
+            <td>${user.isEnabled()}</td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/admin/deleteUser">
+                    <input type="hidden" name="user_id" value="${user.id}">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
     </c:forEach>
-
 </table>
 
 <footer>
