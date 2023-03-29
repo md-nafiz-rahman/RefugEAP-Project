@@ -365,19 +365,7 @@
             justify-content: space-between;
         }
 
-        .blog-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .blog-post {
-            background-color: #f8f8f8;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            width: calc(33.33% - 10px);
-        }
+
         .blog-post h2 {
             font-size: 26px;
             margin-top: 0;
@@ -431,17 +419,6 @@
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 99;
-        }
-
-        .sec1 {
-            background-color: white; /* add a blue background color to the team section */
-            padding: 10px;
-            font-size:16px;
-            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
-            margin: 0 auto; /* center the section horizontally within its parent container */
-            color: black; /* set the text color to white */
-            line-height: 2.0; /* add some spacing between lines */
-            font-family: "Calibri", sans-serif;
         }
 
         .contribution-popup {
@@ -531,9 +508,6 @@
             gap: 20px;
             justify-content: space-between;
         }
-        .contributionDropdown {
-            margin-bottom: 10px;
-        }
 
         .iconHover:hover {
             background-color: #12b7e0;
@@ -544,6 +518,273 @@
             vertical-align: middle;
             transform: translate(0,-5px);
         }
+
+        /* CSS style for mobile responsiveness */
+        @media screen and (max-width: 600px) {
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            .blog p{
+                color: gray;
+            }
+            .blog  h5{
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .container {
+                position: relative;
+            }
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlays {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
+            }
+
+
+            .navigator a {
+                float: right;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 7px 10px;
+                text-decoration: none;
+                font-size: 9px;
+                /*position: relative;*/
+            }
+
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
+            }
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 20px;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 9px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 5px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+                z-index: 2;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+                z-index: 2;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 10px 0;
+            }
+
+            .footer-columns {
+                max-width: 600px;
+                margin: 0 0 0 30px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-columns > div {
+                flex: 1;
+                text-align: left;
+            }
+
+            .footer-col-1 img {
+                max-width: 75px;
+                height: auto;
+                margin: 7px 12px;
+            }
+
+            .social-icons {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .social-icons li {
+                display: inline-block;
+                margin: 0 5px;
+                height: 20px;
+                width: 20px;
+            }
+
+            .social-icons a {
+                color: black;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                display: block;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+
+            .footer-links a {
+                text-decoration:none;
+                font-size:10px;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+            }
+
+            li {
+                font-size: 10px; /* set the font size to 20 pixels */
+            }
+
+            .contribution-popup {
+                display: block;
+                position: fixed;
+                width: 80%;
+                max-height: 90vh;
+                font-size: 12px;
+                font-family: Calibri, sans-serif;
+                background: #fff;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                text-align: center;
+                z-index: 100;
+                overflow: auto;
+            }
+
+
+            .containerForm {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+                margin-bottom: 50px; /* add margin bottom */
+            }
+
+
+            .form {
+                width: 90%;
+                margin: 0 auto;
+                border: 0px solid gray;
+                /*border-radius: 10px;*/
+                padding: 25px 20px;
+            }
+
+            .containerBlog.show {
+                display: flex;
+                flex-wrap: wrap;
+                /*gap: 20px;*/
+                justify-content: center;
+                width: 100%;
+            }
+
+            article {
+                border: 1px solid #ccc;
+                /*padding: 20px;*/
+                /*flex: 0 0 calc(33.33%);*/
+                box-sizing: border-box;
+                width: 100%
+            }
+
+        }
+
 
 
     </style>
