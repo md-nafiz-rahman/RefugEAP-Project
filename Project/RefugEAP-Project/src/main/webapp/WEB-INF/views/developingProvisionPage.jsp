@@ -326,40 +326,99 @@
                 width: 100%;
             }
 
+
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: right;
+                padding: 10px 0 10px 0;
+                flex-direction: row-reverse;
+
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 12px;
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 10px;
+                height: 50px;
+                margin: 0;
             }
-
 
             .navigator a:hover {
                 background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
                 color: black;
+
             }
 
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
             }
+
+            .dropdown {
+                float: right;
+                overflow: hidden;
+
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 12px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 7px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: #29668B;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #FFFFFF;
+                color: #29668B;
+            }
+
 
             h2 {
                 margin-top: 0;
@@ -512,24 +571,32 @@
             .navigator {
                 background-color: #29668B;         /* Header Navigation Main Button */
                 overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
             }
 
 
             .navigator a {
                 float: right;
-                display: block;
                 color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
                 text-align: center;
-                padding: 5px 10px;
+                padding: 7px 10px;
                 text-decoration: none;
                 font-size: 9px;
+                /*position: relative;*/
             }
 
             .logo {
-                float: left;
-                display: block;       /* Header Navigation Settings text color, font size, alignment */
-                padding: 5px 10px;
-                height: 25px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
             }
 
             .navigator a:hover {
@@ -540,7 +607,39 @@
             .navigator a.mainB {
                 background-color: #f2f2f2;     /* Header Navigation Main Button */
                 color: #29668B;
-                padding: 7px 30px;
+                padding: 7px 20px;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 9px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 5px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+                z-index: 2;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: #29668B;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+                z-index: 2;
             }
 
             h2 {
