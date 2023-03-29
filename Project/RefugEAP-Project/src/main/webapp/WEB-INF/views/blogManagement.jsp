@@ -590,6 +590,7 @@
 
 </header>
 
+<!-- Form to add blogs admin side -->
 
 <div>
     <div class="form">
@@ -612,6 +613,7 @@
     </div>
 </div>
 
+<!-- Blog Management tables -->
 <div class="managementTable">
     <h3 class="textheader">Pending Blog Posts</h3>
     <div class="tScroll">
@@ -757,6 +759,7 @@
         </table>
     </div>
 </div>
+
 
 <footer>
     <div>
