@@ -2,6 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html lang="en">
 <head>
     <title>RefugEAP - Events</title>
@@ -285,16 +286,6 @@
             cursor: pointer;
         }
 
-        input[type="submit"]:hover {
-            background-color: #092747;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: 0;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
 
         footer {
             background-color: #29668B;
@@ -566,15 +557,30 @@
             transform: translateX(-50%);
         }
 
-        .iconHover:hover {
-            background-color: #12b7e0;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            text-align: center;
-            vertical-align: middle;
-            transform: translate(0,-5px);
+        .event-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+        .event {
+            width: 400px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .event-title {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .event-datetime {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .event-info {
+            margin-bottom: 0;
+        }
+
 
     </style>
 </head>
