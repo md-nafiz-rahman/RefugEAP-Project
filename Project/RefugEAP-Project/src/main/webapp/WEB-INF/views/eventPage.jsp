@@ -351,19 +351,6 @@
         }
 
 
-        .post-header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-        }
-
-        .post-footer {
-            background-color: #f5f5f5;
-            color: #333;
-            padding: 10px;
-        }
-
-
         header h1 {
             margin: 0;
         }
@@ -423,24 +410,6 @@
             border: 1px solid;
         }
 
-        .containerBlog {
-            display: flex;
-            height: auto;
-        }
-
-        .blog-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .blog-post {
-            background-color: #f8f8f8;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            width: calc(33.33% - 10px);
-        }
         .blog-post h2 {
             font-size: 26px;
             margin-top: 0;
@@ -456,7 +425,7 @@
 
         .containerForm {
             display: flex;
-            height: 1500px;
+            height: 1000px;
         }
 
         .form {
@@ -521,10 +490,6 @@
 
         }
 
-        .fc-daygrid-day.active {
-            background-color: #f0ad4e;
-            color: #ffffff;
-        }
 
         .has-event {
             background-color: rgba(255, 0, 0, 0.8); /* Change the background color */
@@ -542,20 +507,6 @@
             right: 3px;
         }
 
-        .event-bg {
-            background-color: #f0f0f0;
-        }
-
-        .event-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #007bff;
-            position: absolute;
-            bottom: 3px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
 
         .event-list {
             display: flex;
@@ -579,6 +530,473 @@
         }
         .event-info {
             margin-bottom: 0;
+        }
+
+        /* CSS style for tablet device responsiveness */
+        @media screen and (max-width: 1200px) {
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 35px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            li {
+                font-size: 12px; /* set the font size to 20 pixels */
+            }
+            .container {
+                position: relative;
+            }
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: right;
+                padding: 10px 0 10px 0;
+                flex-direction: row-reverse;
+
+            }
+
+
+            .navigator a {
+                float: right;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 7px 10px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 10px;
+                height: 50px;
+                margin: 0;
+            }
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 20px;
+            }
+
+            .dropdown {
+                float: right;
+                overflow: hidden;
+
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 12px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 7px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #FFFFFF;
+                color: #29668B;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 10px 0;
+            }
+
+            .footer-columns {
+                max-width: 600px;
+                margin: 0 0 0 250px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-columns > div {
+                flex: 1;
+                text-align: left;
+            }
+
+            .footer-col-1 img {
+                max-width: 75px;
+                height: auto;
+                margin: 7px 12px;
+            }
+
+            .social-icons {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .social-icons li {
+                display: inline-block;
+                margin: 0 5px;
+                height: 20px;
+                width: 20px;
+            }
+
+            .social-icons a {
+                color: black;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                display: block;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+
+            .footer-links a {
+                text-decoration:none;
+                font-size:10px;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+            }
+
+            .containerForm {
+                display: flex;
+                height: 860px;
+            }
+
+        }
+
+
+
+        /* CSS style for mobile responsiveness */
+        @media screen and (max-width: 600px) {
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-family: 'Calibri', sans-serif;
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            h4{
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            .blog p{
+                color: gray;
+            }
+            .blog  h5{
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .container {
+                position: relative;
+            }
+
+            .background-image {
+                background-image: url(https://hbr.org/resources/images/article_assets/2020/06/Jun20_12_1202344480.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+            .navigator {
+                background-color: #29668B;         /* Header Navigation Main Button */
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                /*position: relative;*/
+                padding: 40px 0 0 0;
+                flex-direction: row-reverse;
+            }
+
+
+            .navigator a {
+                float: right;
+                color: #FFFFFF;               /* Header Navigation Settings text color, font size, alignment */
+                text-align: center;
+                padding: 7px 10px;
+                text-decoration: none;
+                font-size: 9px;
+                /*position: relative;*/
+            }
+
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 40px;
+                padding: 10px 0;
+            }
+
+            .navigator a:hover {
+                background-color: #FFFFFF;     /* Header Navigation Other Buttons hover effect */
+                color: black;
+            }
+
+            .navigator a.mainB {
+                background-color: #f2f2f2;     /* Header Navigation Main Button */
+                color: #29668B;
+                padding: 7px 20px;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 9px;
+                border: none;
+                outline: none;
+                color: #FFFFFF;
+                padding: 5px 10px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+                z-index: 2;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+                z-index: 2;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+                z-index: 2;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            #events li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 10px;
+            }
+
+
+            footer {
+                background-color: #29668B;
+                color: #fff;
+                padding: 10px 0;
+            }
+
+            .footer-columns {
+                max-width: 600px;
+                margin: 0 0 0 30px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-columns > div {
+                flex: 1;
+                text-align: left;
+            }
+
+            .footer-col-1 img {
+                max-width: 75px;
+                height: auto;
+                margin: 7px 12px;
+            }
+
+            .social-icons {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .social-icons li {
+                display: inline-block;
+                margin: 0 5px;
+                height: 20px;
+                width: 20px;
+            }
+
+            .social-icons a {
+                color: black;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                display: block;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+
+            .footer-links a {
+                text-decoration:none;
+                font-size:10px;
+            }
+
+            .footer-slogan {
+                font-size: 7px;
+                max-width: 100px;
+            }
+
+            li {
+                font-size: 10px; /* set the font size to 20 pixels */
+            }
+
+            .containerForm {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+                margin-bottom: 50px; /* add margin bottom */
+                height:660px;
+            }
+
+
+            .form {
+                width: 90%;
+                margin: 0 auto;
+                border: 0px solid gray;
+                /*border-radius: 10px;*/
+                padding: 25px 20px;
+            }
+
+
+
         }
 
 
