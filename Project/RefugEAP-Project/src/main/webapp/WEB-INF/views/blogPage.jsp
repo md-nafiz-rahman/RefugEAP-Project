@@ -861,7 +861,7 @@
                 display: none;
                 position: absolute;
                 background-color: #f9f9f9;
-                min-width: 160px;
+                min-width: 90%;
                 box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
                 z-index: 2;
             }
@@ -996,18 +996,27 @@
 
             .containerBlog.show {
                 display: flex;
+                flex-direction: column;
                 flex-wrap: wrap;
                 /*gap: 20px;*/
                 justify-content: center;
-                width: 100%;
+                width: 95%;
             }
 
             article {
-                border: 1px solid #ccc;
-                /*padding: 20px;*/
-                /*flex: 0 0 calc(33.33%);*/
-                box-sizing: border-box;
-                width: 100%
+                width: 95%;
+                margin-bottom: 20px;
+            }
+            article,
+            article section {
+                margin: 0;
+                padding:0 15px;
+                display: flex;
+                flex-direction: column;
+            }
+            article header,
+            article footer {
+                height: auto;
             }
 
         }
