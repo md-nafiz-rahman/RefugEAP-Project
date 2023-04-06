@@ -82,6 +82,8 @@ CREATE TABLE `blogs` (
                          `affiliation` varchar(100) NOT NULL,
                          `role` varchar(50) NOT NULL,
                          `type_of_contribution` varchar(50) NOT NULL,
+                         `file_data` LONGBLOB,
+                         `file_name` VARCHAR(100) NULL,
                          PRIMARY KEY (`blog_id`) USING BTREE
 );
 

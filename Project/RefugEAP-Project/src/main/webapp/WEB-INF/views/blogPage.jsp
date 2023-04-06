@@ -216,6 +216,39 @@
             cursor: pointer;
         }
 
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            background-color: #2196F3;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .file-upload input[type=file] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+
+        /* Style the file preview container */
+        #file-preview {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #file-preview p {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
 
         footer {
             background-color: #29668B;
@@ -517,6 +550,49 @@
             text-align: center;
             vertical-align: middle;
             transform: translate(0,-5px);
+        }
+
+        #submitting-screen {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            padding-top: 20px;
+            align-items: center;
+            justify-content: center;
+            font-family: Calibri, sans-serif;
+        }
+
+        .lds-dual-ring {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+        }
+        .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 46px;
+            height: 46px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
 
@@ -1053,11 +1129,6 @@
             var overlay = document.getElementById("overlay");
             var guidelinesCheckbox = document.getElementById("readGuidelines");
 
-            // Check if the guidelines checkbox is checked
-            if (!guidelinesCheckbox.checked) {
-                alert("Please read and agree to the contribution guidelines before submitting the form.");
-                return;
-            }
 
             $.ajax({
                 type: 'POST',
@@ -1104,7 +1175,6 @@
                 overlay.style.display = "none";
             });
         }
-
 
     </script>
 </head>
@@ -1252,7 +1322,7 @@
         <button type="button" onclick="viewGuideline()" style="margin-bottom: 10px;">View Guidelines</button>
 
         <%--@elvariable id="blog" type=""--%>
-        <form:form action="/addBlog" modelAttribute="blog" onsubmit="showConfirmation(event)">
+        <form:form action="/addBlog" modelAttribute="blog" onsubmit="showConfirmation(event)" id="blog-form" method= "post" enctype="multipart/form-data">
             <form:label path="name">Name:</form:label>
             <form:input path="name" required="required"/>
 
@@ -1278,18 +1348,26 @@
             <form:label path="content">Content:</form:label>
             <form:input path="content" required="required"/>
 
+            <label class="file-upload" for="file">Choose a file to upload</label>
+            <input type="file" name="file" id="file" accept=".pdf,.doc,.docx" style="display: none;">
+
+            <div id="file-preview"></div>
 
             <br>
             <br>
 
             <form:hidden path="status" value="pending"/>
 
+
             <input type="submit"/>
+            <div id="submitting-screen">
+                <div class="lds-dual-ring"></div>
+                <p>Please wait while your blog post is being submitted.</p>
+            </div>
         </form:form>
 
     </div>
 </div>
-
 
 <div class="contribution-overlay">
     <div class="contribution-popup">
@@ -1334,7 +1412,7 @@
                 <p class="popup-text">In terms of submission format:</p>
                 <ul>
                     <li>This might take the form of a written blog post, a vlog, an interview, or something else - we are open to suggestions!</li>
-                    <li>If your submission contains text, you can paste it directly into the form below.</li>
+                    <li>If your submission contains text, you can paste it directly into the form below, or upload it as a MS Word document/pdf if you prefer (also via the form). An ideal length for blog posts is around 500-1000 words (but we are open to longer or shorter submissions too)</li>
                 </ul>
             </li>
         </ol>
@@ -1377,5 +1455,71 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const fileInput = document.getElementById('file');
+    const filePreview = document.getElementById('file-preview');
+
+    fileInput.addEventListener('change', function() {
+        const file = this.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function() {
+            const preview = document.createElement('div');
+            preview.innerHTML = `<p>${file.name}</p>
+                        <button type="button" onclick="removeFile()">Remove</button>`;
+            filePreview.appendChild(preview);
+
+            preview.innerHTML += '<p>' + file.name + '</p>'; // add the file name to the preview
+        });
+
+        reader.readAsDataURL(file);
+    });
+
+    function removeFile() {
+        fileInput.value = null;
+        filePreview.innerHTML = '';
+    }
+
+    const submittingScreen = document.getElementById('submitting-screen');
+    const form = document.getElementById('blog-form');
+    const checkbox = document.getElementById('readGuidelines');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+        if (checkbox.checked) {
+            submittingScreen.style.display = 'flex'; // Display the loading screen immediately
+
+            const formData = new FormData(form);
+
+            fetch('/addBlog', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        submittingScreen.style.display = 'none'; // Hide the loading screen after submission
+                        const popup = document.getElementById('popup');
+                        popup.style.display = 'block';
+                        form.reset();
+                        filePreview.innerHTML = '';
+                    } else {
+                        submittingScreen.style.display = 'none'; // Hide the loading screen on error
+                        alert('An error occurred while submitting the blog post.');
+                    }
+                })
+                .catch(error => {
+                    submittingScreen.style.display = 'none'; // Hide the loading screen on error
+                    alert('An error occurred while submitting the blog post.');
+                    console.error(error);
+                });
+        } else {
+            alert('Please read and agree to the contribution guidelines.');
+        }
+    });
+
+
+</script>
+
 </body>
 </html>
