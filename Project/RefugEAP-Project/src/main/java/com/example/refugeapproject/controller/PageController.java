@@ -1,5 +1,6 @@
 package com.example.refugeapproject.controller;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -17,7 +18,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 //import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
 
 /*  Class to handle all requests through out the webpage  */
 @Controller
@@ -25,7 +29,7 @@ public class PageController {
 
 
     // Enter you email to configure sending emails
-    private String yourEmail = "Enter you email here";
+    private String yourEmail = "nafizmdrahman@gmail.com";
     @Autowired
     UserRepo userRepo;
     @Autowired
@@ -329,16 +333,31 @@ public class PageController {
 
 
     // Add a blog to the database
-    @RequestMapping(value = "/addBlog", method = RequestMethod.POST)
+    @RequestMapping(value = "/addBlog", method = RequestMethod.POST, consumes = "multipart/form-data")
     public String addBlog(@RequestParam("name") String name,
                           @RequestParam("email") String email,
                           @RequestParam("title") String title,
                           @RequestParam("content") String content,
                           @RequestParam("affiliation") String affiliation,
                           @RequestParam("role") String role,
-                          @RequestParam("typeOfContribution") String typeOfContribution){
+                          @RequestParam("typeOfContribution") String typeOfContribution,
+                          @RequestParam("file") MultipartFile file){
+
 
         Blog blog = new Blog();
+
+        String fileName = file.getOriginalFilename();
+        blog.setFileName(fileName);
+
+        if (!file.isEmpty()) {
+            try {
+                byte[] fileData = file.getBytes();
+                blog.setFileData(fileData);
+            } catch (IOException e) {
+                // Handle the error
+            }
+        }
+
         java.sql.Date currentDate = new java.sql.Date(new Date().getTime());
         blog.setName(name);
         blog.setEmail(email);
@@ -542,6 +561,18 @@ public class PageController {
         }
         return "redirect:/admin/blogManagement";
     }
+
+    @RequestMapping(value = "/admin/downloadBlogFile", method = RequestMethod.GET)
+    public void downloadBlogFile(@RequestParam("blog_id") int blogId, HttpServletResponse response) throws IOException {
+        Blog blog = blogRepo.findById(blogId);
+        if (blog != null && blog.getFileData() != null) {
+            response.setHeader("Content-Disposition", "attachment; filename=" + blog.getFileName());
+            response.setContentType("application/octet-stream");
+            response.getOutputStream().write(blog.getFileData());
+            response.getOutputStream().flush();
+        }
+    }
+
 
 
     @GetMapping("/api/events")
