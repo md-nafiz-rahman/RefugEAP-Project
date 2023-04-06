@@ -81,6 +81,38 @@
                 eventList.append('<div class="event-item"><strong>No events found on this date.</strong></div><hr/>');
             }
         }
+
+
+        <%-- Shows confirmation of submission --%>
+        function showConfirmation(event) {
+            event.preventDefault(); // Prevent form submission
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+
+            $.ajax({
+                type: 'POST',
+                url: '/addEvent',
+                data: $('form').serialize(),
+                success: function(response) {
+                    // Show the popup message after the AJAX request is complete
+                    popup.style.display = "block";
+                    overlay.style.display = "block";
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+                }
+            });
+        }
+
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+            popup.style.display = "none";
+            overlay.style.display = "none";
+            location.reload(); // Reload the page to clear form data
+        }
+
     </script>
 
 
@@ -114,7 +146,7 @@
         }
 
         p {
-            font-size: 23px;
+            font-size: 18px;
         }
 
 
@@ -145,7 +177,7 @@
             width: 100%;
         }
 
-        .overlay {
+        .overlays {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -532,6 +564,74 @@
             margin-bottom: 0;
         }
 
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+
+        #submitting-screen {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            padding-top: 20px;
+            align-items: center;
+            justify-content: center;
+            font-family: Calibri, sans-serif;
+        }
+
+        .lds-dual-ring {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+        }
+        .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 46px;
+            height: 46px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         /* CSS style for tablet device responsiveness */
         @media screen and (max-width: 1200px) {
 
@@ -570,7 +670,7 @@
                 width: 100%;
             }
 
-            .overlay {
+            .overlays {
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -806,7 +906,7 @@
                 width: 100%;
             }
 
-            .overlay {
+            .overlays {
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -1066,7 +1166,7 @@
 <header>
     <div class="container">
         <div class="background-image"></div>
-        <div class="overlay" style="padding-top: 70px">
+        <div class="overlays" style="padding-top: 70px">
             <h1>EVENTS</h1>
         </div>
     </div>
@@ -1099,7 +1199,7 @@
 
             <%-- Form to take in an event --%>
             <%--@elvariable id="event" type="event"--%>
-            <form:form action="/addEvent" modelAttribute="event">
+            <form:form action="/addEvent" modelAttribute="event" id="event-form">
 
                 <form:hidden path="event_id" />
 
@@ -1119,12 +1219,23 @@
                 <form:textarea path="event_more_info" rows="5" required="required" />
 
                 <input type="submit"/>
+                <div id="submitting-screen">
+                    <div class="lds-dual-ring"></div>
+                    <p>Please wait while your event is being submitted.</p>
+                </div>
 
             </form:form>
         </div>
     </div>
 
 
+</div>
+
+<!-- Popup and overlay -->
+<div id="overlay" class="overlay" onclick="closePopup()"></div>
+<div id="popup" class="popup">
+    <p>Your event submission has been received!</p>
+    <button onclick="closePopup()">OK</button>
 </div>
 
 
@@ -1154,5 +1265,39 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const submittingScreen = document.getElementById('submitting-screen');
+    const form = document.getElementById('event-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+        submittingScreen.style.display = 'flex'; // Display the loading screen immediately
+
+        const formData = new FormData(form);
+
+        fetch('/addEvent', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    submittingScreen.style.display = 'none'; // Hide the loading screen after submission
+                    const popup = document.getElementById('popup');
+                    popup.style.display = 'block';
+                    form.reset();
+                } else {
+                    submittingScreen.style.display = 'none'; // Hide the loading screen on error
+                    alert('An error occurred while submitting the event.');
+                }
+            })
+            .catch(error => {
+                submittingScreen.style.display = 'none'; // Hide the loading screen on error
+                alert('An error occurred while submitting the event.');
+                console.error(error);
+            });
+    });
+</script>
+
 </body>
 </html>
