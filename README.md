@@ -7,7 +7,7 @@
  - From here copy this code into a connection in MySQLWorkbench, and at the very top of the file add the following:
 
 		CREATE DATABASE refuge_db  
-		USE reuge_db
+		USE refuge_db
 
  - After doing so, you can select all the text in the file using CTRL+A/CMD+A and then by pressing the query dropdown at the top of your screen and clicking Execute (All or Selection)
 
