@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 
 import com.example.refugeapproject.membership.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
@@ -184,6 +186,7 @@ public class PageController {
 
     }
 
+/*
     // Method to completely remove a user from the database
     @PostMapping(value = "/admin/deleteUser")
     public String deleteUser(@RequestParam("user_id") Long id) {
@@ -194,6 +197,110 @@ public class PageController {
             userRepo.delete(user);
         }
         return "redirect:/admin/adminPortal";
+    }
+*/
+
+    @RequestMapping(value = "/admin/user/deleteUser/{id}") // Start page of the members only section
+    public ModelAndView DeleteUser(@PathVariable("id") int id) {
+        ModelAndView mv= new ModelAndView();
+        Long userID= Long.valueOf(id);
+        User user = userRepo.findById(userID).orElse(null);
+        if(user==null)
+        {
+            mv.addObject("username", "Not found");
+            mv.addObject("id", "0");
+        }
+        else
+        {
+            mv.addObject("username", user.getUsername());
+            mv.addObject("id", user.getId());
+        }
+        mv.setViewName("deleteUser");
+        return mv;
+    }
+
+    //prevents deletion of main admin account & the user deleting themselves
+    @RequestMapping(value = "/admin/user/doDeleteUser/{id}") // Start page of the members only section
+    public String DoDeleteUser(@PathVariable("id") int id) {
+        ModelAndView mv= new ModelAndView();
+        Long userID= Long.valueOf(id);
+        User user = userRepo.findById(userID).orElse(null);
+        if(user!=null)
+        {
+            // Get the login username and the userDetails object.
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String currentUser = authentication.getName();
+            if(user.getUsername().equals("admin1") || user.getUsername().equals(currentUser))
+            {
+                return "redirect:/admin/adminPortal";
+            }
+            userRepo.delete(user);
+        }
+        return "redirect:/admin/adminPortal";
+    }
+
+    @RequestMapping(value = "/admin/user/resetPassword/{id}") // Start page of the members only section
+    public ModelAndView ResetPassword(@PathVariable("id") int id) {
+        ModelAndView mv= new ModelAndView();
+        Long userID= Long.valueOf(id);
+        User user = userRepo.findById(userID).orElse(null);
+        if(user==null)
+        {
+            mv.addObject("username", "Not found");
+        }
+        else
+        {
+            mv.addObject("username", user.getUsername());
+        }
+        mv.setViewName("resetPassword");
+        return mv;
+    }
+
+    @RequestMapping(value = "/admin/user/resetPassword", method = RequestMethod.POST) // Request to adminPortal page
+    public String DoResetPassword(@RequestParam("username") String username,@RequestParam("password") String password) {
+
+        User user=userRepo.getUserByUsername(username);
+        String encrypPassword= new BCryptPasswordEncoder().encode(password);
+        user.setPassword(encrypPassword);
+        userRepo.save(user);
+
+        return "redirect:/admin/adminPortal";
+
+    }
+
+    @RequestMapping(value = "/admin/changePassword") // Start page of the members only section
+    public ModelAndView ChangePassword(@RequestParam(required = false) String error) {
+        ModelAndView mv= new ModelAndView();
+        if(error!=null)
+        {
+            mv.addObject("message",true);
+            mv.addObject("error", "The submitted password does not match the user's password!");
+        }
+        mv.setViewName("changePassword");
+        return mv;
+    }
+
+    @RequestMapping(value = "/admin/changePassword", method = RequestMethod.POST) // Request to adminPortal page
+    public String DoChangePassword(@RequestParam("newPassword") String newPassword,@RequestParam("password") String password) {
+
+        // Get the login username and the userDetails object.
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        User user=userRepo.getUserByUsername(username);
+
+        // Check if the submitted current password is same user's password.
+        boolean matched = new BCryptPasswordEncoder().matches(password, user.getPassword());
+        if(!matched)
+        {
+            return "redirect:/admin/changePassword?error=Incorrect";
+        }
+
+        String encrypPassword= new BCryptPasswordEncoder().encode(newPassword);
+        user.setPassword(encrypPassword);
+        userRepo.save(user);
+
+        return "redirect:/admin/secure";
+
     }
 
     @RequestMapping(value = "/login") // Request login page
