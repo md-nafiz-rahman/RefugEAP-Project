@@ -320,6 +320,50 @@
             z-index: 99;
         }
 
+        #submitting-screen {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            padding-top: 20px;
+            align-items: center;
+            justify-content: center;
+            font-family: Calibri, sans-serif;
+        }
+
+        .lds-dual-ring {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+        }
+        .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 46px;
+            height: 46px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
 
         /* CSS style for tablet device responsiveness */
         @media screen and (max-width: 1200px) {
@@ -864,6 +908,7 @@
 
 
     </style>
+
     <script>
         function showConfirmation(event) {
             event.preventDefault(); // Prevent form submission
@@ -973,7 +1018,7 @@
 
         <%--  Form to take in a contact  --%>
         <%--@elvariable id="contact" type="contact"--%>
-        <form:form action="/addContact" modelAttribute="contact" >    <%-- onsubmit="showConfirmation(event)"  --%>
+        <form:form action="/addContact" modelAttribute="contact" id="contact-form" >    <%-- onsubmit="showConfirmation(event)"  --%>
 
             <form:label path="name">Name: </form:label><form:input path="name" required="required"/>
 
@@ -983,9 +1028,11 @@
 
             <form:hidden path="status" value="pending"/>
 
-
-
             <input type="submit"/>
+            <div id="submitting-screen">
+                <div class="lds-dual-ring"></div>
+                <p>Please wait while your message is being submitted.</p>
+            </div>
         </form:form>
     </div>
     <div class="contact-info">
@@ -1028,5 +1075,37 @@
         </div>
     </div>
 </footer>
+<script>
+    const submittingScreen = document.getElementById('submitting-screen');
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+        submittingScreen.style.display = 'flex'; // Display the loading screen immediately
+
+        const formData = new FormData(form);
+
+        fetch('/addContact', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    submittingScreen.style.display = 'none'; // Hide the loading screen after submission
+                    const popup = document.getElementById('popup');
+                    popup.style.display = 'block';
+                    form.reset();
+                } else {
+                    submittingScreen.style.display = 'none'; // Hide the loading screen on error
+                    alert('An error occurred while submitting the message.');
+                }
+            })
+            .catch(error => {
+                submittingScreen.style.display = 'none'; // Hide the loading screen on error
+                alert('An error occurred while submitting the message.');
+                console.error(error);
+            });
+    });
+</script>
 </body>
 </html>
