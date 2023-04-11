@@ -216,40 +216,6 @@
             cursor: pointer;
         }
 
-        .file-upload {
-            position: relative;
-            display: inline-block;
-            background-color: #2196F3;
-            color: #fff;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .file-upload input[type=file] {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-
-        /* Style the file preview container */
-        #file-preview {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-top: 10px;
-        }
-
-        #file-preview p {
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
         footer {
             background-color: #29668B;
             color: #fff;
@@ -318,18 +284,6 @@
             margin: 0;
         }
 
-        .post-header {
-            background-color: #023047; /*#333*/
-            color: #fff;
-            padding: 20px;
-        }
-
-        .post-footer {
-            background-color: #f5f5f5;
-            color: #333;
-            padding: 10px;
-        }
-
 
         header h1 {
             margin: 0;
@@ -391,14 +345,6 @@
             border: 1px solid;
         }
 
-        .containerBlog {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
-
         .blog-post h2 {
             font-size: 26px;
             margin-top: 0;
@@ -412,67 +358,6 @@
             font-size: 16px;
         }
 
-        .containerForm {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-            margin-bottom: 50px; /* add margin bottom */
-        }
-
-
-        .form {
-            width: 100%;
-            margin: 0 auto;
-            border: 0px solid gray;
-            /*border-radius: 10px;*/
-            padding: 25px 150px;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            text-align: center;
-            z-index: 100;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 99;
-        }
-
-        .contribution-popup {
-            display: block;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            width: 50%;
-            max-height: 90vh;
-            font-size: 12px;
-            font-family: Calibri, sans-serif;
-            background: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            text-align: center;
-            z-index: 100;
-            overflow: auto;
-        }
-
         .contribution-popup li {
             text-align: left;
             font-family: Calibri, sans-serif;
@@ -484,36 +369,12 @@
             font-size: 24px;
         }
 
-        .contribution-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 99;
-        }
-
-
-        .popup-text {
-            font-size: 12px;
-            font-family: Calibri, sans-serif;
-            text-align: left;
-        }
 
         .contribution-popup button {
             position: relative;
             bottom: 20px;
             right: 20px;
             top : -5px;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-            margin-top: 10px;
         }
 
         .button-container button {
@@ -531,17 +392,6 @@
             /*#e6e6e6*/
         }
 
-        .containerBlog {
-            display: none;
-        }
-
-        .containerBlog.show {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: flex-start;
-        }
-
         .iconHover:hover {
             background-color: #12b7e0;
             width: 35px;
@@ -552,49 +402,15 @@
             transform: translate(0,-5px);
         }
 
-        #submitting-screen {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            text-align: center;
-            font-size: 20px;
-            padding-top: 20px;
-            align-items: center;
-            justify-content: center;
-            font-family: Calibri, sans-serif;
+        .sec1 {
+            background-color: white; /* add a blue background color to the team section */
+            padding: 10px;
+            max-width: 1200px; /* limit the maximum width of the section to 800 pixels */
+            margin: 0 auto; /* center the section horizontally within its parent container */
+            color: black; /* set the text color to white */
+            line-height: 2.0; /* add some spacing between lines */
+            font-family: "Calibri", sans-serif;
         }
-
-        .lds-dual-ring {
-            display: inline-block;
-            width: 64px;
-            height: 64px;
-        }
-        .lds-dual-ring:after {
-            content: " ";
-            display: block;
-            width: 46px;
-            height: 46px;
-            margin: 1px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            border-color: #fff transparent #fff transparent;
-            animation: lds-dual-ring 1.2s linear infinite;
-        }
-        @keyframes lds-dual-ring {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
 
         /* CSS style for tablet device responsiveness */
         @media screen and (max-width: 1200px) {
@@ -818,6 +634,17 @@
                 max-width: 100px;
             }
 
+            .sec1 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 10px;
+                max-width: 85%; /* limit the maximum width of the section to 800 pixels */
+                margin: 0 auto; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+                font-family: "Calibri", sans-serif;
+
+            }
+
         }
 
 
@@ -1036,49 +863,6 @@
                 font-size: 10px; /* set the font size to 20 pixels */
             }
 
-            .contribution-popup {
-                display: block;
-                position: fixed;
-                width: 80%;
-                max-height: 90vh;
-                font-size: 12px;
-                font-family: Calibri, sans-serif;
-                background: #fff;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 10px;
-                text-align: center;
-                z-index: 100;
-                overflow: auto;
-            }
-
-
-            .containerForm {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: space-between;
-                margin-bottom: 50px; /* add margin bottom */
-            }
-
-
-            .form {
-                width: 90%;
-                margin: 0 auto;
-                border: 0px solid gray;
-                /*border-radius: 10px;*/
-                padding: 25px 20px;
-            }
-
-            .containerBlog.show {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                /*gap: 20px;*/
-                justify-content: center;
-                width: 95%;
-            }
-
             article {
                 width: 95%;
                 margin-bottom: 20px;
@@ -1095,88 +879,20 @@
                 height: auto;
             }
 
+            .sec1 {
+                background-color: white; /* add a blue background color to the team section */
+                padding: 10px 10px 2px;
+                max-width: 85%; /* limit the maximum width of the section to 400 pixels */
+                margin: 0 auto; /* center the section horizontally within its parent container */
+                color: black; /* set the text color to white */
+                line-height: 2.0; /* add some spacing between lines */
+                font-family: 'Calibri', sans-serif; /* set the font to Calibri */
+            }
+
         }
-
-
 
     </style>
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.containerBlog');
-            sections.forEach(section => {
-                section.classList.remove('show');
-            });
 
-            // Show selected section
-            const selectedSection = document.getElementById(sectionId);
-            selectedSection.classList.add('show');
-
-            // Set active button
-            const buttons = document.querySelectorAll('.button-container button');
-            buttons.forEach(button => {
-                button.classList.remove('active');
-                if (button.getAttribute('onclick').includes(sectionId)) {
-                    button.classList.add('active');
-                }
-            });
-        }
-
-        <%-- Shows confirmation of submission --%>
-        function showConfirmation(event) {
-            event.preventDefault(); // Prevent form submission
-            var popup = document.getElementById("popup");
-            var overlay = document.getElementById("overlay");
-            var guidelinesCheckbox = document.getElementById("readGuidelines");
-
-
-            $.ajax({
-                type: 'POST',
-                url: '/addBlog',
-                data: $('form').serialize(),
-                success: function(response) {
-                    // Show the popup message after the AJAX request is complete
-                    popup.style.display = "block";
-                    overlay.style.display = "block";
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log('AJAX request failed: ' + textStatus + ', ' + errorThrown);
-                }
-            });
-        }
-
-
-        function closePopup() {
-            var popup = document.getElementById("popup");
-            var overlay = document.getElementById("overlay");
-            popup.style.display = "none";
-            overlay.style.display = "none";
-            location.reload(); // Reload the page to clear form data
-        }
-
-        function viewGuideline() {
-            var overlay = document.querySelector('.contribution-overlay');
-            var popup = document.querySelector('.contribution-popup');
-            overlay.style.display = 'block';
-            popup.style.display = 'block';
-        }
-
-        function closeGuideline() {
-            var overlay = document.querySelector('.contribution-overlay');
-            var popup = document.querySelector('.contribution-popup');
-            overlay.style.display = "none";
-            popup.style.display = "none";
-        }
-
-        var closeButtons = document.querySelectorAll(".contribution-popup button");
-        for (var i = 0; i < closeButtons.length; i++) {
-            closeButtons[i].addEventListener("click", function() {
-                var overlay = document.querySelector(".contribution-overlay");
-                overlay.style.display = "none";
-            });
-        }
-
-    </script>
 </head>
 <body>
 
@@ -1243,192 +959,17 @@
     <div class="container">
         <div class="background-image"></div>
         <div class="overlays" style="padding-top: 70px">
-            <h1>BLOG</h1>
+            <h1>${blog.title}</h1>
         </div>
     </div>
 
 </header>
 
-<div class="button-container">
-    <button class="active" onclick="showSection('blog')">Blog</button>
-    <button onclick="showSection('testimonials')">Testimonials</button>
-    <button onclick="showSection('case-studies')">Case Studies</button>
-</div>
-
-<%-- Display approvedOther blogs --%>
-<main id="blog" class="containerBlog show">
-    <c:forEach var="blog" items="${approvedOther}">
-        <article>
-            <header class="post-header">
-                <h3>${blog.title}</h3>
-                <p class="meta">Posted on <fmt:formatDate value="${blog.date}" pattern="dd MMMM, yyyy" />, by ${blog.name}</p>
-            </header>
-            <section>
-                <p>${fn:substring(blog.content,0,200)}...<a href="/seperateBlogPage?blog_id=${blog.blog_id}">Read More</a></p>
-            </section>
-            <footer class="post-footer">
-                <!-- Add any additional footer content here -->
-            </footer>
-        </article>
-    </c:forEach>
-</main>
-
-<%-- Display approvedTestimonial blogs --%>
-<main id="testimonials" class="containerBlog">
-    <c:forEach var="blog" items="${approvedTestimonials}">
-        <article>
-            <header class="post-header">
-                <h3>${blog.title}</h3>
-                <p class="meta">Posted on <fmt:formatDate value="${blog.date}" pattern="dd MMMM, yyyy" />, by ${blog.name}</p>
-            </header>
-            <section>
-                <p>${fn:substring(blog.content,0,200)}...<a href="/seperateBlogPage?blog_id=${blog.blog_id}">Read More</a></p>
-            </section>
-            <footer class="post-footer">
-                <!-- Add any additional footer content here -->
-            </footer>
-        </article>
-    </c:forEach>
-</main>
-
-<%-- Display approvedCaseStudy blogs --%>
-<main id="case-studies" class="containerBlog">
-    <c:forEach var="blog" items="${approvedCaseStudies}">
-        <article>
-            <header class="post-header">
-                <h3>${blog.title}</h3>
-                <p class="meta">Posted on <fmt:formatDate value="${blog.date}" pattern="dd MMMM, yyyy" />, by ${blog.name}</p>
-            </header>
-            <section>
-                <p>${fn:substring(blog.content,0,200)}...<a href="/seperateBlogPage?blog_id=${blog.blog_id}">Read More</a></p>
-            </section>
-            <footer class="post-footer">
-                <!-- Add any additional footer content here -->
-            </footer>
-        </article>
-    </c:forEach>
-</main>
-
-
-<%-- Form for user to submit a blog --%>
-<div class="containerForm">
-    <div class="form">
-        <h2>Contribute to the Blog</h2><br>
-
-        <label>
-            <input type="checkbox" id="readGuidelines" name="readGuidelines" required="required" />
-            I have read and agree to the contribution guidelines
-        </label>
-        <button type="button" onclick="viewGuideline()" style="margin-bottom: 10px;">View Guidelines</button>
-
-        <%--@elvariable id="blog" type=""--%>
-        <form:form action="/addBlog" modelAttribute="blog" onsubmit="showConfirmation(event)" id="blog-form" method= "post" enctype="multipart/form-data">
-            <form:label path="name">Name:</form:label>
-            <form:input path="name" required="required"/>
-
-            <form:label path="email">Email:</form:label>
-            <form:input type="email" path="email" required="required"/>
-
-            <form:label path="affiliation">Affiliation (if any):</form:label>
-            <form:input path="affiliation" required="required"/>
-
-            <form:label path="role">Role:</form:label>
-            <form:input path="role" required="required"/>
-
-            <form:label path="typeOfContribution" class="contributionDropdown">Type of Contribution:</form:label>
-            <form:select path="typeOfContribution" required="required" class="contributionDropdown">
-                <form:option value="case study">Case Study</form:option>
-                <form:option value="testimonial">Testimonial</form:option>
-                <form:option value="other">Other</form:option>
-            </form:select>
-
-            <form:label path="title">Title:</form:label>
-            <form:input path="title" required="required"/>
-
-            <form:label path="content">Content:</form:label>
-            <form:input path="content" required="required"/>
-
-            <label class="file-upload" for="file">Choose a file to upload</label>
-            <input type="file" name="file" id="file" accept=".pdf,.doc,.docx" style="display: none;">
-
-            <div id="file-preview"></div>
-
-            <br>
-            <br>
-
-            <form:hidden path="status" value="pending"/>
-
-
-            <input type="submit"/>
-            <div id="submitting-screen">
-                <div class="lds-dual-ring"></div>
-                <p>Please wait while your blog post is being submitted.</p>
-            </div>
-        </form:form>
-
-    </div>
-</div>
-
-<div class="contribution-overlay">
-    <div class="contribution-popup">
-        <h2>Contribution Guidelines</h2>
-        <p class="popup-text">We encourage contributions to our RefugEAP Network Blog in accordance with the submission guidelines below:</p>
-        <ol>
-            <li>
-                <p class="popup-text">Ensure that your submission is relevant to the RefugEAP Network's main objective of facilitating the development and implementation of 'pathway to Higher Education' English language provision for refugee-background students (RBS), with a particular focus on English for Academic Purposes (EAP).</p>
-            </li>
-            <li>
-                <p class="popup-text">Indicate which of the following categories your submission falls under:</p>
-                <ul>
-                    <li>
-                        <strong>Case study</strong> - this can focus on one of more types of 'pathway to HE' English language provision, and should outline what the provision is, how it was set up, what challenges were faced along the way, how these were tackled, what the impact of the initiative was, etc.
-                    </li>
-                    <li>
-                        <strong>Testimonial</strong> - these can be submitted by practitioners, researchers or students involved in this provision:
-                        <ol>
-                            <li>For practitioner/researcher testimonials, these should include name (if happy to share), role, institution, initiative involved with, reasons for getting involved, impact on themselves and on the students. </li>
-                            <li>For student testimonials, these should include name (if happy to share), country of origin, future goal, what they need to study at university to reach this goal, what challenges they have faced along the way, what EAP provision they have accessed to help them reach this goal, what impact it has had on them, what advice they would give to future students</li>
-                        </ol>
-                    </li>
-                    <li>
-                        <strong>Other</strong> - this category is deliberately broad, and might cover submissions such as those which focus on one aspect relating to developing or running this type of 'pathway to HE' English language provision - perhaps related to developing suitable materials, how to build in progression opportunities, how to ensure provision is trauma-informed, how to work successfully with partner organisations, or how you might advocate for increased opportunities for RBS within your institution.
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <p class="popup-text">We accept posts from a range of perspectives - practitioner, student, research, policy or personal. Submissions might also span two or more perspectives, perhaps by being written in collaboration with others (e.g. student-practitioner)</p>
-            </li>
-            <li>
-                <p class="popup-text">In order for your post to contribute to the RefugEAP Network evidence base, please ensure it is measured in its approach and supported with evidence. Depending on the perspective you are writing from, this evidence might be from academic sources, blog posts, reports, websites and other grey literature. If you are writing from a personal perspective, please include some biographical and situational context.</p>
-            </li>
-            <li>
-                <p class="popup-text">In terms of language, please ensure that:</p>
-                <ul>
-                    <li>Any terminology used is accessible to non-specialists by using clear language and explaining any acronyms or technical terms used</li>
-                    <li>No offensive or discriminatory language is used</li>
-                </ul>
-            </li>
-            <li>
-                <p class="popup-text">In terms of submission format:</p>
-                <ul>
-                    <li>This might take the form of a written blog post, a vlog, an interview, or something else - we are open to suggestions!</li>
-                    <li>If your submission contains text, you can paste it directly into the form below, or upload it as a MS Word document/pdf if you prefer (also via the form). An ideal length for blog posts is around 500-1000 words (but we are open to longer or shorter submissions too)</li>
-                </ul>
-            </li>
-        </ol>
-        <button type="button" onclick="closeGuideline()">Close Guidelines</button>
-    </div>
-</div>
-
-
-<!-- Popup and overlay -->
-<div id="overlay" class="overlay" onclick="closePopup()"></div>
-<div id="popup" class="popup">
-    <p>Your blog submission has been received!</p>
-    <button onclick="closePopup()">OK</button>
-</div>
-
-
+<section class="sec1">
+    <h1>${blog.title}</h1>
+    <p class="meta">Posted on <fmt:formatDate value="${blog.date}" pattern="dd MMMM, yyyy" />, by ${blog.name}</p>
+    <p>${blog.content}</p>
+</section>
 <footer>
     <div class="footer-columns">
         <div class="footer-col-1">
@@ -1455,71 +996,5 @@
         </div>
     </div>
 </footer>
-
-<script>
-    const fileInput = document.getElementById('file');
-    const filePreview = document.getElementById('file-preview');
-
-    fileInput.addEventListener('change', function() {
-        const file = this.files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener('load', function() {
-            const preview = document.createElement('div');
-            preview.innerHTML = `<p>${file.name}</p>
-                        <button type="button" onclick="removeFile()">Remove</button>`;
-            filePreview.appendChild(preview);
-
-            preview.innerHTML += '<p>' + file.name + '</p>'; // add the file name to the preview
-        });
-
-        reader.readAsDataURL(file);
-    });
-
-    function removeFile() {
-        fileInput.value = null;
-        filePreview.innerHTML = '';
-    }
-
-    const submittingScreen = document.getElementById('submitting-screen');
-    const form = document.getElementById('blog-form');
-    const checkbox = document.getElementById('readGuidelines');
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
-        if (checkbox.checked) {
-            submittingScreen.style.display = 'flex'; // Display the loading screen immediately
-
-            const formData = new FormData(form);
-
-            fetch('/addBlog', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => {
-                    if (response.ok) {
-                        submittingScreen.style.display = 'none'; // Hide the loading screen after submission
-                        const popup = document.getElementById('popup');
-                        popup.style.display = 'block';
-                        form.reset();
-                        filePreview.innerHTML = '';
-                    } else {
-                        submittingScreen.style.display = 'none'; // Hide the loading screen on error
-                        alert('An error occurred while submitting the blog post.');
-                    }
-                })
-                .catch(error => {
-                    submittingScreen.style.display = 'none'; // Hide the loading screen on error
-                    alert('An error occurred while submitting the blog post.');
-                    console.error(error);
-                });
-        } else {
-            alert('Please read and agree to the contribution guidelines.');
-        }
-    });
-
-
-</script>
-
 </body>
 </html>

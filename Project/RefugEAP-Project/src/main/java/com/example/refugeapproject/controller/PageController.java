@@ -780,5 +780,14 @@ public class PageController {
         return "redirect:/admin/contactManagement";
     }
 
+    @GetMapping("/seperateBlogPage")
+    public String showSeperateBlogPage(@RequestParam("blog_id") int blogId, Model model) {
+        Blog blog = blogRepo.findById(blogId);
+        if (blog == null) {
+            return "error";
+        }
+        model.addAttribute("blog", blog);
+        return "seperateBlogPage";
+    }
 
 }
