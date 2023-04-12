@@ -857,7 +857,6 @@
     <ul>
         <li>If you have a general enquiry, please email <a href="mailto:refugeap@le.ac.uk">refugeap@le.ac.uk</a></li>
         <li>Follow us on Twitter at <a href="https://twitter.com/RefugEAP">@RefugEAP</a></li>
-        <li>Follow the RefugEAP Programme project updates on <a href="https://www.researchgate.net/project/RefugEAP-conceptualising-piloting-and-evaluating-an-innovative-EAP-programme-for-refugee-background-students">ResearchGate</a></li>
     </ul>
     <p><a href="https://www.teachingenglish.org.uk/professional-development/podcast/teaching-english/british-council-teachingenglish-podcast-what">Listen to a British Council Teaching English podcast featuring the RefugEAP Programme</a><p>
 </section>
