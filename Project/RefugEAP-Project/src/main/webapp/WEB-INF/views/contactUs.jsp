@@ -1038,9 +1038,7 @@
     <div class="contact-info">
         <h2>Contact Information</h2>
         <br>
-        <p>Phone: +44 (0)116 252 2522</p>
-        <p>Email: sanctuary@le.ac.uk</p>
-        <p>Address: The University of Leicester, University Road, Leicester, LE1 7RH, United Kingdom</p>
+        <p>Email: <a href="mailto:refugeap-network@baleap.org">refugeap-network@baleap.org</a> </p>
     </div>
 </div>
 
