@@ -241,6 +241,13 @@
 
         tr:nth-child(even) {background-color: #f2f2f2;}
 
+        .editable {
+            border: 1px dashed #ccc;
+            padding: 5px;
+            min-height: 20px;
+        }
+
+
         @media screen and (max-width: 1200px) {
             h1 {
                 font-size: 24px;
@@ -564,6 +571,52 @@
         }
 
     </style>
+
+    <script>
+        let updatedTitle = {};
+        let updatedContent = {};
+
+        function initUpdatedValues(blog_id, title, content) {
+            updatedTitle[blog_id] = title;
+            updatedContent[blog_id] = content;
+        }
+
+        function updateField(element, column, blog_id) {
+            if (column === 'title') {
+                updatedTitle[blog_id] = element.innerText;
+            } else if (column === 'content') {
+                updatedContent[blog_id] = element.innerText;
+            }
+        }
+
+        function submitForm(event, form, blog_id) {
+            event.preventDefault();
+
+            // Set the updated title and content values in the hidden input fields
+            form.getElementsByClassName('updatedTitleInput')[0].value = updatedTitle[blog_id];
+            form.getElementsByClassName('updatedContentInput')[0].value = updatedContent[blog_id];
+
+            // Create a FormData object from the form
+            var formData = new FormData(form);
+
+            // Send the updated content to the server using the Fetch API
+            fetch('${pageContext.request.contextPath}/admin/updateBlogContent', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    // Update successful
+                    console.log('Content updated successfully');
+                } else {
+                    // Update failed
+                    console.error('Content update failed');
+                }
+            }).catch(error => {
+                console.error('Error updating content:', error);
+            });
+        }
+
+    </script>
 </head>
 <body>
 
@@ -632,6 +685,7 @@
                 <th>Content</th>
                 <th>Action</th>
                 <th>Action</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -644,8 +698,8 @@
                     <td>${blog.role}</td>
                     <td>${blog.typeOfContribution}</td>
                     <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
-                    <td>${blog.title}</td>
-                    <td>${blog.content}</td>
+                    <td><div class="editable" contenteditable="true" onBlur="updateField(this, 'title', ${blog.blog_id})">${blog.title}</div></td>
+                    <td><div class="editable" contenteditable="true" onBlur="updateField(this, 'content', ${blog.blog_id})">${blog.content}</div></td>
                     <td>
                         <form method="post" action="${pageContext.request.contextPath}/admin/acceptBlog">
                             <input type="hidden" name="blog_id" value="${blog.blog_id}">
@@ -657,8 +711,20 @@
                             <input type="hidden" name="blog_id" value="${blog.blog_id}">
                             <input type="submit" value="Discard">
                         </form>
+
+                    </td>
+                    <td>
+                        <form onsubmit="submitForm(event, this, ${blog.blog_id})">
+                            <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                            <input type="hidden" name="updatedTitle" class="updatedTitleInput">
+                            <input type="hidden" name="updatedContent" class="updatedContentInput">
+                            <input type="submit" value="Save">
+                        </form>
                     </td>
                 </tr>
+                <script>
+                    initUpdatedValues(${blog.blog_id}, '${blog.title}', '${blog.content}');
+                </script>
             </c:forEach>
             </tbody>
         </table>
@@ -682,6 +748,7 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>Action</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -694,15 +761,26 @@
                     <td>${blog.role}</td>
                     <td>${blog.typeOfContribution}</td>
                     <td><fmt:formatDate value="${blog.date}" pattern="dd-MM-yyyy" /></td>
-                    <td>${blog.title}</td>
-                    <td>${blog.content}</td>
+                    <td><div class="editable" contenteditable="true" onBlur="updateField(this, 'title', ${blog.blog_id})">${blog.title}</div></td>
+                    <td><div class="editable" contenteditable="true" onBlur="updateField(this, 'content', ${blog.blog_id})">${blog.content}</div></td>
                     <td>
                         <form method="post" action="${pageContext.request.contextPath}/admin/discardBlog">
                             <input type="hidden" name="blog_id" value="${blog.blog_id}">
                             <input type="submit" value="Discard">
                         </form>
                     </td>
+                    <td>
+                        <form onsubmit="submitForm(event, this, ${blog.blog_id})">
+                            <input type="hidden" name="blog_id" value="${blog.blog_id}">
+                            <input type="hidden" name="updatedTitle" class="updatedTitleInput">
+                            <input type="hidden" name="updatedContent" class="updatedContentInput">
+                            <input type="submit" value="Save">
+                        </form>
+                    </td>
                 </tr>
+                <script>
+                    initUpdatedValues(${blog.blog_id}, '${blog.title}', '${blog.content}');
+                </script>
             </c:forEach>
             </tbody>
         </table>

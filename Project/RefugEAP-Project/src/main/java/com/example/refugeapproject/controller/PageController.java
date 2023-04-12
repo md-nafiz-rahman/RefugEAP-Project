@@ -790,4 +790,30 @@ public class PageController {
         return "seperateBlogPage";
     }
 
+    @RequestMapping(value = "/admin/updateBlogContent", method = RequestMethod.POST)
+    public ResponseEntity<String> updateBlogContent(@RequestParam("blog_id") Integer blog_id,
+                                                    @RequestParam("updatedTitle") String updatedTitle,
+                                                    @RequestParam("updatedContent") String updatedContent) {
+        try {
+            Optional<Blog> optionalBlog = blogRepo.findById(blog_id);
+
+            if (optionalBlog.isPresent()) {
+                Blog blog = optionalBlog.get();
+
+                blog.setTitle(updatedTitle);
+                blog.setContent(updatedContent);
+
+                // Save the updated blog to the database
+                blogRepo.save(blog);
+
+                return ResponseEntity.ok("Content updated successfully");
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Blog not found");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error updating content");
+        }
+    }
+
+
 }
