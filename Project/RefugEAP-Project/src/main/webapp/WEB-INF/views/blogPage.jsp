@@ -596,6 +596,15 @@
             }
         }
 
+        .expanding-textarea {
+            min-height: 100px;
+            max-height: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 6px 12px;
+            resize: none;
+            overflow-y: auto;
+        }
 
         /* CSS style for tablet device responsiveness */
         @media screen and (max-width: 1200px) {
@@ -1347,7 +1356,7 @@
             <form:input path="title" required="required"/>
 
             <form:label path="content">Content:</form:label>
-            <form:input path="content" required="required"/>
+            <form:textarea path="content" required="required" class="expanding-textarea" rows="4" />
 
             <label class="file-upload" for="file">Choose a file to upload</label>
             <input type="file" name="file" id="file" accept=".pdf,.doc,.docx" style="display: none;">
@@ -1519,6 +1528,18 @@
         }
     });
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const expandingTextareas = document.querySelectorAll('.expanding-textarea');
+        expandingTextareas.forEach(textarea => {
+            textarea.addEventListener('input', expandTextarea);
+        });
+    });
+
+    function expandTextarea(e) {
+        const target = e.target;
+        target.style.height = 'auto';
+        target.style.height = target.scrollHeight + 'px';
+    }
 
 </script>
 
