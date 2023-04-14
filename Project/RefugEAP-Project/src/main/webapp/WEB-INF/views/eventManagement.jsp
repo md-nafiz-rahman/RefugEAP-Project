@@ -118,13 +118,33 @@
             margin-top: 0;
         }
 
+        .containerForm {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 50px; /* add margin bottom */
+        }
+
+
         .form {
-            width: 66%;
+            width: 100%;
             margin: 0 auto;
-            padding: 150px ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
+            padding: 25px 150px;
         }
+
+        .expanding-textarea {
+            min-height: 100px;
+            max-height: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 6px 12px;
+            resize: none;
+            overflow-y: auto;
+        }
+
 
         label {
             display: block;
@@ -195,17 +215,6 @@
             margin-left: 20px;
         }
 
-        .form {
-            width: 80%;
-            margin: 0 auto;
-            padding: 60px 0 100px ;
-            border: 0px solid gray;
-        }
-
-        .containerForm {
-            display: flex;
-            height: 500px;
-        }
 
         table {
             border-collapse: collapse;
@@ -236,7 +245,7 @@
         }
 
         .managementTable{
-            padding: 350px 0 100px 0;
+            padding: 50px 0 100px 0;
             width: 90%;
             margin: 0 auto;
         }
@@ -388,8 +397,9 @@
             }
 
 
+
             .managementTable{
-                padding: 250px 0 50px 0;
+                padding: 90px 0 50px 0;
                 width: 95%;
                 margin: 0 auto;
             }
@@ -572,9 +582,26 @@
             }
 
             .managementTable{
-                padding: 250px 0 50px 0;
-                width: 95%;
+                padding: 90px 0 50px 0;
+                width: 100%;
                 margin: 0 auto;
+            }
+
+            .containerForm {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+                margin-bottom: 50px; /* add margin bottom */
+            }
+
+
+            .form {
+                width: 90%;
+                margin: 0 auto;
+                border: 0px solid gray;
+                /*border-radius: 10px;*/
+                padding: 25px 20px;
             }
         }
 
@@ -608,32 +635,30 @@
 </header>
 
 
-<div>
-    <div class="containerForm">
-        <div class="form">
-            <h2>Submit Your Event Here</h2><br>
-            <form method="post" action="${pageContext.request.contextPath}/admin/event/add">    <input type="hidden" name="event_id" />
+<div class="containerForm">
+    <div class="form">
+        <h2>Submit Your Event Here</h2><br>
+        <form method="post" action="${pageContext.request.contextPath}/admin/event/add">    <input type="hidden" name="event_id" />
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" required />
 
-                <label for="name">Name: </label>
-                <input type="text" id="name" name="name" required />
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" required />
 
-                <label for="email">Email: </label>
-                <input type="email" id="email" name="email" required />
+            <label for="event_title">Event Title: </label>
+            <input type="text" id="event_title" name="event_title" required />
 
-                <label for="event_title">Event Title: </label>
-                <input type="text" id="event_title" name="event_title" required />
+            <label for="event_datetime">Event Date and Time (dd-MM-yyyy HH:mm): </label>
+            <input type="datetime-local" id="event_datetime" name="event_datetime" required />
 
-                <label for="event_datetime">Event Date and Time (dd-MM-yyyy HH:mm): </label>
-                <input type="datetime-local" id="event_datetime" name="event_datetime" required />
+            <label for="event_more_info">Event More Info: </label>
+            <textarea id="event_more_info" name="event_more_info" class="expanding-textarea" rows="4" required></textarea>
 
-                <label for="event_more_info">Event More Info: </label>
-                <textarea id="event_more_info" name="event_more_info" rows="5" required></textarea>
-
-                <input type="submit" value="Submit"/>
-            </form>
-        </div>
+            <input type="submit" value="Submit"/>
+        </form>
     </div>
 </div>
+
 
 <div class="managementTable">
     <h3 class="textheader">Requests to add events</h3>
@@ -768,5 +793,21 @@
         <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const expandingTextareas = document.querySelectorAll('.expanding-textarea');
+        expandingTextareas.forEach(textarea => {
+            textarea.addEventListener('input', expandTextarea);
+        });
+    });
+
+    function expandTextarea(e) {
+        const target = e.target;
+        target.style.height = 'auto';
+        target.style.height = target.scrollHeight + 'px';
+    }
+</script>
+
 </body>
 </html>
