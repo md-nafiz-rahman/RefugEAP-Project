@@ -111,12 +111,31 @@
             margin-top: 0;
         }
 
+        .containerForm {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 50px; /* add margin bottom */
+        }
+
+
         .form {
-            width: 66%;
+            width: 100%;
             margin: 0 auto;
-            padding: 50px 0 20px 0 ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
+            padding: 25px 150px;
+        }
+
+        .expanding-textarea {
+            min-height: 100px;
+            max-height: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 6px 12px;
+            resize: none;
+            overflow-y: auto;
         }
 
         label {
@@ -568,6 +587,23 @@
                 margin: 0 auto;
             }
 
+            .containerForm {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+                margin-bottom: 50px; /* add margin bottom */
+            }
+
+
+            .form {
+                width: 90%;
+                margin: 0 auto;
+                border: 0px solid gray;
+                /*border-radius: 10px;*/
+                padding: 25px 20px;
+            }
+
         }
 
     </style>
@@ -645,7 +681,7 @@
 
 <!-- Form to add blogs admin side -->
 
-<div>
+<div class="containerForm">
     <div class="form">
         <h4>Add New Blog Post</h4>
         <form method="post" action="${pageContext.request.contextPath}/admin/blog/add">
@@ -660,7 +696,7 @@
                 <option value="other">Other</option>
             </select>
             <label for="title">Title:</label> <input type="text" id="title" name="title" required />
-            <label for="content">Content:</label> <textarea type="text" id="content" name="content" rows="5" required></textarea>
+            <label for="content">Content:</label> <textarea type="text" id="content" name="content" class="expanding-textarea" rows="4" required></textarea>
             <input type="submit" value="Add New Post" title="Add Post" />
         </form>
     </div>
@@ -845,5 +881,20 @@
         <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const expandingTextareas = document.querySelectorAll('.expanding-textarea');
+        expandingTextareas.forEach(textarea => {
+            textarea.addEventListener('input', expandTextarea);
+        });
+    });
+
+    function expandTextarea(e) {
+        const target = e.target;
+        target.style.height = 'auto';
+        target.style.height = target.scrollHeight + 'px';
+    }
+</script>
 </body>
 </html>
