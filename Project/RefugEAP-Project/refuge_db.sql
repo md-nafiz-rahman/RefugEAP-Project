@@ -14,6 +14,8 @@
 
  Date: 15/02/2023 20:29:14
 */
+create database refuge_db;
+use refuge_db;
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -73,19 +75,20 @@ CREATE TABLE `users_roles`  (
 DROP TABLE IF EXISTS `blogs`;
 CREATE TABLE `blogs` (
                          `blog_id` int NOT NULL AUTO_INCREMENT,
-                         `title` varchar(100) NOT NULL,
+                         `title` varchar(1000) NOT NULL,
                          `content` TEXT(10000) NOT NULL,
                          `status` VARCHAR(10) NOT NULL DEFAULT 'pending',
-                         `email` varchar(100) NOT NULL,
-                         `name` varchar(100) NOT NULL,
+                         `email` varchar(1000) NOT NULL,
+                         `name` varchar(1000) NOT NULL,
                          `date` Date NOT NULL,
-                         `affiliation` varchar(100) NOT NULL,
-                         `role` varchar(50) NOT NULL,
-                         `type_of_contribution` varchar(50) NOT NULL,
+                         `affiliation` varchar(1000) NOT NULL,
+                         `role` varchar(1000) NOT NULL,
+                         `type_of_contribution` varchar(100) NOT NULL,
                          `file_data` LONGBLOB,
-                         `file_name` VARCHAR(100) NULL,
+                         `file_name` VARCHAR(1000) NULL,
                          PRIMARY KEY (`blog_id`) USING BTREE
 );
+
 
 DROP TABLE IF EXISTS `events`;
 CREATE TABLE events (
@@ -97,8 +100,6 @@ CREATE TABLE events (
                         event_datetime DATETIME,
                         status VARCHAR(20) DEFAULT 'Pending'
 );
-
-select * from `events`;
 
 -- ----------------------------
 -- Table  for view counter

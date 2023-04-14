@@ -31,7 +31,7 @@ public class PageController {
 
 
     // Enter you email to configure sending emails
-    private String yourEmail = "nafizmdrahman@gmail.com";
+    private String yourEmail = "Your email to receive notifications here";
     @Autowired
     UserRepo userRepo;
     @Autowired
