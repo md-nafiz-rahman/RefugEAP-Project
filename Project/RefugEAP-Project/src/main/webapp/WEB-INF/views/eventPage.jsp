@@ -299,14 +299,29 @@
 
         input[type="text"],
         input[type="email"],
+
         textarea {
             width: 100%;
             padding: 10px;
+            max-height: 400px;
             margin-bottom: 20px;
             border-radius: 5px;
             border: 1px solid gray;
             font-size: 18px;
+            overflow-y: auto;
+            resize: none;
         }
+
+        .expanding-textarea {
+            min-height: 100px;
+            max-height: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 6px 12px;
+            resize: none;
+            overflow-y: auto;
+        }
+
 
         input[type="submit"] {
             background-color: black;
@@ -457,15 +472,19 @@
 
         .containerForm {
             display: flex;
-            height: 1000px;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 50px; /* add margin bottom */
         }
+
 
         .form {
             width: 100%;
             margin: 0 auto;
-            padding: 150px ;
             border: 0px solid gray;
             /*border-radius: 10px;*/
+            padding: 25px 150px;
         }
 
 
@@ -1216,7 +1235,7 @@
                 <form:input type="datetime-local" path="event_datetime" required="required" />
 
                 <form:label path="event_more_info">Event More Info: </form:label>
-                <form:textarea path="event_more_info" rows="5" required="required" />
+                <form:textarea path="event_more_info" rows="4" required="required" class="expanding-textarea" />
 
                 <input type="submit"/>
                 <div id="submitting-screen">
@@ -1297,6 +1316,19 @@
                 console.error(error);
             });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const expandingTextareas = document.querySelectorAll('.expanding-textarea');
+        expandingTextareas.forEach(textarea => {
+            textarea.addEventListener('input', expandTextarea);
+        });
+    });
+
+    function expandTextarea(e) {
+        const target = e.target;
+        target.style.height = 'auto';
+        target.style.height = target.scrollHeight + 'px';
+    }
 </script>
 
 </body>
