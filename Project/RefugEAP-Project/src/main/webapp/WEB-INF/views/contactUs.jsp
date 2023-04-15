@@ -210,7 +210,9 @@
             border-radius: 5px;
             border: 1px solid gray;
             font-size: 18px;
+            resize: none;
         }
+
 
         input[type="submit"] {
             background-color: black;
@@ -1024,7 +1026,8 @@
 
             <form:label path="email">Email: </form:label><form:input type="email" path="email" required="required"/>
 
-            <form:label path="message">Message: </form:label><form:input path="message" required="required"/>
+            <form:label path="message">Message: </form:label>
+            <form:textarea path="message" required="required" rows="4" />
 
             <form:hidden path="status" value="pending"/>
 
