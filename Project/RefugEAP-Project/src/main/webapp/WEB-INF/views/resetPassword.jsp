@@ -406,7 +406,7 @@
 <footer>
     <div>
         <div>
-            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+            <img src="${pageContext.request.contextPath}/images/Logo.jpg" alt="RefugEAP Logo" />
         </div>
         <nav>
             <ul>

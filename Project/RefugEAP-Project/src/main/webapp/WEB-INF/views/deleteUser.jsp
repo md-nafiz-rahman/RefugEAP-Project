@@ -385,7 +385,7 @@
     <a href="/">Home</a>
     <a href="/admin/adminPortal" class="mainB">Users Managment</a>
     <a href="/logout">Logout</a>
-    <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
+    <img class="logo" src="${pageContext.request.contextPath}/images/Logo.jpg" alt="RefugEAP Logo" />
 </div>
 
 
@@ -402,7 +402,7 @@
 <footer>
     <div>
         <div>
-            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+            <img src="${pageContext.request.contextPath}/images/Logo.jpg" alt="RefugEAP Logo" />
         </div>
         <nav>
             <ul>
@@ -417,13 +417,8 @@
     <div id="footer-follow">
         <h3>Follow Us</h3>
         <p id="social-links">
-            <a href="https://www.facebook.com/LeicesterUniversityOfSanctuary/" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png" alt="Facebook logo"></a>
             <a href="https://twitter.com/EapForSJ" target="_blank">
                 <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png" alt="Twitter logo"></a>
-            <a href="https://www.instagram.com/">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png" alt="Instagram logo">
-            </a>
         </p>
     </div>
     <div>

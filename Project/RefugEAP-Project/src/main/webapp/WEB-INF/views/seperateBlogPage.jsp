@@ -950,7 +950,7 @@
         </div>
     </div>
 
-    <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
+    <img class="logo" src="${pageContext.request.contextPath}/images/Logo.jpg" alt="RefugEAP Logo" />
 </div>
 
 <!-- Header -->
@@ -973,7 +973,7 @@
 <footer>
     <div class="footer-columns">
         <div class="footer-col-1">
-            <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+            <img src="${pageContext.request.contextPath}/images/Logo.jpg" alt="RefugEAP Logo" />
             <p class="footer-slogan">The RefugEAP Network's overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
         </div>
         <div class="footer-col-2">

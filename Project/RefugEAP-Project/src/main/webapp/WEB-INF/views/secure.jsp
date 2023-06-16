@@ -434,7 +434,7 @@
     <a href="/admin/eventManagement">Events Management</a>
     <a href="/admin/adminPortal">Users Management</a>
     <a href="/admin/contactManagement">Contact Management</a>
-    <img class="logo" src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" />
+    <img class="logo" src="${pageContext.request.contextPath}/images/Logo.jpg" alt="RefugEAP Logo" />
 </div>
 
 <!-- Header -->
@@ -451,7 +451,7 @@
 
 <footer>
     <div>
-        <img src="https://eap4socialjustice.files.wordpress.com/2022/01/refugeap-banner-pencil.png" alt="RefugEAP Logo">
+        <img src="${pageContext.request.contextPath}/images/Logo.jpg" alt="RefugEAP Logo" />
         <p class="footer-slogan">The RefugEAP Network overarching objective is to facilitate the development of widening participation initiatives enabling refugee-background students to access HE via English language pathways, with a particular focus on English for Academic Purposes. </p>
     </div>
 </footer>
