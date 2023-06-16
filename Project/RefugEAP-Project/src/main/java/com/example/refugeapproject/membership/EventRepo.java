@@ -12,6 +12,7 @@ public interface EventRepo extends CrudRepository<Event, Integer> {
     List<Event> findByStatus(String status);
 
     // Find event between times
-    @Query("SELECT e FROM Event e WHERE e.event_datetime BETWEEN :startDateTime AND :endDateTime")
+    @Query("SELECT e FROM Event e WHERE e.event_datetime BETWEEN :startDateTime AND :endDateTime AND e.status = 'approved'")
     List<Event> findByEventDatetimeBetween(LocalDateTime startDateTime, LocalDateTime endDateTime);
+
 }
