@@ -23,13 +23,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
+
 /*  Class to handle all requests through out the webpage  */
 @Controller
 public class PageController {
 
 
     // Enter you email to configure sending emails
-    private String yourEmail = "Your email to receive notifications here";
+    private String yourEmail = "Your Email to Receive Notifications here";
     @Autowired
     UserRepo userRepo;
     @Autowired
@@ -420,9 +421,8 @@ public class PageController {
     @RequestMapping(value = "/eventPage")
     public String EventPage(Model model) {
         model.addAttribute("event", new Event());
-        List<Event> allEvents = (List<Event>) eventRepo.findAll();
 
-        List<Event> acceptedEvents = (List<Event>) eventRepo.findByStatus("approved");
+        List<Event> acceptedEvents = eventRepo.findByStatus("approved");
 
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH-mm");
@@ -524,6 +524,7 @@ public class PageController {
         event.setEvent_title(event_title);
         event.setEvent_datetime(LocalDateTime.parse(event_datetime));
         event.setEvent_more_info(event_more_info);
+
 
         // Save the event to database
         eventRepo.save(event);
